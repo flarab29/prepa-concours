@@ -1,0 +1,20 @@
+.tmp/
+public_sources/
+# Android / Gradle
+.gradle-user/
+.android-home/
+.gradle/
+build/
+app/build/
+local.properties
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prépa DGFiP C</title>
+  <style>
+    :root {
+      --brand: #244b5a;
+      --brand-dark: #17323d;
+      --accent: #c9503b;
+      --accent-soft: #f4ddd5;
+      --paper: #f7f4ee;
+      --surface: #fffdf9;
+      --ink: #20262b;
+      --muted: #65717a;
+      --line: #ded8ce;
+      --ok: #2f7d57;
+      --warn: #a66318;
+      --bad: #b24336;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #fffdf9 0, var(--paper) 280px, #efebe3 100%);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    header {
+      background: linear-gradient(135deg, var(--brand-dark), var(--brand));
+      color: #fff;
+      padding: 24px clamp(14px, 4vw, 32px) 18px;
+      border-bottom: 5px solid var(--accent);
+      box-shadow: 0 14px 34px rgba(23, 50, 61, .18);
+    }
+    h1, h2, h3 { letter-spacing: 0; }
+    h1 { margin: 0 0 4px; font-size: 28px; }
+    header p { margin: 0; color: rgba(255,255,255,.86); line-height: 1.35; }
+    nav {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 8px clamp(10px, 3vw, 28px);
+      background: rgba(255, 253, 249, .96);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      backdrop-filter: blur(10px);
+    }
+    button, select {
+      font: inherit;
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      min-height: 42px;
+      padding: 10px 13px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(201, 80, 59, .18);
+    }
+    button:hover { filter: brightness(.97); }
+    button:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 3px solid rgba(201, 80, 59, .28);
+      outline-offset: 2px;
+    }
+    nav button {
+      color: var(--brand-dark);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      white-space: nowrap;
+      box-shadow: none;
+    }
+    nav button.active {
+      color: #fff;
+      background: var(--brand);
+      border-color: var(--brand);
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 18px clamp(12px, 3vw, 28px) 42px;
+    }
+    h2 { margin: 8px 0 14px; color: var(--brand-dark); font-size: 22px; }
+    h3 { margin: 0 0 8px; color: var(--brand-dark); font-size: 17px; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 12px; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 12px 28px rgba(32, 38, 43, .07);
+      padding: 15px;
+      line-height: 1.45;
+      white-space: pre-line;
+    }
+    .card:hover { border-color: #d4c8ba; }
+    .span-3 { grid-column: span 3; }
+    .span-4 { grid-column: span 4; }
+    .span-5 { grid-column: span 5; }
+    .span-6 { grid-column: span 6; }
+    .span-7 { grid-column: span 7; }
+    .span-8 { grid-column: span 8; }
+    .span-12 { grid-column: span 12; }
+    .stat {
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .muted { color: var(--muted); }
+    .pill {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 6px 10px;
+      margin: 0 6px 6px 0;
+      background: var(--accent-soft);
+      border: 1px solid var(--line);
+      color: var(--brand-dark);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+      align-items: center;
+    }
+    select {
+      min-height: 42px;
+      border-radius: 8px;
+      padding: 8px 12px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--ink);
+    }
+    .choice {
+      width: 100%;
+      margin: 0 0 8px;
+      background: var(--surface);
+      color: var(--brand-dark);
+      border: 1px solid var(--line);
+      text-align: left;
+      font-weight: 400;
+      box-shadow: none;
+    }
+    .choice:hover { border-color: var(--brand); }
+    .question-support {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 12px 28px rgba(32, 38, 43, .07);
+      padding: 13px 15px 15px;
+      margin: 0 0 12px;
+    }
+    .question-support strong {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+    .question-support pre {
+      margin: 0;
+      color: var(--brand-dark);
+      font: 700 16px/1.6 ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+      text-align: center;
+      white-space: pre-wrap;
+    }
+    .correction-steps {
+      display: grid;
+      gap: 8px;
+      white-space: normal;
+    }
+    .correction-steps div {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 9px 10px;
+    }
+    .progress {
+      height: 10px;
+      background: #e7e1d7;
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 10px 0;
+    }
+    .progress div { height: 100%; background: var(--ok); width: 0%; }
+    textarea {
+      width: 100%;
+      min-height: 260px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      font: inherit;
+      line-height: 1.45;
+      resize: vertical;
+      color: var(--ink);
+      background: var(--surface);
+    }
+    .rubric {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .rubric div { background: var(--paper); border: 1px solid var(--line); padding: 10px; }
+    .source {
+      display: block;
+      text-decoration: none;
+      color: var(--brand-dark);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 13px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .source:hover { border-color: var(--brand); }
+    label.check {
+      display: block;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    input[type="checkbox"] { transform: scale(1.15); margin-right: 8px; }
+    @media (max-width: 820px) {
+      .span-3, .span-4, .span-5, .span-6, .span-7, .span-8 { grid-column: span 12; }
+      .rubric { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Prépa DGFiP C</h1>
+    <p>Concours externe d’agent administratif principal des finances publiques de 2e classe · préparation par annales, jury, écrit et oral</p>
+  </header>
+  <nav id="nav"></nav>
+  <main id="app"></main>
+
+  <script>
+    const officialPage = "https://www.economie.gouv.fr/rejoignez-nous/agent-administratif-principal-des-finances-publiques-de-2eme-classe-externe-dgfip";
+    let officialQcmTotal = 320;
+    const qcmUrls = {
+      2024: "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2025_03_ccc_qcm_metropole2024.pdf",
+      2023: "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2024_03_qcm_metropole.pdf",
+      2022: "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2022_ccc_qcm-metro.pdf",
+      2021: "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2021_ccc_qcm.pdf",
+      2020: "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2020_ccc_qcm.pdf"
+    };
+    const correctionUrls = {
+      2023: "https://monconcoursdgfip.fr/correction-qcm-concours-commun-categorie-c-2023/",
+      2022: "https://monconcoursdgfip.fr/correction-qcm-concours-commun-categorie-c-2022/",
+      2021: "https://monconcoursdgfip.fr/correction-qcm-concours-commun-categorie-c-2021/",
+      2020: "https://monconcoursdgfip.fr/correction-qcm-concours-commun-categorie-c-2020/"
+    };
+    const ecritUrls = {
+      2024: officialPage,
+      2023: "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2024_03__sujet%20admissibilite.pdf",
+      2022: "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2022_ccc_epreuve_admissibilite.pdf",
+      2021: "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2021_ccc_epreuve_admissibilite.pdf",
+      2020: "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2020_ccc_epreuve_admissibilite.pdf"
+    };
+    const reportUrls = {
+      2024: "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2025_03_ccc_rapport_jury_2024_administratif.pdf",
+      2023: "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2024_03_rapport%20jury_ccc_2023_Adm.pdf",
+      2022: "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2022_ccc_rapport_jury.pdf",
+      2021: "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2021_ccc_rapport_jury.pdf",
+      2020: "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2020_ccc_rapport_jury.pdf"
+    };
+    const zero = {
+      qcm: "https://rejoindrelesfinancespubliques.economie.gouv.fr//files/files/concours/Sujets_zero/CCC%20-%202026%20-%20Sujet%20test%20-%20%C3%89preuve%20de%20pr%C3%A9admissibilit%C3%A9.pdf",
+      ecrit: "https://rejoindrelesfinancespubliques.economie.gouv.fr/files/files/concours/Sujets_zero/CCC%20-%202026%20-%20sujet%20test%20-%20admissibilit%C3%A9.pdf"
+    };
+
+    let annales = [];
+
+    let qcm = [];
+
+    let subjects = [];
+
+    let juryRules = [];
+
+    let oralQuestions = [];
+
+    const tabs = ["Accueil", "Annales", "QCM", "Écrit", "Jury", "Oral", "Suivi", "Sources"];
+    let currentTab = "Accueil";
+    let quiz = { list: [], index: 0, score: 0, answers: [] };
+    let selectedSubject = 0;
+    let activeQuizMode = "Libre";
+    let sourceItems = null;
+    let corpusLoadError = null;
+    const domains = ["Tous les domaines", "Maths et logique", "Francais", "Histoire-geographie", "EMC et institutions", "Numerique", "MEF / DGFiP / DGDDI", "Actualite", "Culture generale"];
+    const quizModes = ["Libre", "Diagnostic initial", "Serie courte 10 min", "Mode examen 54", "Sujet zero 2026", "Annale complete", "Faiblesses du jour", "Carnet d'erreurs"];
+    const app = document.querySelector("#app");
+    const nav = document.querySelector("#nav");
+
+    function q(year, category, prompt, choices, answer, explanation, supportRows = [], correctionSteps = []) {
+      return { year, category, prompt, choices, answer, explanation, supportRows, correctionSteps };
+    }
+    function applyCorpus(corpus) {
+      officialQcmTotal = corpus.officialQcmTotal || officialQcmTotal;
+      qcm = (corpus.questions || []).map(item => ({
+        year: item.year,
+        category: item.category,
+        prompt: item.prompt,
+        choices: item.choices || [],
+        answer: item.answer,
+        explanation: item.explanation,
+        supportRows: item.supportRows || [],
+        correctionSteps: item.correctionSteps || []
+      }));
+      annales = corpus.annales || annales;
+      subjects = corpus.writtenSubjects || subjects;
+      juryRules = (corpus.juryRules || juryRules).map(item => Array.isArray(item) ? item : [item.title, item.body]);
+      oralQuestions = corpus.oralQuestions || oralQuestions;
+      sourceItems = corpus.sources || sourceItems;
+    }
+    async function loadCorpus() {
+      try {
+        const response = await fetch("public_sources/corpus.json", { cache: "no-store" });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        applyCorpus(await response.json());
+      } catch (error) {
+        corpusLoadError = error;
+        console.warn("Impossible de charger public_sources/corpus.json", error);
+      }
+      render();
+    }
+    function setTab(tab) {
+      currentTab = tab;
+      render();
+    }
+    function card(title, body = "", extra = "") {
+      return `<section class="card ${extra}"><h3>${escapeHtml(title)}</h3>${body}</section>`;
+    }
+    function questionSupport(item) {
+      if (!item.supportRows || !item.supportRows.length) return "";
+      return `<section class="question-support"><strong>Support</strong><pre>${item.supportRows.map(escapeHtml).join("\n")}</pre></section>`;
+    }
+    function questionBlock(item) {
+      return `${card(item.prompt)}${questionSupport(item)}`;
+    }
+    function correctionBlock(item) {
+      if (!item.correctionSteps || !item.correctionSteps.length) return escapeHtml(item.explanation);
+      return `<div class="correction-steps">${item.correctionSteps.map(step => `<div>${escapeHtml(step)}</div>`).join("")}</div>`;
+    }
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, m => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" }[m]));
+    }
+    function pct(value, total) {
+      return total ? Math.round(value * 100 / total) : 0;
+    }
+    function normalizeText(value) {
+      return String(value).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+    function domainOf(item) {
+      const c = normalizeText(item.category);
+      if (/calcul|mathem|equation|fraction|pourcentage|statistique|probabilite|geometrie|volume|vitesse|arithmetique|proportionnalite|moyenne|radicaux|nombres|raisonnement|suite|logique|codage|anagrammes/.test(c)) return "Maths et logique";
+      if (/orthographe|accord|grammaire|conjugaison|vocabulaire|expression|genre|figure/.test(c)) return "Francais";
+      if (/histoire|geographie|geopolitique/.test(c)) return "Histoire-geographie";
+      if (/enseignement|civique|institution|union europeenne|administration|administratif/.test(c)) return "EMC et institutions";
+      if (/numerique/.test(c)) return "Numerique";
+      if (/mef|dgfip|dgddi|douane|douanes|missions/.test(c)) return "MEF / DGFiP / DGDDI";
+      if (/actualite/.test(c)) return "Actualite";
+      return "Culture generale";
+    }
+    function questionId(item) {
+      return `${item.year}|${item.category}|${item.prompt}`.replace(/\W+/g, "_").slice(0, 120);
+    }
+    function loadJson(key, fallback) {
+      try { return JSON.parse(localStorage.getItem(key) || JSON.stringify(fallback)); } catch { return fallback; }
+    }
+    function isMistake(item) {
+      return (loadJson("dgfipMisses", {})[questionId(item)] || 0) > 0;
+    }
+    function mistakeQuestions() {
+      return qcm.filter(isMistake);
+    }
+    function recordQuestion(item, ok) {
+      const misses = loadJson("dgfipMisses", {});
+      const stats = loadJson("dgfipDomainStats", {});
+      const domain = domainOf(item);
+      stats[domain] = stats[domain] || { attempts: 0, correct: 0 };
+      stats[domain].attempts += 1;
+      if (ok) {
+        stats[domain].correct += 1;
+        misses[questionId(item)] = Math.max(0, (misses[questionId(item)] || 0) - 1);
+      } else {
+        misses[questionId(item)] = (misses[questionId(item)] || 0) + 1;
+      }
+      localStorage.setItem("dgfipMisses", JSON.stringify(misses));
+      localStorage.setItem("dgfipDomainStats", JSON.stringify(stats));
+    }
+    function weakestDomain() {
+      const stats = loadJson("dgfipDomainStats", {});
+      let weakest = domains.find(d => d !== "Tous les domaines");
+      let low = 101;
+      let hasStats = false;
+      domains.filter(d => d !== "Tous les domaines").forEach(domain => {
+        const s = stats[domain];
+        if (!s || !s.attempts) {
+          if (!hasStats) weakest = domain;
+          return;
+        }
+        hasStats = true;
+        const rate = pct(s.correct, s.attempts);
+        if (rate < low) { low = rate; weakest = domain; }
+      });
+      return weakest;
+    }
+    function domainStatsHtml() {
+      const stats = loadJson("dgfipDomainStats", {});
+      const rows = domains.filter(d => d !== "Tous les domaines" && stats[d]?.attempts)
+        .map(d => `${escapeHtml(d)} : ${stats[d].correct}/${stats[d].attempts} (${pct(stats[d].correct, stats[d].attempts)}%)`);
+      return rows.length ? rows.join("\n") : "Aucune statistique par domaine pour l'instant.";
+    }
+    function daysUntil(dateText) {
+      const [d, m, y] = dateText.split("/").map(Number);
+      return Math.max(0, Math.ceil((new Date(y, m - 1, d) - new Date()) / 86400000));
+    }
+    function qcmIssues() {
+      return qcm.filter(item => !item.prompt || !item.explanation || !Array.isArray(item.choices) || item.choices.length !== 4 || item.answer < 0 || item.answer >= item.choices.length);
+    }
+    function auditText() {
+      const issues = qcmIssues().length;
+      return issues === 0
+        ? "Contrôle interne : aucune question active sans réponse."
+        : `Contrôle interne : ${issues} question(s) à corriger avant entraînement.`;
+    }
+    function saveScore(score, total) {
+      const history = JSON.parse(localStorage.getItem("dgfipScores") || "[]");
+      history.unshift({ score, total, mode: activeQuizMode, at: new Date().toLocaleString("fr-FR") });
+      localStorage.setItem("dgfipScores", JSON.stringify(history.slice(0, 10)));
+    }
+    function renderNav() {
+      nav.innerHTML = tabs.map(t => `<button class="${t === currentTab ? "active" : ""}" onclick="setTab('${t}')">${t}</button>`).join("");
+    }
+    function render() {
+      renderNav();
+      if (currentTab === "Annales") return renderAnnales();
+      if (currentTab === "QCM") return renderQcmHome();
+      if (currentTab === "Écrit") return renderWritten();
+      if (currentTab === "Jury") return renderJury();
+      if (currentTab === "Oral") return renderOral();
+      if (currentTab === "Suivi") return renderProgress();
+      if (currentTab === "Sources") return renderSources();
+      renderHome();
+    }
+    function renderHome() {
+      if (!qcm.length) {
+        app.innerHTML = `<h2>Corpus JSON requis</h2>${card("Chargement impossible", `La preview web attend public_sources/corpus.json. Double-cliquez plutot sur ouvrir-preview.bat a la racine du projet. Le navigateur bloque souvent le chargement du JSON quand web-preview.html est ouvert directement en file://.\n\nDetail : ${escapeHtml(corpusLoadError?.message || "corpus absent")}`)}`;
+        return;
+      }
+      app.innerHTML = `
+        <h2>Tableau de bord</h2>
+        <div class="grid">
+          ${card("QCM corrigés", `<div class="stat">${qcm.length}</div><div class="muted">questions actives avec réponse et explication, dont les 50 questions du sujet zéro QCM 2026.</div>`, "span-3")}
+          ${card("Écrits", `<div class="stat">5 + 1</div><div class="muted">annales 2020-2024 + sujet zéro 2026.</div>`, "span-3")}
+          ${card("Jury", `<div class="stat">5</div><div class="muted">rapports transformés en règles d’alerte.</div>`, "span-3")}
+          ${card("Échéance", `<div class="stat">29/09</div><div class="muted">épreuves écrites 2026.</div>`, "span-3")}
+          ${card("Aujourd'hui", `<div class="stat">${mistakeQuestions().length}</div><div class="muted">question(s) dans le carnet d'erreurs. Domaine a travailler : ${escapeHtml(weakestDomain())}. Jours avant les epreuves ecrites : ${daysUntil("29/09/2026")}.</div>`, "span-12")}
+          ${card("Audit QCM", `<div class="stat">${qcm.length}/${officialQcmTotal}</div><div class="muted">${auditText()} Reste à intégrer avec corrigé vérifié : ${Math.max(0, officialQcmTotal - qcm.length)}.</div>`, "span-12")}
+          ${card("Format 2026", `QCM de 1 h 30 sans calculatrice, coefficient 1.\nCas pratique écrit de 3 h avec calculatrice, coefficient 2.\nOral de 20 minutes, coefficient 3, avec présentation du parcours en 2 minutes.\nToute note inférieure à 5/20 est éliminatoire.`, "span-6")}
+          ${card("Plan d’attaque", `1. QCM quotidien : français, calcul, logique, culture générale.\n2. Une annale écrite par semaine : lecture rapide, plan, livrable.\n3. Une simulation orale tous les 10 jours : parcours, missions, déontologie.\n4. Relecture systématique : consigne, chiffres, structure, orthographe.`, "span-6")}
+          ${card("Règle qualité", `Une question affichée dans l’entraînement doit toujours avoir une réponse attendue et une explication. Le sujet zéro QCM 2026 est intégré en totalité ; les autres items officiels dont le corrigé n’est pas encore vérifié restent dans les sources tant que l’intégration serait incomplète.`, "span-12")}
+        </div>
+        <div class="toolbar" style="margin-top:14px">
+          <button onclick="setTab('QCM')">Lancer une série QCM</button>
+          <button onclick="setTab('Écrit')">Travailler l’écrit</button>
+          <button onclick="setTab('Annales')">Voir le corpus</button>
+        </div>`;
+    }
+    function renderAnnales() {
+      app.innerHTML = `<h2>Corpus d’annales utilisé</h2><div class="grid">${
+        annales.map(a => card(`${a.year} · ${a.title}`, `<span class="pill">QCM</span> ${escapeHtml(a.qcm)}\n<span class="pill">Écrit</span> ${escapeHtml(a.ecrit)}\n<span class="pill">Jury</span> ${escapeHtml(a.jury)}\n\n${a.skills.map(s => `<span class="pill">${escapeHtml(s)}</span>`).join(" ")}`, "span-6")).join("")
+      }</div>`;
+    }
+    function renderQcmHome() {
+      const years = ["Toutes", ...new Set(qcm.map(q => q.year))];
+      const cats = ["Toutes", ...new Set(qcm.map(q => q.category))];
+      app.innerHTML = `<h2>Entraînement QCM</h2>
+        <div class="card">
+          <div class="toolbar">
+            <select id="mode">${quizModes.map(m => `<option>${m}</option>`).join("")}</select>
+            <select id="domain">${domains.map(d => `<option>${d}</option>`).join("")}</select>
+            <select id="year">${years.map(y => `<option>${y}</option>`).join("")}</select>
+            <select id="cat">${cats.map(c => `<option>${c}</option>`).join("")}</select>
+            <select id="size"><option>10</option><option>20</option><option>50</option><option>54</option><option>Toutes</option></select>
+            <button onclick="startQuiz()">Démarrer</button>
+            ${mistakeQuestions().length ? `<button onclick="startMistakeQuiz()">Carnet d'erreurs</button>` : ""}
+          </div>
+          <div class="muted">Banque corrigee par domaines officiels. ${auditText()} Carnet d'erreurs : ${mistakeQuestions().length}. Domaine faible : ${escapeHtml(weakestDomain())}.</div>
+        </div>
+        <div class="grid">${summaryByDomain().map(s => card(s.name, `<div class="stat">${s.count}</div><div class="muted">${escapeHtml(s.rate)}</div>`, "span-3")).join("")}</div>`;
+    }
+    function summaryByDomain() {
+      const map = {};
+      qcm.forEach(item => map[domainOf(item)] = (map[domainOf(item)] || 0) + 1);
+      const stats = loadJson("dgfipDomainStats", {});
+      return Object.entries(map).map(([name, count]) => {
+        const s = stats[name];
+        return { name, count, rate: s?.attempts ? `${s.correct}/${s.attempts} bonnes reponses (${pct(s.correct, s.attempts)}%)` : "pas encore travaille" };
+      });
+    }
+    function startQuiz() {
+      const mode = document.querySelector("#mode").value;
+      const domain = document.querySelector("#domain").value;
+      const y = document.querySelector("#year").value;
+      const c = document.querySelector("#cat").value;
+      const size = document.querySelector("#size").value;
+      activeQuizMode = mode;
+      let list = qcm.filter(item => (y === "Toutes" || String(item.year) === y) && (c === "Toutes" || item.category === c) && (domain === "Tous les domaines" || domainOf(item) === domain));
+      if (mode === "Carnet d'erreurs") list = mistakeQuestions();
+      if (mode === "Faiblesses du jour") list = qcm.filter(item => domainOf(item) === weakestDomain());
+      if (mode === "Sujet zero 2026") list = list.filter(item => String(item.year) === "2026");
+      if (mode === "Annale complete") list = list.filter(item => String(item.year) === (y === "Toutes" ? "2024" : y));
+      if (mode === "Diagnostic initial") list = balancedDiagnostic(list);
+      list = list.sort(() => Math.random() - .5);
+      const plannedSize = mode === "Diagnostic initial" ? 24 : mode === "Serie courte 10 min" ? 10 : mode === "Mode examen 54" || mode === "Annale complete" ? 54 : mode === "Sujet zero 2026" ? 50 : mode === "Faiblesses du jour" || mode === "Carnet d'erreurs" ? 20 : size === "Toutes" ? 0 : Number(size);
+      if (plannedSize) list = list.slice(0, plannedSize);
+      if (!list.length) {
+        app.innerHTML = `<h2>Entraînement QCM</h2>${card("Aucune question disponible", "Aucune question corrigée ne correspond à ces filtres. Élargissez l’année ou la catégorie.")}<button onclick="renderQcmHome()">Retour aux filtres</button>`;
+        return;
+      }
+      quiz = { list, index: 0, score: 0, answers: [] };
+      renderQuestion();
+    }
+    function balancedDiagnostic(list) {
+      const out = [];
+      domains.filter(d => d !== "Tous les domaines").forEach(domain => {
+        out.push(...list.filter(item => domainOf(item) === domain).slice(0, 3));
+      });
+      return out.length ? out : list;
+    }
+    function startMistakeQuiz() {
+      activeQuizMode = "Carnet d'erreurs";
+      quiz = { list: mistakeQuestions().sort(() => Math.random() - .5).slice(0, 20), index: 0, score: 0, answers: [] };
+      renderQuestion();
+    }
+    function renderQuestion() {
+      if (!quiz.list.length) return renderQcmHome();
+      if (quiz.index >= quiz.list.length) {
+        saveScore(quiz.score, quiz.list.length);
+        const scorePct = pct(quiz.score, quiz.list.length);
+        const misses = quiz.answers.filter(a => !a.ok);
+        const missDomains = [...new Set(misses.map(a => domainOf(a.item)))].join(", ") || "aucun";
+        app.innerHTML = `<h2>Résultat</h2>${card("Score", `<div class="stat">${quiz.score}/${quiz.list.length}</div><div class="progress"><div style="width:${scorePct}%"></div></div>${scorePct >= 80 ? "Très solide. Passez en mode examen complet." : scorePct >= 60 ? "Base correcte. Reprenez les domaines perdus." : "Priorité aux fondamentaux et aux erreurs récurrentes."}\n\nMode : ${escapeHtml(activeQuizMode)}\nErreurs de la serie : ${misses.length}\nDomaines a revoir : ${escapeHtml(missDomains)}`)}<button onclick="renderQcmHome()">Nouvelle série</button>${mistakeQuestions().length ? `<button onclick="startMistakeQuiz()">Revoir le carnet d'erreurs</button>` : ""}`;
+        return;
+      }
+      const item = quiz.list[quiz.index];
+      app.innerHTML = `<h2>Question ${quiz.index + 1}/${quiz.list.length}</h2>
+        <span class="pill">${item.year}</span><span class="pill">${escapeHtml(domainOf(item))}</span><span class="pill">${escapeHtml(item.category)}</span>
+        ${questionBlock(item)}
+        ${item.choices.map((choice, i) => `<button class="choice" onclick="answer(${i})">${i + 1}. ${escapeHtml(choice)}</button>`).join("")}`;
+    }
+    function answer(choice) {
+      const item = quiz.list[quiz.index];
+      const ok = choice === item.answer;
+      if (ok) quiz.score++;
+      recordQuestion(item, ok);
+      quiz.answers.push({ item, choice, ok });
+      app.innerHTML = `<h2>${ok ? "Bonne réponse" : "À revoir"}</h2>
+        ${card(item.prompt, `Votre réponse : ${escapeHtml(item.choices[choice])}\nRéponse attendue : ${escapeHtml(item.choices[item.answer])}`)}
+        ${questionSupport(item)}
+        ${card("Correction", correctionBlock(item))}
+        <button onclick="quiz.index++;renderQuestion()">Question suivante</button>`;
+    }
+    function renderWritten() {
+      const s = subjects[selectedSubject];
+      app.innerHTML = `<h2>Écrit d’admissibilité</h2>
+        <div class="toolbar">
+          <select id="subject">${subjects.map((x, i) => `<option value="${i}" ${i === selectedSubject ? "selected" : ""}>${x.source} · ${x.title}</option>`).join("")}</select>
+          <button onclick="selectedSubject=Number(document.querySelector('#subject').value);renderWritten()">Charger</button>
+          <button onclick="selectedSubject=(selectedSubject+1)%subjects.length;renderWritten()">Autre sujet</button>
+        </div>
+        ${card(`${s.source} · ${s.title}`, `${s.prompt}\n\nAttendus : ${s.expected.join(", ")}`)}
+        ${card("Atelier 3 heures", "0-20 min : lecture de la consigne et tri des documents.\n20-45 min : brouillon court, plan, chiffres utiles.\n45-165 min : redaction du livrable attendu.\n165-180 min : relecture ciblee : consigne, chiffres, anonymat, orthographe.", "span-12")}
+        <textarea id="copy" placeholder="Rédigez votre production ici : synthèse, courriel, fiche opérationnelle ou support..."></textarea>
+        <div class="toolbar"><button onclick="gradeCopy()">Noter ma production</button><button onclick="insertPlan()">Insérer un squelette de plan</button></div>
+        <div id="grade"></div>`;
+    }
+    function insertPlan() {
+      document.querySelector("#copy").value = "Objet : ...\n\n1. Constat et enjeux\n- Faits du dossier : ...\n- Donnees chiffrees a commenter : ...\n\n2. Risques et publics concernes\n- Usagers / agents / service : ...\n- Point de vigilance juridique ou deontologique : ...\n\n3. Actions proposees\n- Action immediate : ...\n- Action de suivi : ...\n- Indicateur ou trace : ...\n\nConclusion operationnelle : decision, priorite, prochaine etape.\n";
+    }
+    function gradeCopy() {
+      const text = document.querySelector("#copy").value.trim();
+      const lower = text.toLowerCase();
+      const checks = [
+        ["Compréhension", 4, text.length > 900 && /enjeu|objectif|constat|risque/.test(lower)],
+        ["Structure", 4, /1\.|2\.|d'abord|ensuite|enfin|partie|conclusion/.test(lower)],
+        ["Exploitation", 4, /document|donnée|chiffre|pourcentage|graphique|tableau/.test(lower)],
+        ["Opérationnel", 3, /fiche|courriel|action|priorité|usager|service/.test(lower)],
+        ["Culture MEF", 3, /dgfip|dgddi|bercy|finances publiques|douane|ministère/.test(lower)],
+        ["Langue", 2, text.split(/[.!?]/).length > 8 && text.length > 400]
+      ];
+      let total = 0;
+      const rows = checks.map(([name, max, ok]) => {
+        const pts = ok ? max : Math.max(0, Math.floor(max / 2) - (text.length < 250 ? 1 : 0));
+        total += pts;
+        return `<div><strong>${name}</strong><br>${pts}/${max}</div>`;
+      }).join("");
+      const advice = [];
+      if (text.length < 700) advice.push("Développer la copie : une réponse trop courte ne couvre pas le dossier.");
+      if (!/pourcentage|graphique|tableau|chiffre/.test(lower)) advice.push("Ajouter un traitement chiffré ou un commentaire de données.");
+      if (!/fiche|courriel|action|priorité/.test(lower)) advice.push("Rendre la réponse plus opérationnelle.");
+      if (!/dgfip|dgddi|finances publiques|douane|bercy/.test(lower)) advice.push("Faire apparaître l’environnement ministériel.");
+      document.querySelector("#grade").innerHTML = card("Note indicative", `<div class="stat">${Math.min(20,total)}/20</div><div class="rubric">${rows}</div>\n${advice.length ? advice.join("\n") : "Copie structurée et exploitable. Prochaine étape : refaire en 3 heures avec relecture finale."}`);
+    }
+    function renderJury() {
+      app.innerHTML = `<h2>Rapports de jury transformés en règles</h2><div class="grid">${
+        juryRules.map(r => card(r[0], escapeHtml(r[1]), "span-6")).join("")
+      }${card("Seuil de sécurité", "Toute note inférieure à 5/20 est éliminatoire. L’application pousse donc à sécuriser chaque épreuve avant de viser la performance.", "span-12")}</div>`;
+    }
+    function renderOral() {
+      app.innerHTML = `<h2>Oral d’admission</h2>
+        <div class="grid">
+          ${card("Trame 2 minutes", "30 s : parcours et fil directeur.\n45 s : expériences utiles.\n30 s : compréhension DGFiP/DGDDI.\n15 s : motivation concrète.", "span-6")}
+          ${card("Réponse en mise en situation", "1. Reformuler.\n2. Identifier la règle.\n3. Agir ou alerter.\n4. Tracer si nécessaire.\n5. Préserver l’usager et le service.", "span-6")}
+          ${card("Simulation 20 minutes", "0-2 min : presentation.\n2-8 min : motivation et missions.\n8-16 min : mises en situation.\n16-20 min : rebonds sur posture, contraintes, mobilite.", "span-6")}
+          ${card("Reflexes DGFiP/DGDDI", "DGFiP : impots, depenses publiques, gestion locale, accueil, controle, recouvrement.\nDGDDI : marchandises, territoire, fiscalite douaniere, lutte contre les trafics.\nDeontologie : neutralite, discretion, probite, hierarchie.", "span-6")}
+          ${oralQuestions.map(q => card("Question d’oral", escapeHtml(q), "span-6")).join("")}
+        </div>`;
+    }
+    function renderProgress() {
+      const tasks = ["QCM français", "QCM calcul", "QCM culture générale", "QCM raisonnement", "Écrit 2020", "Écrit 2021", "Écrit 2022", "Écrit 2023", "Écrit 2024", "Sujet zéro 2026", "Présentation orale", "Mises en situation"];
+      const done = JSON.parse(localStorage.getItem("dgfipDone") || "{}");
+      const history = JSON.parse(localStorage.getItem("dgfipScores") || "[]");
+      const count = tasks.filter(t => done[t]).length;
+      app.innerHTML = `<h2>Suivi local</h2>
+        ${card("Avancement", `<div class="stat">${count}/${tasks.length}</div><div class="progress"><div style="width:${pct(count,tasks.length)}%"></div></div>`, "span-12")}
+        ${card("Pilotage QCM", `<div class="stat">${mistakeQuestions().length}</div><div class="muted">question(s) dans le carnet d'erreurs. Domaine fragile : ${escapeHtml(weakestDomain())}.\n${domainStatsHtml()}</div>`, "span-12")}
+        <div class="toolbar">${mistakeQuestions().length ? `<button onclick="startMistakeQuiz()">Revoir le carnet d'erreurs</button>` : ""}<button onclick="setTab('QCM')">Nouvelle serie</button></div>
+        <div class="grid">
+          <section class="card span-6"><h3>Checklist</h3>${tasks.map(t => `<label class="check"><input type="checkbox" ${done[t] ? "checked" : ""} onchange="toggleTask('${t}', this.checked)">${t}</label>`).join("")}</section>
+          <section class="card span-6"><h3>Historique QCM</h3>${history.length ? history.map(h => `${h.at} · ${h.mode || "Libre"} · ${h.score}/${h.total}`).join("\n") : "Aucune série terminée pour l’instant."}</section>
+        </div>`;
+    }
+    function toggleTask(task, checked) {
+      const done = JSON.parse(localStorage.getItem("dgfipDone") || "{}");
+      done[task] = checked;
+      localStorage.setItem("dgfipDone", JSON.stringify(done));
+      renderProgress();
+    }
+    function renderSources() {
+      if (sourceItems) {
+        app.innerHTML = `<h2>Sources publiques officielles</h2>${sourceItems.map(item => `<a class="source" href="${item.url}" target="_blank" rel="noreferrer">${escapeHtml(item.title)}</a>`).join("")}`;
+        return;
+      }
+      const items = [["Page officielle", officialPage], ["Sujet zéro QCM 2026 avec corrigé", zero.qcm], ["Sujet zéro écrit 2026", zero.ecrit]];
+      Object.entries(qcmUrls).forEach(([year, url]) => items.push([`Annale QCM ${year}`, url]));
+      Object.entries(correctionUrls).forEach(([year, url]) => items.push([`Proposition de correction QCM ${year}`, url]));
+      Object.entries(ecritUrls).forEach(([year, url]) => items.push([`Annale écrit ${year}`, url]));
+      Object.entries(reportUrls).forEach(([year, url]) => items.push([`Rapport de jury ${year}`, url]));
+      app.innerHTML = `<h2>Sources publiques officielles</h2>${items.map(([label, url]) => `<a class="source" href="${url}" target="_blank" rel="noreferrer">${label}</a>`).join("")}`;
+    }
+    loadCorpus();
+  </script>
+</body>
+</html>
