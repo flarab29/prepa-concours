@@ -63,6 +63,18 @@
       box-shadow: 0 8px 18px rgba(201, 80, 59, .18);
     }
     button:hover { filter: brightness(.97); }
+    button.primary-action {
+      width: 100%;
+      min-height: 58px;
+      font-size: 18px;
+      background: var(--brand);
+      box-shadow: 0 14px 28px rgba(36, 75, 90, .22);
+    }
+    button:disabled {
+      cursor: not-allowed;
+      opacity: .55;
+      filter: grayscale(.1);
+    }
     button:focus-visible, select:focus-visible, textarea:focus-visible {
       outline: 3px solid rgba(201, 80, 59, .28);
       outline-offset: 2px;
@@ -303,13 +315,22 @@
       officialQcmTotal = corpus.officialQcmTotal || officialQcmTotal;
       qcm = (corpus.questions || []).map(item => ({
         year: item.year,
+        id: item.id,
         category: item.category,
         prompt: item.prompt,
         choices: item.choices || [],
         answer: item.answer,
         explanation: item.explanation,
+        domain: item.domain,
+        tags: item.tags || [],
         supportRows: item.supportRows || [],
-        correctionSteps: item.correctionSteps || []
+        correctionSteps: item.correctionSteps || [],
+        verificationLevel: item.verificationLevel || "",
+        sourceType: item.sourceType || "",
+        difficulty: item.difficulty || "",
+        skill: item.skill || "",
+        subskill: item.subskill || "",
+        estimatedTimeSeconds: item.estimatedTimeSeconds || 90
       }));
       annales = corpus.annales || annales;
       subjects = corpus.writtenSubjects || subjects;
@@ -356,6 +377,7 @@
       return String(value).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     }
     function domainOf(item) {
+      if (item.domain) return item.domain;
       const c = normalizeText(item.category);
       if (/calcul|mathem|equation|fraction|pourcentage|statistique|probabilite|geometrie|volume|vitesse|arithmetique|proportionnalite|moyenne|radicaux|nombres|raisonnement|suite|logique|codage|anagrammes/.test(c)) return "Maths et logique";
       if (/orthographe|accord|grammaire|conjugaison|vocabulaire|expression|genre|figure/.test(c)) return "Francais";
@@ -367,30 +389,114 @@
       return "Culture generale";
     }
     function questionId(item) {
+      if (item.id) return item.id;
       return `${item.year}|${item.category}|${item.prompt}`.replace(/\W+/g, "_").slice(0, 120);
     }
     function loadJson(key, fallback) {
       try { return JSON.parse(localStorage.getItem(key) || JSON.stringify(fallback)); } catch { return fallback; }
     }
+    function addDays(days) {
+      return Date.now() + days * 86400000;
+    }
+    function reviewCards() {
+      const cards = loadJson("dgfipReviewCards", {});
+      const legacyMisses = loadJson("dgfipMisses", {});
+      const legacyDue = loadJson("dgfipDue", {});
+      let changed = false;
+      Object.entries(legacyMisses).forEach(([id, failures]) => {
+        if ((failures || 0) > 0 && !cards[id]) {
+          cards[id] = {
+            attempts: failures,
+            successes: 0,
+            failures,
+            consecutiveSuccesses: 0,
+            lastAttemptAt: null,
+            nextReviewAt: legacyDue[id] || Date.now(),
+            mastery: "fragile"
+          };
+          changed = true;
+        }
+      });
+      if (changed) localStorage.setItem("dgfipReviewCards", JSON.stringify(cards));
+      return cards;
+    }
+    function saveReviewCards(cards) {
+      localStorage.setItem("dgfipReviewCards", JSON.stringify(cards));
+    }
+    function reviewCard(item) {
+      return reviewCards()[questionId(item)] || null;
+    }
     function isMistake(item) {
-      return (loadJson("dgfipMisses", {})[questionId(item)] || 0) > 0;
+      const card = reviewCard(item);
+      return !!card && card.failures > 0 && card.mastery !== "mastered";
+    }
+    function isDueMistake(item) {
+      const card = reviewCard(item);
+      return !!card && card.failures > 0 && card.mastery !== "mastered" && (card.nextReviewAt || 0) <= Date.now();
     }
     function mistakeQuestions() {
       return qcm.filter(isMistake);
     }
+    function dueMistakeQuestions() {
+      return qcm.filter(isDueMistake);
+    }
+    function masteredMistakeQuestions() {
+      return qcm.filter(item => reviewCard(item)?.mastery === "mastered");
+    }
+    function fragileMistakeQuestions() {
+      return qcm.filter(item => {
+        const card = reviewCard(item);
+        return card && card.failures > 0 && ["new", "fragile", "review_tomorrow"].includes(card.mastery);
+      });
+    }
+    function reviewStats() {
+      return {
+        due: dueMistakeQuestions().length,
+        mastered: masteredMistakeQuestions().length,
+        fragile: fragileMistakeQuestions().length,
+        total: mistakeQuestions().length
+      };
+    }
     function recordQuestion(item, ok) {
-      const misses = loadJson("dgfipMisses", {});
+      const cards = reviewCards();
       const stats = loadJson("dgfipDomainStats", {});
       const domain = domainOf(item);
+      const id = questionId(item);
+      const existing = cards[id] || {
+        attempts: 0,
+        successes: 0,
+        failures: 0,
+        consecutiveSuccesses: 0,
+        lastAttemptAt: null,
+        nextReviewAt: Date.now(),
+        mastery: "new"
+      };
       stats[domain] = stats[domain] || { attempts: 0, correct: 0 };
       stats[domain].attempts += 1;
+      existing.attempts += 1;
+      existing.lastAttemptAt = Date.now();
       if (ok) {
         stats[domain].correct += 1;
-        misses[questionId(item)] = Math.max(0, (misses[questionId(item)] || 0) - 1);
+        existing.successes += 1;
+        existing.consecutiveSuccesses += 1;
+        if (existing.failures > 0 && existing.consecutiveSuccesses >= 3) {
+          existing.mastery = "mastered";
+          existing.nextReviewAt = addDays(30);
+        } else if (existing.failures > 0 && existing.consecutiveSuccesses >= 2) {
+          existing.mastery = "review_7_days";
+          existing.nextReviewAt = addDays(7);
+        } else if (existing.failures > 0) {
+          existing.mastery = "review_3_days";
+          existing.nextReviewAt = addDays(3);
+        }
       } else {
-        misses[questionId(item)] = (misses[questionId(item)] || 0) + 1;
+        existing.failures += 1;
+        existing.consecutiveSuccesses = 0;
+        existing.mastery = "fragile";
+        existing.nextReviewAt = addDays(1);
       }
-      localStorage.setItem("dgfipMisses", JSON.stringify(misses));
+      cards[id] = existing;
+      saveReviewCards(cards);
       localStorage.setItem("dgfipDomainStats", JSON.stringify(stats));
     }
     function weakestDomain() {
@@ -415,6 +521,84 @@
       const rows = domains.filter(d => d !== "Tous les domaines" && stats[d]?.attempts)
         .map(d => `${escapeHtml(d)} : ${stats[d].correct}/${stats[d].attempts} (${pct(stats[d].correct, stats[d].attempts)}%)`);
       return rows.length ? rows.join("\n") : "Aucune statistique par domaine pour l'instant.";
+    }
+    function hasDomainStats() {
+      const stats = loadJson("dgfipDomainStats", {});
+      return domains.some(d => d !== "Tous les domaines" && stats[d]?.attempts);
+    }
+    function lastScore() {
+      return loadJson("dgfipScores", [])[0] || null;
+    }
+    function recommendedDomain() {
+      return hasDomainStats() ? weakestDomain() : "Diagnostic initial";
+    }
+    function todayRecommendation() {
+      if (!hasDomainStats()) return "Commencer par un diagnostic initial pour mesurer les domaines.";
+      if (dueMistakeQuestions().length) return "Revoir les erreurs dues puis compléter avec le sujet zéro 2026.";
+      if (mistakeQuestions().length) return "Réactiver le carnet d'erreurs et renforcer le domaine faible.";
+      return `Faire 10 questions ciblées sur ${weakestDomain()} avec priorité au sujet zéro 2026.`;
+    }
+    function takeUnique(target, source, limit = Infinity) {
+      const seen = new Set(target.map(questionId));
+      for (const item of source) {
+        const id = questionId(item);
+        if (seen.has(id)) continue;
+        target.push(item);
+        seen.add(id);
+        if (target.length >= limit) break;
+      }
+    }
+    function reliableFirst(list) {
+      return [...list].sort((a, b) => {
+        const score = item => (item.verificationLevel === "official_correction" ? 0 : item.sourceType === "official_zero_2026" ? 1 : item.verificationLevel === "manual_verified" ? 2 : 3);
+        return score(a) - score(b);
+      });
+    }
+    function diagnosticFirst(list) {
+      const difficultyScore = item => item.difficulty === "easy" ? 0 : item.difficulty === "medium" ? 1 : 2;
+      return reliableFirst(list).sort((a, b) => difficultyScore(a) - difficultyScore(b));
+    }
+    function isDiagnosticMode() {
+      return activeQuizMode === "Diagnostic initial";
+    }
+    function buildDailySessionQuestions() {
+      const selected = [];
+      const statsExist = hasDomainStats();
+      const weak = weakestDomain();
+      const mistakes = reliableFirst([...dueMistakeQuestions(), ...mistakeQuestions()]);
+      takeUnique(selected, mistakes, Math.min(3, mistakes.length));
+
+      const zero2026 = reliableFirst(qcm.filter(item => item.sourceType === "official_zero_2026" || String(item.year) === "2026"));
+      if (statsExist) {
+        takeUnique(selected, zero2026.filter(item => domainOf(item) === weak), 7);
+        takeUnique(selected, reliableFirst(qcm.filter(item => domainOf(item) === weak)), 7);
+      } else {
+        for (const domain of domains.filter(d => d !== "Tous les domaines")) {
+          takeUnique(selected, zero2026.filter(item => domainOf(item) === domain), Math.min(10, selected.length + 1));
+        }
+      }
+      takeUnique(selected, zero2026, 10);
+      takeUnique(selected, reliableFirst(qcm), 10);
+      return selected.slice(0, 10);
+    }
+    function pickDailyJuryRule() {
+      if (!juryRules.length) return null;
+      return juryRules[new Date().getDate() % juryRules.length];
+    }
+    function pickDailyOralQuestion() {
+      if (!oralQuestions.length) return "";
+      return oralQuestions[new Date().getDate() % oralQuestions.length];
+    }
+    function startDailySession() {
+      activeQuizMode = "Séance du jour";
+      const list = buildDailySessionQuestions();
+      quiz = { list, index: 0, score: 0, answers: [] };
+      renderQuestion();
+    }
+    function startInitialDiagnostic() {
+      activeQuizMode = "Diagnostic initial";
+      quiz = { list: buildInitialDiagnostic(qcm), index: 0, score: 0, answers: [] };
+      renderQuestion();
     }
     function daysUntil(dateText) {
       const [d, m, y] = dateText.split("/").map(Number);
@@ -450,23 +634,43 @@
     }
     function renderHome() {
       if (!qcm.length) {
-        app.innerHTML = `<h2>Corpus JSON requis</h2>${card("Chargement impossible", `La preview web attend public_sources/corpus.json. Double-cliquez plutot sur ouvrir-preview.bat a la racine du projet. Le navigateur bloque souvent le chargement du JSON quand web-preview.html est ouvert directement en file://.\n\nDetail : ${escapeHtml(corpusLoadError?.message || "corpus absent")}`)}`;
+        app.innerHTML = `<h2>Corpus JSON requis</h2>${card("Chargement impossible", `La preview web attend public_sources/corpus.json. Double-cliquez plutot sur ouvrir-preview.bat a la racine du projet. Le navigateur bloque souvent le chargement du JSON quand la page est ouverte directement en file://.\n\nDetail : ${escapeHtml(corpusLoadError?.message || "corpus absent")}`)}`;
         return;
       }
+      const last = lastScore();
+      const mistakes = mistakeQuestions().length;
+      const due = dueMistakeQuestions().length;
+      const reviews = reviewStats();
       app.innerHTML = `
         <h2>Tableau de bord</h2>
         <div class="grid">
+          ${card("S’entraîner aujourd’hui", `
+            <div class="stat">10 QCM</div>
+            <div class="muted">Domaine recommandé : ${escapeHtml(recommendedDomain())}.</div>
+            <div class="muted">Carnet d’erreurs : ${mistakes} question${mistakes > 1 ? "s" : ""}${due ? `, dont ${due} due${due > 1 ? "s" : ""} aujourd’hui` : ""}.</div>
+            <div class="muted">Fragiles : ${reviews.fragile} · maîtrisées : ${reviews.mastered}.</div>
+            <div class="muted">Dernier score : ${last ? `${last.score}/${last.total} (${last.mode || "QCM"})` : "aucune série terminée"}.</div>
+            <div style="margin:12px 0">${escapeHtml(todayRecommendation())}</div>
+            <button class="primary-action" onclick="startDailySession()">Lancer la séance du jour</button>
+            <div class="toolbar" style="margin:12px 0 0">
+              <button onclick="startDueReview()" ${due ? "" : "disabled"}>Réviser ce qui est dû aujourd’hui</button>
+              <button onclick="startMistakeQuiz()" ${mistakes ? "" : "disabled"}>Revoir mes erreurs</button>
+              ${hasDomainStats() ? "" : `<button onclick="startInitialDiagnostic()">Diagnostic initial</button>`}
+            </div>
+          `, "span-12")}
           ${card("QCM corrigés", `<div class="stat">${qcm.length}</div><div class="muted">questions actives avec réponse et explication, dont les 50 questions du sujet zéro QCM 2026.</div>`, "span-3")}
           ${card("Écrits", `<div class="stat">5 + 1</div><div class="muted">annales 2020-2024 + sujet zéro 2026.</div>`, "span-3")}
           ${card("Jury", `<div class="stat">5</div><div class="muted">rapports transformés en règles d’alerte.</div>`, "span-3")}
           ${card("Échéance", `<div class="stat">29/09</div><div class="muted">épreuves écrites 2026.</div>`, "span-3")}
-          ${card("Aujourd'hui", `<div class="stat">${mistakeQuestions().length}</div><div class="muted">question(s) dans le carnet d'erreurs. Domaine a travailler : ${escapeHtml(weakestDomain())}. Jours avant les epreuves ecrites : ${daysUntil("29/09/2026")}.</div>`, "span-12")}
+          ${card("Carnet d’erreurs", `<div class="stat">${reviews.due}</div><div class="muted">erreur(s) à revoir aujourd'hui.\nQuestions encore fragiles : ${reviews.fragile}.\nErreurs maîtrisées : ${reviews.mastered}.\nCarnet actif : ${reviews.total}.</div>`, "span-12")}
+          ${card("Aujourd'hui", `<div class="stat">${dueMistakeQuestions().length}</div><div class="muted">révision(s) dues aujourd'hui. Carnet total : ${mistakeQuestions().length}. Domaine a travailler : ${escapeHtml(weakestDomain())}. Jours avant les epreuves ecrites : ${daysUntil("29/09/2026")}.</div>`, "span-12")}
           ${card("Audit QCM", `<div class="stat">${qcm.length}/${officialQcmTotal}</div><div class="muted">${auditText()} Reste à intégrer avec corrigé vérifié : ${Math.max(0, officialQcmTotal - qcm.length)}.</div>`, "span-12")}
           ${card("Format 2026", `QCM de 1 h 30 sans calculatrice, coefficient 1.\nCas pratique écrit de 3 h avec calculatrice, coefficient 2.\nOral de 20 minutes, coefficient 3, avec présentation du parcours en 2 minutes.\nToute note inférieure à 5/20 est éliminatoire.`, "span-6")}
           ${card("Plan d’attaque", `1. QCM quotidien : français, calcul, logique, culture générale.\n2. Une annale écrite par semaine : lecture rapide, plan, livrable.\n3. Une simulation orale tous les 10 jours : parcours, missions, déontologie.\n4. Relecture systématique : consigne, chiffres, structure, orthographe.`, "span-6")}
           ${card("Règle qualité", `Une question affichée dans l’entraînement doit toujours avoir une réponse attendue et une explication. Le sujet zéro QCM 2026 est intégré en totalité ; les autres items officiels dont le corrigé n’est pas encore vérifié restent dans les sources tant que l’intégration serait incomplète.`, "span-12")}
         </div>
         <div class="toolbar" style="margin-top:14px">
+          <button onclick="startDailySession()">Lancer la séance du jour</button>
           <button onclick="setTab('QCM')">Lancer une série QCM</button>
           <button onclick="setTab('Écrit')">Travailler l’écrit</button>
           <button onclick="setTab('Annales')">Voir le corpus</button>
@@ -489,7 +693,8 @@
             <select id="cat">${cats.map(c => `<option>${c}</option>`).join("")}</select>
             <select id="size"><option>10</option><option>20</option><option>50</option><option>54</option><option>Toutes</option></select>
             <button onclick="startQuiz()">Démarrer</button>
-            ${mistakeQuestions().length ? `<button onclick="startMistakeQuiz()">Carnet d'erreurs</button>` : ""}
+            ${dueMistakeQuestions().length ? `<button onclick="startDueReview()">Réviser ce qui est dû aujourd’hui (${dueMistakeQuestions().length})</button>` : ""}
+            ${mistakeQuestions().length ? `<button onclick="startMistakeQuiz()">Carnet d'erreurs${dueMistakeQuestions().length ? ` (${dueMistakeQuestions().length})` : ""}</button>` : ""}
           </div>
           <div class="muted">Banque corrigee par domaines officiels. ${auditText()} Carnet d'erreurs : ${mistakeQuestions().length}. Domaine faible : ${escapeHtml(weakestDomain())}.</div>
         </div>
@@ -512,13 +717,13 @@
       const size = document.querySelector("#size").value;
       activeQuizMode = mode;
       let list = qcm.filter(item => (y === "Toutes" || String(item.year) === y) && (c === "Toutes" || item.category === c) && (domain === "Tous les domaines" || domainOf(item) === domain));
-      if (mode === "Carnet d'erreurs") list = mistakeQuestions();
+      if (mode === "Carnet d'erreurs") list = dueMistakeQuestions().length ? dueMistakeQuestions() : mistakeQuestions();
       if (mode === "Faiblesses du jour") list = qcm.filter(item => domainOf(item) === weakestDomain());
       if (mode === "Sujet zero 2026") list = list.filter(item => String(item.year) === "2026");
       if (mode === "Annale complete") list = list.filter(item => String(item.year) === (y === "Toutes" ? "2024" : y));
-      if (mode === "Diagnostic initial") list = balancedDiagnostic(list);
+      if (mode === "Diagnostic initial") list = buildInitialDiagnostic(list);
       list = list.sort(() => Math.random() - .5);
-      const plannedSize = mode === "Diagnostic initial" ? 24 : mode === "Serie courte 10 min" ? 10 : mode === "Mode examen 54" || mode === "Annale complete" ? 54 : mode === "Sujet zero 2026" ? 50 : mode === "Faiblesses du jour" || mode === "Carnet d'erreurs" ? 20 : size === "Toutes" ? 0 : Number(size);
+      const plannedSize = mode === "Diagnostic initial" ? 20 : mode === "Serie courte 10 min" ? 10 : mode === "Mode examen 54" || mode === "Annale complete" ? 54 : mode === "Sujet zero 2026" ? 50 : mode === "Faiblesses du jour" || mode === "Carnet d'erreurs" ? 20 : size === "Toutes" ? 0 : Number(size);
       if (plannedSize) list = list.slice(0, plannedSize);
       if (!list.length) {
         app.innerHTML = `<h2>Entraînement QCM</h2>${card("Aucune question disponible", "Aucune question corrigée ne correspond à ces filtres. Élargissez l’année ou la catégorie.")}<button onclick="renderQcmHome()">Retour aux filtres</button>`;
@@ -528,32 +733,52 @@
       renderQuestion();
     }
     function balancedDiagnostic(list) {
+      return buildInitialDiagnostic(list);
+    }
+    function buildInitialDiagnostic(list) {
       const out = [];
+      const easyMedium = list.filter(item => item.difficulty !== "hard");
+      const source = easyMedium.length >= 20 ? easyMedium : list;
       domains.filter(d => d !== "Tous les domaines").forEach(domain => {
-        out.push(...list.filter(item => domainOf(item) === domain).slice(0, 3));
+        takeUnique(out, diagnosticFirst(source.filter(item => domainOf(item) === domain)), Math.min(20, out.length + 3));
       });
-      return out.length ? out : list;
+      takeUnique(out, diagnosticFirst(source), 20);
+      return (out.length ? out : source).slice(0, 20);
     }
     function startMistakeQuiz() {
       activeQuizMode = "Carnet d'erreurs";
-      quiz = { list: mistakeQuestions().sort(() => Math.random() - .5).slice(0, 20), index: 0, score: 0, answers: [] };
+      const list = dueMistakeQuestions().length ? dueMistakeQuestions() : mistakeQuestions();
+      quiz = { list: list.sort(() => Math.random() - .5).slice(0, 20), index: 0, score: 0, answers: [] };
+      renderQuestion();
+    }
+    function startDueReview() {
+      activeQuizMode = "Révisions dues";
+      const list = dueMistakeQuestions();
+      quiz = { list: list.sort(() => Math.random() - .5).slice(0, 20), index: 0, score: 0, answers: [] };
       renderQuestion();
     }
     function renderQuestion() {
       if (!quiz.list.length) return renderQcmHome();
       if (quiz.index >= quiz.list.length) {
         saveScore(quiz.score, quiz.list.length);
+        if (isDiagnosticMode()) return renderDiagnosticResult();
         const scorePct = pct(quiz.score, quiz.list.length);
         const misses = quiz.answers.filter(a => !a.ok);
         const missDomains = [...new Set(misses.map(a => domainOf(a.item)))].join(", ") || "aucun";
-        app.innerHTML = `<h2>Résultat</h2>${card("Score", `<div class="stat">${quiz.score}/${quiz.list.length}</div><div class="progress"><div style="width:${scorePct}%"></div></div>${scorePct >= 80 ? "Très solide. Passez en mode examen complet." : scorePct >= 60 ? "Base correcte. Reprenez les domaines perdus." : "Priorité aux fondamentaux et aux erreurs récurrentes."}\n\nMode : ${escapeHtml(activeQuizMode)}\nErreurs de la serie : ${misses.length}\nDomaines a revoir : ${escapeHtml(missDomains)}`)}<button onclick="renderQcmHome()">Nouvelle série</button>${mistakeQuestions().length ? `<button onclick="startMistakeQuiz()">Revoir le carnet d'erreurs</button>` : ""}`;
+        const dailyJury = activeQuizMode === "Séance du jour" ? pickDailyJuryRule() : null;
+        const dailyOral = activeQuizMode === "Séance du jour" ? pickDailyOralQuestion() : "";
+        const dailyFollowup = activeQuizMode === "Séance du jour"
+          ? `${dailyJury ? card("Règle de jury à lire", `<strong>${escapeHtml(dailyJury[0])}</strong>\n${escapeHtml(dailyJury[1])}`) : ""}${dailyOral ? card("Question orale à répondre à voix haute", escapeHtml(dailyOral)) : ""}<button onclick="startDailySession()">Relancer une séance du jour</button>`
+          : "";
+        app.innerHTML = `<h2>Résultat</h2>${card("Score", `<div class="stat">${quiz.score}/${quiz.list.length}</div><div class="progress"><div style="width:${scorePct}%"></div></div>${scorePct >= 80 ? "Très solide. Passez en mode examen complet." : scorePct >= 60 ? "Base correcte. Reprenez les domaines perdus." : "Priorité aux fondamentaux et aux erreurs récurrentes."}\n\nMode : ${escapeHtml(activeQuizMode)}\nErreurs de la serie : ${misses.length}\nDomaines a revoir : ${escapeHtml(missDomains)}`)}${dailyFollowup}<button onclick="renderQcmHome()">Nouvelle série</button>${mistakeQuestions().length ? `<button onclick="startMistakeQuiz()">Revoir le carnet d'erreurs</button>` : ""}`;
         return;
       }
       const item = quiz.list[quiz.index];
       app.innerHTML = `<h2>Question ${quiz.index + 1}/${quiz.list.length}</h2>
         <span class="pill">${item.year}</span><span class="pill">${escapeHtml(domainOf(item))}</span><span class="pill">${escapeHtml(item.category)}</span>
         ${questionBlock(item)}
-        ${item.choices.map((choice, i) => `<button class="choice" onclick="answer(${i})">${i + 1}. ${escapeHtml(choice)}</button>`).join("")}`;
+        ${item.choices.map((choice, i) => `<button class="choice" onclick="answer(${i})">${i + 1}. ${escapeHtml(choice)}</button>`).join("")}
+        ${isDiagnosticMode() ? `<button class="choice" onclick="skipQuestion()">Je ne sais pas / passer</button><div class="muted">Diagnostic initial : les corrections seront affichées à la fin.</div>` : ""}`;
     }
     function answer(choice) {
       const item = quiz.list[quiz.index];
@@ -561,11 +786,76 @@
       if (ok) quiz.score++;
       recordQuestion(item, ok);
       quiz.answers.push({ item, choice, ok });
+      if (isDiagnosticMode()) {
+        quiz.index++;
+        renderQuestion();
+        return;
+      }
       app.innerHTML = `<h2>${ok ? "Bonne réponse" : "À revoir"}</h2>
         ${card(item.prompt, `Votre réponse : ${escapeHtml(item.choices[choice])}\nRéponse attendue : ${escapeHtml(item.choices[item.answer])}`)}
         ${questionSupport(item)}
         ${card("Correction", correctionBlock(item))}
+        ${ok ? "" : errorReasonHtml(item)}
         <button onclick="quiz.index++;renderQuestion()">Question suivante</button>`;
+    }
+    function skipQuestion() {
+      const item = quiz.list[quiz.index];
+      recordQuestion(item, false);
+      saveErrorReason(questionId(item), "Question non répondue");
+      quiz.answers.push({ item, choice: null, ok: false, reason: "Question non répondue" });
+      quiz.index++;
+      renderQuestion();
+    }
+    function diagnosticDomainRows() {
+      const stats = {};
+      quiz.answers.forEach(answer => {
+        const domain = domainOf(answer.item);
+        stats[domain] = stats[domain] || { total: 0, correct: 0 };
+        stats[domain].total += 1;
+        if (answer.ok) stats[domain].correct += 1;
+      });
+      return Object.entries(stats).map(([domain, values]) => ({ domain, ...values, rate: pct(values.correct, values.total) }))
+        .sort((a, b) => a.rate - b.rate);
+    }
+    function renderDiagnosticResult() {
+      const rows = diagnosticDomainRows();
+      const weakest = rows[0]?.domain || weakestDomain();
+      const scorePct = pct(quiz.score, quiz.list.length);
+      const misses = quiz.answers.filter(answer => !answer.ok);
+      const domainHtml = rows.map(row => `<div><strong>${escapeHtml(row.domain)}</strong><br>${row.correct}/${row.total} (${row.rate}%)</div>`).join("");
+      const recommendation = scorePct >= 80
+        ? `Diagnostic solide. Entretiens le rythme avec la séance du jour et une simulation écrite courte.`
+        : `Priorité : travailler ${weakest} aujourd’hui, puis refaire les erreurs du diagnostic demain.`;
+      const missedHtml = misses.length
+        ? misses.map(answer => card(answer.item.prompt, `
+            <span class="pill">${escapeHtml(domainOf(answer.item))}</span>
+            <div>Votre réponse : ${answer.choice === null ? "Question non répondue" : escapeHtml(answer.item.choices[answer.choice])}</div>
+            <div>Réponse attendue : ${escapeHtml(answer.item.choices[answer.item.answer])}</div>
+            <div>${correctionBlock(answer.item)}</div>
+            ${errorReasonHtml(answer.item, answer.reason || "")}
+          `)).join("")
+        : card("Erreurs", "Aucune erreur dans ce diagnostic.");
+      app.innerHTML = `<h2>Résultat du diagnostic initial</h2>
+        ${card("Score global", `<div class="stat">${quiz.score}/${quiz.list.length}</div><div class="progress"><div style="width:${scorePct}%"></div></div>${scorePct}%`)}
+        ${card("Score par domaine", `<div class="rubric">${domainHtml}</div>`)}
+        ${card("Domaine le plus faible", `<div class="stat">${escapeHtml(weakest)}</div>${escapeHtml(recommendation)}`)}
+        <div class="toolbar"><button onclick="startTargetedDomain('${escapeHtml(weakest)}')">Lancer une séance ciblée</button><button onclick="startInitialDiagnostic()">Refaire un diagnostic</button></div>
+        <h2>Corrections et causes d’erreur</h2>${missedHtml}`;
+    }
+    function startTargetedDomain(domain) {
+      activeQuizMode = `Séance ciblée ${domain}`;
+      const list = reliableFirst(qcm.filter(item => domainOf(item) === domain)).slice(0, 10);
+      quiz = { list, index: 0, score: 0, answers: [] };
+      renderQuestion();
+    }
+    function errorReasonHtml(item, selected = "") {
+      const reasons = ["Je ne savais pas", "J’ai mal lu", "Erreur de calcul", "J’ai répondu trop vite", "J’ai hésité"];
+      return `<div class="card"><h3>Pourquoi ai-je raté ?</h3><div class="toolbar">${reasons.map(reason => `<button class="choice" onclick="saveErrorReason('${questionId(item)}','${escapeHtml(reason)}')" ${selected === reason ? "disabled" : ""}>${escapeHtml(reason)}</button>`).join("")}</div></div>`;
+    }
+    function saveErrorReason(id, reason) {
+      const reasons = loadJson("dgfipErrorReasons", {});
+      reasons[id] = reason;
+      localStorage.setItem("dgfipErrorReasons", JSON.stringify(reasons));
     }
     function renderWritten() {
       const s = subjects[selectedSubject];
@@ -630,8 +920,8 @@
       const count = tasks.filter(t => done[t]).length;
       app.innerHTML = `<h2>Suivi local</h2>
         ${card("Avancement", `<div class="stat">${count}/${tasks.length}</div><div class="progress"><div style="width:${pct(count,tasks.length)}%"></div></div>`, "span-12")}
-        ${card("Pilotage QCM", `<div class="stat">${mistakeQuestions().length}</div><div class="muted">question(s) dans le carnet d'erreurs. Domaine fragile : ${escapeHtml(weakestDomain())}.\n${domainStatsHtml()}</div>`, "span-12")}
-        <div class="toolbar">${mistakeQuestions().length ? `<button onclick="startMistakeQuiz()">Revoir le carnet d'erreurs</button>` : ""}<button onclick="setTab('QCM')">Nouvelle serie</button></div>
+        ${card("Pilotage QCM", `<div class="stat">${dueMistakeQuestions().length}</div><div class="muted">révision(s) dues aujourd'hui. Carnet total : ${mistakeQuestions().length}. Questions fragiles : ${fragileMistakeQuestions().length}. Questions maîtrisées : ${masteredMistakeQuestions().length}. Domaine fragile : ${escapeHtml(weakestDomain())}.\n${domainStatsHtml()}</div>`, "span-12")}
+        <div class="toolbar">${dueMistakeQuestions().length ? `<button onclick="startDueReview()">Réviser ce qui est dû aujourd’hui</button>` : ""}${mistakeQuestions().length ? `<button onclick="startMistakeQuiz()">Revoir le carnet d'erreurs</button>` : ""}<button onclick="setTab('QCM')">Nouvelle serie</button></div>
         <div class="grid">
           <section class="card span-6"><h3>Checklist</h3>${tasks.map(t => `<label class="check"><input type="checkbox" ${done[t] ? "checked" : ""} onchange="toggleTask('${t}', this.checked)">${t}</label>`).join("")}</section>
           <section class="card span-6"><h3>Historique QCM</h3>${history.length ? history.map(h => `${h.at} · ${h.mode || "Libre"} · ${h.score}/${h.total}`).join("\n") : "Aucune série terminée pour l’instant."}</section>

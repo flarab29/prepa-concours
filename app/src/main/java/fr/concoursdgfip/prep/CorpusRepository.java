@@ -48,6 +48,7 @@ final class CorpusRepository {
             if (item == null) continue;
             String source = item.optString("source", "QCM " + item.optString("year"));
             result.add(new MainActivity.Question(
+                    item.optString("id", ""),
                     item.optString("category"),
                     source,
                     item.optString("prompt"),
@@ -55,7 +56,12 @@ final class CorpusRepository {
                     item.optInt("answer"),
                     item.optString("explanation"),
                     stringArray(item.optJSONArray("supportRows")),
-                    stringArray(item.optJSONArray("correctionSteps"))
+                    stringArray(item.optJSONArray("correctionSteps")),
+                    item.optString("domain", ""),
+                    stringArray(item.optJSONArray("tags")),
+                    item.optString("verificationLevel", ""),
+                    item.optString("sourceType", ""),
+                    item.optString("difficulty", "")
             ));
         }
         return result;

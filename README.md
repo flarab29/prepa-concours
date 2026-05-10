@@ -39,6 +39,7 @@ Le corpus éditable est `public_sources/corpus.json`.
 Il contient :
 
 - `questions` : QCM, choix, réponse attendue, explication et supports éventuels ;
+- `verificationLevel`, `sourceType`, `skill`, `subskill`, `difficulty`, `estimatedTimeSeconds` : métadonnées obligatoires pour guider les séances, distinguer les sources et suivre les faiblesses ;
 - `annales` : vue synthétique par millésime ;
 - `writtenSubjects` : sujets d'entraînement à l'écrit ;
 - `juryRules` : alertes issues des rapports de jury ;
@@ -63,9 +64,9 @@ Option manuelle : depuis ce dossier, lancer un petit serveur local puis ouvrir l
 python -m http.server 8000
 ```
 
-Puis ouvrir `http://localhost:8000/web-preview.html`.
+Puis ouvrir `http://localhost:8000/index.html`.
 
-La prévisualisation charge `public_sources/corpus.json`. Un double-clic direct sur `web-preview.html` peut être bloqué par le navigateur, car le fichier JSON local n'est pas toujours accessible en `file://`.
+La prévisualisation charge `public_sources/corpus.json`. Un double-clic direct sur `index.html` ou `web-preview.html` peut être bloqué par le navigateur, car le fichier JSON local n'est pas toujours accessible en `file://`.
 
 ## Tester sur smartphone Android émulé
 

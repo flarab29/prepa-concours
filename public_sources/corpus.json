@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 4,
   "generatedFrom": "web-preview.html",
   "officialQcmTotal": 320,
   "questions": [
@@ -18,7 +18,20 @@
       "answer": 3,
       "explanation": "Le traité de Versailles, signé en 1919, met fin à l’état de guerre avec l’Allemagne.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Histoire",
+        "2026",
+        "culture generale"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "histoire_geographie",
+      "subskill": "traites_et_guerres",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-002",
@@ -35,7 +48,20 @@
       "answer": 1,
       "explanation": "Le Code civil napoléonien unifie une grande partie du droit civil français.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Histoire",
+        "2026",
+        "culture generale"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "histoire_geographie",
+      "subskill": "etat_et_institutions",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-003",
@@ -52,7 +78,20 @@
       "answer": 2,
       "explanation": "Ces innovations caractérisent la révolution industrielle.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Histoire",
+        "2026",
+        "culture generale"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "histoire_geographie",
+      "subskill": "revolutions_et_modernisation",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-004",
@@ -69,7 +108,20 @@
       "answer": 3,
       "explanation": "La carte du sujet zéro représente l’empire romain autour de la Méditerranée.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Histoire",
+        "2026",
+        "culture generale"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "histoire_geographie",
+      "subskill": "antiquite",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-005",
@@ -86,7 +138,20 @@
       "answer": 1,
       "explanation": "George Washington devient le premier président des États-Unis en 1789.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Histoire",
+        "2026",
+        "culture generale"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "histoire_geographie",
+      "subskill": "institutions",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-006",
@@ -103,7 +168,20 @@
       "answer": 1,
       "explanation": "Charles de Gaulle incarne la France libre et la Résistance extérieure.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Histoire",
+        "2026",
+        "culture generale"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "histoire_geographie",
+      "subskill": "traites_et_guerres",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-007",
@@ -120,7 +198,20 @@
       "answer": 2,
       "explanation": "Le Nil traverse l’Égypte et se jette dans la mer Méditerranée.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Géographie",
+        "2026",
+        "culture generale"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "histoire_geographie",
+      "subskill": "geographie",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-008",
@@ -137,7 +228,20 @@
       "answer": 3,
       "explanation": "La façade ouest de la France donne sur l’océan Atlantique.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Géographie",
+        "2026",
+        "culture generale"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "histoire_geographie",
+      "subskill": "geographie",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-009",
@@ -154,7 +258,20 @@
       "answer": 1,
       "explanation": "Le corrigé du sujet zéro retient les États-Unis.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Géographie",
+        "2026",
+        "culture generale"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "histoire_geographie",
+      "subskill": "geographie",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-010",
@@ -171,7 +288,20 @@
       "answer": 3,
       "explanation": "Le corrigé retient une population mondiale située entre 8 et 8,5 milliards d’habitants.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Géographie",
+        "2026",
+        "culture generale"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "histoire_geographie",
+      "subskill": "geographie",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-011",
@@ -188,7 +318,20 @@
       "answer": 3,
       "explanation": "Le Brexit correspond à la sortie du Royaume-Uni de l’Union européenne.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Géographie",
+        "2026",
+        "culture generale"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "histoire_geographie",
+      "subskill": "geographie",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-012",
@@ -205,7 +348,20 @@
       "answer": 0,
       "explanation": "L’exode rural alimente la croissance des villes.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Géographie",
+        "2026",
+        "culture generale"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "histoire_geographie",
+      "subskill": "geographie",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-013",
@@ -222,7 +378,19 @@
       "answer": 1,
       "explanation": "La laïcité repose notamment sur la séparation de l’État et des organisations religieuses.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "EMC et institutions",
+      "tags": [
+        "EMC et institutions",
+        "Enseignement moral et civique",
+        "2026"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "emc_institutions",
+      "subskill": "valeurs_republique",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-014",
@@ -239,7 +407,19 @@
       "answer": 1,
       "explanation": "Cette formulation figure à l’article premier de la Constitution du 4 octobre 1958.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "EMC et institutions",
+      "tags": [
+        "EMC et institutions",
+        "Enseignement moral et civique",
+        "2026"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "emc_institutions",
+      "subskill": "institutions",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-015",
@@ -256,7 +436,19 @@
       "answer": 3,
       "explanation": "Le Parlement vote la loi, contrôle le Gouvernement et évalue les politiques publiques.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "EMC et institutions",
+      "tags": [
+        "EMC et institutions",
+        "Enseignement moral et civique",
+        "2026"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "emc_institutions",
+      "subskill": "valeurs_republique",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-016",
@@ -273,7 +465,19 @@
       "answer": 1,
       "explanation": "Dans une démocratie, la souveraineté appartient au peuple.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "EMC et institutions",
+      "tags": [
+        "EMC et institutions",
+        "Enseignement moral et civique",
+        "2026"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "emc_institutions",
+      "subskill": "valeurs_republique",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-017",
@@ -290,7 +494,19 @@
       "answer": 1,
       "explanation": "L’article 4 définit ainsi la liberté.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "EMC et institutions",
+      "tags": [
+        "EMC et institutions",
+        "Enseignement moral et civique",
+        "2026"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "emc_institutions",
+      "subskill": "valeurs_republique",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-018",
@@ -307,7 +523,19 @@
       "answer": 3,
       "explanation": "La JDC sensibilise les jeunes aux enjeux de défense et de citoyenneté.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "EMC et institutions",
+      "tags": [
+        "EMC et institutions",
+        "Enseignement moral et civique",
+        "2026"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "emc_institutions",
+      "subskill": "valeurs_republique",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-019",
@@ -324,7 +552,19 @@
       "answer": 1,
       "explanation": "Un réseau social sert d’abord à mettre en relation et communiquer avec d’autres personnes.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Numerique",
+      "tags": [
+        "Numerique",
+        "Numérique",
+        "2026"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "numerique",
+      "subskill": "environnement_numerique",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-020",
@@ -341,7 +581,19 @@
       "answer": 1,
       "explanation": "Les réseaux mobiles 3G, 4G et 5G permettent l’accès à internet.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Numerique",
+      "tags": [
+        "Numerique",
+        "Numérique",
+        "2026"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "numerique",
+      "subskill": "environnement_numerique",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-021",
@@ -358,7 +610,19 @@
       "answer": 0,
       "explanation": "Un virus informatique est un programme malveillant.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Numerique",
+      "tags": [
+        "Numerique",
+        "Numérique",
+        "2026"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "numerique",
+      "subskill": "environnement_numerique",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-022",
@@ -375,7 +639,19 @@
       "answer": 1,
       "explanation": "Un cookie stocke des informations liées à la navigation ou aux préférences de l’utilisateur.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Numerique",
+      "tags": [
+        "Numerique",
+        "Numérique",
+        "2026"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "numerique",
+      "subskill": "environnement_numerique",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-023",
@@ -392,7 +668,19 @@
       "answer": 1,
       "explanation": "Un moteur de recherche sert à retrouver des informations sur Internet.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Numerique",
+      "tags": [
+        "Numerique",
+        "Numérique",
+        "2026"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "numerique",
+      "subskill": "environnement_numerique",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-024",
@@ -409,7 +697,19 @@
       "answer": 3,
       "explanation": "Le wifi et le Bluetooth utilisent des ondes radio.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Numerique",
+      "tags": [
+        "Numerique",
+        "Numérique",
+        "2026"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "numerique",
+      "subskill": "environnement_numerique",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-025",
@@ -426,7 +726,20 @@
       "answer": 0,
       "explanation": "Le corrigé du sujet zéro retient le Brésil.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Actualite",
+      "tags": [
+        "Actualite",
+        "Actualités",
+        "2026",
+        "culture generale"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "actualite",
+      "subskill": "actualites",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-026",
@@ -443,7 +756,21 @@
       "answer": 0,
       "explanation": "Le corrigé du sujet zéro retient les États-Unis.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Actualite",
+      "tags": [
+        "Actualite",
+        "Actualités",
+        "2026",
+        "DGDDI",
+        "culture generale"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "actualite",
+      "subskill": "missions_dgddi",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-027",
@@ -460,7 +787,20 @@
       "answer": 3,
       "explanation": "Le corrigé du sujet zéro retient le Japon.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Actualite",
+      "tags": [
+        "Actualite",
+        "Actualités",
+        "2026",
+        "culture generale"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "actualite",
+      "subskill": "actualites",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-028",
@@ -477,7 +817,20 @@
       "answer": 0,
       "explanation": "Le corrigé du sujet zéro retient François Bayrou et Sébastien Lecornu.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Actualite",
+      "tags": [
+        "Actualite",
+        "Actualités",
+        "2026",
+        "culture generale"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "actualite",
+      "subskill": "actualites",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-029",
@@ -494,7 +847,20 @@
       "answer": 0,
       "explanation": "Le corrigé du sujet zéro retient la dermatose nodulaire contagieuse.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Actualite",
+      "tags": [
+        "Actualite",
+        "Actualités",
+        "2026",
+        "culture generale"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "actualite",
+      "subskill": "actualites",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-030",
@@ -511,7 +877,20 @@
       "answer": 1,
       "explanation": "Le corrigé retient l’incitation au télétravail pour réduire la consommation de carburant.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Actualite",
+      "tags": [
+        "Actualite",
+        "Actualités",
+        "2026",
+        "culture generale"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "actualite",
+      "subskill": "actualites",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-031",
@@ -528,7 +907,20 @@
       "answer": 1,
       "explanation": "Le corrigé du sujet zéro indique une augmentation des prix.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Actualite",
+      "tags": [
+        "Actualite",
+        "Actualités",
+        "2026",
+        "culture generale"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "actualite",
+      "subskill": "traites_et_guerres",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2026-032",
@@ -545,7 +937,20 @@
       "answer": 2,
       "explanation": "TVA signifie taxe sur la valeur ajoutée.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "MEF / DGFiP / DGDDI",
+      "tags": [
+        "MEF / DGFiP / DGDDI",
+        "Missions MEF",
+        "2026",
+        "DGFiP"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "mef_dgfip_dgddi",
+      "subskill": "missions_mef_dgfip_dgddi",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2026-033",
@@ -562,7 +967,20 @@
       "answer": 3,
       "explanation": "Le contrôle fiscal vérifie la conformité des déclarations et paiements d’impôts.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "MEF / DGFiP / DGDDI",
+      "tags": [
+        "MEF / DGFiP / DGDDI",
+        "Missions MEF",
+        "2026",
+        "DGFiP"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "mef_dgfip_dgddi",
+      "subskill": "missions_dgfip",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2026-034",
@@ -579,7 +997,20 @@
       "answer": 0,
       "explanation": "Le recouvrement correspond à la collecte effective des impôts.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "MEF / DGFiP / DGDDI",
+      "tags": [
+        "MEF / DGFiP / DGDDI",
+        "Missions MEF",
+        "2026",
+        "DGFiP"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "mef_dgfip_dgddi",
+      "subskill": "missions_dgfip",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2026-035",
@@ -596,7 +1027,20 @@
       "answer": 1,
       "explanation": "La DGDDI contrôle les flux de marchandises et contribue à la protection du territoire.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "MEF / DGFiP / DGDDI",
+      "tags": [
+        "MEF / DGFiP / DGDDI",
+        "Missions MEF",
+        "2026",
+        "DGDDI"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "mef_dgfip_dgddi",
+      "subskill": "missions_dgddi",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2026-036",
@@ -613,7 +1057,20 @@
       "answer": 0,
       "explanation": "Un tarif douanier désigne un droit appliqué aux marchandises importées.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "MEF / DGFiP / DGDDI",
+      "tags": [
+        "MEF / DGFiP / DGDDI",
+        "Missions MEF",
+        "2026",
+        "DGDDI"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "mef_dgfip_dgddi",
+      "subskill": "missions_mef_dgfip_dgddi",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2026-037",
@@ -630,7 +1087,19 @@
       "answer": 1,
       "explanation": "Le sujet zéro retient la facturation électronique.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "MEF / DGFiP / DGDDI",
+      "tags": [
+        "MEF / DGFiP / DGDDI",
+        "Missions MEF",
+        "2026"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "mef_dgfip_dgddi",
+      "subskill": "missions_mef_dgfip_dgddi",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2026-038",
@@ -647,7 +1116,20 @@
       "answer": 1,
       "explanation": "Une remise de 20 % sur 80 euros vaut 16 euros ; le prix soldé est donc 64 euros.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Mathématiques",
+        "2026",
+        "pourcentages"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "maths_logique",
+      "subskill": "pourcentages",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2026-039",
@@ -664,7 +1146,19 @@
       "answer": 1,
       "explanation": "La somme vaut 59 ; 59 / 5 = 11,80.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Mathématiques",
+        "2026"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "maths_logique",
+      "subskill": "moyennes",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2026-040",
@@ -681,7 +1175,20 @@
       "answer": 2,
       "explanation": "15 % de 120 vaut 18 ; le nouveau prix est 138 euros.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Mathématiques",
+        "2026",
+        "pourcentages"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "maths_logique",
+      "subskill": "pourcentages",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2026-041",
@@ -698,7 +1205,20 @@
       "answer": 2,
       "explanation": "Le corrigé additionne samedi et dimanche : 800 + 900 = 1700.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Mathématiques",
+        "2026",
+        "donnees"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "maths_logique",
+      "subskill": "lecture_de_donnees",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2026-042",
@@ -715,7 +1235,19 @@
       "answer": 3,
       "explanation": "Sahirtan met 108 minutes, soit le temps le plus court.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Mathématiques",
+        "2026"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "maths_logique",
+      "subskill": "calcul",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2026-043",
@@ -732,7 +1264,20 @@
       "answer": 1,
       "explanation": "Avec intérêts composés : 1 000 × 1,05² = 1 102,50 ; les intérêts sont donc 102,50 euros.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Mathématiques",
+        "2026",
+        "pourcentages"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "maths_logique",
+      "subskill": "pourcentages",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2026-044",
@@ -749,7 +1294,20 @@
       "answer": 0,
       "explanation": "La production est proportionnelle au nombre de poules et au temps : moitié des poules et moitié du temps donnent 200 œufs.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Raisonnement",
+        "2026",
+        "logique"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "maths_logique",
+      "subskill": "moyennes",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2026-045",
@@ -766,7 +1324,20 @@
       "answer": 1,
       "explanation": "Le guépard va à 68 km/h, la gazelle à 60 km/h et le lion à 50 km/h.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Raisonnement",
+        "2026",
+        "logique"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "maths_logique",
+      "subskill": "raisonnement_logique",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2026-046",
@@ -783,7 +1354,20 @@
       "answer": 0,
       "explanation": "6 + 5 compte deux fois les enfants communs. Comme il y a 8 enfants, ils en ont 3 ensemble.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Raisonnement",
+        "2026",
+        "logique"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "maths_logique",
+      "subskill": "raisonnement_logique",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2026-047",
@@ -800,7 +1384,20 @@
       "answer": 3,
       "explanation": "La position centrale doit être avant 19, avec un total impair multiple de 3 et au moins 28 personnes : 17e place pour 33 personnes.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Raisonnement",
+        "2026",
+        "logique"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "maths_logique",
+      "subskill": "raisonnement_logique",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2026-048",
@@ -817,7 +1414,20 @@
       "answer": 3,
       "explanation": "La disposition compatible place Nina à une extrémité à côté de Sovann seulement.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Raisonnement",
+        "2026",
+        "logique"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "maths_logique",
+      "subskill": "raisonnement_logique",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2026-049",
@@ -834,7 +1444,20 @@
       "answer": 2,
       "explanation": "La montre lente a gagné 11 h affichées en 12 h réelles ; la montre rapide a donc gagné 13 h et indique 10 h.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Raisonnement",
+        "2026",
+        "logique"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "maths_logique",
+      "subskill": "raisonnement_logique",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2026-050",
@@ -851,7 +1474,20 @@
       "answer": 1,
       "explanation": "Le corrigé du sujet zéro retient 4 crayons pour Bianca.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Raisonnement",
+        "2026",
+        "logique"
+      ],
+      "verificationLevel": "official_correction",
+      "sourceType": "official_zero_2026",
+      "skill": "maths_logique",
+      "subskill": "raisonnement_logique",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2024-051",
@@ -868,7 +1504,20 @@
       "answer": 1,
       "explanation": "Forme correcte : « telle qu’elle a toujours été ».",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Orthographe",
+        "2024",
+        "langue"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "francais",
+      "subskill": "orthographe",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2024-052",
@@ -885,14 +1534,26 @@
       "answer": 2,
       "explanation": "Dispendieux signifie coûteux.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Vocabulaire",
+        "2024"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "francais",
+      "subskill": "vocabulaire",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2024-053",
       "year": 2024,
       "source": "QCM 2024",
       "category": "Orthographe",
-      "prompt": "Quelle est la bonne orthographe ?",
+      "prompt": "Quelle est la bonne orthographe de la phrase sur les plus-values ?",
       "choices": [
         "Ils on fais de belles plus-value",
         "Ils ont fais de belle plus-values",
@@ -902,7 +1563,20 @@
       "answer": 3,
       "explanation": "« Ont fait » est correct et « plus-values » prend le pluriel.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Orthographe",
+        "2024",
+        "langue"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "francais",
+      "subskill": "orthographe",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2024-054",
@@ -919,7 +1593,20 @@
       "answer": 2,
       "explanation": "L’orthographe correcte est « phosphorescent ».",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Orthographe",
+        "2024",
+        "langue"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "francais",
+      "subskill": "orthographe",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2024-055",
@@ -936,7 +1623,20 @@
       "answer": 1,
       "explanation": "Le futur simple est « j’acquerrai ».",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Conjugaison",
+        "2024",
+        "langue"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "francais",
+      "subskill": "conjugaison",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2024-056",
@@ -953,7 +1653,19 @@
       "answer": 1,
       "explanation": "Million prend un s, vingt est suivi de mille donc reste invariable, et cents termine le nombre.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Nombres",
+        "2024"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "maths_logique",
+      "subskill": "nombres",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2024-057",
@@ -970,7 +1682,19 @@
       "answer": 3,
       "explanation": "La glottophobie vise les discriminations liées à la langue ou à l’accent.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Vocabulaire",
+        "2024"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "francais",
+      "subskill": "vocabulaire",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2024-058",
@@ -987,7 +1711,20 @@
       "answer": 2,
       "explanation": "À l’imparfait : vous criiez, vous rougissiez, vous voyiez.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Conjugaison",
+        "2024",
+        "langue"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "francais",
+      "subskill": "conjugaison",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2024-059",
@@ -1004,7 +1741,19 @@
       "answer": 2,
       "explanation": "Un écogeste réduit l’impact environnemental.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Vocabulaire",
+        "2024"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "francais",
+      "subskill": "vocabulaire",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2024-060",
@@ -1021,7 +1770,20 @@
       "answer": 1,
       "explanation": "Jamais, tard et autrefois indiquent le temps.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Grammaire",
+        "2024",
+        "langue"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "francais",
+      "subskill": "grammaire",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2024-061",
@@ -1038,7 +1800,20 @@
       "answer": 1,
       "explanation": "On écrit « témoin oculaire ».",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Orthographe",
+        "2024",
+        "langue"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "francais",
+      "subskill": "orthographe",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2024-062",
@@ -1055,14 +1830,26 @@
       "answer": 3,
       "explanation": "On dit « une équivoque ».",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Genre",
+        "2024"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "francais",
+      "subskill": "genre",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2024-063",
       "year": 2024,
       "source": "QCM 2024",
       "category": "Accords",
-      "prompt": "Quelle proposition est correctement orthographiée ?",
+      "prompt": "Quelle proposition est correctement orthographiée pour l'accord de « châtain clair » ?",
       "choices": [
         "Des cheveux châtain clair",
         "Des cheveux châtain clairs",
@@ -1072,7 +1859,20 @@
       "answer": 0,
       "explanation": "Les adjectifs de couleur composés restent invariables.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Accords",
+        "2024",
+        "langue"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "francais",
+      "subskill": "accords",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2024-064",
@@ -1089,7 +1889,20 @@
       "answer": 3,
       "explanation": "Avec avoir, le participe s’accorde avec le COD placé avant : « les toiles », donc « vues ».",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Accords",
+        "2024",
+        "langue"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "francais",
+      "subskill": "accords",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2024-065",
@@ -1106,14 +1919,26 @@
       "answer": 2,
       "explanation": "Rare et fréquent sont de sens opposés.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Vocabulaire",
+        "2024"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "francais",
+      "subskill": "vocabulaire",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2024-066",
       "year": 2024,
       "source": "QCM 2024",
       "category": "Orthographe",
-      "prompt": "Quelle proposition est correctement orthographiée ?",
+      "prompt": "Quelle proposition est correctement orthographiée pour « demi-journées » ?",
       "choices": [
         "Des demies-journée",
         "Des demies-journées",
@@ -1123,7 +1948,20 @@
       "answer": 2,
       "explanation": "Dans « demi-journées », demi reste invariable.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Orthographe",
+        "2024",
+        "langue"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "francais",
+      "subskill": "orthographe",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2024-067",
@@ -1140,7 +1978,19 @@
       "answer": 3,
       "explanation": "L’intérim revient au président du Sénat.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "EMC et institutions",
+      "tags": [
+        "EMC et institutions",
+        "Institutions",
+        "2024"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "emc_institutions",
+      "subskill": "institutions",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2024-068",
@@ -1157,7 +2007,20 @@
       "answer": 3,
       "explanation": "L’Homme de Vitruve est un dessin de Léonard de Vinci.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Culture",
+        "2024",
+        "culture generale"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "culture_generale",
+      "subskill": "culture_generale",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2024-069",
@@ -1174,7 +2037,20 @@
       "answer": 3,
       "explanation": "Belgique, Luxembourg, Allemagne, Suisse, Italie, Monaco, Espagne et Andorre.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Géographie",
+        "2024",
+        "culture generale"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "histoire_geographie",
+      "subskill": "geographie",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2024-070",
@@ -1191,7 +2067,19 @@
       "answer": 0,
       "explanation": "Pierre de Coubertin a relancé les Jeux olympiques modernes.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Sport",
+        "2024"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "culture_generale",
+      "subskill": "sport",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2024-071",
@@ -1208,7 +2096,20 @@
       "answer": 0,
       "explanation": "One Piece est l’œuvre d’Eiichirō Oda.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Culture",
+        "2024",
+        "culture generale"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "culture_generale",
+      "subskill": "culture_generale",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2024-072",
@@ -1225,7 +2126,20 @@
       "answer": 2,
       "explanation": "Le DSA encadre les plateformes et services numériques.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Actualite",
+      "tags": [
+        "Actualite",
+        "Actualité",
+        "2024",
+        "culture generale"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "actualite",
+      "subskill": "actualites",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2024-073",
@@ -1242,7 +2156,19 @@
       "answer": 0,
       "explanation": "La Palme d’or 2023 a récompensé « Anatomie d’une chute ».",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Cinéma",
+        "2024"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "culture_generale",
+      "subskill": "arts",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2024-074",
@@ -1259,7 +2185,19 @@
       "answer": 0,
       "explanation": "Sophie Adenot a été retenue dans la promotion d’astronautes de l’ESA.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Espace",
+        "2024"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "culture_generale",
+      "subskill": "sciences_et_espace",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2024-075",
@@ -1276,7 +2214,20 @@
       "answer": 0,
       "explanation": "Robert Badinter a porté l’abolition de la peine de mort en France.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Histoire",
+        "2024",
+        "culture generale"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "histoire_geographie",
+      "subskill": "histoire",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2024-076",
@@ -1293,7 +2244,19 @@
       "answer": 1,
       "explanation": "Le roman « Dune » est de Frank Herbert.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Littérature",
+        "2024"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "culture_generale",
+      "subskill": "litterature",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2024-077",
@@ -1310,7 +2273,20 @@
       "answer": 2,
       "explanation": "Le couronnement a eu lieu à l’abbaye de Westminster.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Actualite",
+      "tags": [
+        "Actualite",
+        "Actualité",
+        "2024",
+        "culture generale"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "actualite",
+      "subskill": "actualites",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2024-078",
@@ -1327,7 +2303,19 @@
       "answer": 0,
       "explanation": "Il s’agit d’une œuvre de Banksy.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Art",
+        "2024"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "culture_generale",
+      "subskill": "arts",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2024-079",
@@ -1344,7 +2332,20 @@
       "answer": 3,
       "explanation": "Le Japon a réussi cet alunissage avec la mission SLIM.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Actualite",
+      "tags": [
+        "Actualite",
+        "Actualité",
+        "2024",
+        "culture generale"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "actualite",
+      "subskill": "actualites",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2024-080",
@@ -1361,7 +2362,19 @@
       "answer": 3,
       "explanation": "La Hongrie a assuré cette présidence au second semestre 2024.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "EMC et institutions",
+      "tags": [
+        "EMC et institutions",
+        "Union européenne",
+        "2024"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "emc_institutions",
+      "subskill": "union_europeenne",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2024-081",
@@ -1378,7 +2391,19 @@
       "answer": 3,
       "explanation": "La devise olympique est « Plus vite, plus haut, plus fort - ensemble ».",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Sport",
+        "2024"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "culture_generale",
+      "subskill": "sport",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2024-082",
@@ -1395,7 +2420,19 @@
       "answer": 3,
       "explanation": "9 × 16 - 24 - 8 = 112.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Calcul",
+        "2024"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "maths_logique",
+      "subskill": "calcul",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2024-083",
@@ -1412,7 +2449,19 @@
       "answer": 1,
       "explanation": "Après classement, la 8e valeur de cette série de 15 notes est 11.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Statistiques",
+        "2024"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "maths_logique",
+      "subskill": "statistiques",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2024-084",
@@ -1429,7 +2478,19 @@
       "answer": 0,
       "explanation": "Aire du losange : diagonale × diagonale / 2 = 6 × 3,4 / 2 = 10,2.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Géométrie",
+        "2024"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "maths_logique",
+      "subskill": "geometrie",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2024-085",
@@ -1446,7 +2507,19 @@
       "answer": 1,
       "explanation": "La part restante vaut 1/15 du total, donc 1 litre, soit 100 cl.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Fractions",
+        "2024"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "maths_logique",
+      "subskill": "fractions",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2024-086",
@@ -1463,7 +2536,19 @@
       "answer": 2,
       "explanation": "Identité remarquable : (a²-b²) = (a-b)(a+b), donc 2 × 8x = 16x.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Calcul littéral",
+        "2024"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "maths_logique",
+      "subskill": "calcul_litteral",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2024-087",
@@ -1480,7 +2565,20 @@
       "answer": 1,
       "explanation": "Après baisse de 5 %, il reste 95 %, soit 0,95.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Calcul",
+        "2024",
+        "pourcentages"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "maths_logique",
+      "subskill": "pourcentages",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2024-088",
@@ -1497,7 +2595,19 @@
       "answer": 3,
       "explanation": "Les trois premières expressions valent environ 5,2 ; 9 est plus grand.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Calcul",
+        "2024"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "maths_logique",
+      "subskill": "calcul",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2024-089",
@@ -1514,7 +2624,19 @@
       "answer": 0,
       "explanation": "150 = 2 × 3 × 5 × 5.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Maths",
+        "2024"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "culture_generale",
+      "subskill": "calcul",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2024-090",
@@ -1531,7 +2653,20 @@
       "answer": 1,
       "explanation": "60 / 3 donne 20 intervalles, donc 21 arbres avec les deux extrémités.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Raisonnement",
+        "2024",
+        "logique"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "maths_logique",
+      "subskill": "raisonnement_logique",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2024-091",
@@ -1548,7 +2683,19 @@
       "answer": 3,
       "explanation": "On factorise par (x+4) : (x+4)(2x+2) = 2(x+4)(x+1).",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Calcul littéral",
+        "2024"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "maths_logique",
+      "subskill": "calcul_litteral",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2024-092",
@@ -1565,7 +2712,19 @@
       "answer": 2,
       "explanation": "Total pondéré : 30 + 18 + 12 + 30 = 90 ; total coefficients : 6 ; moyenne 15.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Moyenne",
+        "2024"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "maths_logique",
+      "subskill": "moyennes",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2024-093",
@@ -1582,7 +2741,20 @@
       "answer": 3,
       "explanation": "Les deux premiers sont Clément puis Sofiane ; Leïla doit être avant Anne et se place donc derrière Sofiane.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Raisonnement",
+        "2024",
+        "logique"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "maths_logique",
+      "subskill": "raisonnement_logique",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2024-094",
@@ -1599,7 +2771,20 @@
       "answer": 2,
       "explanation": "27 n’est pas un nombre premier, contrairement aux autres.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Logique",
+        "2024",
+        "logique"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "maths_logique",
+      "subskill": "logique",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2024-095",
@@ -1616,7 +2801,20 @@
       "answer": 0,
       "explanation": "C’est la suite « look-and-say » : on lit 312211 comme un 3, un 1, deux 2, deux 1.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Suite logique",
+        "2024",
+        "logique"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "maths_logique",
+      "subskill": "suites",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2024-096",
@@ -1633,7 +2831,20 @@
       "answer": 2,
       "explanation": "Les écarts augmentent de 1 : +4, +5, +6, puis +7, donc X et 24.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Suite logique",
+        "2024",
+        "logique"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "maths_logique",
+      "subskill": "suites",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2024-097",
@@ -1650,7 +2861,20 @@
       "answer": 2,
       "explanation": "Le code 2-9-5 respecte les contraintes de placement et exclut 0, 3, 4, 7, 8, 1.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Raisonnement",
+        "2024",
+        "logique"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "maths_logique",
+      "subskill": "raisonnement_logique",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2024-098",
@@ -1667,7 +2891,19 @@
       "answer": 1,
       "explanation": "Chaque colonne réarrange les mêmes lettres ; Carne et Nacre donnent Écran.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Anagrammes",
+        "2024"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "maths_logique",
+      "subskill": "raisonnement_verbal",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2024-099",
@@ -1684,7 +2920,19 @@
       "answer": 0,
       "explanation": "3 machines creusent 1 m par heure. En 6 heures, elles creusent déjà 6 m : aucune machine supplémentaire.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Proportionnalité",
+        "2024"
+      ],
+      "verificationLevel": "manual_verified",
+      "sourceType": "official_annale_qcm_2024",
+      "skill": "maths_logique",
+      "subskill": "proportionnalite",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2023-100",
@@ -1701,7 +2949,20 @@
       "answer": 3,
       "explanation": "Il faut écrire « lancer », « ses engagements » et « formulés ».",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Orthographe",
+        "2023",
+        "langue"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "francais",
+      "subskill": "orthographe",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2023-101",
@@ -1718,7 +2979,19 @@
       "answer": 0,
       "explanation": "Cent reste invariable lorsqu’il est suivi.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Nombres",
+        "2023"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "maths_logique",
+      "subskill": "nombres",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2023-102",
@@ -1735,7 +3008,20 @@
       "answer": 3,
       "explanation": "Les deux éléments prennent le pluriel : des choux-fleurs.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Orthographe",
+        "2023",
+        "langue"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "francais",
+      "subskill": "orthographe",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2023-103",
@@ -1752,7 +3038,19 @@
       "answer": 2,
       "explanation": "La sagacité renvoie à la finesse de jugement.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Vocabulaire",
+        "2023"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "francais",
+      "subskill": "vocabulaire",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2023-104",
@@ -1769,7 +3067,20 @@
       "answer": 1,
       "explanation": "Il précise notamment temps, lieu, manière, cause.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Grammaire",
+        "2023",
+        "langue"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "francais",
+      "subskill": "grammaire",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2023-105",
@@ -1786,7 +3097,19 @@
       "answer": 2,
       "explanation": "C’est un secret connu de tous.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Vocabulaire",
+        "2023"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "francais",
+      "subskill": "vocabulaire",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2023-106",
@@ -1803,7 +3126,20 @@
       "answer": 0,
       "explanation": "Au passé simple : je marchai.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Conjugaison",
+        "2023",
+        "langue"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "francais",
+      "subskill": "conjugaison",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2023-107",
@@ -1820,7 +3156,19 @@
       "answer": 2,
       "explanation": "Seing se prononce comme sain mais n’a pas le même sens.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Vocabulaire",
+        "2023"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "francais",
+      "subskill": "vocabulaire",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2023-108",
@@ -1837,7 +3185,19 @@
       "answer": 2,
       "explanation": "Un palindrome se lit de gauche à droite et de droite à gauche.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Vocabulaire",
+        "2023"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "francais",
+      "subskill": "vocabulaire",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2023-109",
@@ -1854,7 +3214,20 @@
       "answer": 1,
       "explanation": "À l’imparfait : je distinguais.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Conjugaison",
+        "2023",
+        "langue"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "francais",
+      "subskill": "conjugaison",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2023-110",
@@ -1871,7 +3244,20 @@
       "answer": 1,
       "explanation": "La formulation correcte est « est-il sorti de la voiture ? ».",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Grammaire",
+        "2023",
+        "langue"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "francais",
+      "subskill": "grammaire",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2023-111",
@@ -1888,7 +3274,19 @@
       "answer": 1,
       "explanation": "La Crimée a été annexée par la Russie en 2014.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Géopolitique",
+        "2023"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "histoire_geographie",
+      "subskill": "relations_internationales",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2023-112",
@@ -1905,7 +3303,20 @@
       "answer": 2,
       "explanation": "Cette formule ouvre le Manifeste du Parti communiste de Marx et Engels.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Histoire des idées",
+        "2023",
+        "culture generale"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "histoire_geographie",
+      "subskill": "histoire_des_idees",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2023-113",
@@ -1922,7 +3333,20 @@
       "answer": 1,
       "explanation": "L’image traditionnelle est celle de Saint Louis rendant la justice sous un chêne.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Histoire",
+        "2023",
+        "culture generale"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "histoire_geographie",
+      "subskill": "histoire",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2023-114",
@@ -1939,7 +3363,20 @@
       "answer": 3,
       "explanation": "1933 pour Hitler, 1945 pour Hiroshima et Nagasaki, 1973-1979 pour les chocs pétroliers, 1989 pour le mur de Berlin.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Histoire",
+        "2023",
+        "culture generale"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "histoire_geographie",
+      "subskill": "histoire",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2023-115",
@@ -1956,7 +3393,19 @@
       "answer": 2,
       "explanation": "Le corrigé retient environ 45 millions d’exemplaires.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Musique",
+        "2023"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "culture_generale",
+      "subskill": "arts",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2023-116",
@@ -1973,7 +3422,19 @@
       "answer": 1,
       "explanation": "E.T. l’extra-terrestre est réalisé par Steven Spielberg.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Cinéma",
+        "2023"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "culture_generale",
+      "subskill": "arts",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2023-117",
@@ -1990,7 +3451,20 @@
       "answer": 2,
       "explanation": "Le Centre Pompidou est un grand lieu d’art moderne et contemporain.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Culture",
+        "2023",
+        "culture generale"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "culture_generale",
+      "subskill": "culture_generale",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2023-118",
@@ -2007,7 +3481,19 @@
       "answer": 3,
       "explanation": "L’Arabe du futur est une série de Riad Sattouf.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Bande dessinée",
+        "2023"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "culture_generale",
+      "subskill": "arts",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2023-119",
@@ -2024,7 +3510,19 @@
       "answer": 0,
       "explanation": "Le plan Bercy Vert comprend des actions de mobilité durable.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "EMC et institutions",
+      "tags": [
+        "EMC et institutions",
+        "Administration",
+        "2023"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "emc_institutions",
+      "subskill": "administration",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2023-120",
@@ -2041,7 +3539,19 @@
       "answer": 1,
       "explanation": "La Bulgarie est membre de l’Union européenne.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "EMC et institutions",
+      "tags": [
+        "EMC et institutions",
+        "Union européenne",
+        "2023"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "emc_institutions",
+      "subskill": "union_europeenne",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2023-121",
@@ -2058,7 +3568,19 @@
       "answer": 2,
       "explanation": "Le quai d’Orsay désigne le ministère chargé des affaires étrangères.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "EMC et institutions",
+      "tags": [
+        "EMC et institutions",
+        "Institutions",
+        "2023"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "emc_institutions",
+      "subskill": "institutions",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2023-122",
@@ -2075,7 +3597,19 @@
       "answer": 1,
       "explanation": "La première moitié dure 1 h ; la seconde 50 min, soit 1 h 50 au total.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Vitesse",
+        "2023"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "maths_logique",
+      "subskill": "vitesse",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2023-123",
@@ -2092,7 +3626,19 @@
       "answer": 2,
       "explanation": "1,8 × 37 + 32 = 66,6 + 32 = 98,6.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Calcul",
+        "2023"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "maths_logique",
+      "subskill": "calcul",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2023-124",
@@ -2109,7 +3655,19 @@
       "answer": 2,
       "explanation": "2024 / 11 = 184.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Arithmétique",
+        "2023"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "maths_logique",
+      "subskill": "arithmetique",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2023-125",
@@ -2126,7 +3684,20 @@
       "answer": 2,
       "explanation": "Il y a 15 garçons sur 25, soit 60 %.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Pourcentages",
+        "2023",
+        "pourcentages"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "maths_logique",
+      "subskill": "pourcentages",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2023-126",
@@ -2143,7 +3714,20 @@
       "answer": 3,
       "explanation": "Les mots sont classés dans l’ordre alphabétique.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Suite alphabétique",
+        "2023",
+        "logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "maths_logique",
+      "subskill": "suites",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2023-127",
@@ -2160,7 +3744,20 @@
       "answer": 1,
       "explanation": "La proposition 2 respecte les comparaisons et donne une moyenne de 24 ans, l’âge de Denis.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Raisonnement",
+        "2023",
+        "logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "maths_logique",
+      "subskill": "moyennes",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2023-128",
@@ -2177,7 +3774,20 @@
       "answer": 2,
       "explanation": "Ce sont les initiales de un, deux, trois, quatre, cinq, six, sept, huit, neuf.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Suite logique",
+        "2023",
+        "logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "maths_logique",
+      "subskill": "suites",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2023-129",
@@ -2194,7 +3804,20 @@
       "answer": 2,
       "explanation": "La correspondance chiffres-lettres donne RÉGIES.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Codage",
+        "2023",
+        "logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "maths_logique",
+      "subskill": "codage",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2023-130",
@@ -2211,14 +3834,27 @@
       "answer": 1,
       "explanation": "Le numéro correspond au nombre de lettres du prénom : Nathalie compte 8 lettres.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Raisonnement",
+        "2023",
+        "logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2023",
+      "skill": "maths_logique",
+      "subskill": "raisonnement_logique",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2022-131",
       "year": 2022,
       "source": "QCM 2022",
       "category": "Orthographe",
-      "prompt": "Quelle est la bonne orthographe ?",
+      "prompt": "Quelle est la bonne orthographe du mot « rhinocéros » ?",
       "choices": [
         "Un rinocéros",
         "Un rhinocéros",
@@ -2228,7 +3864,20 @@
       "answer": 1,
       "explanation": "La graphie correcte est rhinocéros.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Orthographe",
+        "2022",
+        "langue"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2022",
+      "skill": "francais",
+      "subskill": "orthographe",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2022-132",
@@ -2245,7 +3894,19 @@
       "answer": 2,
       "explanation": "L’expression signifie s’engager sans retour.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Expression",
+        "2022"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2022",
+      "skill": "francais",
+      "subskill": "expression",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2022-133",
@@ -2262,7 +3923,20 @@
       "answer": 1,
       "explanation": "La forme correcte est « c’est ».",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Grammaire",
+        "2022",
+        "langue"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2022",
+      "skill": "francais",
+      "subskill": "grammaire",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2022-134",
@@ -2279,7 +3953,20 @@
       "answer": 2,
       "explanation": "Accueil et public sont mal orthographiés.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Orthographe",
+        "2022",
+        "langue"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2022",
+      "skill": "francais",
+      "subskill": "orthographe",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2022-135",
@@ -2296,7 +3983,19 @@
       "answer": 0,
       "explanation": "Dans quatre-vingt-cinq, vingt ne prend pas s.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Nombres",
+        "2022"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2022",
+      "skill": "maths_logique",
+      "subskill": "nombres",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2022-136",
@@ -2313,7 +4012,19 @@
       "answer": 2,
       "explanation": "Dessein signifie intention, projet.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Vocabulaire",
+        "2022"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2022",
+      "skill": "francais",
+      "subskill": "vocabulaire",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2022-137",
@@ -2330,7 +4041,19 @@
       "answer": 1,
       "explanation": "Le terme juridique attendu est blanchiment.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Vocabulaire administratif",
+        "2022"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2022",
+      "skill": "francais",
+      "subskill": "vocabulaire_administratif",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2022-138",
@@ -2347,7 +4070,20 @@
       "answer": 1,
       "explanation": "Le mur de Berlin a séparé la ville de 1961 à 1989.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Histoire",
+        "2022",
+        "culture generale"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2022",
+      "skill": "histoire_geographie",
+      "subskill": "histoire",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2022-139",
@@ -2364,7 +4100,19 @@
       "answer": 3,
       "explanation": "Les Fleurs du mal est un recueil de Baudelaire.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Littérature",
+        "2022"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2022",
+      "skill": "culture_generale",
+      "subskill": "litterature",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2022-140",
@@ -2381,7 +4129,19 @@
       "answer": 2,
       "explanation": "Le quinquennat s’applique à partir de l’élection présidentielle de 2002.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "EMC et institutions",
+      "tags": [
+        "EMC et institutions",
+        "Institutions",
+        "2022"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2022",
+      "skill": "emc_institutions",
+      "subskill": "institutions",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2022-141",
@@ -2398,7 +4158,19 @@
       "answer": 1,
       "explanation": "Le film se déroule à Marseille, dans les quartiers Nord.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Cinéma",
+        "2022"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2022",
+      "skill": "culture_generale",
+      "subskill": "arts",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2022-142",
@@ -2415,7 +4187,19 @@
       "answer": 1,
       "explanation": "1 litre vaut 1 000 cm³ ; 60 000 cm³ = 60 litres.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Volumes",
+        "2022"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2022",
+      "skill": "maths_logique",
+      "subskill": "volumes",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2022-143",
@@ -2432,7 +4216,19 @@
       "answer": 2,
       "explanation": "(3x - 2)² = 9x² - 12x + 4.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Calcul littéral",
+        "2022"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2022",
+      "skill": "maths_logique",
+      "subskill": "calcul_litteral",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2022-144",
@@ -2449,7 +4245,20 @@
       "answer": 1,
       "explanation": "90 km représente 75 % de 120 km ; 75 % d’une heure = 45 minutes.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Vitesse",
+        "2022",
+        "pourcentages"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2022",
+      "skill": "maths_logique",
+      "subskill": "pourcentages",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2022-145",
@@ -2466,7 +4275,19 @@
       "answer": 2,
       "explanation": "Les diviseurs positifs de 22 sont 1, 2, 11 et 22.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Arithmétique",
+        "2022"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2022",
+      "skill": "maths_logique",
+      "subskill": "arithmetique",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2022-146",
@@ -2483,7 +4304,19 @@
       "answer": 1,
       "explanation": "Le système donne x = 6 pour la clé USB et y = 5 pour le CD.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Équations",
+        "2022"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2022",
+      "skill": "maths_logique",
+      "subskill": "equations",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2022-147",
@@ -2500,7 +4333,19 @@
       "answer": 2,
       "explanation": "5√32 = 20√2, √18 = 3√2 et 4√50 = 20√2 ; il reste 3√2.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Radicaux",
+        "2022"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2022",
+      "skill": "maths_logique",
+      "subskill": "radicaux",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2022-148",
@@ -2517,7 +4362,19 @@
       "answer": 3,
       "explanation": "110 × 13,50 = 1 485 et 30 × 6 = 180 ; total 1 665 €.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Calcul",
+        "2022"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2022",
+      "skill": "maths_logique",
+      "subskill": "calcul",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2022-149",
@@ -2534,7 +4391,20 @@
       "answer": 0,
       "explanation": "Les deux conditions nécessaires sont l’entraînement et la concentration.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Logique",
+        "2022",
+        "logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2022",
+      "skill": "maths_logique",
+      "subskill": "logique",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2022-150",
@@ -2551,7 +4421,20 @@
       "answer": 2,
       "explanation": "Doubler le troisième place Charles en troisième position.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Raisonnement",
+        "2022",
+        "logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2022",
+      "skill": "maths_logique",
+      "subskill": "raisonnement_logique",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2022-151",
@@ -2568,7 +4451,20 @@
       "answer": 3,
       "explanation": "Une sous-suite monte : 37, 38, 39 ; l’autre descend : 34, 33, 32.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Suite logique",
+        "2022",
+        "logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2022",
+      "skill": "maths_logique",
+      "subskill": "suites",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2022-152",
@@ -2585,7 +4481,20 @@
       "answer": 1,
       "explanation": "En appliquant la même correspondance de lettres, IWO JIMA devient AWP JAMZ.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Codage",
+        "2022",
+        "logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2022",
+      "skill": "maths_logique",
+      "subskill": "codage",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2022-153",
@@ -2602,7 +4511,20 @@
       "answer": 1,
       "explanation": "La suite prend un nombre premier sur deux : 2, 5, 11, 17, 23.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Suite logique",
+        "2022",
+        "logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2022",
+      "skill": "maths_logique",
+      "subskill": "suites",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2022-154",
@@ -2619,7 +4541,19 @@
       "answer": 2,
       "explanation": "Les masses sont lapin 3, chat 7, chien 17 ; total 27.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Calcul",
+        "2022"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2022",
+      "skill": "maths_logique",
+      "subskill": "calcul",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2022-155",
@@ -2636,7 +4570,20 @@
       "answer": 3,
       "explanation": "Les nombres romains valent 9, 36, 64 et 169 ; ce sont 3², 6², 8² et 13².",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Raisonnement",
+        "2022",
+        "logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2022",
+      "skill": "maths_logique",
+      "subskill": "raisonnement_logique",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2021-156",
@@ -2653,7 +4600,19 @@
       "answer": 0,
       "explanation": "Cent et vingt restent ici invariables.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Nombres",
+        "2021"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2021",
+      "skill": "maths_logique",
+      "subskill": "nombres",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2021-157",
@@ -2670,7 +4629,19 @@
       "answer": 0,
       "explanation": "C’est une collectivité territoriale.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "EMC et institutions",
+      "tags": [
+        "EMC et institutions",
+        "Institutions",
+        "2021"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2021",
+      "skill": "emc_institutions",
+      "subskill": "institutions",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2021-158",
@@ -2687,7 +4658,20 @@
       "answer": 2,
       "explanation": "Le sujet réel est pluriel : la méditation et le sport apportent.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Grammaire",
+        "2021",
+        "langue"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2021",
+      "skill": "francais",
+      "subskill": "grammaire",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2021-159",
@@ -2704,7 +4688,19 @@
       "answer": 0,
       "explanation": "La colombe représente la paix.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Figure de style",
+        "2021"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2021",
+      "skill": "francais",
+      "subskill": "figures_de_style",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2021-160",
@@ -2721,7 +4717,19 @@
       "answer": 2,
       "explanation": "Le poinçon certifie les métaux précieux.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "MEF / DGFiP / DGDDI",
+      "tags": [
+        "MEF / DGFiP / DGDDI",
+        "Douanes",
+        "2021"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2021",
+      "skill": "mef_dgfip_dgddi",
+      "subskill": "missions_dgddi",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2021-161",
@@ -2738,7 +4746,20 @@
       "answer": 3,
       "explanation": "Cueillir et pensées.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Orthographe",
+        "2021",
+        "langue"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2021",
+      "skill": "francais",
+      "subskill": "orthographe",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2021-162",
@@ -2755,7 +4776,20 @@
       "answer": 3,
       "explanation": "Tu peux prend un x.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Conjugaison",
+        "2021",
+        "langue"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2021",
+      "skill": "francais",
+      "subskill": "conjugaison",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2021-163",
@@ -2772,7 +4806,19 @@
       "answer": 2,
       "explanation": "84 et 245 sont divisibles par 7 : 84/245 = 12/35.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Calcul",
+        "2021"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2021",
+      "skill": "maths_logique",
+      "subskill": "calcul",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2021-164",
@@ -2789,7 +4835,19 @@
       "answer": 2,
       "explanation": "La médiane vaut 12 et la moyenne vaut 12,40.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Statistiques",
+        "2021"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2021",
+      "skill": "maths_logique",
+      "subskill": "moyennes",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2021-165",
@@ -2806,7 +4864,19 @@
       "answer": 3,
       "explanation": "Aire d’un carré : côté × côté = 7 × 7 = 49 cm².",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Géométrie",
+        "2021"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2021",
+      "skill": "maths_logique",
+      "subskill": "geometrie",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2021-166",
@@ -2823,7 +4893,19 @@
       "answer": 2,
       "explanation": "Les mois de juillet à décembre totalisent 184 jours ; 184 × 1440 = 264 960 minutes.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Calcul",
+        "2021"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2021",
+      "skill": "maths_logique",
+      "subskill": "calcul",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2021-167",
@@ -2840,7 +4922,19 @@
       "answer": 2,
       "explanation": "Priorité aux multiplications et divisions : 5 × 2 / 2 = 5 et 4 × 3 = 12, donc 117.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Calcul",
+        "2021"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2021",
+      "skill": "maths_logique",
+      "subskill": "calcul",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2021-168",
@@ -2857,7 +4951,19 @@
       "answer": 1,
       "explanation": "5,75 / 5 = 1,15 €.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Calcul",
+        "2021"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2021",
+      "skill": "maths_logique",
+      "subskill": "calcul",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2021-169",
@@ -2874,7 +4980,20 @@
       "answer": 2,
       "explanation": "Le placement conduit à Alice peintre, Anne chanteuse, Angèle actrice et Anastasia présentatrice.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Raisonnement",
+        "2021",
+        "logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2021",
+      "skill": "maths_logique",
+      "subskill": "raisonnement_logique",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2021-170",
@@ -2891,7 +5010,21 @@
       "answer": 2,
       "explanation": "La progression par lignes et colonnes donne 11 puis 21.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Suite logique",
+        "2021",
+        "donnees",
+        "logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2021",
+      "skill": "maths_logique",
+      "subskill": "lecture_de_donnees",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2021-171",
@@ -2908,7 +5041,20 @@
       "answer": 2,
       "explanation": "Deux suites s’entrecroisent ; la branche 23, 31, ? donne 41.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Suite logique",
+        "2021",
+        "logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2021",
+      "skill": "maths_logique",
+      "subskill": "suites",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2021-172",
@@ -2925,7 +5071,20 @@
       "answer": 3,
       "explanation": "XC correspond à 90 en chiffres romains.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Raisonnement",
+        "2021",
+        "logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2021",
+      "skill": "maths_logique",
+      "subskill": "raisonnement_logique",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2021-173",
@@ -2942,7 +5101,20 @@
       "answer": 0,
       "explanation": "La proportion reste 9 %, quel que soit le nombre de flans.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Calcul",
+        "2021",
+        "pourcentages"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2021",
+      "skill": "maths_logique",
+      "subskill": "pourcentages",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2021-174",
@@ -2967,7 +5139,20 @@
         "On lit P-U-O-C, soit COUP à l’envers.",
         "14 = N, 9 = I, 18 = R, 2 = B",
         "On lit N-I-R-B : le mot attendu est BRIN."
-      ]
+      ],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Raisonnement",
+        "2021",
+        "logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2021",
+      "skill": "maths_logique",
+      "subskill": "raisonnement_logique",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2021-175",
@@ -2984,7 +5169,21 @@
       "answer": 1,
       "explanation": "Après 55 % de dépenses, il reste 45 % ; 30 % de 45 % = 13,5 %.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Calcul",
+        "2021",
+        "pourcentages",
+        "DGFiP"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2021",
+      "skill": "maths_logique",
+      "subskill": "missions_dgfip",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2021-176",
@@ -3001,7 +5200,20 @@
       "answer": 3,
       "explanation": "Chaque ligne décrit la précédente : 111221 se lit trois 1, deux 2, un 1, soit 312211.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Suite logique",
+        "2021",
+        "logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2021",
+      "skill": "maths_logique",
+      "subskill": "suites",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2020-177",
@@ -3018,7 +5230,20 @@
       "answer": 2,
       "explanation": "On est prêt à faire quelque chose.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Orthographe",
+        "2020",
+        "langue"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "francais",
+      "subskill": "orthographe",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2020-178",
@@ -3035,7 +5260,19 @@
       "answer": 3,
       "explanation": "Ad hoc signifie adapté à cet usage précis.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Expression latine",
+        "2020"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "francais",
+      "subskill": "vocabulaire",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2020-179",
@@ -3052,7 +5289,20 @@
       "answer": 1,
       "explanation": "Marron et bleu clair restent invariables dans cet emploi.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Accords",
+        "2020",
+        "langue"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "francais",
+      "subskill": "accords",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2020-180",
@@ -3069,7 +5319,19 @@
       "answer": 2,
       "explanation": "Économique est l’opposé de coûteux.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Vocabulaire",
+        "2020"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "francais",
+      "subskill": "vocabulaire",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2020-181",
@@ -3086,7 +5348,20 @@
       "answer": 0,
       "explanation": "Mille est invariable et cent ne prend pas s ici.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Orthographe",
+        "2020",
+        "langue"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "francais",
+      "subskill": "orthographe",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2020-182",
@@ -3103,7 +5378,20 @@
       "answer": 1,
       "explanation": "Futur de envoyer dans ce sens : enverra.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Conjugaison",
+        "2020",
+        "langue"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "francais",
+      "subskill": "conjugaison",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2020-183",
@@ -3120,7 +5408,20 @@
       "answer": 3,
       "explanation": "Le contribuable est redevable d’un impôt.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Vocabulaire administratif",
+        "2020",
+        "DGFiP"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "francais",
+      "subskill": "missions_dgfip",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2020-184",
@@ -3137,7 +5438,20 @@
       "answer": 2,
       "explanation": "Une brigade cynophile travaille avec des chiens.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Orthographe",
+        "2020",
+        "langue"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "francais",
+      "subskill": "orthographe",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2020-185",
@@ -3154,7 +5468,20 @@
       "answer": 1,
       "explanation": "Tous accompagne le pluriel documents ; tout accompagne le singulier renseignement.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Accords",
+        "2020",
+        "langue"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "francais",
+      "subskill": "accords",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2020-186",
@@ -3171,7 +5498,20 @@
       "answer": 3,
       "explanation": "Il faut écrire inconsciemment, blessé et ses amies.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Orthographe",
+        "2020",
+        "langue"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "francais",
+      "subskill": "orthographe",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2020-187",
@@ -3188,7 +5528,20 @@
       "answer": 3,
       "explanation": "Le COD « les » est placé avant l’auxiliaire avoir : dépassés.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Accords",
+        "2020",
+        "langue"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "francais",
+      "subskill": "accords",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2020-188",
@@ -3205,7 +5558,20 @@
       "answer": 0,
       "explanation": "L’administration regroupe les services chargés de l’action publique.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "EMC et institutions",
+      "tags": [
+        "EMC et institutions",
+        "Administratif",
+        "2020",
+        "service public"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "emc_institutions",
+      "subskill": "administration",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2020-189",
@@ -3222,7 +5588,20 @@
       "answer": 3,
       "explanation": "Avec avoir, l’accord se fait avec le COD placé avant.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Grammaire",
+        "2020",
+        "langue"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "francais",
+      "subskill": "grammaire",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2020-190",
@@ -3239,7 +5618,20 @@
       "answer": 2,
       "explanation": "Tenue est COD placé avant, donc portée ; le verbe est « allait ».",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Orthographe",
+        "2020",
+        "langue"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "francais",
+      "subskill": "orthographe",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 75
     },
     {
       "id": "qcm-2020-191",
@@ -3256,7 +5648,20 @@
       "answer": 1,
       "explanation": "On écrit des chefs-d’œuvre et des cafés-théâtres.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Accords",
+        "2020",
+        "langue"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "francais",
+      "subskill": "accords",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2020-192",
@@ -3273,7 +5678,20 @@
       "answer": 1,
       "explanation": "Le traité de Versailles de 1919 clôt la Première Guerre mondiale avec l’Allemagne.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Histoire",
+        "2020",
+        "culture generale"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "histoire_geographie",
+      "subskill": "traites_et_guerres",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2020-193",
@@ -3290,7 +5708,20 @@
       "answer": 0,
       "explanation": "La capitale du Mali est Bamako.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Géographie",
+        "2020",
+        "culture generale"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "histoire_geographie",
+      "subskill": "geographie",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2020-194",
@@ -3307,7 +5738,19 @@
       "answer": 3,
       "explanation": "Arthur Fleck est joué par Joaquin Phoenix.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Cinéma",
+        "2020"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "culture_generale",
+      "subskill": "arts",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2020-195",
@@ -3324,7 +5767,20 @@
       "answer": 2,
       "explanation": "Henri IV est assassiné par François Ravaillac en 1610.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Histoire",
+        "2020",
+        "culture generale"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "histoire_geographie",
+      "subskill": "histoire",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2020-196",
@@ -3341,7 +5797,20 @@
       "answer": 2,
       "explanation": "L’URSS est fondée en 1922.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Histoire",
+        "2020",
+        "culture generale"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "histoire_geographie",
+      "subskill": "histoire",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2020-197",
@@ -3358,7 +5827,19 @@
       "answer": 1,
       "explanation": "Notre-Dame de Paris est un roman de Victor Hugo.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Littérature",
+        "2020"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "culture_generale",
+      "subskill": "litterature",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2020-198",
@@ -3375,7 +5856,20 @@
       "answer": 1,
       "explanation": "Persepolis raconte notamment l’Iran de la révolution islamique.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Culture",
+        "2020",
+        "culture generale"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "culture_generale",
+      "subskill": "culture_generale",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2020-199",
@@ -3392,7 +5886,19 @@
       "answer": 2,
       "explanation": "Le biathlon associe ski de fond et tir, pas ski alpin.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Sport",
+        "2020"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "culture_generale",
+      "subskill": "sport",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2020-200",
@@ -3409,7 +5915,20 @@
       "answer": 3,
       "explanation": "Les plus anciennes écritures connues sont associées à la Mésopotamie.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Histoire",
+        "2020",
+        "culture generale"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "histoire_geographie",
+      "subskill": "histoire",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2020-201",
@@ -3426,7 +5945,19 @@
       "answer": 2,
       "explanation": "La mise en demeure demande officiellement d’exécuter une obligation.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "EMC et institutions",
+      "tags": [
+        "EMC et institutions",
+        "Administratif",
+        "2020"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "emc_institutions",
+      "subskill": "administration",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2020-202",
@@ -3443,7 +5974,20 @@
       "answer": 1,
       "explanation": "Édith Cresson a été Première ministre de 1991 à 1992.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Culture",
+        "2020",
+        "culture generale"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "culture_generale",
+      "subskill": "culture_generale",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 90
     },
     {
       "id": "qcm-2020-203",
@@ -3460,7 +6004,19 @@
       "answer": 2,
       "explanation": "Les heures font 156 coups et les demi-heures 24 coups : total 180.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Calcul",
+        "2020"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "maths_logique",
+      "subskill": "calcul",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2020-204",
@@ -3477,7 +6033,19 @@
       "answer": 2,
       "explanation": "Le second groupe est exactement le double du premier : 103 €.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Calcul",
+        "2020"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "maths_logique",
+      "subskill": "calcul",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2020-205",
@@ -3494,7 +6062,19 @@
       "answer": 1,
       "explanation": "Il y a 6 nombres impairs sur 9.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Probabilités",
+        "2020"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "maths_logique",
+      "subskill": "probabilites",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2020-206",
@@ -3511,7 +6091,19 @@
       "answer": 2,
       "explanation": "La somme pondérée vaut 156 pour 30 élèves, soit 5,20.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Statistiques",
+        "2020"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "maths_logique",
+      "subskill": "moyennes",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2020-207",
@@ -3528,7 +6120,19 @@
       "answer": 3,
       "explanation": "Produit nul : 6x - 2 = 0 donne x = 1/3, et x + 6 = 0 donne -6.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Équations",
+        "2020"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "maths_logique",
+      "subskill": "equations",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2020-208",
@@ -3545,7 +6149,19 @@
       "answer": 1,
       "explanation": "Le point de concours des hauteurs est l’orthocentre.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Géométrie",
+        "2020"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "maths_logique",
+      "subskill": "geometrie",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2020-209",
@@ -3562,7 +6178,19 @@
       "answer": 3,
       "explanation": "(4x - 5)² = 16x² - 40x + 25.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Calcul littéral",
+        "2020"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "maths_logique",
+      "subskill": "calcul_litteral",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2020-210",
@@ -3579,7 +6207,19 @@
       "answer": 3,
       "explanation": "L’aire dépend du carré du côté : 3² = 9.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Géométrie",
+        "2020"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "maths_logique",
+      "subskill": "geometrie",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2020-211",
@@ -3596,7 +6236,19 @@
       "answer": 0,
       "explanation": "192/288 se simplifie par 96 : 2/3.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Fractions",
+        "2020"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "maths_logique",
+      "subskill": "fractions",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2020-212",
@@ -3613,7 +6265,20 @@
       "answer": 3,
       "explanation": "1 050 véhicules respectent la vitesse ; 1050/1400 = 75 %.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Pourcentages",
+        "2020",
+        "pourcentages"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "maths_logique",
+      "subskill": "pourcentages",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2020-213",
@@ -3630,7 +6295,19 @@
       "answer": 1,
       "explanation": "2³ = 8, et son double vaut 16.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Calcul",
+        "2020"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "maths_logique",
+      "subskill": "calcul",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2020-214",
@@ -3647,7 +6324,19 @@
       "answer": 1,
       "explanation": "3 × 2 × 0,54 = 3,24 m³.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Volumes",
+        "2020"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "maths_logique",
+      "subskill": "volumes",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 105
     },
     {
       "id": "qcm-2020-215",
@@ -3664,7 +6353,20 @@
       "answer": 2,
       "explanation": "Chaque terme est multiplié par 4.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Suite logique",
+        "2020",
+        "logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "maths_logique",
+      "subskill": "suites",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2020-216",
@@ -3681,7 +6383,20 @@
       "answer": 0,
       "explanation": "Le placement compatible met Sophie à côté de Pierre.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Raisonnement",
+        "2020",
+        "logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "maths_logique",
+      "subskill": "raisonnement_logique",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2020-217",
@@ -3698,7 +6413,20 @@
       "answer": 3,
       "explanation": "Le nombre correspond au rang alphabétique de la lettre : X est la 24e.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Suite logique",
+        "2020",
+        "logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "maths_logique",
+      "subskill": "suites",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     },
     {
       "id": "qcm-2020-218",
@@ -3715,7 +6443,20 @@
       "answer": 3,
       "explanation": "Les villes ont 3, 4, 5 puis 6 lettres : Rennes.",
       "supportRows": [],
-      "correctionSteps": []
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Suite logique",
+        "2020",
+        "logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2020",
+      "skill": "maths_logique",
+      "subskill": "suites",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
     }
   ],
   "annales": [

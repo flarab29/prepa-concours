@@ -83,6 +83,7 @@ public class MainActivity extends Activity {
     private String activeQuizMode = "Libre";
     private int officialQcmTotal = OFFICIAL_QCM_TOTAL;
     private final List<Question> currentMistakes = new ArrayList<>();
+    private final List<QuizAnswer> quizAnswers = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -180,9 +181,26 @@ public class MainActivity extends Activity {
     private void showDashboard() {
         addSection("Objectif 2026");
         int mistakes = mistakeCount();
+        int due = dueMistakeCount();
+        content.addView(card("S'entraîner aujourd'hui",
+                "Domaine recommandé : " + recommendedDomainLabel() + ".\n" +
+                        "Carnet d'erreurs : " + mistakes + " question" + (mistakes > 1 ? "s" : "") +
+                        (due > 0 ? ", dont " + due + " due" + (due > 1 ? "s" : "") + " aujourd'hui" : "") + ".\n" +
+                        "Dernier score : " + lastScoreText() + ".\n" +
+                        "Action recommandée : " + dailyRecommendation() + ".\n\n" +
+                        "Séance prévue : 10 QCM, priorité aux erreurs, au sujet zéro 2026 et aux questions les plus fiables."));
+        addPrimaryAction("Lancer la séance du jour", this::startDailySession);
+        if (due > 0) addAction("Réviser ce qui est dû aujourd'hui", this::startDueReview);
+        else addDisabledAction("Réviser ce qui est dû aujourd'hui");
+        if (mistakes > 0) addAction("Revoir mes erreurs", this::startMistakeQuiz);
+        else addDisabledAction("Revoir mes erreurs");
+        if (!hasDomainStats()) addAction("Diagnostic initial", this::startInitialDiagnostic);
         content.addView(card("Aujourd'hui",
                 "Jours avant les epreuves ecrites : " + daysUntil("29/09/2026") + ".\n" +
-                        "Carnet d'erreurs QCM : " + mistakes + " question" + (mistakes > 1 ? "s" : "") + " a revoir.\n" +
+                        "Révisions dues aujourd'hui : " + dueMistakeCount() + ".\n" +
+                        "Carnet d'erreurs QCM : " + mistakes + " question" + (mistakes > 1 ? "s" : "") + " au total.\n" +
+                        "Questions fragiles : " + fragileMistakeCount() + ".\n" +
+                        "Erreurs maîtrisées : " + masteredMistakeCount() + ".\n" +
                         "Domaine le plus fragile : " + weakestDomain() + ".\n" +
                         "Prochaine action conseillee : " + dailyRecommendation()));
         content.addView(card("Corpus exploité",
@@ -285,7 +303,18 @@ public class MainActivity extends Activity {
             addSection("Résultat QCM");
             int percent = Math.round((score * 100f) / quiz.size());
             saveScore(score, quiz.size(), percent);
+            if ("Diagnostic initial".equals(activeQuizMode)) {
+                showDiagnosticResult(percent);
+                return;
+            }
             content.addView(card("Score", score + "/" + quiz.size() + " - " + percent + "%\n" + feedback(percent) + "\n\n" + sessionReviewText()));
+            if ("Séance du jour".equals(activeQuizMode)) {
+                Advice advice = dailyAdvice();
+                if (advice != null) content.addView(card("Règle de jury à lire", advice.title + "\n\n" + advice.body));
+                String oral = dailyOralQuestion();
+                if (!oral.isEmpty()) content.addView(card("Question orale à répondre à voix haute", oral));
+                addAction("Relancer la séance du jour", this::startDailySession);
+            }
             if (!currentMistakes.isEmpty()) addAction("Rejouer les erreurs de cette serie", this::startSessionMistakeQuiz);
             if (mistakeCount() > 0) addAction("Revoir tout mon carnet d'erreurs", this::startMistakeQuiz);
             addAction("Recommencer", () -> {
@@ -306,16 +335,37 @@ public class MainActivity extends Activity {
             final int index = i;
             Button b = button((i + 1) + ". " + q.choices[i], true);
             b.setGravity(Gravity.START | Gravity.CENTER_VERTICAL);
-            b.setOnClickListener(v -> {
-                if (index == q.answer) score++;
-                showAnswer(q, index);
-            });
+            b.setOnClickListener(v -> answerQuestion(q, index));
             b.setMinHeight(dp(58));
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(-1, -2);
             lp.setMargins(0, 0, 0, dp(8));
             content.addView(b, lp);
         }
+        if ("Diagnostic initial".equals(activeQuizMode)) addAction("Je ne sais pas / passer", this::skipDiagnosticQuestion);
         addAction("Arrêter la série", this::goQuizHome);
+    }
+
+    private void answerQuestion(Question q, int picked) {
+        boolean ok = picked == q.answer;
+        if (ok) score++;
+        if ("Diagnostic initial".equals(activeQuizMode)) {
+            recordQuestionResult(q, ok);
+            quizAnswers.add(new QuizAnswer(q, picked, ok));
+            if (!ok) currentMistakes.add(q);
+            currentQuestion++;
+            showQuiz();
+            return;
+        }
+        showAnswer(q, picked);
+    }
+
+    private void skipDiagnosticQuestion() {
+        Question q = quiz.get(currentQuestion);
+        recordQuestionResult(q, false);
+        quizAnswers.add(new QuizAnswer(q, -1, false));
+        currentMistakes.add(q);
+        currentQuestion++;
+        showQuiz();
     }
 
     private void showAnswer(Question q, int picked) {
@@ -328,6 +378,7 @@ public class MainActivity extends Activity {
         content.addView(card(q.prompt, "Votre réponse : " + q.choices[picked] + "\nRéponse attendue : " + q.choices[q.answer]));
         addQuestionSupport(q);
         content.addView(card("Correction", correctionText(q)));
+        if (!ok) addErrorReasonActions(questionId(q));
         addAction("Question suivante", () -> {
             currentQuestion++;
             showQuiz();
@@ -366,7 +417,7 @@ public class MainActivity extends Activity {
 
     private List<Question> buildQuizList() {
         String mode = selectedModeLabel();
-        if ("Carnet d'erreurs".equals(mode)) return mistakeQuestions();
+        if ("Carnet d'erreurs".equals(mode)) return dueMistakeQuestions().isEmpty() ? mistakeQuestions() : dueMistakeQuestions();
         if ("Faiblesses du jour".equals(mode)) return questionsForDomain(weakestDomain());
 
         List<Question> base = new ArrayList<>();
@@ -389,18 +440,16 @@ public class MainActivity extends Activity {
 
     private List<Question> balancedDiagnostic(List<Question> source) {
         List<Question> result = new ArrayList<>();
+        List<Question> base = new ArrayList<>();
+        for (Question q : source) if (!"hard".equals(q.difficulty)) base.add(q);
+        if (base.size() < 20) base = source;
         for (String domain : DOMAIN_FILTERS) {
             if ("Tous les domaines".equals(domain)) continue;
-            int kept = 0;
-            for (Question q : source) {
-                if (domain.equals(domainOf(q))) {
-                    result.add(q);
-                    kept++;
-                    if (kept >= 3) break;
-                }
-            }
+            takeUnique(result, reliableFirst(filterByDomain(base, domain)), Math.min(20, result.size() + 3));
         }
-        return result.isEmpty() ? source : result;
+        takeUnique(result, reliableFirst(new ArrayList<>(base)), 20);
+        if (result.isEmpty()) result.addAll(source);
+        return result.size() > 20 ? new ArrayList<>(result.subList(0, 20)) : result;
     }
 
     private void applyModeDefaults() {
@@ -434,8 +483,81 @@ public class MainActivity extends Activity {
         startQuizFromFilters();
     }
 
+    private void startInitialDiagnostic() {
+        List<Question> list = balancedDiagnostic(new ArrayList<>(allQuestions));
+        if (list.size() > 20) list = new ArrayList<>(list.subList(0, 20));
+        startQuizWithList(list, "Diagnostic initial", false);
+    }
+
+    private void startDailySession() {
+        startQuizWithList(buildDailySessionQuestions(), "Séance du jour", false);
+    }
+
+    private List<Question> buildDailySessionQuestions() {
+        List<Question> selected = new ArrayList<>();
+        List<Question> mistakes = reliableFirst(new ArrayList<>(dueMistakeQuestions()));
+        mistakes.addAll(reliableFirst(new ArrayList<>(mistakeQuestions())));
+        takeUnique(selected, mistakes, Math.min(3, mistakes.size()));
+
+        List<Question> zero2026 = reliableFirst(questionsFromZero2026());
+        if (hasDomainStats()) {
+            String weak = weakestDomain();
+            takeUnique(selected, filterByDomain(zero2026, weak), 7);
+            takeUnique(selected, reliableFirst(questionsForDomain(weak)), 7);
+        } else {
+            for (String domain : DOMAIN_FILTERS) {
+                if ("Tous les domaines".equals(domain)) continue;
+                takeUnique(selected, filterByDomain(zero2026, domain), Math.min(10, selected.size() + 1));
+            }
+        }
+        takeUnique(selected, zero2026, 10);
+        takeUnique(selected, reliableFirst(new ArrayList<>(allQuestions)), 10);
+        if (selected.size() > 10) return new ArrayList<>(selected.subList(0, 10));
+        return selected;
+    }
+
+    private void takeUnique(List<Question> target, List<Question> source, int maxSize) {
+        Set<String> seen = new LinkedHashSet<>();
+        for (Question q : target) seen.add(questionId(q));
+        for (Question q : source) {
+            if (target.size() >= maxSize) return;
+            if (seen.add(questionId(q))) target.add(q);
+        }
+    }
+
+    private List<Question> reliableFirst(List<Question> source) {
+        Collections.sort(source, (a, b) -> reliableRank(a) - reliableRank(b));
+        return source;
+    }
+
+    private int reliableRank(Question q) {
+        if ("official_correction".equals(q.verificationLevel)) return 0;
+        if ("official_zero_2026".equals(q.sourceType)) return 1;
+        if ("manual_verified".equals(q.verificationLevel)) return 2;
+        return 3;
+    }
+
+    private List<Question> questionsFromZero2026() {
+        List<Question> result = new ArrayList<>();
+        for (Question q : allQuestions) {
+            if ("official_zero_2026".equals(q.sourceType) || "2026".equals(questionYear(q))) result.add(q);
+        }
+        return result;
+    }
+
+    private List<Question> filterByDomain(List<Question> source, String domain) {
+        List<Question> result = new ArrayList<>();
+        for (Question q : source) if (domain.equals(domainOf(q))) result.add(q);
+        return result;
+    }
+
     private void startMistakeQuiz() {
-        startQuizWithList(mistakeQuestions(), "Carnet d'erreurs", true);
+        List<Question> due = dueMistakeQuestions();
+        startQuizWithList(due.isEmpty() ? mistakeQuestions() : due, "Carnet d'erreurs", true);
+    }
+
+    private void startDueReview() {
+        startQuizWithList(dueMistakeQuestions(), "Révisions dues", true);
     }
 
     private void startSessionMistakeQuiz() {
@@ -450,6 +572,7 @@ public class MainActivity extends Activity {
         currentQuestion = 0;
         score = 0;
         currentMistakes.clear();
+        quizAnswers.clear();
         activeQuizMode = mode;
         content.removeAllViews();
         showQuiz();
@@ -584,7 +707,7 @@ public class MainActivity extends Activity {
 
     private int selectedSizeForMode() {
         String mode = selectedModeLabel();
-        if ("Diagnostic initial".equals(mode)) return 24;
+        if ("Diagnostic initial".equals(mode)) return 20;
         if ("Serie courte 10 min".equals(mode)) return 10;
         if ("Mode examen 54".equals(mode) || "Annale complete".equals(mode)) return 54;
         if ("Sujet zero 2026".equals(mode)) return 50;
@@ -612,6 +735,7 @@ public class MainActivity extends Activity {
     }
 
     private String domainOf(Question q) {
+        if (q.domain != null && !q.domain.trim().isEmpty()) return q.domain;
         String c = normalize(q.category);
         if (hasAny(c, "calcul", "mathem", "equation", "fraction", "pourcentage", "statistique", "probabilite", "geometrie", "volume", "vitesse", "arithmetique", "proportionnalite", "moyenne", "radicaux", "nombres", "raisonnement", "suite", "logique", "codage", "anagrammes")) {
             return "Maths et logique";
@@ -648,6 +772,7 @@ public class MainActivity extends Activity {
     }
 
     private String questionId(Question q) {
+        if (q.id != null && !q.id.trim().isEmpty()) return q.id;
         return "q" + Math.abs((q.source + "|" + q.category + "|" + q.prompt).hashCode());
     }
 
@@ -659,21 +784,74 @@ public class MainActivity extends Activity {
         SharedPreferences prefs = getPreferences(MODE_PRIVATE);
         String domain = domainOf(q);
         String id = questionId(q);
-        int miss = prefs.getInt("miss_" + id, 0);
+        int attempts = prefs.getInt("review_attempts_" + id, prefs.getInt("miss_" + id, 0));
+        int successes = prefs.getInt("review_successes_" + id, 0);
+        int failures = prefs.getInt("review_failures_" + id, prefs.getInt("miss_" + id, 0));
+        int streak = prefs.getInt("review_streak_" + id, prefs.getInt("streak_" + id, 0));
+        String mastery = prefs.getString("review_mastery_" + id, failures > 0 ? "fragile" : "new");
+        long nextReview = prefs.getLong("review_next_" + id, prefs.getLong("due_" + id, 0));
         SharedPreferences.Editor editor = prefs.edit()
                 .putInt(statKey("attempts", domain), prefs.getInt(statKey("attempts", domain), 0) + 1)
-                .putString("last_domain", domain);
+                .putString("last_domain", domain)
+                .putInt("review_attempts_" + id, attempts + 1)
+                .putLong("review_last_" + id, System.currentTimeMillis());
         if (ok) {
             editor.putInt(statKey("correct", domain), prefs.getInt(statKey("correct", domain), 0) + 1);
-            if (miss > 0) editor.putInt("miss_" + id, miss - 1);
+            int nextStreak = streak + 1;
+            editor.putInt("review_successes_" + id, successes + 1)
+                    .putInt("review_failures_" + id, failures)
+                    .putInt("review_streak_" + id, nextStreak)
+                    .putInt("streak_" + id, nextStreak);
+            if (failures > 0 && nextStreak >= 3) {
+                mastery = "mastered";
+                nextReview = addDays(30);
+                editor.putInt("miss_" + id, 0);
+            } else if (failures > 0 && nextStreak >= 2) {
+                mastery = "review_7_days";
+                nextReview = addDays(7);
+                editor.putInt("miss_" + id, failures);
+            } else if (failures > 0) {
+                mastery = "review_3_days";
+                nextReview = addDays(3);
+                editor.putInt("miss_" + id, failures);
+            }
         } else {
-            editor.putInt("miss_" + id, miss + 1);
+            failures += 1;
+            mastery = "fragile";
+            nextReview = addDays(1);
+            editor.putInt("review_successes_" + id, successes)
+                    .putInt("review_failures_" + id, failures)
+                    .putInt("review_streak_" + id, 0)
+                    .putInt("miss_" + id, failures)
+                    .putInt("streak_" + id, 0);
         }
+        editor.putString("review_mastery_" + id, mastery)
+                .putLong("review_next_" + id, nextReview)
+                .putLong("due_" + id, nextReview);
         editor.apply();
     }
 
     private boolean isMistake(Question q) {
-        return getPreferences(MODE_PRIVATE).getInt("miss_" + questionId(q), 0) > 0;
+        String id = questionId(q);
+        SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+        return reviewFailures(id) > 0 && !"mastered".equals(prefs.getString("review_mastery_" + id, "fragile"));
+    }
+
+    private boolean isDueMistake(Question q) {
+        SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+        String id = questionId(q);
+        return reviewFailures(id) > 0
+                && !"mastered".equals(prefs.getString("review_mastery_" + id, "fragile"))
+                && prefs.getLong("review_next_" + id, prefs.getLong("due_" + id, 0)) <= System.currentTimeMillis();
+    }
+
+    private int reviewFailures(String id) {
+        SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+        return prefs.getInt("review_failures_" + id, prefs.getInt("miss_" + id, 0));
+    }
+
+    private long addDays(int days) {
+        return System.currentTimeMillis() + days * 86400000L;
     }
 
     private List<Question> mistakeQuestions() {
@@ -684,6 +862,40 @@ public class MainActivity extends Activity {
 
     private int mistakeCount() {
         return mistakeQuestions().size();
+    }
+
+    private List<Question> dueMistakeQuestions() {
+        List<Question> result = new ArrayList<>();
+        for (Question q : allQuestions) if (isDueMistake(q)) result.add(q);
+        return result;
+    }
+
+    private int dueMistakeCount() {
+        return dueMistakeQuestions().size();
+    }
+
+    private int masteredMistakeCount() {
+        SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+        int count = 0;
+        for (Question q : allQuestions) {
+            String id = questionId(q);
+            if (reviewFailures(id) > 0 && "mastered".equals(prefs.getString("review_mastery_" + id, ""))) count++;
+        }
+        return count;
+    }
+
+    private int fragileMistakeCount() {
+        SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+        int count = 0;
+        for (Question q : allQuestions) {
+            String id = questionId(q);
+            String mastery = prefs.getString("review_mastery_" + id, "");
+            if (reviewFailures(id) > 0 && !"mastered".equals(mastery)
+                    && ("".equals(mastery) || "new".equals(mastery) || "fragile".equals(mastery) || "review_tomorrow".equals(mastery))) {
+                count++;
+            }
+        }
+        return count;
     }
 
     private List<Question> questionsForDomain(String domain) {
@@ -716,13 +928,118 @@ public class MainActivity extends Activity {
         return weakest;
     }
 
+    private boolean hasDomainStats() {
+        SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+        for (String domain : DOMAIN_FILTERS) {
+            if (!"Tous les domaines".equals(domain) && prefs.getInt(statKey("attempts", domain), 0) > 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private String recommendedDomainLabel() {
+        return hasDomainStats() ? weakestDomain() : "Diagnostic initial";
+    }
+
+    private String lastScoreText() {
+        int last = getPreferences(MODE_PRIVATE).getInt("last_score", -1);
+        return last >= 0 ? last + "% au dernier QCM terminé" : "aucune série terminée";
+    }
+
     private String dailyRecommendation() {
-        if (mistakeCount() > 0) return "rejouer le carnet d'erreurs avant d'ajouter de nouvelles questions";
+        if (dueMistakeCount() > 0) return "rejouer les erreurs dues aujourd'hui avant d'ajouter de nouvelles questions";
+        if (mistakeCount() > 0) return "continuer le domaine faible en attendant la prochaine révision du carnet";
         String weak = weakestDomain();
         if (getPreferences(MODE_PRIVATE).getInt(statKey("attempts", weak), 0) == 0) {
             return "faire un diagnostic initial pour mesurer les domaines";
         }
         return "faire une serie courte sur " + weak;
+    }
+
+    private Advice dailyAdvice() {
+        if (adviceItems.isEmpty()) return null;
+        return adviceItems.get(Math.abs(new Date().getDate()) % adviceItems.size());
+    }
+
+    private String dailyOralQuestion() {
+        if (oralQuestionItems.isEmpty()) return "";
+        return oralQuestionItems.get(Math.abs(new Date().getDate()) % oralQuestionItems.size());
+    }
+
+    private void showDiagnosticResult(int percent) {
+        content.addView(card("Score global", score + "/" + quiz.size() + " - " + percent + "%"));
+        String weakest = weakestDiagnosticDomain();
+        content.addView(card("Score par domaine", diagnosticDomainText()));
+        content.addView(card("Domaine le plus faible",
+                weakest + "\n\n" + (percent >= 80
+                        ? "Diagnostic solide : gardez la séance du jour et ajoutez une simulation écrite."
+                        : "Priorité : travailler ce domaine aujourd'hui, puis refaire les erreurs du diagnostic demain.")));
+        addAction("Lancer une séance ciblée", () -> startTargetedDomain(weakest));
+        if (!currentMistakes.isEmpty()) {
+            content.addView(card("Pourquoi ai-je raté ?",
+                    "À renseigner après relecture des corrections : Je ne savais pas, J'ai mal lu, Erreur de calcul, J'ai répondu trop vite, J'ai hésité."));
+            addErrorReasonActions("last_diagnostic_error");
+            for (QuizAnswer answer : quizAnswers) {
+                if (!answer.ok) {
+                    String picked = answer.picked < 0 ? "Question non répondue" : answer.question.choices[answer.picked];
+                    content.addView(card(answer.question.prompt,
+                            "Votre réponse : " + picked + "\nRéponse attendue : " + answer.question.choices[answer.question.answer] +
+                                    "\n\nCorrection : " + correctionText(answer.question)));
+                }
+            }
+        }
+        addAction("Refaire un diagnostic", this::startInitialDiagnostic);
+        addAction("Nouvelle sélection", this::goQuizHome);
+    }
+
+    private String diagnosticDomainText() {
+        StringBuilder builder = new StringBuilder();
+        for (String domain : DOMAIN_FILTERS) {
+            if ("Tous les domaines".equals(domain)) continue;
+            int total = 0;
+            int correct = 0;
+            for (QuizAnswer answer : quizAnswers) {
+                if (domain.equals(domainOf(answer.question))) {
+                    total++;
+                    if (answer.ok) correct++;
+                }
+            }
+            if (total > 0) {
+                if (builder.length() > 0) builder.append("\n");
+                builder.append(domain).append(" : ").append(correct).append("/").append(total)
+                        .append(" (").append(Math.round((correct * 100f) / total)).append("%)");
+            }
+        }
+        return builder.length() == 0 ? "Aucun domaine calculé." : builder.toString();
+    }
+
+    private String weakestDiagnosticDomain() {
+        String weakest = weakestDomain();
+        int lowest = 101;
+        for (String domain : DOMAIN_FILTERS) {
+            if ("Tous les domaines".equals(domain)) continue;
+            int total = 0;
+            int correct = 0;
+            for (QuizAnswer answer : quizAnswers) {
+                if (domain.equals(domainOf(answer.question))) {
+                    total++;
+                    if (answer.ok) correct++;
+                }
+            }
+            if (total > 0) {
+                int rate = Math.round((correct * 100f) / total);
+                if (rate < lowest) {
+                    lowest = rate;
+                    weakest = domain;
+                }
+            }
+        }
+        return weakest;
+    }
+
+    private void startTargetedDomain(String domain) {
+        startQuizWithList(reliableFirst(questionsForDomain(domain)), "Séance ciblée " + domain, false);
     }
 
     private String sessionReviewText() {
@@ -870,8 +1187,12 @@ public class MainActivity extends Activity {
         content.addView(card("Dernier score", scoreText));
         content.addView(card("Pilotage QCM",
                 "Domaine fragile : " + weakestDomain() + ".\n" +
+                        "Révisions dues : " + dueMistakeCount() + ".\n" +
                         "Carnet d'erreurs : " + mistakeCount() + " question" + (mistakeCount() > 1 ? "s" : "") + ".\n" +
+                        "Questions fragiles : " + fragileMistakeCount() + ".\n" +
+                        "Erreurs maîtrisées : " + masteredMistakeCount() + ".\n" +
                         domainStatsText()));
+        if (dueMistakeCount() > 0) addAction("Réviser ce qui est dû aujourd'hui", this::startDueReview);
         if (mistakeCount() > 0) addAction("Revoir le carnet d'erreurs", this::startMistakeQuiz);
         int done = 0;
         for (int i = 0; i < PROGRESS_TASKS.length; i++) {
@@ -1003,6 +1324,37 @@ public class MainActivity extends Activity {
         content.addView(b, lp);
     }
 
+    private void addPrimaryAction(String label, Runnable action) {
+        Button b = button(label, false);
+        b.setTextSize(18);
+        b.setBackground(rounded(BRAND, BRAND, 1, 8));
+        b.setOnClickListener(v -> action.run());
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(-1, dp(62));
+        lp.setMargins(0, dp(4), 0, dp(12));
+        content.addView(b, lp);
+    }
+
+    private void addDisabledAction(String label) {
+        Button b = button(label, false);
+        b.setEnabled(false);
+        b.setAlpha(0.55f);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(-1, dp(52));
+        lp.setMargins(0, dp(4), 0, dp(12));
+        content.addView(b, lp);
+    }
+
+    private void addErrorReasonActions(String id) {
+        content.addView(card("Pourquoi ai-je raté ?", ""));
+        String[] reasons = {"Je ne savais pas", "J'ai mal lu", "Erreur de calcul", "J'ai répondu trop vite", "J'ai hésité"};
+        for (String reason : reasons) {
+            Button b = button(reason, true);
+            b.setOnClickListener(v -> getPreferences(MODE_PRIVATE).edit().putString("reason_" + id, reason).apply());
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(-1, dp(46));
+            lp.setMargins(0, 0, 0, dp(8));
+            content.addView(b, lp);
+        }
+    }
+
     private Button button(String label, boolean light) {
         Button b = new Button(this);
         b.setText(label);
@@ -1053,14 +1405,35 @@ public class MainActivity extends Activity {
         void onSelected(int index);
     }
 
+    static class QuizAnswer {
+        final Question question;
+        final int picked;
+        final boolean ok;
+        QuizAnswer(Question question, int picked, boolean ok) {
+            this.question = question;
+            this.picked = picked;
+            this.ok = ok;
+        }
+    }
+
     static class Question {
-        final String category, source, prompt, explanation;
-        final String[] choices, supportRows, correctionSteps;
+        final String id, category, source, prompt, explanation, domain, verificationLevel, sourceType, difficulty;
+        final String[] choices, supportRows, correctionSteps, tags;
         final int answer;
         Question(String category, String source, String prompt, String[] choices, int answer, String explanation) {
-            this(category, source, prompt, choices, answer, explanation, null, null);
+            this(null, category, source, prompt, choices, answer, explanation, null, null, null, null, null, null, null);
         }
         Question(String category, String source, String prompt, String[] choices, int answer, String explanation, String[] supportRows, String[] correctionSteps) {
+            this(null, category, source, prompt, choices, answer, explanation, supportRows, correctionSteps, null, null, null, null, null);
+        }
+        Question(String category, String source, String prompt, String[] choices, int answer, String explanation, String[] supportRows, String[] correctionSteps, String domain, String[] tags) {
+            this(null, category, source, prompt, choices, answer, explanation, supportRows, correctionSteps, domain, tags, null, null, null);
+        }
+        Question(String id, String category, String source, String prompt, String[] choices, int answer, String explanation, String[] supportRows, String[] correctionSteps, String domain, String[] tags) {
+            this(id, category, source, prompt, choices, answer, explanation, supportRows, correctionSteps, domain, tags, null, null, null);
+        }
+        Question(String id, String category, String source, String prompt, String[] choices, int answer, String explanation, String[] supportRows, String[] correctionSteps, String domain, String[] tags, String verificationLevel, String sourceType, String difficulty) {
+            this.id = id;
             this.category = category;
             this.source = source;
             this.prompt = prompt;
@@ -1069,6 +1442,11 @@ public class MainActivity extends Activity {
             this.explanation = explanation;
             this.supportRows = supportRows;
             this.correctionSteps = correctionSteps;
+            this.domain = domain;
+            this.tags = tags;
+            this.verificationLevel = verificationLevel == null ? "" : verificationLevel;
+            this.sourceType = sourceType == null ? "" : sourceType;
+            this.difficulty = difficulty == null ? "" : difficulty;
         }
     }
 

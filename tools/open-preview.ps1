@@ -8,7 +8,7 @@ if (-not (Test-Path $stateDir)) {
 }
 
 function Open-PreviewUrl([int]$port) {
-    $url = "http://127.0.0.1:$port/web-preview.html"
+    $url = "http://127.0.0.1:$port/index.html"
     Start-Process $url
     Write-Host "Preview ouverte : $url"
 }
