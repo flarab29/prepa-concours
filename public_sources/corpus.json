@@ -1,0 +1,4021 @@
+{
+  "schemaVersion": 2,
+  "generatedFrom": "web-preview.html",
+  "officialQcmTotal": 320,
+  "questions": [
+    {
+      "id": "qcm-2026-001",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Histoire",
+      "prompt": "Quel traité a mis fin à la Première Guerre mondiale ?",
+      "choices": [
+        "Le traité de Berlin",
+        "Le traité de Londres",
+        "Le traité de Paris",
+        "Le traité de Versailles"
+      ],
+      "answer": 3,
+      "explanation": "Le traité de Versailles, signé en 1919, met fin à l’état de guerre avec l’Allemagne.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-002",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Histoire",
+      "prompt": "Quelle réalisation est associée à Napoléon Ier ?",
+      "choices": [
+        "Il a aboli les droits féodaux et les privilèges de la noblesse",
+        "Il a créé le Code civil, imposant une loi uniforme partout et pour tous",
+        "Il a entériné la séparation de l’Église et de l’État",
+        "Il a rétabli la monarchie absolue"
+      ],
+      "answer": 1,
+      "explanation": "Le Code civil napoléonien unifie une grande partie du droit civil français.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-003",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Histoire",
+      "prompt": "Quel est le nom de la période marquée par la machine à vapeur, le charbon, le chemin de fer et les premiers bateaux à moteurs ?",
+      "choices": [
+        "La révolution agricole",
+        "La révolution des communications",
+        "La révolution industrielle",
+        "La révolution des transports"
+      ],
+      "answer": 2,
+      "explanation": "Ces innovations caractérisent la révolution industrielle.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-004",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Histoire",
+      "prompt": "Quel empire antique dominait un vaste espace autour de la Méditerranée depuis Rome ?",
+      "choices": [
+        "L’empire égyptien",
+        "L’empire grec",
+        "L’empire perse",
+        "L’empire romain"
+      ],
+      "answer": 3,
+      "explanation": "La carte du sujet zéro représente l’empire romain autour de la Méditerranée.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-005",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Histoire",
+      "prompt": "En quelle année George Washington est-il devenu le premier président des États-Unis ?",
+      "choices": [
+        "1689",
+        "1789",
+        "1889",
+        "1989"
+      ],
+      "answer": 1,
+      "explanation": "George Washington devient le premier président des États-Unis en 1789.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-006",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Histoire",
+      "prompt": "Qui était le chef de file de la Résistance française pendant la Seconde Guerre mondiale ?",
+      "choices": [
+        "Léon Blum",
+        "Charles de Gaulle",
+        "Pierre Laval",
+        "Philippe Pétain"
+      ],
+      "answer": 1,
+      "explanation": "Charles de Gaulle incarne la France libre et la Résistance extérieure.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-007",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Géographie",
+      "prompt": "Quel fleuve traverse l’Égypte du sud vers le nord et se jette dans la Méditerranée ?",
+      "choices": [
+        "Le Congo",
+        "Le Niger",
+        "Le Nil",
+        "Le Zambèze"
+      ],
+      "answer": 2,
+      "explanation": "Le Nil traverse l’Égypte et se jette dans la mer Méditerranée.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-008",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Géographie",
+      "prompt": "Quel est le nom de l’étendue d’eau qui borde la France à l’ouest ?",
+      "choices": [
+        "La Manche",
+        "La mer Méditerranée",
+        "La mer du Nord",
+        "L’océan Atlantique"
+      ],
+      "answer": 3,
+      "explanation": "La façade ouest de la France donne sur l’océan Atlantique.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-009",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Géographie",
+      "prompt": "En 2025, quel pays a le produit intérieur brut le plus élevé du monde ?",
+      "choices": [
+        "L’Allemagne",
+        "Les États-Unis",
+        "Le Japon",
+        "La Russie"
+      ],
+      "answer": 1,
+      "explanation": "Le corrigé du sujet zéro retient les États-Unis.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-010",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Géographie",
+      "prompt": "Quelle est l’estimation de la population mondiale pour 2025 ?",
+      "choices": [
+        "Entre 2 et 2,5 milliards d’habitants",
+        "Entre 4 et 4,5 milliards d’habitants",
+        "Entre 6 et 6,5 milliards d’habitants",
+        "Entre 8 et 8,5 milliards d’habitants"
+      ],
+      "answer": 3,
+      "explanation": "Le corrigé retient une population mondiale située entre 8 et 8,5 milliards d’habitants.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-011",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Géographie",
+      "prompt": "Quel pays a quitté l’Union européenne en 2020 ?",
+      "choices": [
+        "L’Allemagne",
+        "La France",
+        "L’Italie",
+        "Le Royaume-Uni"
+      ],
+      "answer": 3,
+      "explanation": "Le Brexit correspond à la sortie du Royaume-Uni de l’Union européenne.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-012",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Géographie",
+      "prompt": "Quel facteur conduit à l’urbanisation ?",
+      "choices": [
+        "L’exode rural",
+        "L’exode urbain",
+        "L’industrialisation",
+        "Le tourisme"
+      ],
+      "answer": 0,
+      "explanation": "L’exode rural alimente la croissance des villes.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-013",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Enseignement moral et civique",
+      "prompt": "Qu’implique la laïcité en France ?",
+      "choices": [
+        "Elle implique que les citoyens doivent pratiquer une religion spécifique",
+        "Elle implique la séparation de l’État et des organisations religieuses",
+        "Elle implique que l’État impose une religion officielle",
+        "La loi de 1905 sur la séparation de l’église et de l’État n’est plus en vigueur"
+      ],
+      "answer": 1,
+      "explanation": "La laïcité repose notamment sur la séparation de l’État et des organisations religieuses.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-014",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Enseignement moral et civique",
+      "prompt": "De quel texte est tiré l’article premier indiquant que la France est une République indivisible, laïque, démocratique et sociale ?",
+      "choices": [
+        "La Constitution du 27 octobre 1946",
+        "La Constitution du 4 octobre 1958",
+        "La Déclaration des droits de l’homme et du citoyen",
+        "La Charte de l’environnement"
+      ],
+      "answer": 1,
+      "explanation": "Cette formulation figure à l’article premier de la Constitution du 4 octobre 1958.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-015",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Enseignement moral et civique",
+      "prompt": "Quel est le rôle du Parlement français ?",
+      "choices": [
+        "Il dirige l’administration publique",
+        "Il nomme le Premier ministre",
+        "Il représente la France à l’étranger",
+        "Il vote les lois"
+      ],
+      "answer": 3,
+      "explanation": "Le Parlement vote la loi, contrôle le Gouvernement et évalue les politiques publiques.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-016",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Enseignement moral et civique",
+      "prompt": "Qu’est-ce qu’une démocratie ?",
+      "choices": [
+        "Un système politique dans lequel les décisions sont prises par un conseil d’experts",
+        "Un système politique dans lequel le peuple est souverain",
+        "Un système politique où l’obéissance est imposée par la répression",
+        "Un système politique où le pouvoir est détenu par un roi"
+      ],
+      "answer": 1,
+      "explanation": "Dans une démocratie, la souveraineté appartient au peuple.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-017",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Enseignement moral et civique",
+      "prompt": "Dans l’article 4 de la Déclaration des droits de l’homme et du citoyen, quel mot complète : « la ... consiste à pouvoir faire tout ce qui ne nuit pas à autrui » ?",
+      "choices": [
+        "Conscience",
+        "Liberté",
+        "Fraternité",
+        "Politique"
+      ],
+      "answer": 1,
+      "explanation": "L’article 4 définit ainsi la liberté.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-018",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Enseignement moral et civique",
+      "prompt": "Qu’est-ce que la JDC, Journée défense et citoyenneté ?",
+      "choices": [
+        "Une activité de loisirs pour les jeunes",
+        "Un examen médical obligatoire",
+        "Un jour de congé pour les élèves",
+        "Une journée de formation sur la défense nationale"
+      ],
+      "answer": 3,
+      "explanation": "La JDC sensibilise les jeunes aux enjeux de défense et de citoyenneté.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-019",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Numérique",
+      "prompt": "Qu’est-ce qu’un réseau social ?",
+      "choices": [
+        "Un site web ou une application pour acheter des produits en ligne",
+        "Un site web ou une application pour communiquer avec des amis et des connaissances",
+        "Un site web ou une application pour jouer en ligne",
+        "Un site web ou une application pour partager des photos"
+      ],
+      "answer": 1,
+      "explanation": "Un réseau social sert d’abord à mettre en relation et communiquer avec d’autres personnes.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-020",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Numérique",
+      "prompt": "Laurent veut connecter son smartphone à internet. Quel moyen peut-il utiliser ?",
+      "choices": [
+        "La géolocalisation",
+        "La 3G/4G/5G",
+        "Le mode avion",
+        "L’accessibilité"
+      ],
+      "answer": 1,
+      "explanation": "Les réseaux mobiles 3G, 4G et 5G permettent l’accès à internet.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-021",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Numérique",
+      "prompt": "Qu’est-ce qu’un virus informatique ?",
+      "choices": [
+        "Un programme qui endommage l’ordinateur ou les données",
+        "Un programme qui protège l’ordinateur contre les virus",
+        "Un site web pour télécharger des logiciels",
+        "Un type de logiciel pour jouer en ligne"
+      ],
+      "answer": 0,
+      "explanation": "Un virus informatique est un programme malveillant.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-022",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Numérique",
+      "prompt": "Qu’est-ce qu’un cookie ?",
+      "choices": [
+        "Un logiciel pour protéger l’ordinateur",
+        "Un petit fichier qui stocke des informations sur l’utilisateur",
+        "Un site web pour acheter des produits en ligne",
+        "Un type de virus informatique"
+      ],
+      "answer": 1,
+      "explanation": "Un cookie stocke des informations liées à la navigation ou aux préférences de l’utilisateur.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-023",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Numérique",
+      "prompt": "Qu’est-ce qu’un moteur de recherche ?",
+      "choices": [
+        "Un logiciel pour protéger l’ordinateur",
+        "Un programme pour trouver des informations sur Internet",
+        "Un site web pour acheter des produits en ligne",
+        "Un type de virus informatique"
+      ],
+      "answer": 1,
+      "explanation": "Un moteur de recherche sert à retrouver des informations sur Internet.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-024",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Numérique",
+      "prompt": "Le wifi et le Bluetooth fonctionnent par :",
+      "choices": [
+        "des câbles",
+        "l’électricité statique",
+        "la fibre optique",
+        "des ondes"
+      ],
+      "answer": 3,
+      "explanation": "Le wifi et le Bluetooth utilisent des ondes radio.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-025",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Actualités",
+      "prompt": "Quel pays a accueilli la 30e Conférence des Parties, COP 30, en 2025 ?",
+      "choices": [
+        "Le Brésil",
+        "La Chine",
+        "Les États-Unis",
+        "La France"
+      ],
+      "answer": 0,
+      "explanation": "Le corrigé du sujet zéro retient le Brésil.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-026",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Actualités",
+      "prompt": "Quel pays a augmenté, au cours de l’année 2025, les droits de douane vis-à-vis de nombreux pays du monde ?",
+      "choices": [
+        "Les États-Unis",
+        "La France",
+        "La Russie",
+        "L’Ukraine"
+      ],
+      "answer": 0,
+      "explanation": "Le corrigé du sujet zéro retient les États-Unis.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-027",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Actualités",
+      "prompt": "Au cours de 2025, quel pays a élu une femme comme Premier ministre pour la première fois ?",
+      "choices": [
+        "L’Allemagne",
+        "La France",
+        "L’Italie",
+        "Le Japon"
+      ],
+      "answer": 3,
+      "explanation": "Le corrigé du sujet zéro retient le Japon.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-028",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Actualités",
+      "prompt": "Quels sont les deux Premiers ministres qui se sont succédé en France en 2025 ?",
+      "choices": [
+        "François Bayrou et Sébastien Lecornu",
+        "Jean Castex et Élisabeth Borne",
+        "Édouard Philippe et Bernard Cazeneuve",
+        "Manuel Valls et Jean-Marc Ayrault"
+      ],
+      "answer": 0,
+      "explanation": "Le corrigé du sujet zéro retient François Bayrou et Sébastien Lecornu.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-029",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Actualités",
+      "prompt": "Quelle maladie a affecté les élevages bovins en 2025 ?",
+      "choices": [
+        "La dermatose nodulaire contagieuse",
+        "La fièvre catarrhale ovine",
+        "La fièvre porcine africaine",
+        "La grippe aviaire"
+      ],
+      "answer": 0,
+      "explanation": "Le corrigé du sujet zéro retient la dermatose nodulaire contagieuse.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-030",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Actualités",
+      "prompt": "Parmi les propositions suivantes, laquelle figure dans le Plan de sobriété énergétique ?",
+      "choices": [
+        "Acheter une voiture diesel pour réduire son impact environnemental",
+        "Inciter au télétravail pour réduire la consommation de carburant",
+        "Privilégier l’avion pour ses déplacements",
+        "Utiliser des ampoules led chez soi"
+      ],
+      "answer": 1,
+      "explanation": "Le corrigé retient l’incitation au télétravail pour réduire la consommation de carburant.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-031",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Actualités",
+      "prompt": "Quel a été l’impact de la guerre en Iran sur les prix de l’énergie en mars 2026 ?",
+      "choices": [
+        "Il n’y a pas eu d’impact",
+        "Les prix ont augmenté",
+        "Les prix ont chuté",
+        "Un prix plafond a été mis en place"
+      ],
+      "answer": 1,
+      "explanation": "Le corrigé du sujet zéro indique une augmentation des prix.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-032",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Missions MEF",
+      "prompt": "Qu’est-ce que la TVA ?",
+      "choices": [
+        "La Taxe sur les Biens et Services",
+        "La Taxe sur les Revenus",
+        "La Taxe sur la Valeur Ajoutée",
+        "La Taxe sur les Ventes et Achats"
+      ],
+      "answer": 2,
+      "explanation": "TVA signifie taxe sur la valeur ajoutée.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-033",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Missions MEF",
+      "prompt": "Qu’est-ce qu’un contrôle fiscal ?",
+      "choices": [
+        "Une aide financière accordée par l’État aux entreprises en difficulté",
+        "Une opération de recouvrement des impôts impayés",
+        "Une procédure permettant aux contribuables de contester leurs impôts",
+        "Une vérification des comptes d’une entreprise ou d’un particulier par l’administration fiscale pour s’assurer de la conformité de leurs déclarations de revenus et de leurs paiements d’impôts"
+      ],
+      "answer": 3,
+      "explanation": "Le contrôle fiscal vérifie la conformité des déclarations et paiements d’impôts.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-034",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Missions MEF",
+      "prompt": "Qu’est-ce que le recouvrement des impôts ?",
+      "choices": [
+        "La collecte des impôts",
+        "Le contrôle des entreprises",
+        "La gestion de la dette publique",
+        "La gestion des finances publiques"
+      ],
+      "answer": 0,
+      "explanation": "Le recouvrement correspond à la collecte effective des impôts.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-035",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Missions MEF",
+      "prompt": "Quel est le rôle principal de la Direction générale des douanes et droits indirects ?",
+      "choices": [
+        "Collecter les impôts",
+        "Contrôler les frontières et les marchandises",
+        "Gérer la dette publique",
+        "Gérer les finances publiques"
+      ],
+      "answer": 1,
+      "explanation": "La DGDDI contrôle les flux de marchandises et contribue à la protection du territoire.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-036",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Missions MEF",
+      "prompt": "Qu’est-ce qu’un tarif douanier ?",
+      "choices": [
+        "Un droit de douane sur les marchandises importées",
+        "Un impôt sur les revenus",
+        "Un impôt sur les sociétés",
+        "Un impôt sur la valeur ajoutée"
+      ],
+      "answer": 0,
+      "explanation": "Un tarif douanier désigne un droit appliqué aux marchandises importées.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-037",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Missions MEF",
+      "prompt": "Quelle réforme impacte les entreprises à partir du 1er septembre 2026 ?",
+      "choices": [
+        "Le changement de taux de l’impôt sur les sociétés",
+        "La facturation électronique",
+        "La suppression des droits de douanes",
+        "La réforme des normes comptables"
+      ],
+      "answer": 1,
+      "explanation": "Le sujet zéro retient la facturation électronique.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-038",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Mathématiques",
+      "prompt": "Un article coûte 80 euros. Il est soldé à 20 %. Quel est le prix soldé ?",
+      "choices": [
+        "60 euros",
+        "64 euros",
+        "70 euros",
+        "76 euros"
+      ],
+      "answer": 1,
+      "explanation": "Une remise de 20 % sur 80 euros vaut 16 euros ; le prix soldé est donc 64 euros.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-039",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Mathématiques",
+      "prompt": "Un élève a obtenu les notes suivantes : 12, 15, 8, 10, 14. Quelle est la moyenne de ces notes ?",
+      "choices": [
+        "10,80",
+        "11,80",
+        "12,80",
+        "13,80"
+      ],
+      "answer": 1,
+      "explanation": "La somme vaut 59 ; 59 / 5 = 11,80.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-040",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Mathématiques",
+      "prompt": "Un article coûte 120 euros. Il est augmenté de 15 %. Quel est le nouveau prix ?",
+      "choices": [
+        "130 euros",
+        "135 euros",
+        "138 euros",
+        "140 euros"
+      ],
+      "answer": 2,
+      "explanation": "15 % de 120 vaut 18 ; le nouveau prix est 138 euros.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-041",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Mathématiques",
+      "prompt": "D’après le graphique du sujet zéro, combien de visiteurs sont allés au zoo durant le week-end ?",
+      "choices": [
+        "800",
+        "900",
+        "1700",
+        "3800"
+      ],
+      "answer": 2,
+      "explanation": "Le corrigé additionne samedi et dimanche : 800 + 900 = 1700.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-042",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Mathématiques",
+      "prompt": "Quatre influenceurs participent à une course. Leurs temps sont : Rina 2 h 13, Sahirtan 108 minutes, Layana 7 140 secondes, Issa 121 minutes. Qui est arrivé en premier ?",
+      "choices": [
+        "Issa",
+        "Layana",
+        "Rina",
+        "Sahirtan"
+      ],
+      "answer": 3,
+      "explanation": "Sahirtan met 108 minutes, soit le temps le plus court.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-043",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Mathématiques",
+      "prompt": "Un capital de 1 000 euros est placé à un taux d’intérêt annuel de 5 %. Quel est le montant des intérêts après 2 ans ?",
+      "choices": [
+        "100 €",
+        "102,50 €",
+        "105 €",
+        "110,25 €"
+      ],
+      "answer": 1,
+      "explanation": "Avec intérêts composés : 1 000 × 1,05² = 1 102,50 ; les intérêts sont donc 102,50 euros.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-044",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Raisonnement",
+      "prompt": "Dans un élevage, 800 poules pondent en moyenne 800 œufs en 8 jours. Combien pondent 400 poules en 4 jours ?",
+      "choices": [
+        "200",
+        "300",
+        "400",
+        "800"
+      ],
+      "answer": 0,
+      "explanation": "La production est proportionnelle au nombre de poules et au temps : moitié des poules et moitié du temps donnent 200 œufs.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-045",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Raisonnement",
+      "prompt": "Sachant que le guépard parcourt 17 km en un quart d’heure, la gazelle 10 km en 10 minutes et le lion 25 km en une demi-heure, qui est le plus rapide ?",
+      "choices": [
+        "La gazelle",
+        "Le guépard",
+        "Le lion",
+        "Ils courent à la même vitesse"
+      ],
+      "answer": 1,
+      "explanation": "Le guépard va à 68 km/h, la gazelle à 60 km/h et le lion à 50 km/h.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-046",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Raisonnement",
+      "prompt": "Adam et Clara ont chacun déjà plusieurs enfants de mariages précédents. Il y a 8 enfants dans leur maison. Adam est le père de 6 et Clara la mère de 5. Combien d’enfants ont-ils eu ensemble ?",
+      "choices": [
+        "3",
+        "5",
+        "6",
+        "8"
+      ],
+      "answer": 0,
+      "explanation": "6 + 5 compte deux fois les enfants communs. Comme il y a 8 enfants, ils en ont 3 ensemble.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-047",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Raisonnement",
+      "prompt": "Martin est dans une queue. Le nombre total de personnes est un multiple de 3, il y a autant de personnes devant lui que derrière lui, et deux amis derrière lui sont aux 19e et 28e places. Quelle est sa position ?",
+      "choices": [
+        "14",
+        "15",
+        "16",
+        "17"
+      ],
+      "answer": 3,
+      "explanation": "La position centrale doit être avant 19, avec un total impair multiple de 3 et au moins 28 personnes : 17e place pour 33 personnes.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-048",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Raisonnement",
+      "prompt": "Un rang à quatre sièges numérotés de 1 à 4 est occupé par Lina, Idriss, Nina et Sovann. Lina n’occupe pas le siège 1 ; Idriss est directement à droite de Lina ; Sovann n’est pas à une extrémité. À côté de qui Nina est-elle assise ?",
+      "choices": [
+        "Lina et Sovann",
+        "Lina seulement",
+        "Idriss et Lina",
+        "Sovann seulement"
+      ],
+      "answer": 3,
+      "explanation": "La disposition compatible place Nina à une extrémité à côté de Sovann seulement.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-049",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Raisonnement",
+      "prompt": "Deux montres ont été mises à l’heure hier à 21 h. Celle du grand-père perd 5 minutes par heure et indique 8 h ce matin ; celle de la grand-mère avance de 5 minutes par heure. Quelle heure indique celle de la grand-mère au même moment ?",
+      "choices": [
+        "9 h",
+        "9 h 30",
+        "10 h",
+        "10 h 30"
+      ],
+      "answer": 2,
+      "explanation": "La montre lente a gagné 11 h affichées en 12 h réelles ; la montre rapide a donc gagné 13 h et indique 10 h.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2026-050",
+      "year": 2026,
+      "source": "QCM 2026",
+      "category": "Raisonnement",
+      "prompt": "Alya, Bianca et Ivy ont acheté chacune 10 articles, crayons et livres. Alya a acheté deux fois plus de crayons qu’Ivy a acheté de livres. Bianca a acheté deux fois plus de crayons qu’Alya a acheté de livres. À elles trois, elles ont acheté un nombre pair de livres. Combien de crayons Bianca a-t-elle achetés ?",
+      "choices": [
+        "2",
+        "4",
+        "6",
+        "7"
+      ],
+      "answer": 1,
+      "explanation": "Le corrigé du sujet zéro retient 4 crayons pour Bianca.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-051",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Orthographe",
+      "prompt": "Complétez : « Ta sœur ne changera pas, elle est [...] a toujours été. »",
+      "choices": [
+        "telle quel",
+        "telle qu’elle",
+        "tel qu’elle",
+        "tel quel"
+      ],
+      "answer": 1,
+      "explanation": "Forme correcte : « telle qu’elle a toujours été ».",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-052",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Vocabulaire",
+      "prompt": "Que signifie « dispendieux » ?",
+      "choices": [
+        "Radinerie",
+        "Dieu de l’argent",
+        "Qui nécessite de grands frais",
+        "Petits moyens"
+      ],
+      "answer": 2,
+      "explanation": "Dispendieux signifie coûteux.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-053",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Orthographe",
+      "prompt": "Quelle est la bonne orthographe ?",
+      "choices": [
+        "Ils on fais de belles plus-value",
+        "Ils ont fais de belle plus-values",
+        "Ils ont fait de belles plus-value",
+        "Ils ont fait de belles plus-values"
+      ],
+      "answer": 3,
+      "explanation": "« Ont fait » est correct et « plus-values » prend le pluriel.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-054",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Orthographe",
+      "prompt": "Un corps qui continue d’émettre de la lumière après exposition est :",
+      "choices": [
+        "fosphoressent",
+        "phosforescent",
+        "phosphorescent",
+        "phosphoressent"
+      ],
+      "answer": 2,
+      "explanation": "L’orthographe correcte est « phosphorescent ».",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-055",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Conjugaison",
+      "prompt": "Futur simple de « acquérir » à la première personne du singulier.",
+      "choices": [
+        "J’acquerais",
+        "J’acquerrai",
+        "J’acquerrais",
+        "J’aquerai"
+      ],
+      "answer": 1,
+      "explanation": "Le futur simple est « j’acquerrai ».",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-056",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Nombres",
+      "prompt": "Comment écrit-on 6 280 400 en toutes lettres ?",
+      "choices": [
+        "Six million deux cent quatre vingt mille quatre cent",
+        "Six millions deux cent quatre-vingt mille quatre cents",
+        "Six millions deux cent quatre vingts mille quatre cents",
+        "Six millions deux cent quatre vingts milles quatre cents"
+      ],
+      "answer": 1,
+      "explanation": "Million prend un s, vingt est suivi de mille donc reste invariable, et cents termine le nombre.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-057",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Vocabulaire",
+      "prompt": "Qu’est-ce que la glottophobie ?",
+      "choices": [
+        "Une discrimination liée au hoquet",
+        "Une discrimination liée aux mimiques",
+        "Une discrimination liée aux grains de beauté",
+        "Une discrimination liée aux traits linguistiques, notamment les accents"
+      ],
+      "answer": 3,
+      "explanation": "La glottophobie vise les discriminations liées à la langue ou à l’accent.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-058",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Conjugaison",
+      "prompt": "Imparfait, deuxième personne du pluriel : crier, rougir et voir.",
+      "choices": [
+        "Criez, rougirez, verriez",
+        "Criez, rougissez, voyez",
+        "Criiez, rougissiez, voyiez",
+        "Crions, rougissions, voyons"
+      ],
+      "answer": 2,
+      "explanation": "À l’imparfait : vous criiez, vous rougissiez, vous voyiez.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-059",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Vocabulaire",
+      "prompt": "Que signifie « écogeste » ?",
+      "choices": [
+        "Des gestes commerciaux",
+        "Des gestes de la main",
+        "Des gestes pour diminuer la pollution et améliorer son environnement",
+        "Des gestes qui sauvent"
+      ],
+      "answer": 2,
+      "explanation": "Un écogeste réduit l’impact environnemental.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-060",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Grammaire",
+      "prompt": "Quelle proposition contient exclusivement des adverbes de temps ?",
+      "choices": [
+        "Ici / partout / alors",
+        "Jamais / tard / autrefois",
+        "Jamais / trop / soudain",
+        "Plutôt / mieux / souvent"
+      ],
+      "answer": 1,
+      "explanation": "Jamais, tard et autrefois indiquent le temps.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-061",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Orthographe",
+      "prompt": "La police a convoqué un témoin ...",
+      "choices": [
+        "occulaire",
+        "oculaire",
+        "oculère",
+        "ocullaire"
+      ],
+      "answer": 1,
+      "explanation": "On écrit « témoin oculaire ».",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-062",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Genre",
+      "prompt": "Parmi les termes suivants, lequel est du genre féminin ?",
+      "choices": [
+        "Emblème",
+        "En-tête",
+        "Entracte",
+        "Équivoque"
+      ],
+      "answer": 3,
+      "explanation": "On dit « une équivoque ».",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-063",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Accords",
+      "prompt": "Quelle proposition est correctement orthographiée ?",
+      "choices": [
+        "Des cheveux châtain clair",
+        "Des cheveux châtain clairs",
+        "Des cheveux châtains clair",
+        "Des cheveux châtains clairs"
+      ],
+      "answer": 0,
+      "explanation": "Les adjectifs de couleur composés restent invariables.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-064",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Accords",
+      "prompt": "« Je suis allé(e) voir les toiles de Monet, je ne les ... jamais ... »",
+      "choices": [
+        "avaient - vu",
+        "avaient - vues",
+        "avais - vu",
+        "avais - vues"
+      ],
+      "answer": 3,
+      "explanation": "Avec avoir, le participe s’accorde avec le COD placé avant : « les toiles », donc « vues ».",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-065",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Vocabulaire",
+      "prompt": "Quel groupe de mots forme un antonyme ?",
+      "choices": [
+        "Bienfaisant / charitable",
+        "Chaud / bouillant",
+        "Rare / fréquent",
+        "Triste / capricieux"
+      ],
+      "answer": 2,
+      "explanation": "Rare et fréquent sont de sens opposés.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-066",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Orthographe",
+      "prompt": "Quelle proposition est correctement orthographiée ?",
+      "choices": [
+        "Des demies-journée",
+        "Des demies-journées",
+        "Des demi-journées",
+        "Des demis-journées"
+      ],
+      "answer": 2,
+      "explanation": "Dans « demi-journées », demi reste invariable.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-067",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Institutions",
+      "prompt": "Qui assure l’intérim en cas de démission du président de la République ?",
+      "choices": [
+        "Ministre de l’Intérieur",
+        "Ministre des Armées",
+        "Président de l’Assemblée nationale",
+        "Président du Sénat"
+      ],
+      "answer": 3,
+      "explanation": "L’intérim revient au président du Sénat.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-068",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Culture",
+      "prompt": "À qui doit-on l’Homme de Vitruve ?",
+      "choices": [
+        "Constantin Brancusi",
+        "Alberto Giacometti",
+        "Edvard Munch",
+        "Léonard de Vinci"
+      ],
+      "answer": 3,
+      "explanation": "L’Homme de Vitruve est un dessin de Léonard de Vinci.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-069",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Géographie",
+      "prompt": "Combien de pays limitrophes ont une frontière terrestre commune avec la France métropolitaine ?",
+      "choices": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "answer": 3,
+      "explanation": "Belgique, Luxembourg, Allemagne, Suisse, Italie, Monaco, Espagne et Andorre.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-070",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Sport",
+      "prompt": "Qui a donné une dimension internationale aux Jeux olympiques modernes ?",
+      "choices": [
+        "Pierre de Coubertin",
+        "Roland Garros",
+        "Olympe de Gouges",
+        "Émile Loubet"
+      ],
+      "answer": 0,
+      "explanation": "Pierre de Coubertin a relancé les Jeux olympiques modernes.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-071",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Culture",
+      "prompt": "Quel est l’auteur du manga « One Piece » ?",
+      "choices": [
+        "Eiichirō Oda",
+        "Hidekatsu Oda",
+        "Nobunaga Oda",
+        "Ieyasu Tokugawa"
+      ],
+      "answer": 0,
+      "explanation": "One Piece est l’œuvre d’Eiichirō Oda.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-072",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Actualité",
+      "prompt": "Le Digital Services Act est :",
+      "choices": [
+        "Un programme éducatif",
+        "Un protocole bancaire",
+        "Un règlement européen sur les services numériques",
+        "Une obligation de tout digitaliser"
+      ],
+      "answer": 2,
+      "explanation": "Le DSA encadre les plateformes et services numériques.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-073",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Cinéma",
+      "prompt": "Pour quel film Justine Triet a-t-elle remporté la Palme d’or 2023 ?",
+      "choices": [
+        "Anatomie d’une chute",
+        "Killers of the Flower Moon",
+        "La Syndicaliste",
+        "Les Algues vertes"
+      ],
+      "answer": 0,
+      "explanation": "La Palme d’or 2023 a récompensé « Anatomie d’une chute ».",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-074",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Espace",
+      "prompt": "Quelle astronaute française a été sélectionnée pour participer à une mission spatiale en 2026 ?",
+      "choices": [
+        "Sophie Adenot",
+        "Claudie Haigneré",
+        "Anne-Laure Michel",
+        "Béatrice Vialle"
+      ],
+      "answer": 0,
+      "explanation": "Sophie Adenot a été retenue dans la promotion d’astronautes de l’ESA.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-075",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Histoire",
+      "prompt": "Quelle personnalité est associée à l’abolition de la peine de mort ?",
+      "choices": [
+        "Robert Badinter",
+        "Jacques Chirac",
+        "Valéry Giscard d’Estaing",
+        "Simone Veil"
+      ],
+      "answer": 0,
+      "explanation": "Robert Badinter a porté l’abolition de la peine de mort en France.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-076",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Littérature",
+      "prompt": "Quel est l’auteur de « Dune » ?",
+      "choices": [
+        "Max Gallo",
+        "Frank Herbert",
+        "David Lynch",
+        "Bernard Werber"
+      ],
+      "answer": 1,
+      "explanation": "Le roman « Dune » est de Frank Herbert.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-077",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Actualité",
+      "prompt": "Où a eu lieu le couronnement du roi Charles III ?",
+      "choices": [
+        "Abbaye de Buckingham",
+        "Abbaye de Canterbury",
+        "Abbaye de Westminster",
+        "Abbaye de Windsor"
+      ],
+      "answer": 2,
+      "explanation": "Le couronnement a eu lieu à l’abbaye de Westminster.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-078",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Art",
+      "prompt": "Quel artiste a créé « Love is in the Bin », œuvre autodétruite en vente aux enchères ?",
+      "choices": [
+        "Banksy",
+        "Keith Haring",
+        "Invader",
+        "JR"
+      ],
+      "answer": 0,
+      "explanation": "Il s’agit d’une œuvre de Banksy.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-079",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Actualité",
+      "prompt": "Quel pays est devenu la 5e nation à réussir un alunissage le 20 janvier 2024 ?",
+      "choices": [
+        "Belgique",
+        "États-Unis",
+        "France",
+        "Japon"
+      ],
+      "answer": 3,
+      "explanation": "Le Japon a réussi cet alunissage avec la mission SLIM.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-080",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Union européenne",
+      "prompt": "Quel État membre assure la présidence du Conseil de l’Union européenne du 1er juillet au 31 décembre 2024 ?",
+      "choices": [
+        "Autriche",
+        "Belgique",
+        "France",
+        "Hongrie"
+      ],
+      "answer": 3,
+      "explanation": "La Hongrie a assuré cette présidence au second semestre 2024.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-081",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Sport",
+      "prompt": "Quelle est la devise des athlètes des Jeux olympiques ?",
+      "choices": [
+        "Il faut que le corps ait de la rigueur pour obéir à l’âme",
+        "La victoire vient en chantant",
+        "L’important est de participer",
+        "Plus vite, plus haut, plus fort - ensemble"
+      ],
+      "answer": 3,
+      "explanation": "La devise olympique est « Plus vite, plus haut, plus fort - ensemble ».",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-082",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Calcul",
+      "prompt": "On donne f(x) = 9x² + 6x - 8. Calculez f(-4).",
+      "choices": [
+        "82",
+        "98",
+        "102",
+        "112"
+      ],
+      "answer": 3,
+      "explanation": "9 × 16 - 24 - 8 = 112.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-083",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Statistiques",
+      "prompt": "Notes : 8, 9, 19, 11, 17, 6, 18, 18, 8, 4, 14, 12, 9, 10, 11. Quelle est la médiane ?",
+      "choices": [
+        "10",
+        "11",
+        "11,50",
+        "11,60"
+      ],
+      "answer": 1,
+      "explanation": "Après classement, la 8e valeur de cette série de 15 notes est 11.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-084",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Géométrie",
+      "prompt": "Aire d’un losange dont les diagonales mesurent 6 cm et 3,4 cm.",
+      "choices": [
+        "10,2 cm²",
+        "18,8 cm²",
+        "20,4 cm²",
+        "37,6 cm²"
+      ],
+      "answer": 0,
+      "explanation": "Aire du losange : diagonale × diagonale / 2 = 6 × 3,4 / 2 = 10,2.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-085",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Fractions",
+      "prompt": "Dans un cocktail de 15 litres, les jus occupent 4/10 + 2/10 + 1/6 + 1/6. Quelle quantité de citron complète la recette ?",
+      "choices": [
+        "90 cl",
+        "100 cl",
+        "110 cl",
+        "120 cl"
+      ],
+      "answer": 1,
+      "explanation": "La part restante vaut 1/15 du total, donc 1 litre, soit 100 cl.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-086",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Calcul littéral",
+      "prompt": "(4x + 1)² − (4x − 1)² est égal à :",
+      "choices": [
+        "8x",
+        "8x²",
+        "16x",
+        "16x²"
+      ],
+      "answer": 2,
+      "explanation": "Identité remarquable : (a²-b²) = (a-b)(a+b), donc 2 × 8x = 16x.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-087",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Calcul",
+      "prompt": "Une quantité diminue de 5 %. Par quelle valeur est-elle multipliée ?",
+      "choices": [
+        "0,005",
+        "0,95",
+        "1,05",
+        "5/100"
+      ],
+      "answer": 1,
+      "explanation": "Après baisse de 5 %, il reste 95 %, soit 0,95.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-088",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Calcul",
+      "prompt": "Quel est le plus grand nombre ?",
+      "choices": [
+        "3√3",
+        "√27",
+        "(√3)³",
+        "9"
+      ],
+      "answer": 3,
+      "explanation": "Les trois premières expressions valent environ 5,2 ; 9 est plus grand.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-089",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Maths",
+      "prompt": "Décomposition en facteurs premiers de 150.",
+      "choices": [
+        "2 × 3 × 5 × 5",
+        "2 × 5 × 15",
+        "3 × 5 × 10",
+        "2 × 75"
+      ],
+      "answer": 0,
+      "explanation": "150 = 2 × 3 × 5 × 5.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-090",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Raisonnement",
+      "prompt": "Un jardin mesure 60 m. Des arbres sont espacés de 3 m le long du jardin, avec un arbre à chaque extrémité. Combien faut-il planter d’arbres ?",
+      "choices": [
+        "20",
+        "21",
+        "30",
+        "31"
+      ],
+      "answer": 1,
+      "explanation": "60 / 3 donne 20 intervalles, donc 21 arbres avec les deux extrémités.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-091",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Calcul littéral",
+      "prompt": "Factorisez A = (x+4)² + (x−4)(x+4) + 2x + 8.",
+      "choices": [
+        "2(x+4)(x−1)",
+        "2(x+4)²",
+        "(2x+4)(x−4)",
+        "2(x+4)(x+1)"
+      ],
+      "answer": 3,
+      "explanation": "On factorise par (x+4) : (x+4)(2x+2) = 2(x+4)(x+1).",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-092",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Moyenne",
+      "prompt": "Notes 15, 18, 12, 15 avec coefficients 2, 1, 1, 2. Quelle est la moyenne ?",
+      "choices": [
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "answer": 2,
+      "explanation": "Total pondéré : 30 + 18 + 12 + 30 = 90 ; total coefficients : 6 ; moyenne 15.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-093",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Raisonnement",
+      "prompt": "Leïla, Anne, Clément, Sofiane et Élise font la queue. Les deux premières places sont occupées par des garçons, Élise est à la fin, Sofiane est derrière Clément. Qui est derrière Sofiane ?",
+      "choices": [
+        "Anne",
+        "Clément",
+        "Élise",
+        "Leïla"
+      ],
+      "answer": 3,
+      "explanation": "Les deux premiers sont Clément puis Sofiane ; Leïla doit être avant Anne et se place donc derrière Sofiane.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-094",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Logique",
+      "prompt": "Quel est l’intrus dans la série : 7, 19, 27, 29 ?",
+      "choices": [
+        "7",
+        "19",
+        "27",
+        "29"
+      ],
+      "answer": 2,
+      "explanation": "27 n’est pas un nombre premier, contrairement aux autres.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-095",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Suite logique",
+      "prompt": "Complétez : 1 - 11 - 21 - 1211 - 111221 - 312211 - ?",
+      "choices": [
+        "13112221",
+        "2221111",
+        "41221111",
+        "42211121"
+      ],
+      "answer": 0,
+      "explanation": "C’est la suite « look-and-say » : on lit 312211 comme un 3, un 1, deux 2, deux 1.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-096",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Suite logique",
+      "prompt": "B-2 / F-6 / K-11 / Q-17 / ?-?",
+      "choices": [
+        "W-22",
+        "X-23",
+        "X-24",
+        "Y-26"
+      ],
+      "answer": 2,
+      "explanation": "Les écarts augmentent de 1 : +4, +5, +6, puis +7, donc X et 24.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-097",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Raisonnement",
+      "prompt": "Code à 3 chiffres : 629 donne 2 bons mal placés ; 034 aucun ; 325 donne 2 bons dont 1 bien placé ; 781 aucun ; 509 donne 2 bons mal placés.",
+      "choices": [
+        "1-6-7",
+        "2-6-5",
+        "2-9-5",
+        "4-9-2"
+      ],
+      "answer": 2,
+      "explanation": "Le code 2-9-5 respecte les contraintes de placement et exclut 0, 3, 4, 7, 8, 1.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-098",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Anagrammes",
+      "prompt": "Poules/Souple/Loupes ; Chien/Niche/Chine ; Carne/Nacre/?",
+      "choices": [
+        "Boîte",
+        "Écran",
+        "Inde",
+        "Outil"
+      ],
+      "answer": 1,
+      "explanation": "Chaque colonne réarrange les mêmes lettres ; Carne et Nacre donnent Écran.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2024-099",
+      "year": 2024,
+      "source": "QCM 2024",
+      "category": "Proportionnalité",
+      "prompt": "3 machines creusent 3 m en 3 h. Combien de machines supplémentaires pour creuser 6 m en 6 h ?",
+      "choices": [
+        "0",
+        "3",
+        "6",
+        "9"
+      ],
+      "answer": 0,
+      "explanation": "3 machines creusent 1 m par heure. En 6 heures, elles creusent déjà 6 m : aucune machine supplémentaire.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-100",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Orthographe",
+      "prompt": "Combien de fautes contient : « Le gouvernement a souhaité lancé la réforme des retraites conformément à ces engagements formulé... » ?",
+      "choices": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "answer": 3,
+      "explanation": "Il faut écrire « lancer », « ses engagements » et « formulés ».",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-101",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Nombres",
+      "prompt": "Bonne écriture de 2 348,30 € en toutes lettres.",
+      "choices": [
+        "Deux mille trois cent quarante-huit euros et trente centimes",
+        "Deux mille trois cents quarante-huit euros et trente centimes",
+        "Deux milles trois cent...",
+        "Deux milles trois cents..."
+      ],
+      "answer": 0,
+      "explanation": "Cent reste invariable lorsqu’il est suivi.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-102",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Orthographe",
+      "prompt": "On écrit des...",
+      "choices": [
+        "chou-fleur",
+        "chou-fleurs",
+        "choux-fleur",
+        "choux-fleurs"
+      ],
+      "answer": 3,
+      "explanation": "Les deux éléments prennent le pluriel : des choux-fleurs.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-103",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Vocabulaire",
+      "prompt": "Une personne qui fait preuve de sagacité est :",
+      "choices": [
+        "drôle et rieuse",
+        "fine et élégante",
+        "perspicace et clairvoyante",
+        "rapide et efficace"
+      ],
+      "answer": 2,
+      "explanation": "La sagacité renvoie à la finesse de jugement.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-104",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Grammaire",
+      "prompt": "Un complément circonstanciel est :",
+      "choices": [
+        "un complément de ponctuation",
+        "un complément facultatif qui précise les circonstances",
+        "un complément inexistant",
+        "un complément d’objet"
+      ],
+      "answer": 1,
+      "explanation": "Il précise notamment temps, lieu, manière, cause.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-105",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Vocabulaire",
+      "prompt": "Que signifie « secret de polichinelle » ?",
+      "choices": [
+        "Information compromettante",
+        "Information fallacieuse",
+        "Information faussement secrète",
+        "Information ultra-confidentielle"
+      ],
+      "answer": 2,
+      "explanation": "C’est un secret connu de tous.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-106",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Conjugaison",
+      "prompt": "Passé simple de « marcher » à la première personne du singulier.",
+      "choices": [
+        "Je marchai",
+        "Je marchais",
+        "J’ai marché",
+        "J’avais marché"
+      ],
+      "answer": 0,
+      "explanation": "Au passé simple : je marchai.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-107",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Vocabulaire",
+      "prompt": "Quel est l’homonyme de « sain » ?",
+      "choices": [
+        "Contaminé",
+        "Pur",
+        "Seing",
+        "Vicié"
+      ],
+      "answer": 2,
+      "explanation": "Seing se prononce comme sain mais n’a pas le même sens.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-108",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Vocabulaire",
+      "prompt": "Qu’est-ce qu’un palindrome ?",
+      "choices": [
+        "Un champ de courses",
+        "Un drone",
+        "Un mot lisible dans les deux sens",
+        "Une unité de mesure"
+      ],
+      "answer": 2,
+      "explanation": "Un palindrome se lit de gauche à droite et de droite à gauche.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-109",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Conjugaison",
+      "prompt": "Conjuguez à l’imparfait de l’indicatif : « je distingue ».",
+      "choices": [
+        "Je distinguai",
+        "Je distinguais",
+        "Je distinguâmes",
+        "Je distinguis"
+      ],
+      "answer": 1,
+      "explanation": "À l’imparfait : je distinguais.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-110",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Grammaire",
+      "prompt": "Complétez correctement : « Pour quelle raison ... »",
+      "choices": [
+        "a-t-il quittée la voiture ?",
+        "est-il sorti de la voiture ?",
+        "n’ait-il pas dans la voiture ?",
+        "sont-elles partient de la voiture ?"
+      ],
+      "answer": 1,
+      "explanation": "La formulation correcte est « est-il sorti de la voiture ? ».",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-111",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Géopolitique",
+      "prompt": "Quelle région d’Ukraine la Russie a-t-elle annexée en 2014 ?",
+      "choices": [
+        "La Birobidjan",
+        "La Crimée",
+        "L’Ossétie",
+        "La Tchétchénie"
+      ],
+      "answer": 1,
+      "explanation": "La Crimée a été annexée par la Russie en 2014.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-112",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Histoire des idées",
+      "prompt": "Qui a écrit : « L’histoire de toutes les sociétés jusqu’à nos jours est celle de la lutte des classes » ?",
+      "choices": [
+        "Lénine",
+        "Bernard-Henri Lévy",
+        "Karl Marx",
+        "Jean-Luc Mélenchon"
+      ],
+      "answer": 2,
+      "explanation": "Cette formule ouvre le Manifeste du Parti communiste de Marx et Engels.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-113",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Histoire",
+      "prompt": "Sous quel arbre Saint Louis rendait-il traditionnellement la justice ?",
+      "choices": [
+        "Un bouleau",
+        "Un chêne",
+        "Un eucalyptus",
+        "Un flamboyant"
+      ],
+      "answer": 1,
+      "explanation": "L’image traditionnelle est celle de Saint Louis rendant la justice sous un chêne.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-114",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Histoire",
+      "prompt": "Quel ordre chronologique est correct ?",
+      "choices": [
+        "Hiroshima / Hitler / Chocs pétroliers / Mur de Berlin",
+        "Hitler / Hiroshima / Mur de Berlin / Chocs pétroliers",
+        "Hiroshima / Hitler / Mur de Berlin / Chocs pétroliers",
+        "Hitler / Hiroshima / Chocs pétroliers / Mur de Berlin"
+      ],
+      "answer": 3,
+      "explanation": "1933 pour Hitler, 1945 pour Hiroshima et Nagasaki, 1973-1979 pour les chocs pétroliers, 1989 pour le mur de Berlin.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-115",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Musique",
+      "prompt": "À combien d’exemplaires environ l’album The Dark Side of the Moon de Pink Floyd est-il vendu depuis 1973 ?",
+      "choices": [
+        "450 000",
+        "4 500 000",
+        "45 000 000",
+        "450 000 000"
+      ],
+      "answer": 2,
+      "explanation": "Le corrigé retient environ 45 millions d’exemplaires.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-116",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Cinéma",
+      "prompt": "Quel film a été réalisé par Steven Spielberg ?",
+      "choices": [
+        "Dunkerque",
+        "E.T. l’extra-terrestre",
+        "Gladiator",
+        "Sherlock Holmes"
+      ],
+      "answer": 1,
+      "explanation": "E.T. l’extra-terrestre est réalisé par Steven Spielberg.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-117",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Culture",
+      "prompt": "Quel lieu parisien est dédié à l’art contemporain ?",
+      "choices": [
+        "Musée Guimet",
+        "Musée du Louvre",
+        "Centre Pompidou",
+        "Musée Rodin"
+      ],
+      "answer": 2,
+      "explanation": "Le Centre Pompidou est un grand lieu d’art moderne et contemporain.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-118",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Bande dessinée",
+      "prompt": "Qui est l’auteur de L’Arabe du futur ?",
+      "choices": [
+        "Yacine Kateb",
+        "Yasmina Khadra",
+        "Amin Maalouf",
+        "Riad Sattouf"
+      ],
+      "answer": 3,
+      "explanation": "L’Arabe du futur est une série de Riad Sattouf.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-119",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Administration",
+      "prompt": "Quelle politique figure dans le plan Bercy Vert ?",
+      "choices": [
+        "Encourager les mobilités douces",
+        "Lutter contre les violences faites aux femmes",
+        "Mutualiser les achats informatiques",
+        "Recruter deux fois plus de fonctionnaires"
+      ],
+      "answer": 0,
+      "explanation": "Le plan Bercy Vert comprend des actions de mobilité durable.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-120",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Union européenne",
+      "prompt": "Lequel de ces pays est membre de l’Union européenne ?",
+      "choices": [
+        "Albanie",
+        "Bulgarie",
+        "Moldavie",
+        "Norvège"
+      ],
+      "answer": 1,
+      "explanation": "La Bulgarie est membre de l’Union européenne.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-121",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Institutions",
+      "prompt": "Quel ministère est appelé le quai d’Orsay ?",
+      "choices": [
+        "Ministère de la Culture",
+        "Ministère de la Défense",
+        "Ministère de l’Europe et des Affaires étrangères",
+        "Ministère du Budget"
+      ],
+      "answer": 2,
+      "explanation": "Le quai d’Orsay désigne le ministère chargé des affaires étrangères.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-122",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Vitesse",
+      "prompt": "Un train parcourt 100 km à 100 km/h puis 100 km à 120 km/h. Combien de temps met-il ?",
+      "choices": [
+        "1 h 40",
+        "1 h 50",
+        "2 h 00",
+        "2 h 10"
+      ],
+      "answer": 1,
+      "explanation": "La première moitié dure 1 h ; la seconde 50 min, soit 1 h 50 au total.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-123",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Calcul",
+      "prompt": "On considère f(x) = 1,8x + 32. Calculez f(37).",
+      "choices": [
+        "32",
+        "37",
+        "98,6",
+        "124,2"
+      ],
+      "answer": 2,
+      "explanation": "1,8 × 37 + 32 = 66,6 + 32 = 98,6.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-124",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Arithmétique",
+      "prompt": "Quelle proposition est correcte concernant 2024 ?",
+      "choices": [
+        "2024 est divisible par 3",
+        "2024 est divisible par 5",
+        "2024 est divisible par 11",
+        "2024 est premier"
+      ],
+      "answer": 2,
+      "explanation": "2024 / 11 = 184.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-125",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Pourcentages",
+      "prompt": "Dans une classe de 25 élèves, 10 sont des filles. Quel est le pourcentage de garçons ?",
+      "choices": [
+        "40 %",
+        "50 %",
+        "60 %",
+        "70 %"
+      ],
+      "answer": 2,
+      "explanation": "Il y a 15 garçons sur 25, soit 60 %.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-126",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Suite alphabétique",
+      "prompt": "Complétez : maire - majorette - maki - malade - ...",
+      "choices": [
+        "machine",
+        "madeleine",
+        "majuscule",
+        "maniguette"
+      ],
+      "answer": 3,
+      "explanation": "Les mots sont classés dans l’ordre alphabétique.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-127",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Raisonnement",
+      "prompt": "André est plus âgé que Benoît, Benoît plus jeune que Denis, Colin est le plus âgé, et Denis a l’âge moyen du groupe. Quelle proposition convient ?",
+      "choices": [
+        "André 21, Benoît 22, Colin 26, Denis 23",
+        "André 23, Benoît 22, Colin 27, Denis 24",
+        "André 25, Benoît 24, Colin 26, Denis 23",
+        "André 26, Benoît 23, Colin 27, Denis 24"
+      ],
+      "answer": 1,
+      "explanation": "La proposition 2 respecte les comparaisons et donne une moyenne de 24 ans, l’âge de Denis.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-128",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Suite logique",
+      "prompt": "Complétez la série : U - D - T - Q - C - S - ? - ? - ?",
+      "choices": [
+        "A - P - M",
+        "P - B - V",
+        "S - H - N",
+        "V - L - N"
+      ],
+      "answer": 2,
+      "explanation": "Ce sont les initiales de un, deux, trois, quatre, cinq, six, sept, huit, neuf.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-129",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Codage",
+      "prompt": "561342 est à GÉSIER ce que 265361 est à ...",
+      "choices": [
+        "ÉRIGÉS",
+        "GRISÉE",
+        "RÉGIES",
+        "SIÉGER"
+      ],
+      "answer": 2,
+      "explanation": "La correspondance chiffres-lettres donne RÉGIES.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2023-130",
+      "year": 2023,
+      "source": "QCM 2023",
+      "category": "Raisonnement",
+      "prompt": "Bruce a le casier 5, Mohamed le 7, Madeleine le 9 et Antoinette le 10. Quel est le numéro du casier de Nathalie ?",
+      "choices": [
+        "6",
+        "8",
+        "11",
+        "15"
+      ],
+      "answer": 1,
+      "explanation": "Le numéro correspond au nombre de lettres du prénom : Nathalie compte 8 lettres.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2022-131",
+      "year": 2022,
+      "source": "QCM 2022",
+      "category": "Orthographe",
+      "prompt": "Quelle est la bonne orthographe ?",
+      "choices": [
+        "Un rinocéros",
+        "Un rhinocéros",
+        "Un rhinnocéros",
+        "Un rhynocéros"
+      ],
+      "answer": 1,
+      "explanation": "La graphie correcte est rhinocéros.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2022-132",
+      "year": 2022,
+      "source": "QCM 2022",
+      "category": "Expression",
+      "prompt": "Que signifie « franchir le Rubicon » ?",
+      "choices": [
+        "Changer de plan",
+        "Faire vœu de pauvreté",
+        "Prendre une décision irrévocable",
+        "S’en remettre à la chance"
+      ],
+      "answer": 2,
+      "explanation": "L’expression signifie s’engager sans retour.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2022-133",
+      "year": 2022,
+      "source": "QCM 2022",
+      "category": "Grammaire",
+      "prompt": "Complétez : « Tu ne sais pas ce que ... que le malheur ».",
+      "choices": [
+        "ces",
+        "c’est",
+        "sais",
+        "s’est"
+      ],
+      "answer": 1,
+      "explanation": "La forme correcte est « c’est ».",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2022-134",
+      "year": 2022,
+      "source": "QCM 2022",
+      "category": "Orthographe",
+      "prompt": "« L’acceuil est ouvert au publique... » comporte :",
+      "choices": [
+        "0 faute",
+        "1 faute",
+        "2 fautes",
+        "5 fautes"
+      ],
+      "answer": 2,
+      "explanation": "Accueil et public sont mal orthographiés.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2022-135",
+      "year": 2022,
+      "source": "QCM 2022",
+      "category": "Nombres",
+      "prompt": "Écrivez 85 euros en toutes lettres.",
+      "choices": [
+        "quatre-vingt-cinq euros",
+        "quatre-vingts-cinq euros",
+        "quatres-vingt-cinq euros",
+        "quatres-vingts-cinqs euros"
+      ],
+      "answer": 0,
+      "explanation": "Dans quatre-vingt-cinq, vingt ne prend pas s.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2022-136",
+      "year": 2022,
+      "source": "QCM 2022",
+      "category": "Vocabulaire",
+      "prompt": "Un dessein est :",
+      "choices": [
+        "un croquis",
+        "un groupe",
+        "un projet",
+        "une peinture"
+      ],
+      "answer": 2,
+      "explanation": "Dessein signifie intention, projet.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2022-137",
+      "year": 2022,
+      "source": "QCM 2022",
+      "category": "Vocabulaire administratif",
+      "prompt": "Dissimuler la provenance illégale de sommes d’argent s’appelle :",
+      "choices": [
+        "blanchiement",
+        "blanchiment",
+        "blanchissage",
+        "blanchissement"
+      ],
+      "answer": 1,
+      "explanation": "Le terme juridique attendu est blanchiment.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2022-138",
+      "year": 2022,
+      "source": "QCM 2022",
+      "category": "Histoire",
+      "prompt": "Quelle capitale a été coupée en deux de 1961 à 1989 ?",
+      "choices": [
+        "Belgrade",
+        "Berlin",
+        "Prague",
+        "Varsovie"
+      ],
+      "answer": 1,
+      "explanation": "Le mur de Berlin a séparé la ville de 1961 à 1989.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2022-139",
+      "year": 2022,
+      "source": "QCM 2022",
+      "category": "Littérature",
+      "prompt": "Charles Baudelaire a écrit :",
+      "choices": [
+        "Les fleurs bleues",
+        "Les fleurs de l’aube",
+        "Les fleurs de lys",
+        "Les fleurs du mal"
+      ],
+      "answer": 3,
+      "explanation": "Les Fleurs du mal est un recueil de Baudelaire.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2022-140",
+      "year": 2022,
+      "source": "QCM 2022",
+      "category": "Institutions",
+      "prompt": "Pour quelle élection présidentielle le quinquennat s’applique-t-il pour la première fois en France ?",
+      "choices": [
+        "1959",
+        "1981",
+        "2002",
+        "2007"
+      ],
+      "answer": 2,
+      "explanation": "Le quinquennat s’applique à partir de l’élection présidentielle de 2002.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2022-141",
+      "year": 2022,
+      "source": "QCM 2022",
+      "category": "Cinéma",
+      "prompt": "Dans quelle ville se déroule le film Bac Nord ?",
+      "choices": [
+        "Lille",
+        "Marseille",
+        "Roubaix",
+        "Saint-Denis"
+      ],
+      "answer": 1,
+      "explanation": "Le film se déroule à Marseille, dans les quartiers Nord.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2022-142",
+      "year": 2022,
+      "source": "QCM 2022",
+      "category": "Volumes",
+      "prompt": "Combien de litres d’eau peut contenir un aquarium de 60 000 cm³ ?",
+      "choices": [
+        "6",
+        "60",
+        "600",
+        "6 000"
+      ],
+      "answer": 1,
+      "explanation": "1 litre vaut 1 000 cm³ ; 60 000 cm³ = 60 litres.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2022-143",
+      "year": 2022,
+      "source": "QCM 2022",
+      "category": "Calcul littéral",
+      "prompt": "(3x - 2)² est égal à :",
+      "choices": [
+        "3x² - 12x + 4",
+        "9x² - 4",
+        "9x² - 12x + 4",
+        "3x² + 4"
+      ],
+      "answer": 2,
+      "explanation": "(3x - 2)² = 9x² - 12x + 4.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2022-144",
+      "year": 2022,
+      "source": "QCM 2022",
+      "category": "Vitesse",
+      "prompt": "À 120 km/h, combien de temps faut-il pour parcourir 90 km ?",
+      "choices": [
+        "30 min",
+        "45 min",
+        "1 h 15",
+        "1 h 20"
+      ],
+      "answer": 1,
+      "explanation": "90 km représente 75 % de 120 km ; 75 % d’une heure = 45 minutes.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2022-145",
+      "year": 2022,
+      "source": "QCM 2022",
+      "category": "Arithmétique",
+      "prompt": "Combien le nombre 22 a-t-il de diviseurs positifs ?",
+      "choices": [
+        "Un",
+        "Deux",
+        "Quatre",
+        "Une infinité"
+      ],
+      "answer": 2,
+      "explanation": "Les diviseurs positifs de 22 sont 1, 2, 11 et 22.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2022-146",
+      "year": 2022,
+      "source": "QCM 2022",
+      "category": "Équations",
+      "prompt": "5 clés USB et 5 CD coûtent 55 €. 3 clés USB et 2 CD coûtent 28 €. Combien coûtent une clé USB et un CD ?",
+      "choices": [
+        "USB 6 €, CD 6 €",
+        "USB 6 €, CD 5 €",
+        "USB 5 €, CD 6 €",
+        "USB 6 €, CD 4 €"
+      ],
+      "answer": 1,
+      "explanation": "Le système donne x = 6 pour la clé USB et y = 5 pour le CD.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2022-147",
+      "year": 2022,
+      "source": "QCM 2022",
+      "category": "Radicaux",
+      "prompt": "Réduisez A = 5√32 + √18 - 4√50.",
+      "choices": [
+        "2√2",
+        "6√10",
+        "3√2",
+        "Aucune proposition"
+      ],
+      "answer": 2,
+      "explanation": "5√32 = 20√2, √18 = 3√2 et 4√50 = 20√2 ; il reste 3√2.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2022-148",
+      "year": 2022,
+      "source": "QCM 2022",
+      "category": "Calcul",
+      "prompt": "Une promenade coûte 13,50 € par adulte et 6 € par enfant. Quelle recette pour 110 adultes et 30 enfants ?",
+      "choices": [
+        "1 365 €",
+        "1 465 €",
+        "1 565 €",
+        "1 665 €"
+      ],
+      "answer": 3,
+      "explanation": "110 × 13,50 = 1 485 et 30 × 6 = 180 ; total 1 665 €.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2022-149",
+      "year": 2022,
+      "source": "QCM 2022",
+      "category": "Logique",
+      "prompt": "Pour réussir un QCM, il faut de l’entraînement et la concentration est indispensable. Quelle proposition est certaine ?",
+      "choices": [
+        "Il faut être concentré et entraîné pour réussir",
+        "Il faut réussir pour être concentré",
+        "Il faut s’entraîner pour être concentré",
+        "On peut réussir sans concentration ni entraînement"
+      ],
+      "answer": 0,
+      "explanation": "Les deux conditions nécessaires sont l’entraînement et la concentration.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2022-150",
+      "year": 2022,
+      "source": "QCM 2022",
+      "category": "Raisonnement",
+      "prompt": "Charles double le troisième pendant une course. À quelle place se retrouve-t-il ?",
+      "choices": [
+        "1re place",
+        "2e place",
+        "3e place",
+        "4e place"
+      ],
+      "answer": 2,
+      "explanation": "Doubler le troisième place Charles en troisième position.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2022-151",
+      "year": 2022,
+      "source": "QCM 2022",
+      "category": "Suite logique",
+      "prompt": "Complétez la suite : 37 - 34 - 38 - 33 - ?",
+      "choices": [
+        "24",
+        "29",
+        "31",
+        "39"
+      ],
+      "answer": 3,
+      "explanation": "Une sous-suite monte : 37, 38, 39 ; l’autre descend : 34, 33, 32.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2022-152",
+      "year": 2022,
+      "source": "QCM 2022",
+      "category": "Codage",
+      "prompt": "Si OKINAWA vaut PKANZWZ, que vaut IWO JIMA ?",
+      "choices": [
+        "AMP ANTE",
+        "AWP JAMZ",
+        "AWP JZNZ",
+        "AWT LABZ"
+      ],
+      "answer": 1,
+      "explanation": "En appliquant la même correspondance de lettres, IWO JIMA devient AWP JAMZ.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2022-153",
+      "year": 2022,
+      "source": "QCM 2022",
+      "category": "Suite logique",
+      "prompt": "Complétez : 2, 5, 11, 17, ...",
+      "choices": [
+        "19",
+        "23",
+        "29",
+        "31"
+      ],
+      "answer": 1,
+      "explanation": "La suite prend un nombre premier sur deux : 2, 5, 11, 17, 23.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2022-154",
+      "year": 2022,
+      "source": "QCM 2022",
+      "category": "Calcul",
+      "prompt": "Lapin + chat = 10, lapin + chien = 20, chat + chien = 24. Quelle est la masse totale ?",
+      "choices": [
+        "7",
+        "17",
+        "27",
+        "30"
+      ],
+      "answer": 2,
+      "explanation": "Les masses sont lapin 3, chat 7, chien 17 ; total 27.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2022-155",
+      "year": 2022,
+      "source": "QCM 2022",
+      "category": "Raisonnement",
+      "prompt": "IX(3), XXXVI(6), LXIV(8), CLXIX(?). Quel nombre manque ?",
+      "choices": [
+        "9",
+        "11",
+        "12",
+        "13"
+      ],
+      "answer": 3,
+      "explanation": "Les nombres romains valent 9, 36, 64 et 169 ; ce sont 3², 6², 8² et 13².",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2021-156",
+      "year": 2021,
+      "source": "QCM 2021",
+      "category": "Nombres",
+      "prompt": "Bonne orthographe de 2 492 euros en lettres.",
+      "choices": [
+        "Deux mille quatre cent quatre-vingt-douze euros",
+        "Deux mille quatre cent quatre-vingts-douze euros",
+        "Deux mille quatre cents...",
+        "Deux milles..."
+      ],
+      "answer": 0,
+      "explanation": "Cent et vingt restent ici invariables.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2021-157",
+      "year": 2021,
+      "source": "QCM 2021",
+      "category": "Institutions",
+      "prompt": "Personne morale de droit public distincte de l’État avec autonomie juridique et patrimoniale :",
+      "choices": [
+        "Collectivité territoriale",
+        "Démocratie",
+        "Fonction publique",
+        "Parlement"
+      ],
+      "answer": 0,
+      "explanation": "C’est une collectivité territoriale.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2021-158",
+      "year": 2021,
+      "source": "QCM 2021",
+      "category": "Grammaire",
+      "prompt": "« Le bien-être que m’... la méditation et le sport est fondamental »",
+      "choices": [
+        "apportant",
+        "apporte",
+        "apportent",
+        "apportes"
+      ],
+      "answer": 2,
+      "explanation": "Le sujet réel est pluriel : la méditation et le sport apportent.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2021-159",
+      "year": 2021,
+      "source": "QCM 2021",
+      "category": "Figure de style",
+      "prompt": "« La colombe serrant le rameau de la paix dans son bec » est :",
+      "choices": [
+        "une allégorie",
+        "une comparaison",
+        "un euphémisme",
+        "une hyperbole"
+      ],
+      "answer": 0,
+      "explanation": "La colombe représente la paix.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2021-160",
+      "year": 2021,
+      "source": "QCM 2021",
+      "category": "Douanes",
+      "prompt": "Quel outil marque les bijoux afin de certifier les teneurs en métaux ?",
+      "choices": [
+        "Butoir",
+        "Heurtoir",
+        "Poinçon",
+        "Pressoir"
+      ],
+      "answer": 2,
+      "explanation": "Le poinçon certifie les métaux précieux.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2021-161",
+      "year": 2021,
+      "source": "QCM 2021",
+      "category": "Orthographe",
+      "prompt": "Bonne orthographe :",
+      "choices": [
+        "Cueilir des pansés",
+        "Cueilir des pensées",
+        "Cueillir des pansées",
+        "Cueillir des pensées"
+      ],
+      "answer": 3,
+      "explanation": "Cueillir et pensées.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2021-162",
+      "year": 2021,
+      "source": "QCM 2021",
+      "category": "Conjugaison",
+      "prompt": "Quel verbe ne se termine pas par s à la 2e personne de l’indicatif présent ?",
+      "choices": [
+        "Attendre",
+        "Grandir",
+        "Parler",
+        "Pouvoir"
+      ],
+      "answer": 3,
+      "explanation": "Tu peux prend un x.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2021-163",
+      "year": 2021,
+      "source": "QCM 2021",
+      "category": "Calcul",
+      "prompt": "Quelle est la fraction irréductible de 84/245 ?",
+      "choices": [
+        "1/4",
+        "1/3",
+        "12/35",
+        "84/245"
+      ],
+      "answer": 2,
+      "explanation": "84 et 245 sont divisibles par 7 : 84/245 = 12/35.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2021-164",
+      "year": 2021,
+      "source": "QCM 2021",
+      "category": "Statistiques",
+      "prompt": "Notes : 6, 8, 12, 16 et 20. Quelle affirmation est vraie ?",
+      "choices": [
+        "La médiane est 12,40",
+        "La médiane est égale à la moyenne",
+        "La médiane est inférieure à la moyenne",
+        "La médiane est supérieure à la moyenne"
+      ],
+      "answer": 2,
+      "explanation": "La médiane vaut 12 et la moyenne vaut 12,40.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2021-165",
+      "year": 2021,
+      "source": "QCM 2021",
+      "category": "Géométrie",
+      "prompt": "Quelle est l’aire d’un carré de 7 cm de côté ?",
+      "choices": [
+        "14 cm²",
+        "14 cm",
+        "49 cm",
+        "49 cm²"
+      ],
+      "answer": 3,
+      "explanation": "Aire d’un carré : côté × côté = 7 × 7 = 49 cm².",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2021-166",
+      "year": 2021,
+      "source": "QCM 2021",
+      "category": "Calcul",
+      "prompt": "Combien y a-t-il de minutes dans le second semestre d’une année ?",
+      "choices": [
+        "259 200",
+        "262 800",
+        "264 960",
+        "518 400"
+      ],
+      "answer": 2,
+      "explanation": "Les mois de juillet à décembre totalisent 184 jours ; 184 × 1440 = 264 960 minutes.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2021-167",
+      "year": 2021,
+      "source": "QCM 2021",
+      "category": "Calcul",
+      "prompt": "Calculez 100 + 5 × 2 / 2 + 4 × 3.",
+      "choices": [
+        "60",
+        "67",
+        "117",
+        "327"
+      ],
+      "answer": 2,
+      "explanation": "Priorité aux multiplications et divisions : 5 × 2 / 2 = 5 et 4 × 3 = 12, donc 117.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2021-168",
+      "year": 2021,
+      "source": "QCM 2021",
+      "category": "Calcul",
+      "prompt": "Jasmine achète 5 croissants pour 5,75 €. Quel est le prix d’un croissant ?",
+      "choices": [
+        "1,10 €",
+        "1,15 €",
+        "1,20 €",
+        "1,25 €"
+      ],
+      "answer": 1,
+      "explanation": "5,75 / 5 = 1,15 €.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2021-169",
+      "year": 2021,
+      "source": "QCM 2021",
+      "category": "Raisonnement",
+      "prompt": "Alice, Anne, Angèle et Anastasia dînent ensemble. Anne est chanteuse ; Alice est à droite d’Anne ; Anastasia est à droite de la peintre ; Angèle, en face d’Alice, n’est pas présentatrice. Quelle proposition est compatible ?",
+      "choices": [
+        "Alice actrice, Anne chanteuse, Angèle peintre, Anastasia présentatrice",
+        "Alice présentatrice, Anne chanteuse, Angèle actrice, Anastasia peintre",
+        "Alice peintre, Anne chanteuse, Angèle actrice, Anastasia présentatrice",
+        "Alice actrice, Anne chanteuse, Angèle présentatrice, Anastasia peintre"
+      ],
+      "answer": 2,
+      "explanation": "Le placement conduit à Alice peintre, Anne chanteuse, Angèle actrice et Anastasia présentatrice.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2021-170",
+      "year": 2021,
+      "source": "QCM 2021",
+      "category": "Suite logique",
+      "prompt": "Dans le tableau 0 4 8 12 / 1 5 9 15 / 2 6 10 18 / 3 7 ? ?, quels nombres manquent ?",
+      "choices": [
+        "11 - 20",
+        "10 - 20",
+        "11 - 21",
+        "11 - 0"
+      ],
+      "answer": 2,
+      "explanation": "La progression par lignes et colonnes donne 11 puis 21.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2021-171",
+      "year": 2021,
+      "source": "QCM 2021",
+      "category": "Suite logique",
+      "prompt": "Complétez la suite : 19 - 23 - 29 - 31 - 37 - ? - 43.",
+      "choices": [
+        "38",
+        "40",
+        "41",
+        "42"
+      ],
+      "answer": 2,
+      "explanation": "Deux suites s’entrecroisent ; la branche 23, 31, ? donne 41.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2021-172",
+      "year": 2021,
+      "source": "QCM 2021",
+      "category": "Raisonnement",
+      "prompt": "L = 50 ; X = 10 ; XL = 40 ; XC = ?0. Quel chiffre remplace le point d’interrogation ?",
+      "choices": [
+        "0",
+        "3",
+        "7",
+        "9"
+      ],
+      "answer": 3,
+      "explanation": "XC correspond à 90 en chiffres romains.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2021-173",
+      "year": 2021,
+      "source": "QCM 2021",
+      "category": "Calcul",
+      "prompt": "Un flan au chocolat contient 9 % de sucre. Quel pourcentage de sucre contiennent 6 flans identiques ?",
+      "choices": [
+        "9 %",
+        "30 %",
+        "50 %",
+        "54 %"
+      ],
+      "answer": 0,
+      "explanation": "La proportion reste 9 %, quel que soit le nombre de flans.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2021-174",
+      "year": 2021,
+      "source": "QCM 2021",
+      "category": "Raisonnement",
+      "prompt": "Quel mot complète la parenthèse ?",
+      "choices": [
+        "BRIN",
+        "BEAU",
+        "BRAS",
+        "BOUT"
+      ],
+      "answer": 0,
+      "explanation": "Les nombres renvoient aux rangs alphabétiques.",
+      "supportRows": [
+        "16 - 21    (COUP)    15 - 3",
+        "14 - 9     (....)    18 - 2"
+      ],
+      "correctionSteps": [
+        "16 = P, 21 = U, 15 = O, 3 = C",
+        "On lit P-U-O-C, soit COUP à l’envers.",
+        "14 = N, 9 = I, 18 = R, 2 = B",
+        "On lit N-I-R-B : le mot attendu est BRIN."
+      ]
+    },
+    {
+      "id": "qcm-2021-175",
+      "year": 2021,
+      "source": "QCM 2021",
+      "category": "Calcul",
+      "prompt": "Alexis dépense 22 % de son salaire en impôts, 33 % en emprunt, puis 30 % du reste en dépenses personnelles. Quelle part du salaire cela représente-t-il ?",
+      "choices": [
+        "9,5 %",
+        "13,5 %",
+        "15 %",
+        "45 %"
+      ],
+      "answer": 1,
+      "explanation": "Après 55 % de dépenses, il reste 45 % ; 30 % de 45 % = 13,5 %.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2021-176",
+      "year": 2021,
+      "source": "QCM 2021",
+      "category": "Suite logique",
+      "prompt": "Complétez : 1 / 11 / 21 / 1211 / 111221 / ...",
+      "choices": [
+        "1211",
+        "1122121",
+        "211122",
+        "312211"
+      ],
+      "answer": 3,
+      "explanation": "Chaque ligne décrit la précédente : 111221 se lit trois 1, deux 2, un 1, soit 312211.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-177",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Orthographe",
+      "prompt": "Complétez : « Le paysan était ... à faucher ses champs ».",
+      "choices": [
+        "pré",
+        "près",
+        "prêt",
+        "prét"
+      ],
+      "answer": 2,
+      "explanation": "On est prêt à faire quelque chose.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-178",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Expression latine",
+      "prompt": "« formulaire ad hoc » signifie :",
+      "choices": [
+        "En ligne",
+        "En pièce jointe",
+        "Pré-rempli",
+        "Prévu à cet effet"
+      ],
+      "answer": 3,
+      "explanation": "Ad hoc signifie adapté à cet usage précis.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-179",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Accords",
+      "prompt": "« Sur la table sont posés des gants ... à motifs ... »",
+      "choices": [
+        "marron / bleus clairs",
+        "marron / bleu clair",
+        "marrons / bleus clairs",
+        "marrons / bleu clair"
+      ],
+      "answer": 1,
+      "explanation": "Marron et bleu clair restent invariables dans cet emploi.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-180",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Vocabulaire",
+      "prompt": "Antonyme de « dispendieux » :",
+      "choices": [
+        "Cher",
+        "Coûteux",
+        "Économique",
+        "Onéreux"
+      ],
+      "answer": 2,
+      "explanation": "Économique est l’opposé de coûteux.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-181",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Orthographe",
+      "prompt": "Bonne orthographe de 3 281 € en lettres.",
+      "choices": [
+        "Trois mille deux cent quatre-vingt-un euros",
+        "Trois mille deux cent quatre-vingts-un euros",
+        "Trois mille deux cents...",
+        "Trois milles..."
+      ],
+      "answer": 0,
+      "explanation": "Mille est invariable et cent ne prend pas s ici.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-182",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Conjugaison",
+      "prompt": "« Le service vous ... une convocation ».",
+      "choices": [
+        "envera",
+        "enverra",
+        "envoiera",
+        "envoyera"
+      ],
+      "answer": 1,
+      "explanation": "Futur de envoyer dans ce sens : enverra.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-183",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Vocabulaire administratif",
+      "prompt": "Un contribuable est :",
+      "choices": [
+        "un citoyen",
+        "un détracteur",
+        "une personne qui contribue à l’action publique",
+        "une personne qui paie l’impôt"
+      ],
+      "answer": 3,
+      "explanation": "Le contribuable est redevable d’un impôt.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-184",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Orthographe",
+      "prompt": "« À Roissy, la brigade ... est intervenue ».",
+      "choices": [
+        "cinéphile",
+        "cinophile",
+        "cynophile",
+        "sinophile"
+      ],
+      "answer": 2,
+      "explanation": "Une brigade cynophile travaille avec des chiens.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-185",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Accords",
+      "prompt": "Complétez : « Vous devez retourner ... les documents demandés. Je reste à votre disposition pour ... renseignement complémentaire ».",
+      "choices": [
+        "Tous / tous",
+        "Tous / tout",
+        "Tout / tous",
+        "Tout / tout"
+      ],
+      "answer": 1,
+      "explanation": "Tous accompagne le pluriel documents ; tout accompagne le singulier renseignement.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-186",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Orthographe",
+      "prompt": "Combien de fautes contient : « Inconsciement, Morgane a blessée ces amies... » ?",
+      "choices": [
+        "0 faute",
+        "1 faute",
+        "2 fautes",
+        "3 fautes"
+      ],
+      "answer": 3,
+      "explanation": "Il faut écrire inconsciemment, blessé et ses amies.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-187",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Accords",
+      "prompt": "Complétez : « Quand je les ai ..., je ne sais plus que faire ».",
+      "choices": [
+        "dépassaient",
+        "dépassé",
+        "dépasser",
+        "dépassés"
+      ],
+      "answer": 3,
+      "explanation": "Le COD « les » est placé avant l’auxiliaire avoir : dépassés.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-188",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Administratif",
+      "prompt": "Quel mot désigne l’ensemble des services qui travaillent pour l’État ?",
+      "choices": [
+        "Administration",
+        "Assemblée nationale",
+        "Collectivités locales",
+        "République"
+      ],
+      "answer": 0,
+      "explanation": "L’administration regroupe les services chargés de l’action publique.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-189",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Grammaire",
+      "prompt": "Dans quel cas le participe passé avec l’auxiliaire avoir s’accorde-t-il ?",
+      "choices": [
+        "Toujours",
+        "Jamais",
+        "Quand le COD est après le verbe",
+        "Quand le COD est avant le verbe"
+      ],
+      "answer": 3,
+      "explanation": "Avec avoir, l’accord se fait avec le COD placé avant.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-190",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Orthographe",
+      "prompt": "Quelle phrase est correctement orthographiée ?",
+      "choices": [
+        "La tenue que j’ai porté m’allait à merveille",
+        "La tenue que j’ai porté m’allez à merveille",
+        "La tenue que j’ai portée m’allait à merveille",
+        "La tenue que j’ai portée m’allez à merveille"
+      ],
+      "answer": 2,
+      "explanation": "Tenue est COD placé avant, donc portée ; le verbe est « allait ».",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-191",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Accords",
+      "prompt": "Complétez : « De multiples ... sont entreposés dans des ... ».",
+      "choices": [
+        "Chefs-d’œuvre / cafés-théâtre",
+        "Chefs-d’œuvre / cafés-théâtres",
+        "Chefs-d’œuvres / café-théâtres",
+        "Chefs-d’œuvres / cafés-théâtres"
+      ],
+      "answer": 1,
+      "explanation": "On écrit des chefs-d’œuvre et des cafés-théâtres.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-192",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Histoire",
+      "prompt": "La signature du traité de Versailles met fin à :",
+      "choices": [
+        "La guerre d’Algérie",
+        "La Première Guerre mondiale",
+        "La Seconde Guerre mondiale",
+        "La guerre du Vietnam"
+      ],
+      "answer": 1,
+      "explanation": "Le traité de Versailles de 1919 clôt la Première Guerre mondiale avec l’Allemagne.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-193",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Géographie",
+      "prompt": "Quelle est la capitale du Mali ?",
+      "choices": [
+        "Bamako",
+        "Niamey",
+        "Nouakchott",
+        "Sikasso"
+      ],
+      "answer": 0,
+      "explanation": "La capitale du Mali est Bamako.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-194",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Cinéma",
+      "prompt": "Qui incarne Arthur Fleck dans le film Joker de 2019 ?",
+      "choices": [
+        "Robert De Niro",
+        "Tobey Maguire",
+        "Robert Pattinson",
+        "Joaquin Phoenix"
+      ],
+      "answer": 3,
+      "explanation": "Arthur Fleck est joué par Joaquin Phoenix.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-195",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Histoire",
+      "prompt": "Qui a assassiné Henri IV ?",
+      "choices": [
+        "Charles VIII",
+        "Charlotte Corday",
+        "François Ravaillac",
+        "François de Guise"
+      ],
+      "answer": 2,
+      "explanation": "Henri IV est assassiné par François Ravaillac en 1610.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-196",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Histoire",
+      "prompt": "En quelle année a été créée l’URSS ?",
+      "choices": [
+        "1917",
+        "1921",
+        "1922",
+        "1925"
+      ],
+      "answer": 2,
+      "explanation": "L’URSS est fondée en 1922.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-197",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Littérature",
+      "prompt": "Qui a écrit Notre-Dame de Paris ?",
+      "choices": [
+        "Gustave Flaubert",
+        "Victor Hugo",
+        "Alfred de Musset",
+        "Marcel Proust"
+      ],
+      "answer": 1,
+      "explanation": "Notre-Dame de Paris est un roman de Victor Hugo.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-198",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Culture",
+      "prompt": "La bande dessinée Persepolis situe la révolution islamique de 1979 dans quel pays ?",
+      "choices": [
+        "Irak",
+        "Iran",
+        "Liban",
+        "Turquie"
+      ],
+      "answer": 1,
+      "explanation": "Persepolis raconte notamment l’Iran de la révolution islamique.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-199",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Sport",
+      "prompt": "Quelle affirmation est inexacte ?",
+      "choices": [
+        "Le décathlon comprend dix épreuves",
+        "L’heptathlon comprend sept épreuves",
+        "Le ski alpin est une épreuve du biathlon",
+        "Le triathlon réunit natation, vélo et course"
+      ],
+      "answer": 2,
+      "explanation": "Le biathlon associe ski de fond et tir, pas ski alpin.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-200",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Histoire",
+      "prompt": "Où ont été découvertes les plus anciennes traces d’écriture ?",
+      "choices": [
+        "Égypte",
+        "Grèce",
+        "Kenya",
+        "Mésopotamie"
+      ],
+      "answer": 3,
+      "explanation": "Les plus anciennes écritures connues sont associées à la Mésopotamie.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-201",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Administratif",
+      "prompt": "Qu’est-ce qu’une mise en demeure ?",
+      "choices": [
+        "Une assignation à résidence",
+        "Un contrat de location",
+        "Une demande d’exécuter une obligation dans un délai précis",
+        "Un prélèvement mensuel"
+      ],
+      "answer": 2,
+      "explanation": "La mise en demeure demande officiellement d’exécuter une obligation.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-202",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Culture",
+      "prompt": "Quelle femme a été Première ministre en France ?",
+      "choices": [
+        "Martine Aubry",
+        "Édith Cresson",
+        "Rachida Dati",
+        "Simone Veil"
+      ],
+      "answer": 1,
+      "explanation": "Édith Cresson a été Première ministre de 1991 à 1992.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-203",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Calcul",
+      "prompt": "Une horloge sonne les heures et un coup à chaque demi-heure. Combien de coups sonne-t-elle en 24 h ?",
+      "choices": [
+        "78",
+        "90",
+        "180",
+        "324"
+      ],
+      "answer": 2,
+      "explanation": "Les heures font 156 coups et les demi-heures 24 coups : total 180.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-204",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Calcul",
+      "prompt": "Deux adultes et cinq enfants paient 51,50 €. Combien paient quatre adultes et dix enfants au même tarif ?",
+      "choices": [
+        "102 €",
+        "102,50 €",
+        "103 €",
+        "103,50 €"
+      ],
+      "answer": 2,
+      "explanation": "Le second groupe est exactement le double du premier : 103 €.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-205",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Probabilités",
+      "prompt": "Dans l’urne 1, 5, 2, 3, 5, 4, 5, 9, 6, quel événement est le plus probable ?",
+      "choices": [
+        "Tirer un numéro pair",
+        "Tirer un numéro impair",
+        "Tirer un numéro premier",
+        "Tirer un 5"
+      ],
+      "answer": 1,
+      "explanation": "Il y a 6 nombres impairs sur 9.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-206",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Statistiques",
+      "prompt": "Notes 0 à 10 avec effectifs 2,1,0,2,4,8,5,4,2,1,1. Quelle est la moyenne ?",
+      "choices": [
+        "5",
+        "5,10",
+        "5,20",
+        "5,30"
+      ],
+      "answer": 2,
+      "explanation": "La somme pondérée vaut 156 pour 30 élèves, soit 5,20.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-207",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Équations",
+      "prompt": "Quelles sont les solutions de (6x - 2)(x + 6) = 0 ?",
+      "choices": [
+        "4/3 et -6",
+        "1/3 et 6",
+        "-1/3 et -6",
+        "1/3 et -6"
+      ],
+      "answer": 3,
+      "explanation": "Produit nul : 6x - 2 = 0 donne x = 1/3, et x + 6 = 0 donne -6.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-208",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Géométrie",
+      "prompt": "Les trois hauteurs d’un triangle sont concourantes en un point appelé :",
+      "choices": [
+        "Hypercentre",
+        "Orthocentre",
+        "Point central",
+        "Point convergent"
+      ],
+      "answer": 1,
+      "explanation": "Le point de concours des hauteurs est l’orthocentre.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-209",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Calcul littéral",
+      "prompt": "En développant (4x - 5)(4x - 5), on obtient :",
+      "choices": [
+        "16x - 25",
+        "4x² + 25 - 4x",
+        "16x² + 25",
+        "16x² - 40x + 25"
+      ],
+      "answer": 3,
+      "explanation": "(4x - 5)² = 16x² - 40x + 25.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-210",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Géométrie",
+      "prompt": "Si on triple la longueur du côté d’un carré, son aire est multipliée par :",
+      "choices": [
+        "2",
+        "6",
+        "8",
+        "9"
+      ],
+      "answer": 3,
+      "explanation": "L’aire dépend du carré du côté : 3² = 9.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-211",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Fractions",
+      "prompt": "Quelle est la fraction irréductible de 192/288 ?",
+      "choices": [
+        "2/3",
+        "6/9",
+        "12/18",
+        "6/7"
+      ],
+      "answer": 0,
+      "explanation": "192/288 se simplifie par 96 : 2/3.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-212",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Pourcentages",
+      "prompt": "350 véhicules sont en infraction sur 1 400 contrôlés. Quel pourcentage respecte la vitesse autorisée ?",
+      "choices": [
+        "25 %",
+        "50 %",
+        "60 %",
+        "75 %"
+      ],
+      "answer": 3,
+      "explanation": "1 050 véhicules respectent la vitesse ; 1050/1400 = 75 %.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-213",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Calcul",
+      "prompt": "Quel est le double du cube de 2 ?",
+      "choices": [
+        "8",
+        "16",
+        "32",
+        "64"
+      ],
+      "answer": 1,
+      "explanation": "2³ = 8, et son double vaut 16.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-214",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Volumes",
+      "prompt": "Un bassin mesure 3 m par 2 m avec 0,54 m de profondeur. Quel volume d’eau faut-il ?",
+      "choices": [
+        "2,76 m³",
+        "3,24 m³",
+        "6 m³",
+        "12 m³"
+      ],
+      "answer": 1,
+      "explanation": "3 × 2 × 0,54 = 3,24 m³.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-215",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Suite logique",
+      "prompt": "Complétez : 1 - 4 - 16 - 64 - ? - 1024.",
+      "choices": [
+        "68",
+        "80",
+        "256",
+        "512"
+      ],
+      "answer": 2,
+      "explanation": "Chaque terme est multiplié par 4.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-216",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Raisonnement",
+      "prompt": "Pierre, Sophie, Luc, Aude et Léa sont assis. Sophie et Aude sont côte à côte, Luc et Pierre aux extrémités, Léa à côté de Luc, Aude au centre. Qui est à côté de Pierre ?",
+      "choices": [
+        "Sophie",
+        "Luc",
+        "Aude",
+        "Léa"
+      ],
+      "answer": 0,
+      "explanation": "Le placement compatible met Sophie à côté de Pierre.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-217",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Suite logique",
+      "prompt": "Complétez : E(5), L(12), R(18), ?(24).",
+      "choices": [
+        "M",
+        "S",
+        "V",
+        "X"
+      ],
+      "answer": 3,
+      "explanation": "Le nombre correspond au rang alphabétique de la lettre : X est la 24e.",
+      "supportRows": [],
+      "correctionSteps": []
+    },
+    {
+      "id": "qcm-2020-218",
+      "year": 2020,
+      "source": "QCM 2020",
+      "category": "Suite logique",
+      "prompt": "Complétez la série : Gap - Nice - Paris - ?",
+      "choices": [
+        "Bordeaux",
+        "Marseille",
+        "Nîmes",
+        "Rennes"
+      ],
+      "answer": 3,
+      "explanation": "Les villes ont 3, 4, 5 puis 6 lettres : Rennes.",
+      "supportRows": [],
+      "correctionSteps": []
+    }
+  ],
+  "annales": [
+    {
+      "year": "2026",
+      "title": "Sujets zéro",
+      "qcm": "50 questions corrigées : histoire, géographie, EMC, numérique, actualités, ministères économiques, maths et logique",
+      "ecrit": "Économie du livre : analyse de dossier, synthèse et document visuel",
+      "jury": "Oral recentré sur les compétences comportementales",
+      "skills": [
+        "synthèse",
+        "support visuel",
+        "culture numérique"
+      ]
+    },
+    {
+      "year": "2024",
+      "title": "Annales officielles",
+      "qcm": "54 questions : français, culture récente, calcul, raisonnement",
+      "ecrit": "Annale écrite officielle 2024 à traiter via le PDF source",
+      "jury": "Préparation orale et connaissance DGFiP/DGDDI déterminantes",
+      "skills": [
+        "QCM complet",
+        "oral",
+        "missions"
+      ]
+    },
+    {
+      "year": "2023",
+      "title": "Dématérialisation",
+      "qcm": "Français administratif, culture générale, calculs, logique",
+      "ecrit": "Dématérialisation des services publics, DINUM, inclusion numérique",
+      "jury": "Éviter les réponses mécaniques",
+      "skills": [
+        "numérique public",
+        "inclusion",
+        "graphiques"
+      ]
+    },
+    {
+      "year": "2022",
+      "title": "Services publics écoresponsables",
+      "qcm": "Expressions, orthographe, culture générale, calculs",
+      "ecrit": "Bercy Vert, dons, économie circulaire, GES DGFiP",
+      "jury": "Commenter les données, ne pas seulement calculer",
+      "skills": [
+        "pourcentages",
+        "environnement",
+        "commentaire"
+      ]
+    },
+    {
+      "year": "2021",
+      "title": "Intervention de l’État",
+      "qcm": "Collectivités, douane, figures de style, grammaire",
+      "ecrit": "France Relance, soutien aux entreprises, lutte contre la fraude",
+      "jury": "Connaître le ministère et ses administrations",
+      "skills": [
+        "économie",
+        "DGFiP",
+        "fraude"
+      ]
+    },
+    {
+      "year": "2020",
+      "title": "Égalité professionnelle",
+      "qcm": "Orthographe, vocabulaire administratif, fiscalité, raisonnement",
+      "ecrit": "Égalité femmes-hommes, violences sexistes, fonction publique",
+      "jury": "Lisibilité, anonymat, structure",
+      "skills": [
+        "RH publique",
+        "tableaux",
+        "rédaction courte"
+      ]
+    }
+  ],
+  "writtenSubjects": [
+    {
+      "source": "Sujet zéro 2026",
+      "title": "Économie du livre",
+      "prompt": "Rédigez une synthèse structurée sur l’évolution du marché du livre, les pratiques de lecture, les risques liés à l’IA générative et les régulations. Ajoutez un projet de document visuel en quatre blocs : évolution du marché, prix du livre, jeunesse/littérature, défis et régulations.",
+      "expected": [
+        "plan en deux parties",
+        "chiffres clés",
+        "support visuel",
+        "enjeux IA et régulation"
+      ]
+    },
+    {
+      "source": "Annale 2023",
+      "title": "Dématérialisation",
+      "prompt": "Présentez les bénéfices de l’administration numérique, les risques pour les usagers éloignés du numérique, puis proposez trois mesures d’accompagnement sous forme de fiche opérationnelle.",
+      "expected": [
+        "DINUM",
+        "inclusion numérique",
+        "usagers fragiles",
+        "actions concrètes"
+      ]
+    },
+    {
+      "source": "Annale 2022",
+      "title": "Services publics écoresponsables",
+      "prompt": "Rédigez une note sur les services publics écoresponsables, Bercy Vert, les dons de biens publics, l’économie circulaire et les émissions de GES. Intégrez un commentaire de graphique.",
+      "expected": [
+        "Bercy Vert",
+        "économie circulaire",
+        "pourcentages",
+        "commentaire de données"
+      ]
+    },
+    {
+      "source": "Annale 2021",
+      "title": "France Relance",
+      "prompt": "Expliquez pourquoi l’État intervient dans l’économie, comment les dispositifs de soutien aux entreprises fonctionnent, et pourquoi la lutte contre la fraude reste une priorité.",
+      "expected": [
+        "intervention de l’État",
+        "DGFiP",
+        "soutien entreprises",
+        "fraude"
+      ]
+    },
+    {
+      "source": "Annale 2020",
+      "title": "Égalité professionnelle",
+      "prompt": "Rédigez une synthèse sur l’égalité femmes-hommes dans la fonction publique et une fiche de signalement face aux violences sexistes et sexuelles.",
+      "expected": [
+        "égalité professionnelle",
+        "label",
+        "violences sexistes",
+        "fonction publique"
+      ]
+    }
+  ],
+  "juryRules": [
+    {
+      "title": "Préparer l’oral",
+      "body": "Le jury valorise une présentation fluide, courte, personnelle et reliée aux missions. L’improvisation se voit très vite."
+    },
+    {
+      "title": "Connaître les deux directions",
+      "body": "La DGFiP est souvent mieux connue que la DGDDI. Le concours étant commun, l’app impose des questions sur les deux univers."
+    },
+    {
+      "title": "Ne pas plaquer de réponses",
+      "body": "Les réponses stéréotypées donnent une impression de récitation. Il faut partir des faits, qualifier la règle et proposer une action."
+    },
+    {
+      "title": "Sécuriser la culture générale",
+      "body": "Les rapports signalent des écarts importants selon les thèmes du QCM. Actualité, institutions, numérique et culture administrative doivent être travaillés."
+    },
+    {
+      "title": "Commenter les chiffres",
+      "body": "À l’écrit, un calcul sans commentaire vaut peu. Il faut expliquer l’évolution, la proportion, le risque ou la priorité de gestion."
+    },
+    {
+      "title": "Produire un livrable utilisable",
+      "body": "Le format 2026 attend synthèse, fiche, courriel, support de communication. Le texte doit être exploitable par un service."
+    }
+  ],
+  "oralQuestions": [
+    "Présentez votre parcours en deux minutes.",
+    "Pourquoi la DGFiP ? Pourquoi ce concours de catégorie C ?",
+    "Que savez-vous des missions de la DGDDI ?",
+    "Un usager s’énerve à l’accueil : que faites-vous ?",
+    "Un collègue vous demande de consulter un dossier sans motif professionnel.",
+    "Vous constatez une erreur dans un courrier déjà envoyé.",
+    "Votre responsable modifie vos priorités au dernier moment.",
+    "Expliquez la neutralité dans un service public."
+  ],
+  "sources": [
+    {
+      "title": "Page officielle du concours",
+      "url": "https://www.economie.gouv.fr/rejoignez-nous/agent-administratif-principal-des-finances-publiques-de-2eme-classe-externe-dgfip",
+      "type": "official"
+    },
+    {
+      "title": "Sujet zero QCM 2026 avec corrige",
+      "url": "https://rejoindrelesfinancespubliques.economie.gouv.fr//files/files/concours/Sujets_zero/CCC%20-%202026%20-%20Sujet%20test%20-%20%C3%89preuve%20de%20pr%C3%A9admissibilit%C3%A9.pdf",
+      "type": "zero-qcm",
+      "year": 2026
+    },
+    {
+      "title": "Sujet zero ecrit 2026",
+      "url": "https://rejoindrelesfinancespubliques.economie.gouv.fr/files/files/concours/Sujets_zero/CCC%20-%202026%20-%20sujet%20test%20-%20admissibilit%C3%A9.pdf",
+      "type": "zero-written",
+      "year": 2026
+    },
+    {
+      "title": "Annale QCM 2020",
+      "url": "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2020_ccc_qcm.pdf",
+      "type": "qcm",
+      "year": 2020
+    },
+    {
+      "title": "Annale QCM 2021",
+      "url": "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2021_ccc_qcm.pdf",
+      "type": "qcm",
+      "year": 2021
+    },
+    {
+      "title": "Annale QCM 2022",
+      "url": "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2022_ccc_qcm-metro.pdf",
+      "type": "qcm",
+      "year": 2022
+    },
+    {
+      "title": "Annale QCM 2023",
+      "url": "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2024_03_qcm_metropole.pdf",
+      "type": "qcm",
+      "year": 2023
+    },
+    {
+      "title": "Annale QCM 2024",
+      "url": "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2025_03_ccc_qcm_metropole2024.pdf",
+      "type": "qcm",
+      "year": 2024
+    },
+    {
+      "title": "Proposition de correction QCM 2020",
+      "url": "https://monconcoursdgfip.fr/correction-qcm-concours-commun-categorie-c-2020/",
+      "type": "qcm-correction",
+      "year": 2020
+    },
+    {
+      "title": "Proposition de correction QCM 2021",
+      "url": "https://monconcoursdgfip.fr/correction-qcm-concours-commun-categorie-c-2021/",
+      "type": "qcm-correction",
+      "year": 2021
+    },
+    {
+      "title": "Proposition de correction QCM 2022",
+      "url": "https://monconcoursdgfip.fr/correction-qcm-concours-commun-categorie-c-2022/",
+      "type": "qcm-correction",
+      "year": 2022
+    },
+    {
+      "title": "Proposition de correction QCM 2023",
+      "url": "https://monconcoursdgfip.fr/correction-qcm-concours-commun-categorie-c-2023/",
+      "type": "qcm-correction",
+      "year": 2023
+    },
+    {
+      "title": "Annale ecrit 2020",
+      "url": "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2020_ccc_epreuve_admissibilite.pdf",
+      "type": "written",
+      "year": 2020
+    },
+    {
+      "title": "Annale ecrit 2021",
+      "url": "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2021_ccc_epreuve_admissibilite.pdf",
+      "type": "written",
+      "year": 2021
+    },
+    {
+      "title": "Annale ecrit 2022",
+      "url": "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2022_ccc_epreuve_admissibilite.pdf",
+      "type": "written",
+      "year": 2022
+    },
+    {
+      "title": "Annale ecrit 2023",
+      "url": "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2024_03__sujet%20admissibilite.pdf",
+      "type": "written",
+      "year": 2023
+    },
+    {
+      "title": "Annale ecrit 2024",
+      "url": "https://www.economie.gouv.fr/rejoignez-nous/agent-administratif-principal-des-finances-publiques-de-2eme-classe-externe-dgfip",
+      "type": "written",
+      "year": 2024
+    },
+    {
+      "title": "Rapport de jury 2020",
+      "url": "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2020_ccc_rapport_jury.pdf",
+      "type": "jury-report",
+      "year": 2020
+    },
+    {
+      "title": "Rapport de jury 2021",
+      "url": "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2021_ccc_rapport_jury.pdf",
+      "type": "jury-report",
+      "year": 2021
+    },
+    {
+      "title": "Rapport de jury 2022",
+      "url": "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2022_ccc_rapport_jury.pdf",
+      "type": "jury-report",
+      "year": 2022
+    },
+    {
+      "title": "Rapport de jury 2023",
+      "url": "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2024_03_rapport%20jury_ccc_2023_Adm.pdf",
+      "type": "jury-report",
+      "year": 2023
+    },
+    {
+      "title": "Rapport de jury 2024",
+      "url": "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2025_03_ccc_rapport_jury_2024_administratif.pdf",
+      "type": "jury-report",
+      "year": 2024
+    }
+  ]
+}

@@ -1,5 +1,4 @@
 .tmp/
-public_sources/
 # Android / Gradle
 .gradle-user/
 .android-home/
