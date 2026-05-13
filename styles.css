@@ -253,6 +253,14 @@ textarea {
   color: var(--brand-dark);
   font-weight: 800;
 }
+.pdf-blocked {
+  border: 1px solid #e4c57f;
+  border-radius: 8px;
+  background: #fff8e8;
+  color: var(--brand-dark);
+  padding: 14px;
+  line-height: 1.45;
+}
 .rubric {
   display: grid;
   grid-template-columns: repeat(6, 1fr);

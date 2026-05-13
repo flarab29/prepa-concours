@@ -1,6 +1,7 @@
 package fr.concoursdgfip.prep;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -22,7 +23,13 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.core.content.FileProvider;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.text.Normalizer;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -1366,13 +1373,16 @@ public class MainActivity extends Activity {
         subjectText = card("Sujet proposé", subjectItems.get(subjectIndex));
         content.addView(subjectText);
         Source pdfSource = writtenPdfSourceForCurrentSubject();
-        if (pdfSource != null && pdfSource.url != null && !pdfSource.url.isEmpty()) {
+        if (pdfSource != null && (hasText(pdfSource.url) || hasText(pdfSource.localUrl))) {
+            boolean localPdf = hasText(pdfSource.localUrl);
             content.addView(card("PDF officiel du sujet",
                     "Année : " + (pdfSource.year.isEmpty() ? writtenSubjectYear(subjectItems.get(subjectIndex)) : pdfSource.year) + "\n" +
                             "Type : " + sourceTypeLabel(pdfSource.type) + "\n" +
                             "Fiabilité : " + sourceReliability(pdfSource.type) + "\n" +
-                            "Sur Android, le PDF s’ouvre dans le lecteur PDF ou le navigateur du téléphone pour garder l’application simple et fiable."));
-            addAction("Ouvrir / visualiser le PDF officiel", () -> openUrl(pdfSource.url));
+                            (localPdf
+                                    ? "Fichier : PDF embarqué dans l’application, ouvert dans le lecteur PDF du téléphone."
+                                    : "Fichier : source officielle distante, ouverte dans le navigateur ou le lecteur PDF du téléphone.")));
+            addAction(localPdf ? "Ouvrir le PDF embarqué" : "Ouvrir / visualiser le PDF officiel", () -> openPdfSource(pdfSource));
         } else {
             content.addView(card("PDF officiel du sujet", "Aucun PDF direct n’est référencé pour ce sujet. Consultez la page Sources."));
         }
@@ -1497,6 +1507,7 @@ public class MainActivity extends Activity {
         }
         String fallbackUrl = null;
         if ("2026".equals(year)) fallbackUrl = "https://rejoindrelesfinancespubliques.economie.gouv.fr/files/files/concours/Sujets_zero/CCC%20-%202026%20-%20sujet%20test%20-%20admissibilit%C3%A9.pdf";
+        else if ("2024".equals(year)) fallbackUrl = "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2025_03_ccc_admissibilite_metropole2024.pdf";
         else if ("2023".equals(year)) fallbackUrl = "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2024_03__sujet%20admissibilite.pdf";
         else if ("2022".equals(year)) fallbackUrl = "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2022_ccc_epreuve_admissibilite.pdf";
         else if ("2021".equals(year)) fallbackUrl = "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2021_ccc_epreuve_admissibilite.pdf";
@@ -1507,6 +1518,48 @@ public class MainActivity extends Activity {
 
     private void openUrl(String url) {
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+    }
+
+    private boolean hasText(String value) {
+        return value != null && !value.trim().isEmpty();
+    }
+
+    private void openPdfSource(Source source) {
+        if (source == null) return;
+        if (hasText(source.localUrl)) {
+            try {
+                openLocalPdf(source.localUrl);
+                return;
+            } catch (ActivityNotFoundException e) {
+                Toast.makeText(this, "Aucun lecteur PDF disponible sur ce téléphone.", Toast.LENGTH_LONG).show();
+                return;
+            } catch (Exception e) {
+                if (!hasText(source.url)) {
+                    Toast.makeText(this, "PDF local indisponible.", Toast.LENGTH_LONG).show();
+                    return;
+                }
+            }
+        }
+        if (hasText(source.url)) openUrl(source.url);
+    }
+
+    private void openLocalPdf(String localUrl) throws Exception {
+        String assetPath = localUrl.replaceFirst("^public_sources/", "");
+        String fileName = assetPath.substring(assetPath.lastIndexOf('/') + 1);
+        File dir = new File(getCacheDir(), "pdfs");
+        if (!dir.exists() && !dir.mkdirs()) throw new IllegalStateException("Impossible de préparer le cache PDF");
+        File outFile = new File(dir, fileName);
+        try (InputStream in = getAssets().open(assetPath);
+             FileOutputStream out = new FileOutputStream(outFile)) {
+            byte[] buffer = new byte[8192];
+            int read;
+            while ((read = in.read(buffer)) != -1) out.write(buffer, 0, read);
+        }
+        Uri uri = FileProvider.getUriForFile(this, getPackageName() + ".fileprovider", outFile);
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setDataAndType(uri, "application/pdf");
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        startActivity(intent);
     }
 
     private void showSources() {
@@ -1535,6 +1588,7 @@ public class MainActivity extends Activity {
                 "Année : " + (source.year.isEmpty() ? "sans année" : source.year) + "\n" +
                         "Type : " + sourceTypeLabel(source.type) + "\n" +
                         "Lien : " + source.url + "\n" +
+                        (source.localUrl.isEmpty() ? "" : "Fichier local : " + source.localUrl + "\n") +
                         "Statut d’intégration : " + sourceIntegrationStatus(source.type, source.year) + "\n" +
                         "Niveau de fiabilité : " + sourceReliability(source.type)));
         if (source.url != null && source.url.startsWith("http")) {
@@ -1874,15 +1928,19 @@ public class MainActivity extends Activity {
     }
 
     static class Source {
-        final String title, url, type, year;
+        final String title, url, type, year, localUrl;
         Source(String title, String url) {
-            this(title, url, "", "");
+            this(title, url, "", "", "");
         }
         Source(String title, String url, String type, String year) {
+            this(title, url, type, year, "");
+        }
+        Source(String title, String url, String type, String year, String localUrl) {
             this.title = title;
             this.url = url;
             this.type = type == null ? "" : type;
             this.year = year == null ? "" : year;
+            this.localUrl = localUrl == null ? "" : localUrl;
         }
     }
 

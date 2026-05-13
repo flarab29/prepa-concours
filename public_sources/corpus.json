@@ -6668,7 +6668,8 @@
       "title": "Sujet zero ecrit 2026",
       "url": "https://rejoindrelesfinancespubliques.economie.gouv.fr/files/files/concours/Sujets_zero/CCC%20-%202026%20-%20sujet%20test%20-%20admissibilit%C3%A9.pdf",
       "type": "zero-written",
-      "year": 2026
+      "year": 2026,
+      "localUrl": "public_sources/pdfs/ecrit-2026-sujet-zero.pdf"
     },
     {
       "title": "Annale QCM 2020",
@@ -6728,31 +6729,36 @@
       "title": "Annale ecrit 2020",
       "url": "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2020_ccc_epreuve_admissibilite.pdf",
       "type": "written",
-      "year": 2020
+      "year": 2020,
+      "localUrl": "public_sources/pdfs/ecrit-2020-annale.pdf"
     },
     {
       "title": "Annale ecrit 2021",
       "url": "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2021_ccc_epreuve_admissibilite.pdf",
       "type": "written",
-      "year": 2021
+      "year": 2021,
+      "localUrl": "public_sources/pdfs/ecrit-2021-annale.pdf"
     },
     {
       "title": "Annale ecrit 2022",
       "url": "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2022_ccc_epreuve_admissibilite.pdf",
       "type": "written",
-      "year": 2022
+      "year": 2022,
+      "localUrl": "public_sources/pdfs/ecrit-2022-annale.pdf"
     },
     {
       "title": "Annale ecrit 2023",
       "url": "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2024_03__sujet%20admissibilite.pdf",
       "type": "written",
-      "year": 2023
+      "year": 2023,
+      "localUrl": "public_sources/pdfs/ecrit-2023-annale.pdf"
     },
     {
       "title": "Annale ecrit 2024",
-      "url": "https://www.economie.gouv.fr/rejoignez-nous/agent-administratif-principal-des-finances-publiques-de-2eme-classe-externe-dgfip",
+      "url": "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2025_03_ccc_admissibilite_metropole2024.pdf",
       "type": "written",
-      "year": 2024
+      "year": 2024,
+      "localUrl": "public_sources/pdfs/ecrit-2024-annale.pdf"
     },
     {
       "title": "Rapport de jury 2020",

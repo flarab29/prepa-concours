@@ -14,7 +14,7 @@ const correctionUrls = {
   2020: "https://monconcoursdgfip.fr/correction-qcm-concours-commun-categorie-c-2020/"
 };
 const ecritUrls = {
-  2024: officialPage,
+  2024: "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2025_03_ccc_admissibilite_metropole2024.pdf",
   2023: "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2024_03__sujet%20admissibilite.pdf",
   2022: "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2022_ccc_epreuve_admissibilite.pdf",
   2021: "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2021_ccc_epreuve_admissibilite.pdf",
@@ -772,17 +772,41 @@ function writtenPdfSource(subject) {
   const fallbackUrl = year === "2026" ? zero.ecrit : ecritUrls[year];
   return fallbackUrl ? { title: `${subject.source} · PDF officiel`, year, type, url: fallbackUrl } : null;
 }
+function isPdfUrl(url) {
+  return /\.pdf($|[?#])/i.test(url || "");
+}
+function canEmbedWrittenPdf(url) {
+  try {
+    const host = new URL(url).hostname;
+    return host === "rejoindrelesfinancespubliques.economie.gouv.fr";
+  } catch {
+    return false;
+  }
+}
 function writtenPdfViewer(subject) {
   const pdf = writtenPdfSource(subject);
-  if (!pdf?.url) return card("PDF du sujet", "Aucun PDF direct n’est référencé pour ce sujet. Utilisez la page Sources pour retrouver la référence officielle.", "span-12");
-  const isPdf = /\.pdf($|[?#])/i.test(pdf.url);
+  const viewerUrl = pdf?.localUrl || pdf?.url || "";
+  if (!viewerUrl) return card("PDF du sujet", "Aucun PDF direct n’est référencé pour ce sujet. Utilisez la page Sources pour retrouver la référence officielle.", "span-12");
+  const hasLocalPdf = Boolean(pdf.localUrl);
+  const canEmbed = isPdfUrl(viewerUrl) && (hasLocalPdf || canEmbedWrittenPdf(viewerUrl));
+  const escapedViewerUrl = escapeHtml(viewerUrl);
+  const escapedOfficialUrl = escapeHtml(pdf.url || viewerUrl);
+  const sourceLink = pdf.url && pdf.url !== viewerUrl
+    ? `<a class="source" href="${escapedOfficialUrl}" target="_blank" rel="noreferrer">Ouvrir la source officielle</a>`
+    : "";
   return `<section class="card span-12">
-    <h3>PDF officiel du sujet</h3>
+    <h3>PDF du sujet</h3>
     <span class="badge good">${escapeHtml(sourceReliability(pdf.type))}</span>
     <span class="badge soft">${escapeHtml(sourceTypeLabel(pdf.type))}</span>
     <span class="badge">${escapeHtml(pdf.year || "sans année")}</span>
-    <div class="toolbar"><a class="source" href="${pdf.url}" target="_blank" rel="noreferrer">Ouvrir le PDF dans un nouvel onglet</a></div>
-    ${isPdf ? `<iframe class="pdf-viewer" src="${pdf.url}#toolbar=1&navpanes=0" title="PDF officiel du sujet écrit"></iframe><a class="pdf-fallback" href="${pdf.url}" target="_blank" rel="noreferrer">Si le PDF ne s’affiche pas, ouvrir la source officielle.</a>` : `<div class="muted">Cette source pointe vers une page officielle plutôt qu’un PDF direct.</div>`}
+    ${hasLocalPdf ? `<span class="badge good">PDF local embarqué</span>` : `<span class="badge warn">PDF distant</span>`}
+    <div class="toolbar">
+      <a class="source" href="${escapedViewerUrl}" target="_blank" rel="noreferrer">Ouvrir le PDF</a>
+      ${sourceLink}
+    </div>
+    ${canEmbed
+      ? `<iframe class="pdf-viewer" src="${escapedViewerUrl}#toolbar=1&navpanes=0" title="PDF du sujet écrit"></iframe><a class="pdf-fallback" href="${escapedViewerUrl}" target="_blank" rel="noreferrer">Si le PDF ne s’affiche pas, l’ouvrir dans un nouvel onglet.</a>`
+      : `<div class="pdf-blocked"><strong>Affichage intégré indisponible</strong><br>Le fichier local n’est pas disponible pour ce sujet. Le lien officiel reste accessible dans un nouvel onglet.</div>`}
   </section>`;
 }
 function renderWritten() {
@@ -989,14 +1013,20 @@ function sourceIntegrationStatus(type, year) {
 function sourceCard(item) {
   const type = item.type || "adapted";
   const href = item.url || "public_sources/corpus.json";
-  return `<a class="source-card" href="${href}" target="_blank" rel="noreferrer">
+  const localLink = item.localUrl ? `<a class="source" href="${escapeHtml(item.localUrl)}" target="_blank" rel="noreferrer">PDF local embarqué</a>` : "";
+  return `<div class="source-card">
     <strong>${escapeHtml(item.title)}</strong>
     <span class="badge">${escapeHtml(item.year || "sans année")}</span>
     <span class="badge soft">${escapeHtml(sourceTypeLabel(type))}</span>
     <span class="badge ${sourceReliability(type).startsWith("Officielle") ? "good" : "warn"}">${escapeHtml(sourceReliability(type))}</span>
     <div class="muted">Statut d’intégration : ${escapeHtml(sourceIntegrationStatus(type, item.year))}</div>
     <div class="muted">Lien : ${escapeHtml(href)}</div>
-  </a>`;
+    ${item.localUrl ? `<div class="muted">Fichier local : ${escapeHtml(item.localUrl)}</div>` : ""}
+    <div class="toolbar">
+      <a class="source" href="${escapeHtml(href)}" target="_blank" rel="noreferrer">Source officielle</a>
+      ${localLink}
+    </div>
+  </div>`;
 }
 function completeSources() {
   const items = sourceItems ? [...sourceItems] : [

@@ -122,7 +122,8 @@ final class CorpusRepository {
                     item.optString("title"),
                     item.optString("url"),
                     item.optString("type"),
-                    item.has("year") ? item.optString("year") : ""
+                    item.has("year") ? item.optString("year") : "",
+                    item.optString("localUrl")
             ));
         }
         return result;
