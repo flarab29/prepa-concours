@@ -7,6 +7,8 @@ import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.content.Intent;
 import android.view.Gravity;
 import android.view.View;
@@ -50,8 +52,8 @@ public class MainActivity extends Activity {
             "EMC et institutions", "Numerique", "MEF / DGFiP / DGDDI", "Actualite", "Culture generale"
     };
     private static final String[] QUIZ_MODES = {
-            "Libre", "Diagnostic initial", "Serie courte 10 min", "Mode examen 54", "Sujet zero 2026",
-            "Annale complete", "Faiblesses du jour", "Carnet d'erreurs"
+            "Libre", "Diagnostic initial", "Serie courte 10 min", "Examen ancien format — 54 questions / 1h30",
+            "Sujet zéro 2026 — 50 questions", "Simulation QCM 1h30", "Annale complete", "Faiblesses du jour", "Carnet d'erreurs"
     };
     private static final String[] PROGRESS_TASKS = {
             "QCM français", "QCM calcul", "QCM culture générale", "QCM raisonnement",
@@ -84,6 +86,12 @@ public class MainActivity extends Activity {
     private int officialQcmTotal = OFFICIAL_QCM_TOTAL;
     private final List<Question> currentMistakes = new ArrayList<>();
     private final List<QuizAnswer> quizAnswers = new ArrayList<>();
+    private final List<Long> questionTimes = new ArrayList<>();
+    private long quizStartedAt = 0L;
+    private long questionStartedAt = 0L;
+    private final Handler oralTimerHandler = new Handler(Looper.getMainLooper());
+    private long oralPresentationStart = 0L;
+    private TextView oralTimerText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -166,6 +174,7 @@ public class MainActivity extends Activity {
     }
 
     private void route(String name) {
+        if (!"Oral".equals(name)) stopOralTimer();
         content.removeAllViews();
         if ("QCM".equals(name)) showQuizHome();
         else if ("Annales".equals(name)) showAnnales();
@@ -182,6 +191,7 @@ public class MainActivity extends Activity {
         addSection("Objectif 2026");
         int mistakes = mistakeCount();
         int due = dueMistakeCount();
+        for (String message : coachMessages(mistakes)) content.addView(card("Conseil", message));
         content.addView(card("S'entraîner aujourd'hui",
                 "Domaine recommandé : " + recommendedDomainLabel() + ".\n" +
                         "Carnet d'erreurs : " + mistakes + " question" + (mistakes > 1 ? "s" : "") +
@@ -211,6 +221,8 @@ public class MainActivity extends Activity {
                 "Inscriptions : 27 avril au 9 juin 2026\nÉpreuves écrites : 29 septembre 2026\nRésultats pré-admissibilité : 16 octobre 2026\nAdmissibilité : 6 novembre 2026\nOraux : 4 au 8 janvier 2027\nAdmission : 22 janvier 2027"));
         content.addView(card("Format des épreuves",
                 "QCM de 1 h 30, coefficient 1, sans calculatrice.\nCas pratique écrit de 3 h, coefficient 2, calculatrice autorisée.\nOral de 20 minutes, coefficient 3, avec présentation du parcours en 2 minutes.\nToute note inférieure à 5/20 est éliminatoire."));
+        content.addView(card("Ancien format vs format 2026",
+                "Les annales 2020-2024 restent utiles.\nLe sujet zéro 2026 est prioritaire pour se caler sur le nouveau format.\nLe mode 54 questions correspond aux anciennes annales.\nLe QCM 2026 reste une épreuve de 1h30 sans calculatrice."));
         content.addView(card("Plan intelligent",
                 "Phase 1 : sécuriser le QCM avec 15 minutes par jour sur français, calcul, logique et culture générale.\nPhase 2 : refaire chaque annale écrite en conditions dégradées : lecture rapide, plan, livrable opérationnel.\nPhase 3 : oral coefficient 3 : présentation de 2 minutes, missions DGFiP/DGDDI, mises en situation et déontologie.\nObjectif : ne jamais descendre sous 5/20 et viser 12+ sur les deux écrits."));
         content.addView(card("Couverture corrigée",
@@ -281,6 +293,8 @@ public class MainActivity extends Activity {
         if (mistakeCount() > 0) addAction("Revoir mon carnet d'erreurs", this::startMistakeQuiz);
 
         addAction("Démarrer la série", this::startQuizFromFilters);
+        content.addView(card("Ancien format vs format 2026",
+                "Les annales 2020-2024 restent utiles.\nLe sujet zéro 2026 est prioritaire pour se caler sur le nouveau format.\nLe mode 54 questions correspond aux anciennes annales.\nLe QCM 2026 reste une épreuve de 1h30 sans calculatrice."));
         content.addView(card("Qualité de la banque",
                 bankHealth() + "\nSeules les questions avec réponse attendue et explication sont proposées en entraînement."));
 
@@ -299,6 +313,18 @@ public class MainActivity extends Activity {
             addAction("Retour aux filtres", this::goQuizHome);
             return;
         }
+        if (isSimulationMode() && quizStartedAt > 0L && System.currentTimeMillis() - quizStartedAt >= simulationLimitMs() && currentQuestion < quiz.size()) {
+            while (currentQuestion < quiz.size()) {
+                Question remaining = quiz.get(currentQuestion);
+                while (questionTimes.size() <= currentQuestion) questionTimes.add(0L);
+                questionTimes.set(currentQuestion, 0L);
+                recordQuestionResult(remaining, false);
+                quizAnswers.add(new QuizAnswer(remaining, -1, false, 0L));
+                currentMistakes.add(remaining);
+                getPreferences(MODE_PRIVATE).edit().putString("reason_" + questionId(remaining), "Temps écoulé").apply();
+                currentQuestion++;
+            }
+        }
         if (currentQuestion >= quiz.size()) {
             addSection("Résultat QCM");
             int percent = Math.round((score * 100f) / quiz.size());
@@ -307,6 +333,11 @@ public class MainActivity extends Activity {
                 showDiagnosticResult(percent);
                 return;
             }
+            if (isSimulationMode()) {
+                showSimulationResult(percent);
+                return;
+            }
+            content.addView(card("Conseil", scoreCoachMessage(percent, currentMistakes.size())));
             content.addView(card("Score", score + "/" + quiz.size() + " - " + percent + "%\n" + feedback(percent) + "\n\n" + sessionReviewText()));
             if ("Séance du jour".equals(activeQuizMode)) {
                 Advice advice = dailyAdvice();
@@ -321,6 +352,10 @@ public class MainActivity extends Activity {
                 currentQuestion = 0;
                 score = 0;
                 currentMistakes.clear();
+                quizAnswers.clear();
+                questionTimes.clear();
+                quizStartedAt = System.currentTimeMillis();
+                questionStartedAt = quizStartedAt;
                 showQuiz();
             });
             addAction("Nouvelle sélection", this::goQuizHome);
@@ -328,6 +363,10 @@ public class MainActivity extends Activity {
         }
         Question q = quiz.get(currentQuestion);
         addSection("Question " + (currentQuestion + 1) + "/" + quiz.size());
+        if (isSimulationMode()) content.addView(card("Simulation QCM 1h30",
+                "Temps écoulé : " + formatDuration(System.currentTimeMillis() - quizStartedAt) +
+                        "\nTemps restant indicatif : " + formatDuration(Math.max(0L, simulationLimitMs() - (System.currentTimeMillis() - quizStartedAt))) +
+                        "\nCorrections affichées à la fin."));
         TextView meta = pill(q.category + " · " + q.source);
         content.addView(meta);
         addQuestionPrompt(q);
@@ -341,34 +380,45 @@ public class MainActivity extends Activity {
             lp.setMargins(0, 0, 0, dp(8));
             content.addView(b, lp);
         }
-        if ("Diagnostic initial".equals(activeQuizMode)) addAction("Je ne sais pas / passer", this::skipDiagnosticQuestion);
+        if (isDeferredCorrectionMode()) addAction("Je ne sais pas / passer", this::skipDeferredQuestion);
         addAction("Arrêter la série", this::goQuizHome);
     }
 
     private void answerQuestion(Question q, int picked) {
         boolean ok = picked == q.answer;
+        long timeMs = markCurrentQuestionTime();
         if (ok) score++;
-        if ("Diagnostic initial".equals(activeQuizMode)) {
+        if (isDeferredCorrectionMode()) {
             recordQuestionResult(q, ok);
-            quizAnswers.add(new QuizAnswer(q, picked, ok));
+            quizAnswers.add(new QuizAnswer(q, picked, ok, timeMs));
             if (!ok) currentMistakes.add(q);
             currentQuestion++;
+            questionStartedAt = System.currentTimeMillis();
             showQuiz();
             return;
         }
-        showAnswer(q, picked);
+        showAnswer(q, picked, timeMs);
     }
 
-    private void skipDiagnosticQuestion() {
+    private void skipDeferredQuestion() {
         Question q = quiz.get(currentQuestion);
+        long timeMs = markCurrentQuestionTime();
         recordQuestionResult(q, false);
-        quizAnswers.add(new QuizAnswer(q, -1, false));
+        quizAnswers.add(new QuizAnswer(q, -1, false, timeMs));
         currentMistakes.add(q);
         currentQuestion++;
+        questionStartedAt = System.currentTimeMillis();
         showQuiz();
     }
 
-    private void showAnswer(Question q, int picked) {
+    private long markCurrentQuestionTime() {
+        long elapsed = questionStartedAt > 0L ? System.currentTimeMillis() - questionStartedAt : 0L;
+        while (questionTimes.size() <= currentQuestion) questionTimes.add(0L);
+        questionTimes.set(currentQuestion, elapsed);
+        return elapsed;
+    }
+
+    private void showAnswer(Question q, int picked, long timeMs) {
         content.removeAllViews();
         scrollTop();
         boolean ok = picked == q.answer;
@@ -381,6 +431,7 @@ public class MainActivity extends Activity {
         if (!ok) addErrorReasonActions(questionId(q));
         addAction("Question suivante", () -> {
             currentQuestion++;
+            questionStartedAt = System.currentTimeMillis();
             showQuiz();
         });
         addAction("Revenir aux filtres", this::goQuizHome);
@@ -410,6 +461,10 @@ public class MainActivity extends Activity {
         currentQuestion = 0;
         score = 0;
         currentMistakes.clear();
+        quizAnswers.clear();
+        questionTimes.clear();
+        quizStartedAt = System.currentTimeMillis();
+        questionStartedAt = quizStartedAt;
         activeQuizMode = selectedModeLabel();
         content.removeAllViews();
         showQuiz();
@@ -422,7 +477,7 @@ public class MainActivity extends Activity {
 
         List<Question> base = new ArrayList<>();
         String forcedYear = null;
-        if ("Sujet zero 2026".equals(mode)) forcedYear = "2026";
+        if (isZero2026Mode(mode)) forcedYear = "2026";
         if ("Annale complete".equals(mode)) forcedYear = "Toutes".equals(selectedYearLabel()) ? "2024" : selectedYearLabel();
 
         String year = forcedYear == null ? selectedYearLabel() : forcedYear;
@@ -454,12 +509,14 @@ public class MainActivity extends Activity {
 
     private void applyModeDefaults() {
         String mode = selectedModeLabel();
-        if ("Sujet zero 2026".equals(mode)) {
+        if (isZero2026Mode(mode)) {
             selectedYearIndex = indexOf(YEAR_FILTERS, "2026");
             selectedSizeIndex = indexOf(SIZE_FILTERS, "50");
-        } else if ("Mode examen 54".equals(mode) || "Annale complete".equals(mode)) {
+        } else if (isOldExamMode(mode) || "Annale complete".equals(mode)) {
             selectedSizeIndex = indexOf(SIZE_FILTERS, "54");
             if ("Annale complete".equals(mode) && "Toutes".equals(selectedYearLabel())) selectedYearIndex = indexOf(YEAR_FILTERS, "2024");
+        } else if (isSimulationMode(mode)) {
+            selectedSizeIndex = indexOf(SIZE_FILTERS, "50");
         } else if ("Serie courte 10 min".equals(mode)) {
             selectedSizeIndex = indexOf(SIZE_FILTERS, "10");
         } else if ("Faiblesses du jour".equals(mode)) {
@@ -573,6 +630,9 @@ public class MainActivity extends Activity {
         score = 0;
         currentMistakes.clear();
         quizAnswers.clear();
+        questionTimes.clear();
+        quizStartedAt = System.currentTimeMillis();
+        questionStartedAt = quizStartedAt;
         activeQuizMode = mode;
         content.removeAllViews();
         showQuiz();
@@ -699,6 +759,26 @@ public class MainActivity extends Activity {
         return QUIZ_MODES[Math.max(0, Math.min(selectedModeIndex, QUIZ_MODES.length - 1))];
     }
 
+    private boolean isOldExamMode(String mode) {
+        return "Examen ancien format — 54 questions / 1h30".equals(mode) || "Mode examen 54".equals(mode);
+    }
+
+    private boolean isZero2026Mode(String mode) {
+        return "Sujet zéro 2026 — 50 questions".equals(mode) || "Sujet zero 2026".equals(mode);
+    }
+
+    private boolean isSimulationMode() {
+        return "Simulation QCM 1h30".equals(activeQuizMode);
+    }
+
+    private boolean isSimulationMode(String mode) {
+        return "Simulation QCM 1h30".equals(mode);
+    }
+
+    private boolean isDeferredCorrectionMode() {
+        return "Diagnostic initial".equals(activeQuizMode) || isSimulationMode();
+    }
+
     private int selectedSize() {
         String label = selectedSizeLabel();
         if ("Toutes".equals(label)) return -1;
@@ -709,8 +789,8 @@ public class MainActivity extends Activity {
         String mode = selectedModeLabel();
         if ("Diagnostic initial".equals(mode)) return 20;
         if ("Serie courte 10 min".equals(mode)) return 10;
-        if ("Mode examen 54".equals(mode) || "Annale complete".equals(mode)) return 54;
-        if ("Sujet zero 2026".equals(mode)) return 50;
+        if (isOldExamMode(mode) || "Annale complete".equals(mode)) return 54;
+        if (isZero2026Mode(mode) || isSimulationMode(mode)) return 50;
         if ("Faiblesses du jour".equals(mode) || "Carnet d'erreurs".equals(mode)) return 20;
         return selectedSize();
     }
@@ -947,6 +1027,24 @@ public class MainActivity extends Activity {
         return last >= 0 ? last + "% au dernier QCM terminé" : "aucune série terminée";
     }
 
+    private List<String> coachMessages(int mistakes) {
+        List<String> messages = new ArrayList<>();
+        int last = getPreferences(MODE_PRIVATE).getInt("last_score", -1);
+        if (!hasDomainStats()) messages.add("Commence par un diagnostic.");
+        if (mistakes == 0) messages.add("Lance une série pour créer ton premier diagnostic.");
+        if (last >= 0 && last < 50) messages.add("Ce score sert à identifier quoi travailler, pas à te juger.");
+        if (last >= 80) messages.add("Bon niveau, consolide maintenant les erreurs.");
+        if (mistakes >= 15) messages.add("Priorité à la correction active, pas à l’enchaînement de nouvelles questions.");
+        return messages;
+    }
+
+    private String scoreCoachMessage(int percent, int misses) {
+        if (percent < 50) return "Ce score sert à identifier quoi travailler, pas à te juger.";
+        if (percent >= 80) return "Bon niveau, consolide maintenant les erreurs.";
+        if (misses >= 8) return "Priorité à la correction active, pas à l’enchaînement de nouvelles questions.";
+        return "Prochaine étape : corrige une erreur activement, puis ajoute seulement ensuite de nouvelles questions.";
+    }
+
     private String dailyRecommendation() {
         if (dueMistakeCount() > 0) return "rejouer les erreurs dues aujourd'hui avant d'ajouter de nouvelles questions";
         if (mistakeCount() > 0) return "continuer le domaine faible en attendant la prochaine révision du carnet";
@@ -991,6 +1089,74 @@ public class MainActivity extends Activity {
         }
         addAction("Refaire un diagnostic", this::startInitialDiagnostic);
         addAction("Nouvelle sélection", this::goQuizHome);
+    }
+
+    private void showSimulationResult(int percent) {
+        long totalTime = totalQuizTimeMs();
+        long averageTime = averageQuestionTimeMs();
+        String weakDomains = weakDomainsFromMistakes();
+        String recommendation = currentMistakes.isEmpty()
+                ? "Prochaine séance : refaire une simulation complète dans 48 h ou passer sur une annale écrite."
+                : "Prochaine séance : revoir " + weakDomains + ", puis lancer le carnet d'erreurs.";
+        content.addView(card("Score", score + "/" + quiz.size() + " - " + percent + "%"));
+        content.addView(card("Temps",
+                "Temps total : " + formatDuration(totalTime) +
+                        "\nTemps moyen par question : " + formatDuration(averageTime) +
+                        "\nTemps par question enregistré localement dans l'historique."));
+        content.addView(card("Domaines faibles", currentMistakes.isEmpty() ? "Aucun domaine faible détecté sur cette simulation." : weakDomains));
+        content.addView(card("Erreurs à revoir",
+                currentMistakes.size() + " erreur" + (currentMistakes.size() > 1 ? "s" : "") + " dans la simulation.\n" +
+                        "Carnet d'erreurs actif : " + mistakeCount() + " question" + (mistakeCount() > 1 ? "s" : "") + "."));
+        content.addView(card("Recommandation", recommendation));
+        for (QuizAnswer answer : quizAnswers) {
+            if (!answer.ok) {
+                String picked = answer.picked < 0 ? "Question non répondue" : answer.question.choices[answer.picked];
+                content.addView(card(answer.question.prompt,
+                        "Domaine : " + domainOf(answer.question) +
+                                "\nVotre réponse : " + picked +
+                                "\nRéponse attendue : " + answer.question.choices[answer.question.answer] +
+                                "\nTemps : " + formatDuration(answer.timeMs) +
+                                "\n\nCorrection : " + correctionText(answer.question)));
+                addErrorReasonActions(questionId(answer.question));
+            }
+        }
+        if (dueMistakeCount() > 0) addAction("Réviser ce qui est dû aujourd'hui", this::startDueReview);
+        if (mistakeCount() > 0) addAction("Revoir mes erreurs", this::startMistakeQuiz);
+        addAction("Nouvelle simulation", this::goQuizHome);
+    }
+
+    private long simulationLimitMs() {
+        return 90L * 60L * 1000L;
+    }
+
+    private long totalQuizTimeMs() {
+        if (quizStartedAt <= 0L) return 0L;
+        return Math.max(0L, System.currentTimeMillis() - quizStartedAt);
+    }
+
+    private long averageQuestionTimeMs() {
+        long total = 0L;
+        int count = 0;
+        for (long time : questionTimes) {
+            if (time >= 0L) {
+                total += time;
+                count++;
+            }
+        }
+        return count == 0 ? 0L : Math.round(total / (float) count);
+    }
+
+    private String formatDuration(long ms) {
+        long seconds = Math.max(0L, Math.round(ms / 1000f));
+        long minutes = seconds / 60L;
+        long rest = seconds % 60L;
+        return minutes + " min " + (rest < 10 ? "0" : "") + rest + " s";
+    }
+
+    private String weakDomainsFromMistakes() {
+        Set<String> domains = new LinkedHashSet<>();
+        for (Question q : currentMistakes) domains.add(domainOf(q));
+        return domains.isEmpty() ? "aucun" : String.join(", ", domains);
     }
 
     private String diagnosticDomainText() {
@@ -1086,37 +1252,156 @@ public class MainActivity extends Activity {
 
     private void showOral() {
         addSection("Oral coefficient 3");
-        content.addView(card("Structure de réponse",
-                "1. Situation : reformuler sans dramatiser.\n2. Règle : neutralité, discrétion, probité, continuité du service, respect de la hiérarchie.\n3. Action : traiter, alerter, tracer, orienter.\n4. Usager : rester clair, calme et équitable."));
-        content.addView(card("Simulation 20 minutes",
-                "0-2 min : presentation personnelle, sobre et chronometree.\n" +
-                        "2-8 min : motivation et connaissance des missions.\n" +
-                        "8-16 min : mises en situation avec regle, action, alerte et trace.\n" +
-                        "16-20 min : questions de rebond, mobilite, contraintes, posture de service public."));
-        content.addView(card("Banque de reflexes",
-                "DGFiP : impots, depenses publiques, gestion publique locale, accueil des usagers, controle et recouvrement.\n" +
-                        "DGDDI : protection du territoire, controle des marchandises, fiscalite douaniere, lutte contre les trafics.\n" +
-                        "Deontologie : neutralite, discretion professionnelle, probite, hierarchie, continuite du service."));
-        for (String question : oralQuestionItems) {
-            content.addView(card("Question possible", question));
-        }
         content.addView(card("Présentation 2 minutes",
                 "30 secondes : parcours et fil directeur.\n45 secondes : expériences utiles pour un poste de catégorie C.\n30 secondes : compréhension des missions DGFiP/DGDDI.\n15 secondes : motivation sobre et concrète."));
+        oralTimerText = card("Chronomètre présentation", "0 min 00 s\nTemps restant : 2 min 00 s");
+        content.addView(oralTimerText);
+        addAction("Démarrer le chronomètre 2 minutes", this::startOralTimer);
+        addAction("Réinitialiser le chronomètre", this::resetOralTimer);
+        content.addView(card("Méthode de réponse en mise en situation",
+                "1. Comprendre la situation.\n2. Rappeler la règle ou le principe.\n3. Agir calmement.\n4. Alerter si nécessaire.\n5. Respecter l’usager, la hiérarchie et la déontologie."));
+        content.addView(card("Avertissement",
+                "Les réponses types doivent aider à structurer, mais ne doivent pas être récitées mécaniquement. Le jury attend une réponse personnelle, calme et adaptée à la situation."));
+        content.addView(card("Simulation 20 minutes",
+                "0-2 min : présentation personnelle chronométrée.\n" +
+                        "2-7 min : motivation et parcours.\n" +
+                        "7-12 min : DGFiP / DGDDI / service public.\n" +
+                        "12-18 min : mises en situation.\n" +
+                        "18-20 min : questions de rebond et conclusion."));
+        content.addView(card("Grille d'auto-évaluation sur 20",
+                "Clarté : 3 pts\nMotivation : 3 pts\nConnaissance des missions : 3 pts\nPosture de service public : 3 pts\nComportement face à une situation difficile : 3 pts\nConcision : 2 pts\nSincérité : 3 pts"));
+        content.addView(card("Réflexes DGFiP / DGDDI / service public",
+                "DGFiP : impôts, dépenses publiques, gestion publique locale, accueil des usagers, contrôle et recouvrement.\n" +
+                        "DGDDI : protection du territoire, contrôle des marchandises, fiscalité douanière, lutte contre les trafics.\n" +
+                        "Service public : neutralité, continuité, égalité, discrétion professionnelle, probité, respect de la hiérarchie."));
+        List<String> motivation = motivationOralQuestions();
+        List<String> missions = missionOralQuestions();
+        List<String> situations = situationOralQuestions();
+        List<String> complement = new ArrayList<>(oralQuestionItems);
+        complement.removeAll(motivation);
+        complement.removeAll(missions);
+        complement.removeAll(situations);
+        addOralBank("Questions de motivation", motivation);
+        addOralBank("DGFiP / DGDDI / service public", missions);
+        addOralBank("Mises en situation", situations);
+        addOralBank("Banque réaliste complémentaire", complement);
+        updateOralTimer();
+    }
+
+    private void addOralBank(String title, List<String> questions) {
+        addSection(title);
+        for (String question : questions) {
+            content.addView(card("Question", question));
+        }
+    }
+
+    private List<String> motivationOralQuestions() {
+        return Arrays.asList(
+                "Pourquoi ce concours et pourquoi maintenant ?",
+                "Quelle expérience de votre parcours peut servir dans un accueil administratif ?",
+                "Qu’attendez-vous d’un poste de catégorie C au quotidien ?",
+                "Quelle qualité devez-vous encore renforcer avant l’oral ?",
+                "Comment réagissez-vous lorsque vous ne réussissez pas du premier coup ?",
+                "Qu’est-ce qui vous motive dans le contact avec les usagers ?");
+    }
+
+    private List<String> missionOralQuestions() {
+        return Arrays.asList(
+                "Quelles sont les grandes missions de la DGFiP ?",
+                "Que savez-vous des missions de la DGDDI ?",
+                "Pourquoi la confidentialité est-elle centrale dans ces administrations ?",
+                "Comment définiriez-vous la neutralité du service public ?",
+                "Que signifie continuité du service public pour un agent administratif ?",
+                "Comment un agent de catégorie C contribue-t-il à la qualité du service rendu ?");
+    }
+
+    private List<String> situationOralQuestions() {
+        return Arrays.asList(
+                "Un usager s’énerve à l’accueil car il ne comprend pas un courrier.",
+                "Un collègue vous demande de consulter un dossier sans motif professionnel.",
+                "Vous constatez une erreur dans un courrier déjà envoyé.",
+                "Deux agents vous donnent des consignes contradictoires.",
+                "Un proche vous demande une information sur son dossier.",
+                "Vous êtes en retard sur une tâche sensible et votre responsable vous sollicite sur une urgence.",
+                "Un usager insiste pour obtenir une information confidentielle.",
+                "Vous remarquez qu’un document contenant des données personnelles est laissé visible.");
+    }
+
+    private final Runnable oralTimerTick = new Runnable() {
+        @Override
+        public void run() {
+            updateOralTimer();
+            if (oralPresentationStart > 0L) oralTimerHandler.postDelayed(this, 500L);
+        }
+    };
+
+    private void startOralTimer() {
+        oralPresentationStart = System.currentTimeMillis();
+        oralTimerHandler.removeCallbacks(oralTimerTick);
+        oralTimerHandler.post(oralTimerTick);
+    }
+
+    private void resetOralTimer() {
+        oralPresentationStart = 0L;
+        oralTimerHandler.removeCallbacks(oralTimerTick);
+        updateOralTimer();
+    }
+
+    private void stopOralTimer() {
+        oralPresentationStart = 0L;
+        oralTimerHandler.removeCallbacks(oralTimerTick);
+    }
+
+    private void updateOralTimer() {
+        if (oralTimerText == null) return;
+        long elapsed = oralPresentationStart > 0L ? System.currentTimeMillis() - oralPresentationStart : 0L;
+        long remaining = Math.max(0L, 120000L - elapsed);
+        String message = formatDuration(elapsed) + "\nTemps restant : " + formatDuration(remaining);
+        if (elapsed > 120000L) message += "\nObjectif dépassé : concluez en une phrase.";
+        oralTimerText.setText("Chronomètre présentation\n\n" + message);
     }
 
     private void showWritten() {
         addSection("Sujet d’écrit");
         subjectText = card("Sujet proposé", subjectItems.get(subjectIndex));
         content.addView(subjectText);
+        Source pdfSource = writtenPdfSourceForCurrentSubject();
+        if (pdfSource != null && pdfSource.url != null && !pdfSource.url.isEmpty()) {
+            content.addView(card("PDF officiel du sujet",
+                    "Année : " + (pdfSource.year.isEmpty() ? writtenSubjectYear(subjectItems.get(subjectIndex)) : pdfSource.year) + "\n" +
+                            "Type : " + sourceTypeLabel(pdfSource.type) + "\n" +
+                            "Fiabilité : " + sourceReliability(pdfSource.type) + "\n" +
+                            "Sur Android, le PDF s’ouvre dans le lecteur PDF ou le navigateur du téléphone pour garder l’application simple et fiable."));
+            addAction("Ouvrir / visualiser le PDF officiel", () -> openUrl(pdfSource.url));
+        } else {
+            content.addView(card("PDF officiel du sujet", "Aucun PDF direct n’est référencé pour ce sujet. Consultez la page Sources."));
+        }
+        content.addView(card("Parcours d'entraînement",
+                "1. Lire le sujet et identifier le livrable demandé.\n" +
+                        "2. Extraire les informations importantes : faits, chiffres, acteurs, risques.\n" +
+                        "3. Construire un plan visible.\n" +
+                        "4. Rédiger comme un futur agent public.\n" +
+                        "5. Auto-évaluer avec la grille sur 20.\n" +
+                        "6. Relire : consigne, chiffres, forme, orthographe."));
         content.addView(card("Atelier 3 heures",
                 "0-20 min : lire la consigne, entourer le livrable et classer les documents.\n" +
-                        "20-45 min : brouillon court avec plan, chiffres utiles et risques.\n" +
-                        "45-165 min : redaction de la synthese, fiche, courriel ou support demande.\n" +
-                        "165-180 min : relecture ciblee : consigne, chiffres, orthographe, anonymat, politesse."));
+                        "20-45 min : extraire faits, chiffres utiles, acteurs, risques et documents à citer.\n" +
+                        "45-65 min : construire un plan court et opérationnel.\n" +
+                        "65-165 min : rédiger le livrable attendu.\n" +
+                        "165-180 min : relecture ciblée : consigne, chiffres, orthographe, anonymat, politesse."));
         content.addView(card("Ce que le correcteur doit voir",
-                "Une reponse structuree, exploitable par un service, avec des donnees commentees.\n" +
-                        "Des actions concretes, pas une dissertation.\n" +
-                        "Un lien visible avec l'environnement MEF : DGFiP, DGDDI, usagers, service public, deontologie."));
+                "Éviter le hors-sujet.\n" +
+                        "Citer les éléments du dossier.\n" +
+                        "Faire un plan visible.\n" +
+                        "Utiliser les chiffres proprement.\n" +
+                        "Rédiger comme un futur agent public."));
+        content.addView(card("Grille d'auto-évaluation sur 20",
+                "Compréhension de la consigne : 4 pts\n" +
+                        "Structure : 3 pts\n" +
+                        "Exploitation des documents : 4 pts\n" +
+                        "Clarté : 3 pts\n" +
+                        "Qualité opérationnelle du livrable : 4 pts\n" +
+                        "Orthographe et expression : 2 pts"));
         LinearLayout row = new LinearLayout(this);
         row.setOrientation(LinearLayout.HORIZONTAL);
         Button prev = button("Précédent", false);
@@ -1128,16 +1413,22 @@ public class MainActivity extends Activity {
         content.addView(row);
 
         addSection("Production");
+        content.addView(card("Livrables prévus",
+                "Synthèse · réponse structurée · fiche · courriel · support de communication."));
         productionInput = new EditText(this);
         productionInput.setMinLines(9);
         productionInput.setGravity(Gravity.TOP | Gravity.START);
         productionInput.setTextColor(INK);
-        productionInput.setHint("Rédigez ici votre synthèse, courriel ou fiche opérationnelle...");
+        productionInput.setHint("Rédigez ici votre synthèse, réponse structurée, fiche, courriel ou support de communication...");
         productionInput.setBackground(rounded(Color.WHITE, LINE, 1, 8));
         productionInput.setPadding(dp(14), dp(14), dp(14), dp(14));
         content.addView(productionInput, new LinearLayout.LayoutParams(-1, dp(220)));
-        addAction("Insérer un squelette de plan", this::insertPlan);
-        addAction("Noter ma production", this::gradeProduction);
+        addAction("Squelette synthèse", () -> insertDeliverableTemplate("Synthèse"));
+        addAction("Squelette réponse structurée", () -> insertDeliverableTemplate("Réponse structurée"));
+        addAction("Squelette fiche", () -> insertDeliverableTemplate("Fiche"));
+        addAction("Squelette courriel", () -> insertDeliverableTemplate("Courriel"));
+        addAction("Squelette support de communication", () -> insertDeliverableTemplate("Support de communication"));
+        addAction("Auto-évaluer ma production", this::gradeProduction);
         gradingResult = text("", 15, INK, false);
         gradingResult.setPadding(0, dp(10), 0, 0);
         content.addView(gradingResult);
@@ -1146,37 +1437,156 @@ public class MainActivity extends Activity {
     private void changeSubject(int delta) {
         List<String> subjects = subjectItems;
         subjectIndex = (subjectIndex + delta + subjects.size()) % subjects.size();
-        subjectText.setText("Sujet proposé\n\n" + subjects.get(subjectIndex));
+        content.removeAllViews();
+        showWritten();
+        scrollTop();
     }
 
     private void gradeProduction() {
         String text = productionInput.getText().toString().trim();
         Grade grade = Grader.grade(text);
-        gradingResult.setText("Note indicative : " + grade.score + "/20\n\n" + grade.comment);
+        gradingResult.setText("Auto-évaluation indicative : " + grade.score + "/20\n\n" + grade.comment);
     }
 
     private void insertPlan() {
-        productionInput.setText("Objet : ...\n\n" +
-                "1. Constat et enjeux\n- Faits du dossier : ...\n- Donnees chiffrees a commenter : ...\n\n" +
-                "2. Risques et publics concernes\n- Usagers / agents / service : ...\n- Point de vigilance juridique ou deontologique : ...\n\n" +
-                "3. Actions proposees\n- Action immediate : ...\n- Action de suivi : ...\n- Indicateur ou trace : ...\n\n" +
-                "Conclusion operationnelle : decision, priorite, prochaine etape.\n");
+        insertDeliverableTemplate("Synthèse");
+    }
+
+    private void insertDeliverableTemplate(String kind) {
+        String text;
+        if ("Réponse structurée".equals(kind)) {
+            text = "Introduction : réponse directe à la consigne.\n\n" +
+                    "1. Analyse de la situation\n- Faits du dossier : ...\n- Données à retenir : ...\n\n" +
+                    "2. Réponse attendue\n- Argument 1 : ...\n- Argument 2 : ...\n\n" +
+                    "3. Mise en œuvre\n- Action concrète : ...\n- Contrôle ou suivi : ...\n\nConclusion courte : ...\n";
+        } else if ("Fiche".equals(kind)) {
+            text = "FICHE\nObjet : ...\nDestinataire : ...\n\n" +
+                    "Contexte\n- ...\n\nPoints clés du dossier\n- ...\n\nAnalyse\n- Risques : ...\n- Chiffres utiles : ...\n\n" +
+                    "Propositions\n- Action immédiate : ...\n- Action de suivi : ...\n\nVigilances\n- Délai : ...\n- Traçabilité : ...\n";
+        } else if ("Courriel".equals(kind)) {
+            text = "Objet : ...\n\nMadame, Monsieur,\n\nÀ la suite de ..., voici les éléments utiles.\n\n" +
+                    "1. Constat\n...\n\n2. Points d'attention\n...\n\n3. Suite proposée\n...\n\n" +
+                    "Je reste disponible pour tout complément.\n\nCordialement,\n";
+        } else if ("Support de communication".equals(kind)) {
+            text = "Titre du support : ...\n\nMessage principal\n- ...\n\nPublic visé\n- ...\n\n" +
+                    "Informations à retenir\n- ...\n- Chiffre clé : ...\n\nConsignes pratiques\n- Étape 1 : ...\n- Étape 2 : ...\n\nContact / suite\n- ...\n";
+        } else {
+            text = "Titre : Synthèse opérationnelle\n\nIntroduction\n- Objet du dossier : ...\n- Problème à traiter : ...\n\n" +
+                    "1. Constats essentiels\n- Élément du dossier : ...\n- Chiffre ou donnée utile : ...\n\n" +
+                    "2. Enjeux et risques\n- Pour le service : ...\n- Pour les usagers : ...\n\n" +
+                    "3. Pistes d'action\n- Action prioritaire : ...\n- Point de vigilance : ...\n\nConclusion\n- Décision ou suite proposée : ...\n";
+        }
+        productionInput.setText(text);
         productionInput.setSelection(productionInput.getText().length());
     }
 
-    private void showSources() {
-        addSection("Sources publiques");
-        content.addView(card("Base officielle",
-                "Page concours DGFiP externe : calendrier 2026, nature des épreuves, annales 2020-2024, rapports de jury 2020-2024, sujets zéro 2026."));
+    private String writtenSubjectYear(String subject) {
+        for (String year : YEAR_FILTERS) {
+            if (!"Toutes".equals(year) && subject != null && subject.contains(year)) return year;
+        }
+        return "";
+    }
+
+    private Source writtenPdfSourceForCurrentSubject() {
+        if (subjectItems.isEmpty()) return null;
+        String year = writtenSubjectYear(subjectItems.get(subjectIndex));
+        if (year.isEmpty()) return null;
+        String expectedType = "2026".equals(year) ? "zero-written" : "written";
         for (Source source : sourceItems) {
-            Button b = button(source.title, true);
-            b.setGravity(Gravity.START | Gravity.CENTER_VERTICAL);
-            b.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(source.url))));
-            b.setMinHeight(dp(58));
-            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(-1, -2);
-            lp.setMargins(0, 0, 0, dp(8));
+            if (expectedType.equals(source.type) && year.equals(source.year)) return source;
+        }
+        String fallbackUrl = null;
+        if ("2026".equals(year)) fallbackUrl = "https://rejoindrelesfinancespubliques.economie.gouv.fr/files/files/concours/Sujets_zero/CCC%20-%202026%20-%20sujet%20test%20-%20admissibilit%C3%A9.pdf";
+        else if ("2023".equals(year)) fallbackUrl = "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2024_03__sujet%20admissibilite.pdf";
+        else if ("2022".equals(year)) fallbackUrl = "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2022_ccc_epreuve_admissibilite.pdf";
+        else if ("2021".equals(year)) fallbackUrl = "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2021_ccc_epreuve_admissibilite.pdf";
+        else if ("2020".equals(year)) fallbackUrl = "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2020_ccc_epreuve_admissibilite.pdf";
+        if (fallbackUrl == null) return null;
+        return new Source("PDF officiel du sujet écrit", fallbackUrl, expectedType, year);
+    }
+
+    private void openUrl(String url) {
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+    }
+
+    private void showSources() {
+        addSection("Sources et fiabilité");
+        content.addView(card("Base officielle",
+                "Les sources officielles servent de référence. Les corrections tierces aident à contrôler certains QCM mais restent moins fiables. Les questions générées ou adaptées sont conservées dans le corpus local et contrôlées par le validateur."));
+        String[] families = {"Sources officielles", "Sujets zéro", "Annales", "Rapports de jury", "Corrections tierces", "Questions générées ou adaptées"};
+        for (String family : families) {
+            boolean printed = false;
+            for (Source source : sourceItems) {
+                if (!family.equals(sourceFamily(source.type))) continue;
+                if (!printed) {
+                    addSection(family);
+                    printed = true;
+                }
+                addSourceCard(source);
+            }
+        }
+        addSection("Questions générées ou adaptées");
+        content.addView(card("Corpus local",
+                "Titre : questions QCM enrichies et adaptées\nAnnée : multi\nType : questions adaptées\nLien : public_sources/corpus.json\nStatut d’intégration : présentes dans le corpus local.\nNiveau de fiabilité : contrôlées par validate-corpus.js."));
+    }
+
+    private void addSourceCard(Source source) {
+        content.addView(card(source.title,
+                "Année : " + (source.year.isEmpty() ? "sans année" : source.year) + "\n" +
+                        "Type : " + sourceTypeLabel(source.type) + "\n" +
+                        "Lien : " + source.url + "\n" +
+                        "Statut d’intégration : " + sourceIntegrationStatus(source.type, source.year) + "\n" +
+                        "Niveau de fiabilité : " + sourceReliability(source.type)));
+        if (source.url != null && source.url.startsWith("http")) {
+            Button b = button("Ouvrir la source", true);
+            b.setOnClickListener(v -> openUrl(source.url));
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(-1, dp(52));
+            lp.setMargins(0, 0, 0, dp(10));
             content.addView(b, lp);
         }
+    }
+
+    private String sourceFamily(String type) {
+        if ("official".equals(type)) return "Sources officielles";
+        if ("zero-qcm".equals(type) || "zero-written".equals(type)) return "Sujets zéro";
+        if ("qcm".equals(type) || "written".equals(type)) return "Annales";
+        if ("jury-report".equals(type)) return "Rapports de jury";
+        if ("qcm-correction".equals(type)) return "Corrections tierces";
+        return "Questions générées ou adaptées";
+    }
+
+    private String sourceTypeLabel(String type) {
+        if ("official".equals(type)) return "page officielle";
+        if ("zero-qcm".equals(type)) return "sujet zéro QCM";
+        if ("zero-written".equals(type)) return "sujet zéro écrit";
+        if ("qcm".equals(type)) return "annale QCM";
+        if ("written".equals(type)) return "annale écrit";
+        if ("jury-report".equals(type)) return "rapport de jury";
+        if ("qcm-correction".equals(type)) return "correction tierce";
+        return type == null || type.isEmpty() ? "source" : type;
+    }
+
+    private String sourceReliability(String type) {
+        if ("qcm-correction".equals(type)) return "Tierce à vérifier";
+        if ("official".equals(type) || "zero-qcm".equals(type) || "zero-written".equals(type)
+                || "qcm".equals(type) || "written".equals(type) || "jury-report".equals(type)) return "Officielle";
+        return "Adaptée, vérifiée par le validateur";
+    }
+
+    private String sourceIntegrationStatus(String type, String year) {
+        if ("zero-qcm".equals(type)) return "Sujet zéro QCM 2026 intégré en questions.";
+        if ("zero-written".equals(type)) return "Sujet zéro écrit disponible dans l’entraînement écrit.";
+        if ("qcm".equals(type)) return qcmCountForYear(year) + " question(s) intégrée(s) ou adaptée(s).";
+        if ("qcm-correction".equals(type)) return "Utilisée comme aide de contrôle, fiabilité inférieure à l’officiel.";
+        if ("written".equals(type)) return "Disponible dans les sujets écrits ou le corpus d’annales.";
+        if ("jury-report".equals(type)) return "Transformé en règles et alertes de préparation.";
+        return "Référence de cadrage.";
+    }
+
+    private int qcmCountForYear(String year) {
+        int count = 0;
+        for (Question q : allQuestions) if (year != null && year.equals(questionYear(q))) count++;
+        return count;
     }
 
     private void showProgress() {
@@ -1227,6 +1637,9 @@ public class MainActivity extends Activity {
         SharedPreferences prefs = getPreferences(MODE_PRIVATE);
         String stamp = new SimpleDateFormat("dd/MM HH:mm", Locale.FRANCE).format(new Date());
         String entry = stamp + " · " + activeQuizMode + " · " + rawScore + "/" + total + " (" + percent + "%)";
+        if (isSimulationMode()) {
+            entry += " · temps " + formatDuration(totalQuizTimeMs()) + " · moy. " + formatDuration(averageQuestionTimeMs());
+        }
         String previous = prefs.getString("score_history", "");
         String next = entry + (previous.isEmpty() ? "" : "\n" + previous);
         String[] lines = next.split("\n");
@@ -1409,10 +1822,15 @@ public class MainActivity extends Activity {
         final Question question;
         final int picked;
         final boolean ok;
+        final long timeMs;
         QuizAnswer(Question question, int picked, boolean ok) {
+            this(question, picked, ok, 0L);
+        }
+        QuizAnswer(Question question, int picked, boolean ok, long timeMs) {
             this.question = question;
             this.picked = picked;
             this.ok = ok;
+            this.timeMs = timeMs;
         }
     }
 
@@ -1456,8 +1874,16 @@ public class MainActivity extends Activity {
     }
 
     static class Source {
-        final String title, url;
-        Source(String title, String url) { this.title = title; this.url = url; }
+        final String title, url, type, year;
+        Source(String title, String url) {
+            this(title, url, "", "");
+        }
+        Source(String title, String url, String type, String year) {
+            this.title = title;
+            this.url = url;
+            this.type = type == null ? "" : type;
+            this.year = year == null ? "" : year;
+        }
     }
 
     static class Annal {
@@ -1482,27 +1908,40 @@ public class MainActivity extends Activity {
         static Grade grade(String text) {
             if (text.length() < 120) return new Grade(5, "Production trop courte : le jury attend une réponse structurée et exploitable.\n\nPriorité : annoncer le livrable, organiser en parties et ajouter des actions concrètes.");
             String lower = text.toLowerCase(Locale.FRANCE);
-            int comprehension = points(4, text.length() > 900 && hasAny(lower, "enjeu", "objectif", "constat", "risque"), text.length() > 450);
-            int structure = points(4, hasAny(lower, "1.", "2.", "d'abord", "ensuite", "enfin", "partie", "conclusion"), countSentences(text) >= 6);
-            int exploitation = points(4, hasAny(lower, "document", "donnée", "chiffre", "pourcentage", "graphique", "tableau"), text.length() > 700);
-            int operational = points(3, hasAny(lower, "fiche", "courriel", "action", "priorité", "usager", "service"), hasAny(lower, "délai", "risque", "contrôle"));
-            int culture = points(3, hasAny(lower, "dgfip", "dgddi", "bercy", "finances publiques", "douane", "ministère"), hasAny(lower, "service public", "administration"));
-            int language = points(2, countSentences(text) > 8 && text.length() > 400, countSentences(text) > 4);
-            int score = Math.min(20, comprehension + structure + exploitation + operational + culture + language);
+            int comprehension = points(4,
+                    text.length() > 700 && hasAny(lower, "consigne", "objectif", "demande", "enjeu", "problème", "livrable"),
+                    text.length() > 350);
+            int structure = points(3,
+                    hasAny(lower, "1.", "2.", "d'abord", "ensuite", "enfin", "partie", "conclusion", "objet", "contexte"),
+                    countLines(text) > 6);
+            int exploitation = points(4,
+                    hasAny(lower, "document", "donnée", "donnee", "chiffre", "pourcentage", "graphique", "tableau", "dossier"),
+                    hasAny(lower, "fait", "constat", "acteur", "usager"));
+            int clarity = points(3,
+                    countSentences(text) > 8 && text.length() > 500,
+                    text.length() > 250);
+            int operational = points(4,
+                    hasAny(lower, "fiche", "courriel", "synthèse", "synthese", "support", "action", "priorité", "priorite", "délai", "delai", "suivi", "usager", "service"),
+                    hasAny(lower, "proposition", "mesure", "alerte", "contrôle", "controle"));
+            int language = points(2,
+                    countSentences(text) > 8 && text.length() > 350 && !text.contains("   "),
+                    text.length() > 350);
+            int score = Math.min(20, comprehension + structure + exploitation + clarity + operational + language);
 
             List<String> advice = new ArrayList<>();
             if (text.length() < 700) advice.add("Développer la copie : une réponse trop courte couvre rarement tout le dossier.");
-            if (!hasAny(lower, "pourcentage", "graphique", "tableau", "chiffre", "donnée")) advice.add("Ajouter un traitement chiffré ou un commentaire de données.");
-            if (!hasAny(lower, "fiche", "courriel", "action", "priorité")) advice.add("Rendre la réponse plus opérationnelle.");
-            if (!hasAny(lower, "dgfip", "dgddi", "finances publiques", "douane", "bercy")) advice.add("Faire apparaître l’environnement ministériel.");
-            if (advice.isEmpty()) advice.add("Copie structurée et exploitable. Prochaine étape : refaire l’exercice en 3 heures avec relecture finale.");
+            if (!hasAny(lower, "document", "dossier", "fait", "donnée", "donnee", "chiffre", "pourcentage", "graphique", "tableau")) advice.add("Citer davantage les éléments du dossier, avec au moins un chiffre ou fait précis.");
+            if (!hasAny(lower, "1.", "2.", "conclusion", "objet", "contexte")) advice.add("Rendre le plan plus visible.");
+            if (!hasAny(lower, "action", "priorité", "priorite", "suivi", "délai", "delai", "usager", "service")) advice.add("Rendre le livrable plus opérationnel.");
+            if (!hasAny(lower, "dgfip", "dgddi", "finances publiques", "douane", "service public", "agent public", "administration")) advice.add("Adopter davantage la posture d'un futur agent public.");
+            if (advice.isEmpty()) advice.add("Copie structurée, exploitable et relue. Prochaine étape : refaire l’exercice en 3 heures avec relecture finale.");
 
-            String rubric = "Compréhension : " + comprehension + "/4\n" +
-                    "Structure : " + structure + "/4\n" +
-                    "Exploitation des données : " + exploitation + "/4\n" +
-                    "Opérationnel : " + operational + "/3\n" +
-                    "Culture MEF : " + culture + "/3\n" +
-                    "Langue : " + language + "/2\n\n" +
+            String rubric = "Compréhension de la consigne : " + comprehension + "/4\n" +
+                    "Structure : " + structure + "/3\n" +
+                    "Exploitation des documents : " + exploitation + "/4\n" +
+                    "Clarté : " + clarity + "/3\n" +
+                    "Qualité opérationnelle du livrable : " + operational + "/4\n" +
+                    "Orthographe et expression : " + language + "/2\n\n" +
                     String.join("\n", advice);
             return new Grade(score, rubric);
         }
@@ -1522,6 +1961,10 @@ public class MainActivity extends Activity {
             int count = 0;
             for (char c : text.toCharArray()) if (c == '.' || c == '!' || c == '?') count++;
             return count;
+        }
+
+        private static int countLines(String text) {
+            return text.split("\n", -1).length;
         }
     }
 

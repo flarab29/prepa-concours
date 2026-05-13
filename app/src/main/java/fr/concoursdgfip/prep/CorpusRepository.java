@@ -118,7 +118,12 @@ final class CorpusRepository {
         for (int i = 0; i < array.length(); i++) {
             JSONObject item = array.optJSONObject(i);
             if (item == null) continue;
-            result.add(new MainActivity.Source(item.optString("title"), item.optString("url")));
+            result.add(new MainActivity.Source(
+                    item.optString("title"),
+                    item.optString("url"),
+                    item.optString("type"),
+                    item.has("year") ? item.optString("year") : ""
+            ));
         }
         return result;
     }
