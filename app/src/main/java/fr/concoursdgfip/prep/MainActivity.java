@@ -223,7 +223,7 @@ public class MainActivity extends Activity {
                         "Domaine le plus fragile : " + weakestDomain() + ".\n" +
                         "Prochaine action conseillee : " + dailyRecommendation()));
         content.addView(card("Corpus exploité",
-                allQuestions.size() + " questions corrigées avec réponse et explication.\nQCM 2020-2025 et sujet zéro QCM 2026 référencés, dont le sujet zéro 2026 complet en entraînement corrigé.\n6 annales écrites 2020-2025 analysées par thème, livrable et compétence.\n6 rapports de jury 2020-2025 référencés et transformés en règles d’alerte.\n2 sujets zéro 2026 intégrés pour coller au nouveau format."));
+                allQuestions.size() + " questions corrigées avec réponse et explication.\nQCM 2020-2025 et sujet zéro QCM 2026 référencés, dont le sujet zéro 2026 et l’annale 2025 complets en entraînement corrigé.\n6 annales écrites 2020-2025 analysées par thème, livrable et compétence.\n6 rapports de jury 2020-2025 référencés et transformés en règles d’alerte.\n2 sujets zéro 2026 intégrés pour coller au nouveau format."));
         content.addView(card("Audit QCM",
                 bankHealth() + "\nQuestions officielles QCM référencées : " + officialQcmTotal + ".\nQuestions corrigées sélectionnables : " + allQuestions.size() + ".\nReste à intégrer avec corrigé vérifié : " + Math.max(0, officialQcmTotal - allQuestions.size()) + "."));
         content.addView(card("Calendrier officiel",
@@ -235,7 +235,7 @@ public class MainActivity extends Activity {
         content.addView(card("Plan intelligent",
                 "Phase 1 : sécuriser le QCM avec 15 minutes par jour sur français, calcul, logique et culture générale.\nPhase 2 : refaire chaque annale écrite en conditions dégradées : lecture rapide, plan, livrable opérationnel.\nPhase 3 : oral coefficient 3 : présentation de 2 minutes, missions DGFiP/DGDDI, mises en situation et déontologie.\nObjectif : ne jamais descendre sous 5/20 et viser 12+ sur les deux écrits."));
         content.addView(card("Couverture corrigée",
-                "Toutes les questions proposées dans l’entraînement ont une réponse attendue et une explication. Le sujet zéro QCM 2026 est intégré en totalité. Les autres questions officielles dont le corrigé n’est pas encore vérifié restent signalées dans les sources plutôt que transformées en QCM incomplet."));
+                "Toutes les questions proposées dans l’entraînement ont une réponse attendue et une explication. Le sujet zéro QCM 2026 et l’annale QCM 2025 sont intégrés en totalité. Le niveau de vérification de chaque correction reste visible."));
         addAction("Lancer la recommandation", this::startRecommendedQuiz);
         addAction("Commencer un QCM", () -> route("QCM"));
         addAction("Explorer les annales", () -> route("Annales"));
@@ -245,7 +245,7 @@ public class MainActivity extends Activity {
     private void showAnnales() {
         addSection("Toutes les annales");
         content.addView(card("Couverture officielle",
-                "Cette version référence toute la liste publiée sur la page officielle : QCM, écrits et rapports de jury 2020 à 2025, ainsi que les deux sujets zéro 2026. Les questions 2025 restent hors entraînement tant qu’un corrigé vérifié n’est pas intégré."));
+                "Cette version référence toute la liste publiée sur la page officielle : QCM, écrits et rapports de jury 2020 à 2025, ainsi que les deux sujets zéro 2026. Les 54 questions du QCM 2025 sont disponibles avec une proposition de correction publique vérifiée."));
         for (Annal annal : annalItems) {
             content.addView(card(annal.year + " · " + annal.title,
                     "QCM : " + annal.qcm + "\nÉcrit : " + annal.written + "\nSignal jury : " + annal.jury + "\nÀ travailler : " + annal.training));

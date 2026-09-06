@@ -637,7 +637,7 @@ function renderHome() {
       ${card("Format 2026", `QCM de 1 h 30 sans calculatrice, coefficient 1.\nCas pratique écrit de 3 h avec calculatrice, coefficient 2.\nOral de 20 minutes, coefficient 3, avec présentation du parcours en 2 minutes.\nToute note inférieure à 5/20 est éliminatoire.`, "span-6")}
       ${card("Ancien format vs format 2026", `Les annales 2020-2025 restent utiles.\nLe sujet zéro 2026 est prioritaire pour se caler sur le nouveau format.\nLe mode 54 questions correspond aux anciennes annales.\nLe QCM 2026 reste une épreuve de 1h30 sans calculatrice.`, "span-6")}
       ${card("Plan d’attaque", `1. QCM quotidien : français, calcul, logique, culture générale.\n2. Une annale écrite par semaine : lecture rapide, plan, livrable.\n3. Une simulation orale tous les 10 jours : parcours, missions, déontologie.\n4. Relecture systématique : consigne, chiffres, structure, orthographe.`, "span-6")}
-      ${card("Règle qualité", `Une question affichée dans l’entraînement doit toujours avoir une réponse attendue et une explication. Le sujet zéro QCM 2026 est intégré en totalité ; les autres items officiels dont le corrigé n’est pas encore vérifié restent dans les sources tant que l’intégration serait incomplète.`, "span-12")}
+      ${card("Règle qualité", `Une question affichée dans l’entraînement doit toujours avoir une réponse attendue et une explication. Le sujet zéro QCM 2026 et l’annale QCM 2025 sont intégrés en totalité ; le niveau de vérification de chaque correction reste visible.`, "span-12")}
     </div>
     <div class="toolbar" style="margin-top:14px">
       <button onclick="startDailySession()">Lancer la séance du jour</button>

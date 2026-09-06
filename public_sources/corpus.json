@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedFrom": "web-preview.html",
+  "generatedFrom": "web-preview.html; QCM 2025 officiel et proposition de correction publique vérifiée",
   "officialQcmTotal": 374,
   "questions": [
     {
@@ -6457,6 +6457,1646 @@
       "subskill": "suites",
       "difficulty": "hard",
       "estimatedTimeSeconds": 135
+    },
+    {
+      "id": "qcm-2025-001",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Orthographe",
+      "prompt": "Quelle est la bonne orthographe ?",
+      "choices": [
+        "Momentanement",
+        "Momentanément",
+        "Momentannément",
+        "Mommentanément"
+      ],
+      "answer": 1,
+      "explanation": "L’adverbe « momentanément » prend un accent aigu sur le premier e et conserve un seul n après le a.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Orthographe",
+        "2025",
+        "francais"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "francais",
+      "subskill": "orthographe_lexicale",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 45
+    },
+    {
+      "id": "qcm-2025-002",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Conjugaison",
+      "prompt": "Choisissez la bonne proposition pour compléter : « Je vous……de bien prendre soin du colis ».",
+      "choices": [
+        "pri",
+        "prie",
+        "pris",
+        "prit"
+      ],
+      "answer": 1,
+      "explanation": "Le verbe « prier » au présent de l’indicatif, à la première personne du singulier, s’écrit « je prie ».",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Conjugaison",
+        "2025",
+        "francais"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "francais",
+      "subskill": "present_indicatif",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 45
+    },
+    {
+      "id": "qcm-2025-003",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Orthographe",
+      "prompt": "Quelle phrase est correctement orthographiée ?",
+      "choices": [
+        "Quels que soient les ingrédients ou la recette, j’aime cuisiner.",
+        "Quel que soit les ingrédients ou la recette, j’aime cuisiner.",
+        "Quelles que soient les ingrédients ou la recette, j’aime cuisiner.",
+        "Quelques soient les ingrédients ou la recette, j’aime cuisiner."
+      ],
+      "answer": 0,
+      "explanation": "Devant le verbe « soient », « quel que » s’écrit en deux mots et s’accorde avec le sujet pluriel masculin « les ingrédients » : « quels que soient ».",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Orthographe",
+        "2025",
+        "francais"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "francais",
+      "subskill": "accord_quel_que",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 60
+    },
+    {
+      "id": "qcm-2025-004",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Orthographe grammaticale",
+      "prompt": "Si/S’il est vrai qu’elle/quel le séduit, Titeuf sait qu’il doit s’attendre à des refus de la/l’a part de Nadia. Pourtant, il la/l’a serrée dans ses bras : elle a compris… Ou alors, il ni/n’y comprend rien ! Quelle proposition orthographie correctement le texte ?",
+      "choices": [
+        "S’ – quel – l’a – la – n’y",
+        "S’ – qu’elle – la – l’a – n’y",
+        "Si – qu’elle – l’a – la – ni",
+        "Si – quel – la – l’a – n’y"
+      ],
+      "answer": 1,
+      "explanation": "La phrase correcte est : « S’il est vrai qu’elle le séduit… de la part… il l’a serrée… il n’y comprend rien ».",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Orthographe grammaticale",
+        "2025",
+        "francais"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "francais",
+      "subskill": "homophones_grammaticaux",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 90
+    },
+    {
+      "id": "qcm-2025-005",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Accords",
+      "prompt": "Quelle est la proposition correcte ?",
+      "choices": [
+        "Je me suis acheté des boucles d’oreilles rose clair",
+        "Je me suis acheté des boucles d’oreilles rose clairs",
+        "Je me suis acheté des boucles d’oreilles rose claire",
+        "Je me suis acheté des boucles d’oreilles roses claires"
+      ],
+      "answer": 0,
+      "explanation": "Un adjectif de couleur composé de deux mots, comme « rose clair », reste invariable.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Accords",
+        "2025",
+        "francais"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "francais",
+      "subskill": "adjectifs_de_couleur",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 60
+    },
+    {
+      "id": "qcm-2025-006",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Vocabulaire",
+      "prompt": "Que signifie le mot « réfuter » ?",
+      "choices": [
+        "Adhérer",
+        "Admettre",
+        "Argumenter contre",
+        "Sanctionner"
+      ],
+      "answer": 2,
+      "explanation": "Réfuter consiste à combattre une affirmation par des arguments et à montrer qu’elle est fausse.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Vocabulaire",
+        "2025",
+        "francais"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "francais",
+      "subskill": "sens_des_mots",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 45
+    },
+    {
+      "id": "qcm-2025-007",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Vocabulaire",
+      "prompt": "Complétez la phrase : « Une personne autodidacte… »",
+      "choices": [
+        "fait plus jeune que son âge",
+        "n’aime pas voyager",
+        "ne vote pas lors des élections",
+        "s’est instruite par elle-même"
+      ],
+      "answer": 3,
+      "explanation": "Une personne autodidacte acquiert des connaissances par elle-même, sans enseignement institutionnel direct.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Vocabulaire",
+        "2025",
+        "francais"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "francais",
+      "subskill": "sens_des_mots",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 45
+    },
+    {
+      "id": "qcm-2025-008",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Figures de style",
+      "prompt": "Un seul pléonasme est proposé. Lequel ?",
+      "choices": [
+        "Eurêka !",
+        "Kayak",
+        "Monter en haut",
+        "Ne jamais dire jamais"
+      ],
+      "answer": 2,
+      "explanation": "« Monter » contient déjà l’idée d’un déplacement vers le haut : « monter en haut » est un pléonasme.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Figures de style",
+        "2025",
+        "francais"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "francais",
+      "subskill": "pleonasme",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 45
+    },
+    {
+      "id": "qcm-2025-009",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Vocabulaire",
+      "prompt": "Que sont les noms « récit » et « narration » ?",
+      "choices": [
+        "Des antonymes",
+        "Des homonymes",
+        "Des paronymes",
+        "Des synonymes"
+      ],
+      "answer": 3,
+      "explanation": "Dans ce contexte, « récit » et « narration » désignent tous deux l’action ou le résultat de raconter.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Vocabulaire",
+        "2025",
+        "francais"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "francais",
+      "subskill": "synonymes",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 45
+    },
+    {
+      "id": "qcm-2025-010",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Vocabulaire",
+      "prompt": "Un champ lexical est un ensemble de mots :",
+      "choices": [
+        "de même classe grammaticale",
+        "de même famille",
+        "de même nature",
+        "de même thème"
+      ],
+      "answer": 3,
+      "explanation": "Un champ lexical réunit des mots de natures et de familles différentes qui se rapportent à un même thème.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Vocabulaire",
+        "2025",
+        "francais"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "francais",
+      "subskill": "champ_lexical",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 45
+    },
+    {
+      "id": "qcm-2025-011",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Figures de style",
+      "prompt": "La phrase « Je rêve de visiter l’Empire du Soleil-Levant » contient une :",
+      "choices": [
+        "allégorie",
+        "comparaison",
+        "métaphore",
+        "périphrase"
+      ],
+      "answer": 3,
+      "explanation": "« L’Empire du Soleil-Levant » désigne le Japon au moyen d’une expression descriptive : c’est une périphrase.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Figures de style",
+        "2025",
+        "francais"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "francais",
+      "subskill": "periphrase",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 60
+    },
+    {
+      "id": "qcm-2025-012",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Expressions",
+      "prompt": "Que signifie l’expression « bouche cousue » ?",
+      "choices": [
+        "Dévoiler un secret",
+        "Fermer la bouche",
+        "Garder un secret",
+        "Ouvrir la bouche"
+      ],
+      "answer": 2,
+      "explanation": "L’expression « bouche cousue » signifie que l’on promet de ne rien révéler.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Expressions",
+        "2025",
+        "francais"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "francais",
+      "subskill": "expressions_idiomatiques",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 45
+    },
+    {
+      "id": "qcm-2025-013",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Vocabulaire",
+      "prompt": "Que signifie le verbe « ghoster » ?",
+      "choices": [
+        "Exercer la profession de parapsychologue",
+        "Rompre soudainement tout contact avec quelqu’un",
+        "Se déguiser en fantôme",
+        "Visiter un château écossais"
+      ],
+      "answer": 1,
+      "explanation": "« Ghoster » signifie cesser brusquement de répondre et rompre tout contact sans explication.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Vocabulaire",
+        "2025",
+        "francais"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "francais",
+      "subskill": "neologismes",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 45
+    },
+    {
+      "id": "qcm-2025-014",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Vocabulaire",
+      "prompt": "Que signifie le verbe « se rembrunir » ?",
+      "choices": [
+        "Devenir soucieux",
+        "Retrouver la santé",
+        "Rougir",
+        "Se méfier"
+      ],
+      "answer": 0,
+      "explanation": "Se rembrunir signifie prendre un air sombre, soucieux ou chagrin.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Vocabulaire",
+        "2025",
+        "francais"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "francais",
+      "subskill": "sens_des_mots",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 45
+    },
+    {
+      "id": "qcm-2025-015",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Vocabulaire",
+      "prompt": "Dans quelle phrase peut-on employer le mot « collusion » ?",
+      "choices": [
+        "Ils sont entrés en… à dix heures pétantes.",
+        "La SNCF n’explique toujours pas la… entre ces deux trains.",
+        "On aurait certainement pu éviter cette série de…",
+        "On ne peut que condamner cette… entre le juge et l’un des prévenus."
+      ],
+      "answer": 3,
+      "explanation": "Une collusion est une entente secrète au préjudice d’un tiers. Une collision désigne un choc.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Vocabulaire",
+        "2025",
+        "francais"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "francais",
+      "subskill": "paronymes",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 60
+    },
+    {
+      "id": "qcm-2025-016",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Conjugaison",
+      "prompt": "Quels sont le temps et le mode de « fera » dans : « Selon la météo, il fera beau demain » ?",
+      "choices": [
+        "Futur de l’indicatif",
+        "Futur antérieur de l’indicatif",
+        "Imparfait de l’indicatif",
+        "Plus-que-parfait de l’indicatif"
+      ],
+      "answer": 0,
+      "explanation": "« Fera » est la troisième personne du singulier du verbe « faire » au futur simple de l’indicatif.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Francais",
+      "tags": [
+        "Francais",
+        "Conjugaison",
+        "2025",
+        "francais"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "francais",
+      "subskill": "temps_et_modes",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 45
+    },
+    {
+      "id": "qcm-2025-017",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Europe",
+      "prompt": "Qu’est-ce que l’espace Schengen ?",
+      "choices": [
+        "Un espace avec des contrôles à chaque frontière intérieure",
+        "Un espace de libre circulation des personnes",
+        "Un programme spatial européen",
+        "Un système bancaire sécurisé"
+      ],
+      "answer": 1,
+      "explanation": "L’espace Schengen organise la libre circulation des personnes et la suppression des contrôles systématiques aux frontières intérieures entre ses États membres.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Europe",
+        "2025",
+        "culture_generale"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "culture_generale",
+      "subskill": "union_europeenne",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 45
+    },
+    {
+      "id": "qcm-2025-018",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Institutions européennes",
+      "prompt": "Qui est devenue la première femme présidente de la Banque centrale européenne en 2019 ?",
+      "choices": [
+        "Christine Lagarde",
+        "Angela Merkel",
+        "Ursula von der Leyen",
+        "Louise Weiss"
+      ],
+      "answer": 0,
+      "explanation": "Christine Lagarde est devenue présidente de la Banque centrale européenne le 1er novembre 2019.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "EMC et institutions",
+      "tags": [
+        "EMC et institutions",
+        "Institutions européennes",
+        "2025",
+        "emc_institutions"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "emc_institutions",
+      "subskill": "institutions_europeennes",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 45
+    },
+    {
+      "id": "qcm-2025-019",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "EMC",
+      "prompt": "En quoi consiste la tolérance ?",
+      "choices": [
+        "Rejeter les autres pour leurs différences",
+        "Tout accepter",
+        "Accepter l’autre avec ses différences et admettre qu’il reste notre égal",
+        "Se faire respecter par les autres"
+      ],
+      "answer": 2,
+      "explanation": "La tolérance suppose le respect d’autrui et de ses différences dans le cadre des droits et des règles communes ; elle ne signifie pas tout accepter.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "EMC et institutions",
+      "tags": [
+        "EMC et institutions",
+        "EMC",
+        "2025",
+        "emc_institutions"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "emc_institutions",
+      "subskill": "valeurs_civiques",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 45
+    },
+    {
+      "id": "qcm-2025-020",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Histoire économique",
+      "prompt": "Comment appelle-t-on la période de croissance économique connue par la France entre 1947 et 1973 ?",
+      "choices": [
+        "Les 20 piteuses",
+        "Les 25 savoureuses",
+        "Les 30 glorieuses",
+        "Les sixties"
+      ],
+      "answer": 2,
+      "explanation": "L’expression « Trente Glorieuses », popularisée par Jean Fourastié, désigne la forte croissance de l’après-guerre jusqu’au choc pétrolier de 1973.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Histoire économique",
+        "2025",
+        "histoire_geographie"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "histoire_geographie",
+      "subskill": "histoire_contemporaine",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 45
+    },
+    {
+      "id": "qcm-2025-021",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Relations internationales",
+      "prompt": "Que signifie l’acronyme OTAN ?",
+      "choices": [
+        "Organisme de défense des nations armées",
+        "Organisation des tireurs anglais et du Nord de l’Amérique",
+        "Organisation du traité de l’Atlantique Nord",
+        "Organisation transverse des armées nationales"
+      ],
+      "answer": 2,
+      "explanation": "OTAN signifie « Organisation du traité de l’Atlantique Nord ».",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Relations internationales",
+        "2025",
+        "culture_generale"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "culture_generale",
+      "subskill": "organisations_internationales",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 45
+    },
+    {
+      "id": "qcm-2025-022",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Institutions françaises",
+      "prompt": "Quel pays a inscrit dans sa Constitution la liberté garantie de recourir à l’avortement en 2024 ?",
+      "choices": [
+        "L’Allemagne",
+        "Les États-Unis",
+        "La France",
+        "La Pologne"
+      ],
+      "answer": 2,
+      "explanation": "Le Parlement français réuni en Congrès a approuvé cette révision constitutionnelle le 4 mars 2024.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "EMC et institutions",
+      "tags": [
+        "EMC et institutions",
+        "Institutions françaises",
+        "2025",
+        "emc_institutions"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "emc_institutions",
+      "subskill": "constitution",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 45
+    },
+    {
+      "id": "qcm-2025-023",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Culture numérique",
+      "prompt": "Qui développe la série de jeux vidéo « Assassin’s Creed » ?",
+      "choices": [
+        "Nintendo",
+        "RobTop Games",
+        "Supercell",
+        "Ubisoft"
+      ],
+      "answer": 3,
+      "explanation": "La série Assassin’s Creed est développée et éditée par Ubisoft.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Numerique",
+      "tags": [
+        "Numerique",
+        "Culture numérique",
+        "2025",
+        "numerique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "numerique",
+      "subskill": "industrie_du_jeu_video",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 45
+    },
+    {
+      "id": "qcm-2025-024",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Culture populaire",
+      "prompt": "Comment appelle-t-on les fans de Taylor Swift ?",
+      "choices": [
+        "Les Taylors",
+        "Les Swifties",
+        "Les Swinnies",
+        "Les Tally’s"
+      ],
+      "answer": 1,
+      "explanation": "Les admirateurs de Taylor Swift sont couramment appelés les « Swifties ».",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Culture populaire",
+        "2025",
+        "culture_generale"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "culture_generale",
+      "subskill": "musique",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 30
+    },
+    {
+      "id": "qcm-2025-025",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Cinéma",
+      "prompt": "Avec quel acteur Lady Gaga partage-t-elle l’affiche du film « A Star Is Born » ?",
+      "choices": [
+        "Christian Bale",
+        "Bradley Cooper",
+        "Patrick Dempsey",
+        "James Franco"
+      ],
+      "answer": 1,
+      "explanation": "Lady Gaga partage l’affiche du film de 2018 avec Bradley Cooper, qui en est aussi le réalisateur.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Cinéma",
+        "2025",
+        "culture_generale"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "culture_generale",
+      "subskill": "cinema",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 30
+    },
+    {
+      "id": "qcm-2025-026",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Culture populaire",
+      "prompt": "Dans le manga One Piece, quelle faiblesse Luffy partage-t-il avec les détenteurs d’un fruit du démon ?",
+      "choices": [
+        "La nourriture",
+        "Il ne sait pas nager",
+        "La perte de son chapeau de paille",
+        "La sieste"
+      ],
+      "answer": 1,
+      "explanation": "Les détenteurs d’un fruit du démon perdent leur capacité à nager.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Culture populaire",
+        "2025",
+        "culture_generale"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "culture_generale",
+      "subskill": "manga",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 30
+    },
+    {
+      "id": "qcm-2025-027",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Musique",
+      "prompt": "Quelle distinction récompense des artistes du domaine de la musique aux États-Unis ?",
+      "choices": [
+        "Emmy Awards",
+        "Golden Globe Awards",
+        "Grammy Awards",
+        "NRJ Music Awards"
+      ],
+      "answer": 2,
+      "explanation": "Les Grammy Awards sont les récompenses américaines consacrées à l’industrie musicale.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Musique",
+        "2025",
+        "culture_generale"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "culture_generale",
+      "subskill": "recompenses_culturelles",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 30
+    },
+    {
+      "id": "qcm-2025-028",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Géographie",
+      "prompt": "Où se dérouleront les Jeux olympiques d’hiver de 2030 ?",
+      "choices": [
+        "Aux États-Unis",
+        "En France",
+        "En Suède",
+        "En Suisse"
+      ],
+      "answer": 1,
+      "explanation": "Les Jeux olympiques d’hiver 2030 ont été attribués aux Alpes françaises.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Histoire-geographie",
+      "tags": [
+        "Histoire-geographie",
+        "Géographie",
+        "2025",
+        "histoire_geographie"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "histoire_geographie",
+      "subskill": "geographie_evenementielle",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 45
+    },
+    {
+      "id": "qcm-2025-029",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Transition écologique",
+      "prompt": "Laquelle de ces propositions correspond à une recommandation publique de sobriété énergétique ?",
+      "choices": [
+        "Acheter une voiture diesel",
+        "Boire au maximum un litre d’eau par jour",
+        "Privilégier l’avion au train",
+        "Régler son chauffage à 19 °C maximum"
+      ],
+      "answer": 3,
+      "explanation": "La recommandation de sobriété énergétique consiste à limiter le chauffage des pièces occupées autour de 19 °C.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Actualite",
+      "tags": [
+        "Actualite",
+        "Transition écologique",
+        "2025",
+        "actualite"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "actualite",
+      "subskill": "ecologie",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 45
+    },
+    {
+      "id": "qcm-2025-030",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Europe",
+      "prompt": "Qu’est-ce que le Brexit ?",
+      "choices": [
+        "Un futur modèle de téléphone",
+        "Le retrait du Royaume-Uni de l’Union européenne",
+        "Un programme informatique",
+        "Un programme spatial"
+      ],
+      "answer": 1,
+      "explanation": "Le terme Brexit désigne le processus de retrait du Royaume-Uni de l’Union européenne.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Culture generale",
+      "tags": [
+        "Culture generale",
+        "Europe",
+        "2025",
+        "culture_generale"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "culture_generale",
+      "subskill": "union_europeenne",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 45
+    },
+    {
+      "id": "qcm-2025-031",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Intelligence artificielle",
+      "prompt": "L’intelligence artificielle générative se caractérise principalement par la faculté, pour une machine :",
+      "choices": [
+        "de comprendre et connaître comme un humain",
+        "de produire des contenus textuels, graphiques ou audiovisuels",
+        "de produire uniquement de nouvelles applications",
+        "de produire son propre système d’exploitation"
+      ],
+      "answer": 1,
+      "explanation": "Une IA générative produit de nouveaux contenus à partir des modèles appris sur ses données d’entraînement.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Numerique",
+      "tags": [
+        "Numerique",
+        "Intelligence artificielle",
+        "2025",
+        "numerique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "numerique",
+      "subskill": "intelligence_artificielle",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 45
+    },
+    {
+      "id": "qcm-2025-032",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Arithmétique",
+      "prompt": "Quel nombre est un nombre premier ?",
+      "choices": [
+        "761",
+        "763",
+        "767",
+        "768"
+      ],
+      "answer": 0,
+      "explanation": "761 n’est divisible par aucun nombre premier inférieur ou égal à sa racine carrée. En revanche, 763 = 7 × 109, 767 = 13 × 59 et 768 est pair.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Arithmétique",
+        "2025",
+        "maths_logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "maths_logique",
+      "subskill": "nombres_premiers",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 120
+    },
+    {
+      "id": "qcm-2025-033",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Calcul",
+      "prompt": "Quel est le résultat de l’expression 4 - (5 × 8 + 3) ?",
+      "choices": [
+        "-39",
+        "-7",
+        "7",
+        "39"
+      ],
+      "answer": 0,
+      "explanation": "Dans la parenthèse : 5 × 8 + 3 = 43. Donc 4 - 43 = -39.",
+      "supportRows": [],
+      "correctionSteps": [
+        "5 × 8 = 40",
+        "40 + 3 = 43",
+        "4 - 43 = -39"
+      ],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Calcul",
+        "2025",
+        "maths_logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "maths_logique",
+      "subskill": "priorites_operatoires",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 60
+    },
+    {
+      "id": "qcm-2025-034",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Équations",
+      "prompt": "Tom achète 1 cahier et 2 stylos pour 4 €. Olive achète 2 cahiers et 2 stylos pour 6 €. Quels sont les prix d’un cahier et d’un stylo ?",
+      "choices": [
+        "Cahier : 1 €, stylo : 1 €",
+        "Cahier : 1 €, stylo : 2 €",
+        "Cahier : 2 €, stylo : 1 €",
+        "Cahier : 2 €, stylo : 2 €"
+      ],
+      "answer": 2,
+      "explanation": "En soustrayant les deux achats, un cahier coûte 2 €. Il reste alors 2 € pour deux stylos, soit 1 € par stylo.",
+      "supportRows": [],
+      "correctionSteps": [
+        "2C + 2S - (C + 2S) = 6 - 4",
+        "C = 2",
+        "2 + 2S = 4, donc S = 1"
+      ],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Équations",
+        "2025",
+        "maths_logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "maths_logique",
+      "subskill": "systemes_equations",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 120
+    },
+    {
+      "id": "qcm-2025-035",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Pourcentages",
+      "prompt": "Une tablette de chocolat de 360 g contient 25 % de matière grasse. Quel est le poids de la matière grasse ?",
+      "choices": [
+        "90 grammes",
+        "100 grammes",
+        "120 grammes",
+        "180 grammes"
+      ],
+      "answer": 0,
+      "explanation": "25 % représente un quart : 360 ÷ 4 = 90 grammes.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Pourcentages",
+        "2025",
+        "maths_logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "maths_logique",
+      "subskill": "calcul_de_pourcentage",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 60
+    },
+    {
+      "id": "qcm-2025-036",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Géométrie",
+      "prompt": "Quelle est l’aire d’un rectangle de 8 cm de longueur et 3 cm de largeur ?",
+      "choices": [
+        "11 cm²",
+        "12 cm²",
+        "16 cm²",
+        "24 cm²"
+      ],
+      "answer": 3,
+      "explanation": "L’aire d’un rectangle vaut longueur × largeur : 8 × 3 = 24 cm².",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Géométrie",
+        "2025",
+        "maths_logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "maths_logique",
+      "subskill": "aire_rectangle",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 45
+    },
+    {
+      "id": "qcm-2025-037",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Statistiques",
+      "prompt": "Bastien a obtenu les notes 12, 14, 16 et 18. Quelle est sa moyenne ?",
+      "choices": [
+        "14",
+        "15",
+        "16",
+        "17"
+      ],
+      "answer": 1,
+      "explanation": "La somme vaut 60 ; divisée par 4 notes, elle donne une moyenne de 15.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Statistiques",
+        "2025",
+        "maths_logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "maths_logique",
+      "subskill": "moyenne",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 60
+    },
+    {
+      "id": "qcm-2025-038",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Pourcentages",
+      "prompt": "Un prix initial de 120 € est réduit de 15 %. Quel est le nouveau prix ?",
+      "choices": [
+        "100 €",
+        "102 €",
+        "105 €",
+        "108 €"
+      ],
+      "answer": 1,
+      "explanation": "La réduction vaut 120 × 0,15 = 18 €. Le prix réduit est donc 120 - 18 = 102 €.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Pourcentages",
+        "2025",
+        "maths_logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "maths_logique",
+      "subskill": "reduction",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 60
+    },
+    {
+      "id": "qcm-2025-039",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Géométrie",
+      "prompt": "Un rectangle mesure 8 cm de longueur et 5 cm de largeur. Quelle est son aire ?",
+      "choices": [
+        "13 cm²",
+        "26 cm²",
+        "40 cm²",
+        "80 cm²"
+      ],
+      "answer": 2,
+      "explanation": "L’aire vaut 8 × 5 = 40 cm².",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Géométrie",
+        "2025",
+        "maths_logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "maths_logique",
+      "subskill": "aire_rectangle",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 45
+    },
+    {
+      "id": "qcm-2025-040",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Conversions",
+      "prompt": "Un agriculteur divise son terrain en trois parts égales pour ses filles après avoir conservé 1 500 m². Le terrain mesure 75 ares. Quelle surface aura chaque parcelle ?",
+      "choices": [
+        "200 m²",
+        "2 000 m²",
+        "2 500 m²",
+        "25 ares"
+      ],
+      "answer": 1,
+      "explanation": "75 ares valent 7 500 m². Après retrait de 1 500 m², il reste 6 000 m² ; chaque fille reçoit 6 000 ÷ 3 = 2 000 m².",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Conversions",
+        "2025",
+        "maths_logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "maths_logique",
+      "subskill": "unites_de_surface",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 120
+    },
+    {
+      "id": "qcm-2025-041",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Conversions",
+      "prompt": "On mélange 570 g de farine, 60 g de sucre, 325 g de chocolat et un litre d’eau. Quel est le poids de la préparation ?",
+      "choices": [
+        "1 935 g",
+        "1 955 g",
+        "1,945 kg",
+        "1,965 kg"
+      ],
+      "answer": 1,
+      "explanation": "Un litre d’eau pèse environ 1 000 g. La masse totale vaut 570 + 60 + 325 + 1 000 = 1 955 g.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Conversions",
+        "2025",
+        "maths_logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "maths_logique",
+      "subskill": "masses_et_volumes",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 90
+    },
+    {
+      "id": "qcm-2025-042",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Pourcentages",
+      "prompt": "Complétez la facture et choisissez les bons sous-total, TVA à 20 % et total.",
+      "choices": [
+        "Sous-total : 24,40 € ; TVA : 4,88 € ; total : 29,28 €",
+        "Sous-total : 24,40 € ; TVA : 5 € ; total : 29,40 €",
+        "Sous-total : 25 € ; TVA : 5 € ; total : 30 €",
+        "Sous-total : 25 € ; TVA : 5,50 € ; total : 30,50 €"
+      ],
+      "answer": 2,
+      "explanation": "Le sous-total vaut 15,20 + 0,60 + 9,20 = 25 €. La TVA vaut 25 × 20 % = 5 €, puis le total 30 €.",
+      "supportRows": [
+        "4 litres d’huile : 15,20 €",
+        "Joint de vidange : 0,60 €",
+        "Filtre à huile : 9,20 €"
+      ],
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Pourcentages",
+        "2025",
+        "maths_logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "maths_logique",
+      "subskill": "facture_et_tva",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 120
+    },
+    {
+      "id": "qcm-2025-043",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Vitesse",
+      "prompt": "Jean parcourt 5 500 km en 29 jours et 5 heures. Quelle est sa vitesse moyenne en km/h ?",
+      "choices": [
+        "7,85 km/h",
+        "7,90 km/h",
+        "15,80 km/h",
+        "15,58 km/h"
+      ],
+      "answer": 0,
+      "explanation": "29 jours et 5 heures représentent 29 × 24 + 5 = 701 heures. La vitesse moyenne vaut 5 500 ÷ 701 ≈ 7,85 km/h.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Vitesse",
+        "2025",
+        "maths_logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "maths_logique",
+      "subskill": "vitesse_moyenne",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 135
+    },
+    {
+      "id": "qcm-2025-044",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Fractions",
+      "prompt": "Si les deux cinquièmes d’une pizza valent 12 €, quel est le prix de la pizza entière ?",
+      "choices": [
+        "24 €",
+        "30 €",
+        "32 €",
+        "60 €"
+      ],
+      "answer": 1,
+      "explanation": "Un cinquième vaut 12 ÷ 2 = 6 €. Cinq cinquièmes valent donc 5 × 6 = 30 €.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Fractions",
+        "2025",
+        "maths_logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "maths_logique",
+      "subskill": "proportionnalite",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 60
+    },
+    {
+      "id": "qcm-2025-045",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Suite logique",
+      "prompt": "Quel nombre complète la suite 8, 9, 11, 14, 18… ?",
+      "choices": [
+        "21",
+        "22",
+        "23",
+        "24"
+      ],
+      "answer": 2,
+      "explanation": "Les écarts successifs valent +1, +2, +3 et +4. L’écart suivant vaut +5 : 18 + 5 = 23.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Suite logique",
+        "2025",
+        "maths_logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "maths_logique",
+      "subskill": "suites_numeriques",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 60
+    },
+    {
+      "id": "qcm-2025-046",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Raisonnement visuel",
+      "prompt": "Quel est le numéro de l’intrus parmi les quatre figures décrites ?",
+      "choices": [
+        "Figure 1",
+        "Figure 2",
+        "Figure 3",
+        "Figure 4"
+      ],
+      "answer": 1,
+      "explanation": "Dans les figures 1, 3 et 4, le polygone contient un disque noir tandis que le disque blanc reste à l’extérieur. Dans la figure 2, le disque blanc et un disque noir sont à l’intérieur du polygone.",
+      "supportRows": [
+        "Figure 1 : un disque noir dans le polygone ; un noir et un blanc à l’extérieur",
+        "Figure 2 : un disque noir et le disque blanc dans le polygone ; un noir à l’extérieur",
+        "Figure 3 : un disque noir dans le polygone ; un noir et un blanc à l’extérieur",
+        "Figure 4 : un disque noir dans le polygone ; un noir et un blanc à l’extérieur"
+      ],
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Raisonnement visuel",
+        "2025",
+        "maths_logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "maths_logique",
+      "subskill": "intrus_visuel",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 120
+    },
+    {
+      "id": "qcm-2025-047",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Tableau logique",
+      "prompt": "Dans le tableau, quel nombre remplace les points d’interrogation ?",
+      "choices": [
+        "26",
+        "27",
+        "36",
+        "37"
+      ],
+      "answer": 1,
+      "explanation": "La case cherchée est à l’intersection de la ligne des nombres commençant par 2 et de la colonne des nombres finissant par 7 : 27.",
+      "supportRows": [
+        "Dernière colonne, de haut en bas : 27 | 37 | 107 | ?",
+        "Dernière ligne, de gauche à droite : 24 | 22 | 28 | ?"
+      ],
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Tableau logique",
+        "2025",
+        "maths_logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "maths_logique",
+      "subskill": "croisement_de_regles",
+      "difficulty": "hard",
+      "estimatedTimeSeconds": 120
+    },
+    {
+      "id": "qcm-2025-048",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Ordonnancement",
+      "prompt": "Antoine est plus âgé que Jean. Karine est née avant Paul et elle est plus jeune que Jean. Qui est le plus âgé ?",
+      "choices": [
+        "Antoine",
+        "Jean",
+        "Karine",
+        "Paul"
+      ],
+      "answer": 0,
+      "explanation": "Les relations donnent Antoine > Jean > Karine > Paul. Antoine est donc le plus âgé.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Ordonnancement",
+        "2025",
+        "maths_logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "maths_logique",
+      "subskill": "relations_ordre",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 60
+    },
+    {
+      "id": "qcm-2025-049",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Suite logique",
+      "prompt": "Complétez la suite de lettres : BDF, HJL, … ?",
+      "choices": [
+        "MNP",
+        "NPR",
+        "QRT",
+        "RTU"
+      ],
+      "answer": 1,
+      "explanation": "Chaque groupe avance de deux lettres à l’intérieur du triplet. Après B-D-F puis H-J-L, le groupe suivant est N-P-R.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Suite logique",
+        "2025",
+        "maths_logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "maths_logique",
+      "subskill": "suites_de_lettres",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 90
+    },
+    {
+      "id": "qcm-2025-050",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Suite logique",
+      "prompt": "La chaîne 3612244896 représente la suite 3, 6, 12, 24, 48, 96 sans séparateurs. Quel chiffre vient ensuite ?",
+      "choices": [
+        "1",
+        "4",
+        "7",
+        "8"
+      ],
+      "answer": 0,
+      "explanation": "Chaque nombre est le double du précédent. Après 96 vient 192 ; le prochain chiffre de la chaîne est donc 1.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Suite logique",
+        "2025",
+        "maths_logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "maths_logique",
+      "subskill": "suites_numeriques",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 90
+    },
+    {
+      "id": "qcm-2025-051",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Probabilités",
+      "prompt": "Si vous choisissez au hasard une réponse parmi quatre propositions, quelle est la probabilité de sélectionner la bonne réponse ?",
+      "choices": [
+        "10 %",
+        "25 %",
+        "33,3 %",
+        "50 %"
+      ],
+      "answer": 1,
+      "explanation": "Une proposition sur quatre est correcte : 1 ÷ 4 = 0,25, soit 25 %.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Probabilités",
+        "2025",
+        "maths_logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "maths_logique",
+      "subskill": "probabilite_simple",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 45
+    },
+    {
+      "id": "qcm-2025-052",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Débit",
+      "prompt": "La connexion internet fonctionne à 2 Gbit/s et le disque écrit à 4 Gbit/s. Combien de temps faut-il pour télécharger un fichier de 12 Gbit ?",
+      "choices": [
+        "2 secondes",
+        "4 secondes",
+        "6 secondes",
+        "12 secondes"
+      ],
+      "answer": 2,
+      "explanation": "La connexion est le facteur limitant. La durée vaut 12 Gbit ÷ 2 Gbit/s = 6 secondes.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Débit",
+        "2025",
+        "maths_logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "maths_logique",
+      "subskill": "debit_et_duree",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 90
+    },
+    {
+      "id": "qcm-2025-053",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Proportionnalité",
+      "prompt": "Cinq ouvriers construisent cinq maisons en cinq jours. Combien de jours faut-il à dix ouvriers pour construire dix maisons, au même rythme ?",
+      "choices": [
+        "2,5 jours",
+        "5 jours",
+        "10 jours",
+        "20 jours"
+      ],
+      "answer": 1,
+      "explanation": "Chaque ouvrier construit une maison en cinq jours. Dix ouvriers construisent donc dix maisons simultanément en cinq jours.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Proportionnalité",
+        "2025",
+        "maths_logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "maths_logique",
+      "subskill": "productivite",
+      "difficulty": "medium",
+      "estimatedTimeSeconds": 90
+    },
+    {
+      "id": "qcm-2025-054",
+      "year": 2025,
+      "source": "QCM 2025",
+      "category": "Calcul",
+      "prompt": "Un homme achète une voiture 5 000 €, la vend 6 000 €, la rachète 7 000 € et la revend 8 000 €. Quel est son bénéfice total ?",
+      "choices": [
+        "1 000 €",
+        "2 000 €",
+        "3 000 €",
+        "4 000 €"
+      ],
+      "answer": 1,
+      "explanation": "La première opération rapporte 1 000 € et la seconde rapporte aussi 1 000 €. Le bénéfice total est de 2 000 €.",
+      "supportRows": [],
+      "correctionSteps": [],
+      "domain": "Maths et logique",
+      "tags": [
+        "Maths et logique",
+        "Calcul",
+        "2025",
+        "maths_logique"
+      ],
+      "verificationLevel": "public_correction_checked",
+      "sourceType": "official_annale_qcm_2025",
+      "skill": "maths_logique",
+      "subskill": "bilan_achats_ventes",
+      "difficulty": "easy",
+      "estimatedTimeSeconds": 60
     }
   ],
   "annales": [
@@ -6475,7 +8115,7 @@
     {
       "year": "2025",
       "title": "Attractivité de la fonction publique",
-      "qcm": "54 questions officielles : français, connaissances générales, calcul et raisonnement ; source référencée, corrigé non intégré",
+      "qcm": "54 questions officielles intégrées : français, connaissances générales, calcul et raisonnement ; proposition de correction publique vérifiée",
       "ecrit": "Attractivité, marque employeur, graphiques et rédaction structurée",
       "jury": "Rapport officiel 2025 référencé dans les sources",
       "skills": [
@@ -6837,6 +8477,30 @@
       "title": "Rapport de jury 2025",
       "url": "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/2026_05_ccc_rapport_jury_2025_administratif.pdf",
       "type": "jury-report",
+      "year": 2025
+    },
+    {
+      "title": "Proposition de correction QCM 2025 — Français",
+      "url": "https://www.devenez-fonctionnaire.fr/correction-qcm-concours-commun-2025/correction-fran%C3%A7ais-qcm-concours-commun-2025",
+      "type": "qcm-correction",
+      "year": 2025
+    },
+    {
+      "title": "Proposition de correction QCM 2025 — Culture générale",
+      "url": "https://www.devenez-fonctionnaire.fr/correction-qcm-concours-commun-2025/correction-culture-qcm-concours-commun-2025",
+      "type": "qcm-correction",
+      "year": 2025
+    },
+    {
+      "title": "Proposition de correction QCM 2025 — Mathématiques",
+      "url": "https://devenez-fonctionnaire.fr/correction-qcm-concours-commun-2025/correction-maths-qcm-concours-commun-2025",
+      "type": "qcm-correction",
+      "year": 2025
+    },
+    {
+      "title": "Proposition de correction QCM 2025 — Logique",
+      "url": "https://devenez-fonctionnaire.fr/correction-qcm-concours-commun-2025/correction-logique-qcm-concours-commun-2025",
+      "type": "qcm-correction",
       "year": 2025
     }
   ]

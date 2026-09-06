@@ -13,6 +13,7 @@ const allowedVerificationLevels = new Set([
 const allowedSourceTypes = new Set([
   "official_zero_2026",
   "official_annale_qcm_2024",
+  "official_annale_qcm_2025",
   "official_annale_qcm_2023",
   "official_annale_qcm_2022",
   "official_annale_qcm_2021",
@@ -102,9 +103,14 @@ function validateQuestion(question, index, seenIds, seenPrompts, counters) {
   } else {
     const normalizedPrompt = normalizePrompt(question.prompt);
     if (seenPrompts.has(normalizedPrompt)) {
-      errors.push(`${label}: duplicate prompt also used by ${seenPrompts.get(normalizedPrompt)}`);
+      const previous = seenPrompts.get(normalizedPrompt);
+      if (previous.year === question.year) {
+        errors.push(`${label}: duplicate prompt also used by ${previous.label} in the same year`);
+      } else {
+        warnings.push(`${label}: official prompt repeated from ${previous.label} (${previous.year} → ${question.year})`);
+      }
     } else {
-      seenPrompts.set(normalizedPrompt, label);
+      seenPrompts.set(normalizedPrompt, { label, year: question.year });
     }
   }
   if (!Array.isArray(question.choices) || question.choices.length !== 4) {

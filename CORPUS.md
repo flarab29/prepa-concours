@@ -11,7 +11,7 @@
 
 ## Annales QCM
 
-- 2025 : 54 questions officielles référencées ; intégration en entraînement différée jusqu'à disponibilité d'un corrigé vérifié.
+- 2025 : 54 questions officielles intégrées avec une proposition de correction publique vérifiée et une explication pédagogique.
 - 2024 : français, culture générale récente, calcul, raisonnement.
 - 2023 : français administratif, culture générale, calculs, logique.
 - 2022 : orthographe, expressions, culture générale, calculs.
@@ -23,9 +23,9 @@ Les annales QCM 2020 à 2025 comptent 54 questions par millésime, soit 324 ques
 État de couverture dans l'application :
 
 - toutes les questions affichées dans l'entraînement ont une réponse attendue et une explication ;
-- la banque contient 218 questions corrigées, dont les 50 questions du sujet zéro QCM 2026 et 49 questions issues de l'annale QCM 2024 ;
+- la banque contient 272 questions corrigées, dont les 50 questions du sujet zéro QCM 2026, 49 questions issues de l'annale QCM 2024 et les 54 questions de l'annale QCM 2025 ;
 - l'application Android et l'aperçu HTML affichent un audit automatique de cette banque avant l'entraînement ;
-- les questions officielles dont le corrigé n'est pas encore vérifié, notamment celles qui nécessitent un graphique, un tableau ou une figure non intégrée dans l'app, restent référencées dans les sources afin d'éviter un QCM incomplet ou trompeur ;
+- les questions officielles dont le corrigé n'est pas encore vérifié restent référencées dans les sources afin d'éviter un QCM incomplet ou trompeur ; les figures 2025 utiles au raisonnement sont transcrites sous forme de données textuelles accessibles ;
 - les millésimes 2020 à 2023 ont été fortement élargis à partir de propositions de correction publiques, en privilégiant les questions textuelles ou calculables sans image ;
 - le sujet zéro QCM 2026 est intégré à 50/50, y compris les questions qui s'appuyaient sur une image ou un graphique, reformulées pour rester utilisables dans l'application sans afficher le PDF.
 

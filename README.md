@@ -15,8 +15,8 @@ Application Android native et prévisualisation navigateur pour préparer le con
 - Programme personnel selon la date des écrits, le temps disponible et la priorité du candidat dans la prévisualisation web.
 - Suivi par compétence avec volume réellement évalué, taux de réussite et acquis confirmés après révision différée.
 - Reprise d'une série QCM interrompue, expiration automatique des simulations et signalement des annales partielles.
-- Banque corrigée renforcée : 218 questions actives ont une réponse et une explication, dont les 50 questions du sujet zéro QCM 2026 et 49 questions issues de l’annale QCM 2024.
-- Audit intégré : l'app signale que toutes les questions sélectionnables sont corrigées, et distingue clairement les questions officielles encore à intégrer avec un corrigé vérifié.
+- Banque corrigée renforcée : 272 questions actives ont une réponse et une explication, dont les 50 questions du sujet zéro QCM 2026, 49 questions issues de l’annale QCM 2024 et les 54 questions de l’annale QCM 2025.
+- Audit intégré : l'app signale que toutes les questions sélectionnables sont corrigées et distingue les corrigés officiels des propositions de correction publiques vérifiées.
 - Annales écrites transformées en thèmes d'entraînement : égalité professionnelle, France Relance, services publics écoresponsables, dématérialisation, sujet zéro économie du livre.
 - Grille de relecture par critères : compréhension, structure, exploitation des données, caractère opérationnel et langue, sans note automatique fondée sur des mots-clés.
 - Atelier écrit avec tableau d'extraction, brouillons sauvegardés automatiquement, versions restaurables et relecture guidée sans note automatique trompeuse.
@@ -36,7 +36,7 @@ Application Android native et prévisualisation navigateur pour préparer le con
 - Sujet zéro QCM 2026 avec corrigé officiel intégré en totalité.
 - Propositions de correction QCM 2020 à 2023 utilisées pour élargir la banque corrigée.
 
-L'application référence les annales QCM et écrites ainsi que les rapports de jury de 2020 à 2025. La banque corrigée couvre actuellement 2020 à 2024 et le sujet zéro 2026 ; l'annale 2025 reste une source officielle consultable tant qu'un corrigé vérifié n'est pas intégré.
+L'application référence les annales QCM et écrites ainsi que les rapports de jury de 2020 à 2025. La banque corrigée couvre actuellement 2020 à 2025 et le sujet zéro 2026. Pour l’annale 2025, la réponse attendue provient d’une proposition de correction publique recoupée avec l’énoncé officiel ; ce niveau de vérification reste visible dans les données et l’interface.
 
 ## Source JSON
 
