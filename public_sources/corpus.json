@@ -1,7 +1,7 @@
 {
   "schemaVersion": 4,
   "generatedFrom": "web-preview.html",
-  "officialQcmTotal": 320,
+  "officialQcmTotal": 374,
   "questions": [
     {
       "id": "qcm-2026-001",
@@ -6473,6 +6473,18 @@
       ]
     },
     {
+      "year": "2025",
+      "title": "Attractivité de la fonction publique",
+      "qcm": "54 questions officielles : français, connaissances générales, calcul et raisonnement ; source référencée, corrigé non intégré",
+      "ecrit": "Attractivité, marque employeur, graphiques et rédaction structurée",
+      "jury": "Rapport officiel 2025 référencé dans les sources",
+      "skills": [
+        "analyse documentaire",
+        "graphiques",
+        "rédaction structurée"
+      ]
+    },
+    {
       "year": "2024",
       "title": "Annales officielles",
       "qcm": "54 questions : français, culture récente, calcul, raisonnement",
@@ -6546,6 +6558,17 @@
       ]
     },
     {
+      "source": "Annale 2025",
+      "title": "Attractivité de la fonction publique",
+      "prompt": "À partir du fonds documentaire officiel, définissez et analysez l’attractivité de la fonction publique, exploitez les données de recrutement sous forme de calculs et de graphiques, puis rédigez une réponse structurée sur les mesures engagées et celles qui pourraient être développées.",
+      "expected": [
+        "réponses courtes respectant les limites",
+        "calculs et graphiques",
+        "commentaire des données",
+        "rédaction structurée en deux parties"
+      ]
+    },
+    {
       "source": "Annale 2023",
       "title": "Dématérialisation",
       "prompt": "Présentez les bénéfices de l’administration numérique, les risques pour les usagers éloignés du numérique, puis proposez trois mesures d’accompagnement sous forme de fiche opérationnelle.",
@@ -6614,6 +6637,14 @@
     {
       "title": "Produire un livrable utilisable",
       "body": "Le format 2026 attend synthèse, fiche, courriel, support de communication. Le texte doit être exploitable par un service."
+    },
+    {
+      "title": "Soigner graphiques et calculs",
+      "body": "Le rapport 2025 signale des graphiques sans titre ni axes annotés et des confusions entre les types de pourcentages. Chaque graphique doit être lisible et chaque calcul interprété."
+    },
+    {
+      "title": "Traiter l’intégralité du sujet",
+      "body": "Le rapport 2025 recommande de lire précisément les énoncés, de reformuler les éléments du dossier et de maîtriser le temps pour terminer toutes les parties."
     }
   ],
   "oralQuestions": [
@@ -6702,6 +6733,12 @@
       "year": 2024
     },
     {
+      "title": "Annale QCM 2025",
+      "url": "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/2026_05_ccc_qcm_metropole2025.pdf",
+      "type": "qcm",
+      "year": 2025
+    },
+    {
       "title": "Proposition de correction QCM 2020",
       "url": "https://monconcoursdgfip.fr/correction-qcm-concours-commun-categorie-c-2020/",
       "type": "qcm-correction",
@@ -6761,6 +6798,12 @@
       "localUrl": "public_sources/pdfs/ecrit-2024-annale.pdf"
     },
     {
+      "title": "Annale ecrit 2025",
+      "url": "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/2026_05_ccc_admissibilite_metropole2025.pdf",
+      "type": "written",
+      "year": 2025
+    },
+    {
       "title": "Rapport de jury 2020",
       "url": "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2020_ccc_rapport_jury.pdf",
       "type": "jury-report",
@@ -6789,6 +6832,12 @@
       "url": "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2025_03_ccc_rapport_jury_2024_administratif.pdf",
       "type": "jury-report",
       "year": 2024
+    },
+    {
+      "title": "Rapport de jury 2025",
+      "url": "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/2026_05_ccc_rapport_jury_2025_administratif.pdf",
+      "type": "jury-report",
+      "year": 2025
     }
   ]
 }

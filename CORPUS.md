@@ -11,13 +11,14 @@
 
 ## Annales QCM
 
+- 2025 : 54 questions officielles référencées ; intégration en entraînement différée jusqu'à disponibilité d'un corrigé vérifié.
 - 2024 : français, culture générale récente, calcul, raisonnement.
 - 2023 : français administratif, culture générale, calculs, logique.
 - 2022 : orthographe, expressions, culture générale, calculs.
 - 2021 : collectivités, douane, figures de style, grammaire, calcul.
 - 2020 : orthographe, vocabulaire administratif, fiscalité, raisonnement.
 
-Les annales QCM comptent 54 questions par millésime, soit 270 questions officielles référencées, auxquelles s'ajoutent les 50 questions du sujet zéro QCM 2026. La banque corrigée embarquée reprend les questions vérifiables et les transforme en entraînement autocorrigé.
+Les annales QCM 2020 à 2025 comptent 54 questions par millésime, soit 324 questions officielles référencées, auxquelles s'ajoutent les 50 questions du sujet zéro QCM 2026. La banque corrigée embarquée reprend les questions vérifiables et les transforme en entraînement autocorrigé.
 
 État de couverture dans l'application :
 
@@ -30,6 +31,7 @@ Les annales QCM comptent 54 questions par millésime, soit 270 questions officie
 
 ## Annales écrites
 
+- 2025 : attractivité de la fonction publique, marque employeur, calculs, graphiques et rédaction structurée.
 - 2023 : dématérialisation des services publics, transformation de l'action publique, DINUM, inclusion numérique.
 - 2022 : services publics écoresponsables, Bercy Vert, dons, économie circulaire, émissions de GES.
 - 2021 : intervention de l'État dans l'économie, France Relance, soutien aux entreprises, lutte contre la fraude.
@@ -38,7 +40,7 @@ Les annales QCM comptent 54 questions par millésime, soit 270 questions officie
 
 ## Rapports de jury
 
-Les rapports 2020 à 2024 alimentent les règles d'alerte :
+Les rapports 2020 à 2025 alimentent les règles d'alerte :
 
 - préparer l'oral et éviter l'improvisation ;
 - connaître DGFiP et DGDDI ;
@@ -46,3 +48,4 @@ Les rapports 2020 à 2024 alimentent les règles d'alerte :
 - sécuriser la culture générale ;
 - commenter les chiffres au lieu de seulement les calculer ;
 - produire une copie lisible, structurée, anonyme et opérationnelle.
+- annoter titres et axes des graphiques, distinguer les calculs de pourcentage et traiter l'intégralité du sujet.

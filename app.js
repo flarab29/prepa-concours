@@ -1,5 +1,5 @@
 const officialPage = "https://www.economie.gouv.fr/rejoignez-nous/agent-administratif-principal-des-finances-publiques-de-2eme-classe-externe-dgfip";
-let officialQcmTotal = 320;
+let officialQcmTotal = 374;
 const qcmUrls = {
   2024: "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2025_03_ccc_qcm_metropole2024.pdf",
   2023: "https://www.economie.gouv.fr/files/files/directions_services/rejoignez-nous/DGFiP/recrutement-par-concours/categorie-C_brevet/Concours_Commun_C/Annales_et_rapport_de_jury/2024_03_qcm_metropole.pdf",
@@ -42,11 +42,12 @@ let juryRules = [];
 
 let oralQuestions = [];
 
-const tabs = ["Accueil", "Annales", "QCM", "Écrit", "Jury", "Oral", "Suivi", "Sources"];
+const tabs = ["Accueil", "Apprendre", "QCM", "Écrit", "Oral", "Suivi", "Annales", "Jury", "Sources"];
 let currentTab = "Accueil";
-let quiz = { list: [], index: 0, score: 0, answers: [], startedAt: 0, questionStartedAt: 0, questionTimes: [] };
+let quiz = { list: [], index: 0, score: 0, answers: [], startedAt: 0, questionStartedAt: 0, questionTimes: [], expectedCount: 0 };
 let selectedSubject = 0;
 let activeQuizMode = "Libre";
+let simulationTimerHandle = null;
 let sourceItems = null;
 let corpusLoadError = null;
 const domains = ["Tous les domaines", "Maths et logique", "Francais", "Histoire-geographie", "EMC et institutions", "Numerique", "MEF / DGFiP / DGDDI", "Actualite", "Culture generale"];
@@ -100,6 +101,11 @@ function setTab(tab) {
     clearInterval(oralTimerHandle);
     oralTimerHandle = null;
   }
+  if (tab !== "Oral" && oralRecorder?.state === "recording") oralRecorder.stop();
+  if (simulationTimerHandle) {
+    clearInterval(simulationTimerHandle);
+    simulationTimerHandle = null;
+  }
   currentTab = tab;
   render();
 }
@@ -110,19 +116,19 @@ function coachMessage(message) {
   return `<section class="card coach span-12">${escapeHtml(message)}</section>`;
 }
 function reliabilityLabel(level, type = "") {
-  if (level === "official_correction" || type.startsWith("official_")) return "Fiabilité maximale";
+  if (level === "official_correction") return "Corrigé officiel";
   if (level === "public_correction_checked") return "Correction publique vérifiée";
-  if (level === "manual_verified") return "Vérification interne";
+  if (level === "manual_verified") return "Corrigé vérifié en interne";
   if (type === "qcm-correction") return "Correction tierce";
   return "À contextualiser";
 }
 function reliabilityBadge(level, type = "") {
   const label = reliabilityLabel(level, type);
-  const cls = label.includes("maximale") || label.includes("publique") ? "good" : label.includes("tierce") || label.includes("contextualiser") ? "warn" : "soft";
+  const cls = label.includes("officiel") || label.includes("publique") ? "good" : label.includes("tierce") || label.includes("contextualiser") ? "warn" : "soft";
   return `<span class="badge ${cls}">${escapeHtml(label)}</span>`;
 }
 function questionBadges(item) {
-  return `${reliabilityBadge(item.verificationLevel, item.sourceType)}<span class="badge">${escapeHtml(item.difficulty || "niveau non précisé")}</span><span class="badge">${escapeHtml(item.sourceType || "source non précisée")}</span>`;
+  return `${reliabilityBadge(item.verificationLevel, item.sourceType)}<span class="badge">${escapeHtml(({ easy: "facile", medium: "intermédiaire", hard: "difficile" })[item.difficulty] || "niveau non précisé")}</span><span class="badge">${escapeHtml(sourceTypeLabel(item.sourceType))}</span>`;
 }
 function questionSupport(item) {
   if (!item.supportRows || !item.supportRows.length) return "";
@@ -134,6 +140,19 @@ function questionBlock(item) {
 function correctionBlock(item) {
   if (!item.correctionSteps || !item.correctionSteps.length) return escapeHtml(item.explanation);
   return `<div class="correction-steps">${item.correctionSteps.map(step => `<div>${escapeHtml(step)}</div>`).join("")}</div>`;
+}
+function learningBlock(item) {
+  const skill = item.skill || domainOf(item);
+  const related = qcm.filter(candidate => (candidate.skill || domainOf(candidate)) === skill && questionId(candidate) !== questionId(item));
+  return card("Transformer l’erreur en acquis", `<strong>Règle à retenir</strong>\n${correctionBlock(item)}\n\n<strong>Étape suivante</strong>\nReformulez la règle avec vos mots, puis résolvez une question différente sur la même compétence.${related.length ? `\n<button onclick="startTransferPractice('${escapeHtml(skill)}','${escapeHtml(questionId(item))}')">Tester sur un exercice différent</button>` : ""}`);
+}
+function startTransferPractice(skill, excludedId) {
+  const cards = reviewCards();
+  const candidates = reliableFirst(qcm.filter(item => (item.skill || domainOf(item)) === skill && questionId(item) !== excludedId));
+  candidates.sort((a, b) => (cards[questionId(a)]?.attempts || 0) - (cards[questionId(b)]?.attempts || 0));
+  activeQuizMode = "Exercice de transfert";
+  quiz = makeQuiz(candidates.slice(0, 3));
+  renderQuestion();
 }
 function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, m => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" }[m]));
@@ -162,6 +181,30 @@ function questionId(item) {
 }
 function loadJson(key, fallback) {
   try { return JSON.parse(localStorage.getItem(key) || JSON.stringify(fallback)); } catch { return fallback; }
+}
+function candidateProfile() {
+  return loadJson("dgfipProfile", { examDate: "2026-09-29", weeklyMinutes: 180, sessionMinutes: 30, focus: "Équilibré" });
+}
+function saveCandidateProfile() {
+  const profile = {
+    examDate: document.querySelector("#examDate")?.value || "2026-09-29",
+    weeklyMinutes: Math.max(30, Number(document.querySelector("#weeklyMinutes")?.value || 180)),
+    sessionMinutes: Math.max(10, Number(document.querySelector("#sessionMinutes")?.value || 30)),
+    focus: document.querySelector("#profileFocus")?.value || "Équilibré"
+  };
+  localStorage.setItem("dgfipProfile", JSON.stringify(profile));
+  renderHome();
+}
+function profileDaysUntil() {
+  const value = candidateProfile().examDate;
+  const target = value ? new Date(`${value}T23:59:59`) : null;
+  return target && Number.isFinite(target.getTime()) ? Math.max(0, Math.ceil((target - new Date()) / 86400000)) : 0;
+}
+function weeklyPlanText() {
+  const profile = candidateProfile();
+  const sessions = Math.max(2, Math.round(profile.weeklyMinutes / profile.sessionMinutes));
+  const qcmSessions = Math.max(1, sessions - 2);
+  return `${sessions} séance(s) de ${profile.sessionMinutes} min : ${qcmSessions} QCM ciblé(s), 1 atelier écrit et 1 entraînement oral. Priorité déclarée : ${profile.focus}.`;
 }
 function addDays(days) {
   return Date.now() + days * 86400000;
@@ -198,15 +241,15 @@ function isMistake(item) {
   const card = reviewCard(item);
   return !!card && card.failures > 0 && card.mastery !== "mastered";
 }
-function isDueMistake(item) {
+function isDueReview(item) {
   const card = reviewCard(item);
-  return !!card && card.failures > 0 && card.mastery !== "mastered" && (card.nextReviewAt || 0) <= Date.now();
+  return !!card && card.failures > 0 && (card.nextReviewAt || 0) <= Date.now();
 }
 function mistakeQuestions() {
   return qcm.filter(isMistake);
 }
 function dueMistakeQuestions() {
-  return qcm.filter(isDueMistake);
+  return qcm.filter(isDueReview);
 }
 function masteredMistakeQuestions() {
   return qcm.filter(item => reviewCard(item)?.mastery === "mastered");
@@ -224,6 +267,28 @@ function reviewStats() {
     fragile: fragileMistakeQuestions().length,
     total: mistakeQuestions().length
   };
+}
+function skillProgress() {
+  const cards = reviewCards();
+  const rows = {};
+  qcm.forEach(item => {
+    const skill = item.skill || domainOf(item);
+    const card = cards[questionId(item)];
+    rows[skill] = rows[skill] || { available: 0, seen: 0, confirmed: 0, correct: 0, attempts: 0 };
+    const row = rows[skill];
+    row.available++;
+    if (card?.attempts) {
+      row.seen++;
+      row.attempts += card.attempts;
+      row.correct += card.successes || 0;
+      if (card.mastery === "mastered") row.confirmed++;
+    }
+  });
+  return Object.entries(rows).map(([skill, row]) => {
+    const rate = row.attempts ? pct(row.correct, row.attempts) : 0;
+    const status = !row.seen ? "Pas encore évaluée" : row.confirmed >= 3 && rate >= 80 ? "Confirmée" : rate >= 70 ? "Réussie seul" : rate >= 50 ? "En apprentissage" : "À travailler";
+    return { skill, ...row, rate, status };
+  }).sort((a, b) => a.rate - b.rate || a.seen - b.seen);
 }
 function recordQuestion(item, ok) {
   const cards = reviewCards();
@@ -358,7 +423,7 @@ function isDeferredCorrectionMode() {
 }
 function makeQuiz(list) {
   const now = Date.now();
-  return { list, index: 0, score: 0, answers: [], startedAt: now, questionStartedAt: now, questionTimes: [] };
+  return { list, index: 0, score: 0, answers: [], startedAt: now, questionStartedAt: now, questionTimes: [], expectedCount: list.length };
 }
 function markQuestionTime() {
   const now = Date.now();
@@ -387,7 +452,53 @@ function simulationTimerHtml() {
   if (!isSimulationMode()) return "";
   const elapsed = simulationElapsedMs();
   const remaining = Math.max(0, simulationLimitMs() - elapsed);
-  return `<div class="card"><strong>Simulation QCM 1h30</strong>\nTemps écoulé : ${formatDuration(elapsed)}\nTemps restant indicatif : ${formatDuration(remaining)}\nCorrections affichées à la fin.</div>`;
+  return `<div class="card exam-timer" id="simulationTimer"><strong>Simulation QCM 1h30</strong>\nTemps restant : ${formatDuration(remaining)}\nLa copie est remise automatiquement à la fin du temps imparti. Corrections affichées à la fin.</div>`;
+}
+function updateSimulationTimer() {
+  if (!isSimulationMode() || !quiz.list.length) return;
+  const target = document.querySelector("#simulationTimer");
+  const remaining = Math.max(0, simulationLimitMs() - simulationElapsedMs());
+  if (target) target.innerHTML = `<strong>Simulation QCM 1h30</strong>\nTemps restant : ${formatDuration(remaining)}\nLa copie est remise automatiquement à la fin du temps imparti. Corrections affichées à la fin.`;
+  if (remaining === 0) {
+    clearInterval(simulationTimerHandle);
+    simulationTimerHandle = null;
+    renderQuestion();
+  }
+}
+function startSimulationTimer() {
+  if (simulationTimerHandle) clearInterval(simulationTimerHandle);
+  if (!isSimulationMode()) return;
+  simulationTimerHandle = setInterval(updateSimulationTimer, 1000);
+  updateSimulationTimer();
+}
+function saveActiveQuiz() {
+  if (!quiz.list.length || quiz.index >= quiz.list.length) return;
+  localStorage.setItem("dgfipActiveQuiz", JSON.stringify({
+    ids: quiz.list.map(questionId), index: quiz.index, score: quiz.score,
+    answers: quiz.answers, startedAt: quiz.startedAt, questionStartedAt: quiz.questionStartedAt,
+    questionTimes: quiz.questionTimes, expectedCount: quiz.expectedCount, mode: activeQuizMode
+  }));
+}
+function clearActiveQuiz() {
+  localStorage.removeItem("dgfipActiveQuiz");
+}
+function resumableQuiz() {
+  const saved = loadJson("dgfipActiveQuiz", null);
+  if (!saved?.ids?.length || saved.index >= saved.ids.length) return null;
+  const byId = new Map(qcm.map(item => [questionId(item), item]));
+  const list = saved.ids.map(id => byId.get(id)).filter(Boolean);
+  return list.length === saved.ids.length ? { ...saved, list } : null;
+}
+function resumeQuiz() {
+  const saved = resumableQuiz();
+  if (!saved) return renderQcmHome();
+  activeQuizMode = saved.mode;
+  const answers = saved.answers || [];
+  const lastAnswer = answers[answers.length - 1];
+  const resumeIndex = lastAnswer?.item && questionId(lastAnswer.item) === saved.ids[saved.index] ? saved.index + 1 : saved.index;
+  quiz = { list: saved.list, index: resumeIndex, score: saved.score, answers, startedAt: saved.startedAt, questionStartedAt: Date.now(), questionTimes: saved.questionTimes || [], expectedCount: saved.expectedCount || saved.list.length };
+  renderQuestion();
+  startSimulationTimer();
 }
 function buildDailySessionQuestions() {
   const selected = [];
@@ -451,6 +562,7 @@ function renderNav() {
 }
 function render() {
   renderNav();
+  if (currentTab === "Apprendre") return renderLearn();
   if (currentTab === "Annales") return renderAnnales();
   if (currentTab === "QCM") return renderQcmHome();
   if (currentTab === "Écrit") return renderWritten();
@@ -459,6 +571,23 @@ function render() {
   if (currentTab === "Suivi") return renderProgress();
   if (currentTab === "Sources") return renderSources();
   renderHome();
+}
+function renderLearn() {
+  const skills = skillProgress();
+  app.innerHTML = `<h2>Apprendre par compétence</h2>
+    ${card("Méthode", "Choisissez une compétence. Lisez une règle issue d’une correction vérifiée, reformulez-la avec vos mots, puis testez-vous sur trois questions différentes. Les erreurs seront reprogrammées automatiquement.", "span-12")}
+    <div class="grid">${skills.map(row => {
+      const sample = reliableFirst(qcm.filter(item => (item.skill || domainOf(item)) === row.skill))[0];
+      return card(row.skill.replaceAll("_", " "), `<span class="badge ${row.status === "Confirmée" ? "good" : "soft"}">${row.status}</span>\n<strong>Exemple de règle</strong>\n${sample ? correctionBlock(sample) : "Aucune fiche disponible."}\n<button onclick="startSkillLesson('${escapeHtml(row.skill)}')">Travailler cette compétence</button>`, "span-6");
+    }).join("")}</div>`;
+}
+function startSkillLesson(skill) {
+  const cards = reviewCards();
+  const list = reliableFirst(qcm.filter(item => (item.skill || domainOf(item)) === skill));
+  list.sort((a, b) => (cards[questionId(a)]?.attempts || 0) - (cards[questionId(b)]?.attempts || 0));
+  activeQuizMode = `Apprentissage · ${skill.replaceAll("_", " ")}`;
+  quiz = makeQuiz(list.slice(0, 3));
+  renderQuestion();
 }
 function renderHome() {
   if (!qcm.length) {
@@ -469,6 +598,7 @@ function renderHome() {
   const mistakes = mistakeQuestions().length;
   const due = dueMistakeQuestions().length;
   const reviews = reviewStats();
+  const profile = candidateProfile();
   app.innerHTML = `
     <h2>Tableau de bord</h2>
     <div class="grid">
@@ -487,15 +617,25 @@ function renderHome() {
           ${hasDomainStats() ? "" : `<button onclick="startInitialDiagnostic()">Diagnostic initial</button>`}
         </div>
       `, "span-12")}
+      ${card("Mon programme", `
+        <div class="profile-grid">
+          <label>Date des écrits<input id="examDate" type="date" value="${escapeHtml(profile.examDate)}"></label>
+          <label>Temps par semaine (min)<input id="weeklyMinutes" type="number" min="30" step="30" value="${profile.weeklyMinutes}"></label>
+          <label>Durée d’une séance (min)<input id="sessionMinutes" type="number" min="10" step="5" value="${profile.sessionMinutes}"></label>
+          <label>Priorité<select id="profileFocus">${["Équilibré", "QCM", "Écrit", "Oral"].map(value => `<option ${profile.focus === value ? "selected" : ""}>${value}</option>`).join("")}</select></label>
+        </div>
+        <div class="muted">${escapeHtml(weeklyPlanText())}</div>
+        <button onclick="saveCandidateProfile()">Enregistrer mon programme</button>
+      `, "span-12")}
       ${card("QCM corrigés", `<div class="stat">${qcm.length}</div><div class="muted">questions actives avec réponse et explication, dont les 50 questions du sujet zéro QCM 2026.</div>`, "span-3")}
-      ${card("Écrits", `<div class="stat">5 + 1</div><div class="muted">annales 2020-2024 + sujet zéro 2026.</div>`, "span-3")}
-      ${card("Jury", `<div class="stat">5</div><div class="muted">rapports transformés en règles d’alerte.</div>`, "span-3")}
+      ${card("Écrits", `<div class="stat">6 + 1</div><div class="muted">annales 2020-2025 + sujet zéro 2026.</div>`, "span-3")}
+      ${card("Jury", `<div class="stat">6</div><div class="muted">rapports officiels 2020-2025 référencés et règles d’alerte intégrées.</div>`, "span-3")}
       ${card("Échéance", `<div class="stat">29/09</div><div class="muted">épreuves écrites 2026.</div>`, "span-3")}
       ${card("Carnet d’erreurs", `<div class="stat">${reviews.due}</div><div class="muted">erreur(s) à revoir aujourd'hui.\nQuestions encore fragiles : ${reviews.fragile}.\nErreurs maîtrisées : ${reviews.mastered}.\nCarnet actif : ${reviews.total}.</div>`, "span-12")}
-      ${card("Aujourd'hui", `<div class="stat">${dueMistakeQuestions().length}</div><div class="muted">révision(s) dues aujourd'hui. Carnet total : ${mistakeQuestions().length}. Domaine a travailler : ${escapeHtml(weakestDomain())}. Jours avant les epreuves ecrites : ${daysUntil("29/09/2026")}.</div>`, "span-12")}
+      ${card("Aujourd'hui", `<div class="stat">${dueMistakeQuestions().length}</div><div class="muted">révision(s) dues aujourd'hui. Carnet total : ${mistakeQuestions().length}. Domaine à travailler : ${escapeHtml(weakestDomain())}. Jours avant les épreuves écrites : ${profileDaysUntil()}.</div>`, "span-12")}
       ${card("Audit QCM", `<div class="stat">${qcm.length}/${officialQcmTotal}</div><div class="muted">${auditText()} Reste à intégrer avec corrigé vérifié : ${Math.max(0, officialQcmTotal - qcm.length)}.</div>`, "span-12")}
       ${card("Format 2026", `QCM de 1 h 30 sans calculatrice, coefficient 1.\nCas pratique écrit de 3 h avec calculatrice, coefficient 2.\nOral de 20 minutes, coefficient 3, avec présentation du parcours en 2 minutes.\nToute note inférieure à 5/20 est éliminatoire.`, "span-6")}
-      ${card("Ancien format vs format 2026", `Les annales 2020-2024 restent utiles.\nLe sujet zéro 2026 est prioritaire pour se caler sur le nouveau format.\nLe mode 54 questions correspond aux anciennes annales.\nLe QCM 2026 reste une épreuve de 1h30 sans calculatrice.`, "span-6")}
+      ${card("Ancien format vs format 2026", `Les annales 2020-2025 restent utiles.\nLe sujet zéro 2026 est prioritaire pour se caler sur le nouveau format.\nLe mode 54 questions correspond aux anciennes annales.\nLe QCM 2026 reste une épreuve de 1h30 sans calculatrice.`, "span-6")}
       ${card("Plan d’attaque", `1. QCM quotidien : français, calcul, logique, culture générale.\n2. Une annale écrite par semaine : lecture rapide, plan, livrable.\n3. Une simulation orale tous les 10 jours : parcours, missions, déontologie.\n4. Relecture systématique : consigne, chiffres, structure, orthographe.`, "span-6")}
       ${card("Règle qualité", `Une question affichée dans l’entraînement doit toujours avoir une réponse attendue et une explication. Le sujet zéro QCM 2026 est intégré en totalité ; les autres items officiels dont le corrigé n’est pas encore vérifié restent dans les sources tant que l’intégration serait incomplète.`, "span-12")}
     </div>
@@ -523,13 +663,14 @@ function renderQcmHome() {
         <select id="cat">${cats.map(c => `<option>${c}</option>`).join("")}</select>
         <select id="size"><option>10</option><option>20</option><option>50</option><option>54</option><option>Toutes</option></select>
         <button onclick="startQuiz()">Démarrer</button>
+        ${resumableQuiz() ? `<button onclick="resumeQuiz()">Reprendre la série interrompue</button>` : ""}
         ${dueMistakeQuestions().length ? `<button onclick="startDueReview()">Réviser ce qui est dû aujourd’hui (${dueMistakeQuestions().length})</button>` : ""}
         ${mistakeQuestions().length ? `<button onclick="startMistakeQuiz()">Carnet d'erreurs${dueMistakeQuestions().length ? ` (${dueMistakeQuestions().length})` : ""}</button>` : ""}
       </div>
       <div class="muted">Banque corrigee par domaines officiels. ${auditText()} Carnet d'erreurs : ${mistakeQuestions().length}. Domaine faible : ${escapeHtml(weakestDomain())}.</div>
     </div>
     <div class="grid">${homeCoachMessages(lastScore(), mistakeQuestions().length)}</div>
-    ${card("Ancien format vs format 2026", `Les annales 2020-2024 restent utiles.\nLe sujet zéro 2026 est prioritaire pour se caler sur le nouveau format.\nLe mode 54 questions correspond aux anciennes annales.\nLe QCM 2026 reste une épreuve de 1h30 sans calculatrice.`)}
+    ${card("Ancien format vs format 2026", `Les annales 2020-2025 restent utiles.\nLe sujet zéro 2026 est prioritaire pour se caler sur le nouveau format.\nLe mode 54 questions correspond aux anciennes annales.\nLe QCM 2026 reste une épreuve de 1h30 sans calculatrice.`)}
     <div class="grid">${summaryByDomain().map(s => card(s.name, `<div class="stat">${s.count}</div><div class="muted">${escapeHtml(s.rate)}</div>`, "span-3")).join("")}</div>`;
 }
 function summaryByDomain() {
@@ -556,13 +697,18 @@ function startQuiz() {
   if (mode === "Diagnostic initial") list = buildInitialDiagnostic(list);
   list = list.sort(() => Math.random() - .5);
   const plannedSize = mode === "Diagnostic initial" ? 20 : mode === "Serie courte 10 min" ? 10 : isOldExamMode(mode) || mode === "Annale complete" ? 54 : isZero2026Mode(mode) || isSimulationMode(mode) ? 50 : mode === "Faiblesses du jour" || mode === "Carnet d'erreurs" ? 20 : size === "Toutes" ? 0 : Number(size);
+  const availableCount = list.length;
   if (plannedSize) list = list.slice(0, plannedSize);
   if (!list.length) {
     app.innerHTML = `<h2>Entraînement QCM</h2>${card("Aucune question disponible", "Aucune question corrigée ne correspond à ces filtres. Élargissez l’année ou la catégorie.")}<button onclick="renderQcmHome()">Retour aux filtres</button>`;
     return;
   }
   quiz = makeQuiz(list);
+  quiz.expectedCount = mode === "Annale complete" ? 54 : (plannedSize || list.length);
+  if (mode === "Annale complete" && availableCount < 54) activeQuizMode = `Annale partielle ${y === "Toutes" ? "2024" : y} — ${availableCount}/54`;
+  saveActiveQuiz();
   renderQuestion();
+  startSimulationTimer();
 }
 function balancedDiagnostic(list) {
   return buildInitialDiagnostic(list);
@@ -602,6 +748,9 @@ function renderQuestion() {
     return renderQuestion();
   }
   if (quiz.index >= quiz.list.length) {
+    if (simulationTimerHandle) clearInterval(simulationTimerHandle);
+    simulationTimerHandle = null;
+    clearActiveQuiz();
     const totalTimeMs = quiz.startedAt ? Date.now() - quiz.startedAt : 0;
     const answeredTimes = quiz.questionTimes.filter(time => Number.isFinite(time));
     const averageTimeMs = answeredTimes.length ? Math.round(answeredTimes.reduce((sum, time) => sum + time, 0) / answeredTimes.length) : 0;
@@ -620,8 +769,13 @@ function renderQuestion() {
     return;
   }
   const item = quiz.list[quiz.index];
+  saveActiveQuiz();
+  const coverageWarning = quiz.expectedCount > quiz.list.length
+    ? card("Couverture de la série", `Entraînement partiel : ${quiz.list.length}/${quiz.expectedCount} questions disponibles avec corrigé vérifié. Ce résultat ne vaut pas examen blanc complet.`)
+    : "";
   app.innerHTML = `<h2>Question ${quiz.index + 1}/${quiz.list.length}</h2>
     ${simulationTimerHtml()}
+    ${coverageWarning}
     <span class="pill">${item.year}</span><span class="pill">${escapeHtml(domainOf(item))}</span><span class="pill">${escapeHtml(item.category)}</span>${questionBadges(item)}
     <div class="muted">Progression : ${quiz.index + 1} sur ${quiz.list.length}. Réponds, puis lis la correction activement.</div>
     ${questionBlock(item)}
@@ -635,6 +789,7 @@ function answer(choice) {
   if (ok) quiz.score++;
   recordQuestion(item, ok);
   quiz.answers.push({ item, choice, ok, timeMs });
+  saveActiveQuiz();
   if (isDeferredCorrectionMode()) {
     nextQuestion();
     return;
@@ -650,6 +805,7 @@ function answer(choice) {
     </div>
     ${questionSupport(item)}
     ${card("Correction", correctionBlock(item))}
+    ${ok ? "" : learningBlock(item)}
     ${ok ? "" : errorReasonHtml(item)}
     <button onclick="nextQuestion()">Question suivante</button>`;
 }
@@ -659,6 +815,7 @@ function skipQuestion() {
   recordQuestion(item, false);
   saveErrorReason(questionId(item), "Question non répondue");
   quiz.answers.push({ item, choice: null, ok: false, reason: "Question non répondue", timeMs });
+  saveActiveQuiz();
   nextQuestion();
 }
 function renderSimulationResult(totalTimeMs, averageTimeMs) {
@@ -753,6 +910,34 @@ const deliverableTemplates = {
   "Courriel": "Objet : ...\n\nMadame, Monsieur,\n\nÀ la suite de ..., voici les éléments utiles.\n\n1. Constat\n...\n\n2. Points d'attention\n...\n\n3. Suite proposée\n...\n\nJe reste disponible pour tout complément.\n\nCordialement,\n",
   "Support de communication": "Titre du support : ...\n\nMessage principal\n- ...\n\nPublic visé\n- ...\n\nInformations à retenir\n- ...\n- Chiffre clé : ...\n\nConsignes pratiques\n- Étape 1 : ...\n- Étape 2 : ...\n\nContact / suite\n- ...\n"
 };
+let writtenTimerStartedAt = 0;
+let writtenTimerHandle = null;
+function updateWrittenTimer() {
+  const target = document.querySelector("#writtenTimer");
+  if (!writtenTimerStartedAt) return;
+  const remaining = Math.max(0, 3 * 60 * 60 * 1000 - (Date.now() - writtenTimerStartedAt));
+  if (target) target.textContent = `Temps restant : ${formatDuration(remaining)}`;
+  if (remaining === 0 && writtenTimerHandle) {
+    clearInterval(writtenTimerHandle);
+    writtenTimerHandle = null;
+    writtenTimerStartedAt = 0;
+    if (currentTab === "Écrit") saveWrittenVersion();
+    else archiveWrittenDraft();
+  }
+}
+function startWrittenTimer() {
+  writtenTimerStartedAt = Date.now();
+  if (writtenTimerHandle) clearInterval(writtenTimerHandle);
+  writtenTimerHandle = setInterval(updateWrittenTimer, 1000);
+  updateWrittenTimer();
+}
+function stopWrittenTimer() {
+  if (writtenTimerHandle) clearInterval(writtenTimerHandle);
+  writtenTimerHandle = null;
+  writtenTimerStartedAt = 0;
+  const target = document.querySelector("#writtenTimer");
+  if (target) target.textContent = "Chronomètre prêt : 3 h 00.";
+}
 function writtenRubricHtml() {
   return writtenRubric.map(([label, max]) => `<div><strong>${escapeHtml(label)}</strong><br>${max} pts</div>`).join("");
 }
@@ -809,8 +994,58 @@ function writtenPdfViewer(subject) {
       : `<div class="pdf-blocked"><strong>Affichage intégré indisponible</strong><br>Le fichier local n’est pas disponible pour ce sujet. Le lien officiel reste accessible dans un nouvel onglet.</div>`}
   </section>`;
 }
+function writtenKey(subject = subjects[selectedSubject]) {
+  return `${subject?.source || "sujet"}|${subject?.title || selectedSubject}`;
+}
+function writtenDraft(subject = subjects[selectedSubject]) {
+  return loadJson("dgfipWrittenDrafts", {})[writtenKey(subject)] || { copy: "", notes: "", savedAt: null };
+}
+function saveWrittenDraft(showStatus = true) {
+  const drafts = loadJson("dgfipWrittenDrafts", {});
+  const key = writtenKey();
+  drafts[key] = {
+    copy: document.querySelector("#copy")?.value || "",
+    notes: document.querySelector("#documentNotes")?.value || "",
+    deliverable: selectedDeliverable(),
+    savedAt: Date.now()
+  };
+  localStorage.setItem("dgfipWrittenDrafts", JSON.stringify(drafts));
+  const status = document.querySelector("#draftStatus");
+  if (status && showStatus) status.textContent = `Brouillon sauvegardé à ${new Date().toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" })}.`;
+}
+function saveWrittenVersion() {
+  saveWrittenDraft(false);
+  archiveWrittenDraft();
+  renderWritten();
+}
+function archiveWrittenDraft() {
+  const draft = writtenDraft();
+  const versions = loadJson("dgfipWrittenVersions", {});
+  const key = writtenKey();
+  versions[key] = versions[key] || [];
+  versions[key].unshift({
+    copy: draft.copy || "",
+    notes: draft.notes || "",
+    savedAt: Date.now()
+  });
+  versions[key] = versions[key].slice(0, 5);
+  localStorage.setItem("dgfipWrittenVersions", JSON.stringify(versions));
+}
+function writtenVersionsHtml() {
+  const versions = loadJson("dgfipWrittenVersions", {})[writtenKey()] || [];
+  if (!versions.length) return "Aucune version enregistrée.";
+  return versions.map((version, index) => `<button class="choice" onclick="restoreWrittenVersion(${index})">${new Date(version.savedAt).toLocaleString("fr-FR")} · ${version.copy.length} caractères</button>`).join("");
+}
+function restoreWrittenVersion(index) {
+  const version = (loadJson("dgfipWrittenVersions", {})[writtenKey()] || [])[index];
+  if (!version) return;
+  document.querySelector("#copy").value = version.copy || "";
+  document.querySelector("#documentNotes").value = version.notes || "";
+  saveWrittenDraft();
+}
 function renderWritten() {
   const s = subjects[selectedSubject];
+  const draft = writtenDraft(s);
   app.innerHTML = `<h2>Écrit d’admissibilité</h2>
     <div class="toolbar">
       <select id="subject">${subjects.map((x, i) => `<option value="${i}" ${i === selectedSubject ? "selected" : ""}>${x.source} · ${x.title}</option>`).join("")}</select>
@@ -818,52 +1053,45 @@ function renderWritten() {
       <button onclick="selectedSubject=(selectedSubject+1)%subjects.length;renderWritten()">Autre sujet</button>
     </div>
     ${card(`${s.source} · ${s.title}`, `${s.prompt}\n\nAttendus : ${s.expected.join(", ")}`)}
+    ${card("Conditions réelles", `<div id="writtenTimer">${writtenTimerStartedAt ? `Temps restant : ${formatDuration(Math.max(0, 3 * 60 * 60 * 1000 - (Date.now() - writtenTimerStartedAt)))}` : "Chronomètre prêt : 3 h 00."}</div><div class="toolbar"><button onclick="startWrittenTimer()">Démarrer 3 heures</button><button onclick="stopWrittenTimer()">Arrêter</button></div>Le brouillon est sauvegardé pendant l’épreuve et une version est créée à la fin du temps.`)}
     ${writtenPdfViewer(s)}
     <div class="grid">
-      ${card("Parcours d'entraînement", "1. Lire le sujet et identifier le livrable demandé.\n2. Extraire les informations importantes du dossier.\n3. Construire un plan visible.\n4. Rédiger comme un futur agent public.\n5. Auto-évaluer avec la grille sur 20.\n6. Relire : consigne, chiffres, forme, orthographe.", "span-12")}
+      ${card("Parcours d'entraînement", "1. Lire le sujet et identifier le livrable demandé.\n2. Extraire les informations importantes du dossier.\n3. Construire un plan visible.\n4. Rédiger comme un futur agent public.\n5. Utiliser la grille de relecture sans fabriquer de note automatique.\n6. Relire : consigne, chiffres, forme, orthographe.", "span-12")}
       ${card("Atelier 3 heures", "0-20 min : lire le sujet, entourer la consigne, repérer le livrable.\n20-45 min : extraire faits, chiffres, acteurs, risques, documents à citer.\n45-65 min : construire un plan court et opérationnel.\n65-165 min : rédiger le livrable.\n165-180 min : relire et corriger.", "span-6")}
       ${card("Conseils courts", "Éviter le hors-sujet.\nCiter les éléments du dossier.\nFaire un plan visible.\nUtiliser les chiffres proprement.\nRédiger comme un futur agent public.", "span-6")}
-      ${card("Grille d'auto-évaluation sur 20", `<div class="rubric">${writtenRubricHtml()}</div>`, "span-12")}
+      ${card("Grille de relecture", `<div class="rubric">${writtenRubricHtml()}</div><div class="muted">Cette grille guide la relecture. Elle ne produit plus de note automatique à partir de la longueur ou de mots-clés.</div>`, "span-12")}
     </div>
     <div class="card">
       <h3>Livrable à produire</h3>
       <div class="toolbar">
-        <select id="deliverable">${Object.keys(deliverableTemplates).map(name => `<option>${name}</option>`).join("")}</select>
+        <select id="deliverable" onchange="saveWrittenDraft()">${Object.keys(deliverableTemplates).map(name => `<option ${draft.deliverable === name ? "selected" : ""}>${name}</option>`).join("")}</select>
         <button onclick="insertPlan()">Insérer un squelette adapté</button>
       </div>
       <div class="muted">Types prévus : synthèse, réponse structurée, fiche, courriel, support de communication.</div>
     </div>
-    <textarea id="copy" placeholder="Rédigez votre production ici. Commencez par le livrable, puis appuyez-vous sur les éléments du dossier."></textarea>
-    <div class="toolbar"><button onclick="gradeCopy()">Auto-évaluer ma production</button><button onclick="insertPlan()">Insérer un squelette de plan</button></div>
+    <div class="written-workspace">
+      <section class="card"><h3>Tableau d’extraction</h3><div class="muted">Notez pour chaque document : source, fait ou chiffre, interprétation et partie du plan.</div><textarea id="documentNotes" oninput="saveWrittenDraft(false)" placeholder="Doc. 1 — source — fait/chiffre — ce que cela démontre — partie du plan">${escapeHtml(draft.notes || "")}</textarea></section>
+      <section class="card"><h3>Production</h3><textarea id="copy" oninput="saveWrittenDraft(false)" placeholder="Rédigez votre production ici. Commencez par le livrable, puis appuyez-vous sur les éléments du dossier.">${escapeHtml(draft.copy || "")}</textarea></section>
+    </div>
+    <div id="draftStatus" class="muted">${draft.savedAt ? `Brouillon repris, dernière sauvegarde ${new Date(draft.savedAt).toLocaleString("fr-FR")}.` : "Le brouillon est sauvegardé automatiquement sur cet appareil."}</div>
+    <div class="toolbar"><button onclick="gradeCopy()">Lancer la relecture guidée</button><button onclick="saveWrittenVersion()">Enregistrer une version</button><button onclick="insertPlan()">Insérer un squelette de plan</button></div>
+    ${card("Versions", writtenVersionsHtml())}
     <div id="grade"></div>`;
 }
 function insertPlan() {
   document.querySelector("#copy").value = deliverableTemplates[selectedDeliverable()];
+  saveWrittenDraft();
 }
 function gradeCopy() {
   const text = document.querySelector("#copy").value.trim();
   const lower = text.toLowerCase();
-  const checks = [
-    ["Compréhension de la consigne", 4, text.length > 700 && /consigne|objectif|demande|enjeu|probl[eè]me|livrable/.test(lower), text.length > 350],
-    ["Structure", 3, /1\.|2\.|d'abord|ensuite|enfin|partie|conclusion|objet|contexte/.test(lower), text.split(/\n/).length > 6],
-    ["Exploitation des documents", 4, /document|donnée|donnee|chiffre|pourcentage|graphique|tableau|dossier/.test(lower), /fait|constat|acteur|usager/.test(lower)],
-    ["Clarté", 3, text.split(/[.!?]/).length > 8 && text.length > 500, text.length > 250],
-    ["Qualité opérationnelle du livrable", 4, /fiche|courriel|synthèse|synthese|support|action|priorité|priorite|délai|delai|suivi|usager|service/.test(lower), /proposition|mesure|alerte|contrôle|controle/.test(lower)],
-    ["Orthographe et expression", 2, text.split(/[.!?]/).length > 8 && !/\s{3,}/.test(text), text.length > 350]
-  ];
-  let total = 0;
-  const rows = checks.map(([name, max, ok, partial]) => {
-    const pts = ok ? max : partial ? Math.max(1, Math.floor(max / 2)) : 0;
-    total += pts;
-    return `<div><strong>${name}</strong><br>${pts}/${max}</div>`;
-  }).join("");
   const advice = [];
-  if (text.length < 700) advice.push("Développer la copie : une réponse trop courte couvre rarement le dossier.");
+  if (!text) advice.push("Rédigez d’abord une production : la grille doit s’appuyer sur votre texte.");
   if (!/document|dossier|fait|donnée|donnee|chiffre|pourcentage|graphique|tableau/.test(lower)) advice.push("Citer davantage les éléments du dossier, avec au moins un chiffre ou fait précis.");
   if (!/1\.|2\.|conclusion|objet|contexte/.test(lower)) advice.push("Rendre le plan plus visible.");
   if (!/action|priorité|priorite|suivi|délai|delai|usager|service/.test(lower)) advice.push("Rendre le livrable plus opérationnel.");
-  if (!/dgfip|dgddi|finances publiques|douane|service public|agent public|administration/.test(lower)) advice.push("Adopter davantage la posture d'un futur agent public.");
-  document.querySelector("#grade").innerHTML = card("Auto-évaluation indicative", `<div class="stat">${Math.min(20,total)}/20</div><div class="rubric">${rows}</div>\n${advice.length ? advice.join("\n") : "Copie structurée, exploitable et relue. Prochaine étape : refaire en 3 heures en conditions réelles."}`);
+  const checklist = ["J’ai répondu à chaque partie de la consigne.", "Chaque idée importante repose sur un élément précis du dossier.", "J’ai vérifié les calculs, unités et ordres de grandeur.", "Le plan et le livrable se repèrent immédiatement.", "Mes propositions précisent une action, un acteur et une échéance.", "J’ai relu l’orthographe, l’anonymat et la présentation."];
+  document.querySelector("#grade").innerHTML = card("Relecture guidée", `${advice.length ? `<strong>Points à vérifier détectés automatiquement</strong>\n${advice.map(item => `• ${escapeHtml(item)}`).join("\n")}\n\n` : ""}<strong>Validation personnelle</strong><div class="review-checklist">${checklist.map(item => `<label class="check"><input type="checkbox">${escapeHtml(item)}</label>`).join("")}</div><div class="muted">Aucune note n’est calculée automatiquement : la pertinence d’une copie dépend du sujet, du dossier et de la justesse des informations.</div>`);
 }
 function renderJury() {
   app.innerHTML = `<h2>Rapports de jury transformés en règles</h2><div class="grid">${
@@ -872,6 +1100,8 @@ function renderJury() {
 }
 let oralTimerStart = 0;
 let oralTimerHandle = null;
+let oralRecorder = null;
+let oralRecordingChunks = [];
 const oralRubric = [
   ["Clarté", 3],
   ["Motivation", 3],
@@ -879,7 +1109,7 @@ const oralRubric = [
   ["Posture de service public", 3],
   ["Comportement face à une situation difficile", 3],
   ["Concision", 2],
-  ["Sincérité", 3]
+  ["Réponses personnelles et argumentées", 3]
 ];
 const oralMotivationQuestions = [
   "Pourquoi ce concours et pourquoi maintenant ?",
@@ -932,6 +1162,35 @@ function resetOralTimer() {
   oralTimerHandle = null;
   updateOralTimer();
 }
+async function startOralRecording() {
+  const status = document.querySelector("#oralRecordingStatus");
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    oralRecordingChunks = [];
+    oralRecorder = new MediaRecorder(stream);
+    oralRecorder.ondataavailable = event => oralRecordingChunks.push(event.data);
+    oralRecorder.onstop = () => {
+      const blob = new Blob(oralRecordingChunks, { type: oralRecorder.mimeType || "audio/webm" });
+      const player = document.querySelector("#oralPlayback");
+      if (player) {
+        player.src = URL.createObjectURL(blob);
+        player.hidden = false;
+      }
+      stream.getTracks().forEach(track => track.stop());
+      if (status) status.textContent = "Enregistrement terminé. Réécoutez-vous puis cochez la grille.";
+    };
+    oralRecorder.start();
+    startOralTimer();
+    if (status) status.textContent = "Enregistrement en cours…";
+  } catch {
+    if (status) status.textContent = "Le microphone n’est pas disponible ou son accès a été refusé.";
+  }
+}
+function stopOralRecording() {
+  if (oralRecorder?.state === "recording") oralRecorder.stop();
+  if (oralTimerHandle) clearInterval(oralTimerHandle);
+  oralTimerHandle = null;
+}
 function questionCards(title, questions) {
   return questions.map(q => card(title, escapeHtml(q), "span-6")).join("");
 }
@@ -939,7 +1198,7 @@ function renderOral() {
   const corpusQuestions = oralQuestions.filter(q => !oralMotivationQuestions.includes(q) && !oralMissionQuestions.includes(q) && !oralSituations.includes(q));
   app.innerHTML = `<h2>Oral d’admission</h2>
     <div class="grid">
-      ${card("Présentation 2 minutes", `<div id="oralTimer"><div class="stat">0 min 00 s</div><div class="progress"><div style="width:0%"></div></div>Temps restant : 2 min 00 s</div><div class="toolbar"><button onclick="startOralTimer()">Démarrer le chronomètre</button><button onclick="resetOralTimer()">Réinitialiser</button></div>30 s : parcours et fil directeur.\n45 s : expériences utiles.\n30 s : compréhension DGFiP/DGDDI.\n15 s : motivation sobre et concrète.`, "span-12")}
+      ${card("Présentation 2 minutes", `<div id="oralTimer"><div class="stat">0 min 00 s</div><div class="progress"><div style="width:0%"></div></div>Temps restant : 2 min 00 s</div><div class="toolbar"><button onclick="startOralTimer()">Démarrer le chronomètre</button><button onclick="startOralRecording()">Enregistrer ma présentation</button><button onclick="stopOralRecording()">Arrêter</button><button onclick="resetOralTimer()">Réinitialiser</button></div><div id="oralRecordingStatus" class="muted">L’enregistrement reste dans cette page et n’est envoyé à aucun service.</div><audio id="oralPlayback" controls hidden></audio>\n30 s : parcours et fil directeur.\n45 s : expériences utiles.\n30 s : compréhension DGFiP/DGDDI.\n15 s : motivation sobre et concrète.`, "span-12")}
       ${card("Méthode de réponse en mise en situation", "1. Comprendre la situation.\n2. Rappeler la règle ou le principe.\n3. Agir calmement.\n4. Alerter si nécessaire.\n5. Respecter l’usager, la hiérarchie et la déontologie.", "span-6")}
       ${card("Avertissement", "Les réponses types doivent aider à structurer, mais ne doivent pas être récitées mécaniquement. Le jury attend une réponse personnelle, calme et adaptée à la situation.", "span-6")}
       ${card("Simulation 20 minutes", "0-2 min : présentation personnelle chronométrée.\n2-7 min : motivation et parcours.\n7-12 min : DGFiP / DGDDI / service public.\n12-18 min : mises en situation.\n18-20 min : questions de rebond et conclusion.", "span-6")}
@@ -957,14 +1216,45 @@ function renderProgress() {
   const done = JSON.parse(localStorage.getItem("dgfipDone") || "{}");
   const history = JSON.parse(localStorage.getItem("dgfipScores") || "[]");
   const count = tasks.filter(t => done[t]).length;
+  const skills = skillProgress();
   app.innerHTML = `<h2>Suivi local</h2>
     ${card("Avancement", `<div class="stat">${count}/${tasks.length}</div><div class="progress"><div style="width:${pct(count,tasks.length)}%"></div></div>`, "span-12")}
     ${card("Pilotage QCM", `<div class="stat">${dueMistakeQuestions().length}</div><div class="muted">révision(s) dues aujourd'hui. Carnet total : ${mistakeQuestions().length}. Questions fragiles : ${fragileMistakeQuestions().length}. Questions maîtrisées : ${masteredMistakeQuestions().length}. Domaine fragile : ${escapeHtml(weakestDomain())}.\n${domainStatsHtml()}</div>`, "span-12")}
-    <div class="toolbar">${dueMistakeQuestions().length ? `<button onclick="startDueReview()">Réviser ce qui est dû aujourd’hui</button>` : ""}${mistakeQuestions().length ? `<button onclick="startMistakeQuiz()">Revoir le carnet d'erreurs</button>` : ""}<button onclick="setTab('QCM')">Nouvelle serie</button></div>
+    ${card("Compétences", `<div class="skill-table">${skills.map(row => `<div><strong>${escapeHtml(row.skill.replaceAll("_", " "))}</strong><span class="badge ${row.status === "Confirmée" ? "good" : row.status === "À travailler" ? "warn" : "soft"}">${row.status}</span><div>${row.seen}/${row.available} questions vues · ${row.attempts ? `${row.rate}% sur ${row.attempts} tentatives` : "aucune mesure"} · ${row.confirmed} acquis confirmé(s)</div><div class="progress"><div style="width:${pct(row.seen, row.available)}%"></div></div></div>`).join("")}</div><div class="muted">Une compétence n’est confirmée qu’après plusieurs réussites et revient en révision après un délai.</div>`, "span-12")}
+    <div class="toolbar">${dueMistakeQuestions().length ? `<button onclick="startDueReview()">Réviser ce qui est dû aujourd’hui</button>` : ""}${mistakeQuestions().length ? `<button onclick="startMistakeQuiz()">Revoir le carnet d'erreurs</button>` : ""}<button onclick="setTab('QCM')">Nouvelle série</button><button onclick="exportProgress()">Exporter mes données</button><label class="import-button">Importer<input type="file" accept="application/json" onchange="importProgress(this.files[0])"></label></div>
     <div class="grid">
       <section class="card span-6"><h3>Checklist</h3>${tasks.map(t => `<label class="check"><input type="checkbox" ${done[t] ? "checked" : ""} onchange="toggleTask('${t}', this.checked)">${t}</label>`).join("")}</section>
       <section class="card span-6"><h3>Historique QCM</h3>${history.length ? history.map(h => `${h.at} · ${h.mode || "Libre"} · ${h.score}/${h.total}`).join("\n") : "Aucune série terminée pour l’instant."}</section>
     </div>`;
+}
+function exportProgress() {
+  const data = {};
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key?.startsWith("dgfip")) data[key] = localStorage.getItem(key);
+  }
+  const blob = new Blob([JSON.stringify({ version: 1, exportedAt: new Date().toISOString(), data }, null, 2)], { type: "application/json" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = `prepa-dgfip-${new Date().toISOString().slice(0, 10)}.json`;
+  link.click();
+  URL.revokeObjectURL(link.href);
+}
+function importProgress(file) {
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const payload = JSON.parse(reader.result);
+      Object.entries(payload.data || {}).forEach(([key, value]) => {
+        if (key.startsWith("dgfip") && typeof value === "string") localStorage.setItem(key, value);
+      });
+      renderProgress();
+    } catch {
+      app.insertAdjacentHTML("afterbegin", coachMessage("Le fichier d’import n’est pas valide."));
+    }
+  };
+  reader.readAsText(file);
 }
 function toggleTask(task, checked) {
   const done = JSON.parse(localStorage.getItem("dgfipDone") || "{}");
@@ -981,6 +1271,8 @@ function sourceFamily(type) {
   return "Questions générées ou adaptées";
 }
 function sourceTypeLabel(type) {
+  if (type === "official_zero_2026") return "sujet zéro officiel 2026";
+  if (/^official_annale_qcm_\d{4}$/.test(type || "")) return `annale QCM officielle ${String(type).slice(-4)}`;
   return ({
     official: "page officielle",
     qcm: "annale QCM",

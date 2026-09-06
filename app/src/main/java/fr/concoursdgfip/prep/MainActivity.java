@@ -24,6 +24,8 @@ import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.text.Editable;
+import android.text.TextWatcher;
 
 import androidx.core.content.FileProvider;
 
@@ -51,8 +53,8 @@ public class MainActivity extends Activity {
     private static final int LINE = Color.rgb(222, 216, 206);
     private static final int SOFT = Color.rgb(252, 250, 246);
     private static final int OK = Color.rgb(47, 125, 87);
-    private static final int OFFICIAL_QCM_TOTAL = 320;
-    private static final String[] YEAR_FILTERS = {"Toutes", "2026", "2024", "2023", "2022", "2021", "2020"};
+    private static final int OFFICIAL_QCM_TOTAL = 374;
+    private static final String[] YEAR_FILTERS = {"Toutes", "2026", "2025", "2024", "2023", "2022", "2021", "2020"};
     private static final String[] SIZE_FILTERS = {"10", "20", "50", "54", "Toutes"};
     private static final String[] DOMAIN_FILTERS = {
             "Tous les domaines", "Maths et logique", "Francais", "Histoire-geographie",
@@ -64,7 +66,7 @@ public class MainActivity extends Activity {
     };
     private static final String[] PROGRESS_TASKS = {
             "QCM français", "QCM calcul", "QCM culture générale", "QCM raisonnement",
-            "Écrit 2020", "Écrit 2021", "Écrit 2022", "Écrit 2023", "Écrit 2024",
+            "Écrit 2020", "Écrit 2021", "Écrit 2022", "Écrit 2023", "Écrit 2024", "Écrit 2025",
             "Sujet zéro 2026", "Présentation orale", "Mises en situation"
     };
 
@@ -221,7 +223,7 @@ public class MainActivity extends Activity {
                         "Domaine le plus fragile : " + weakestDomain() + ".\n" +
                         "Prochaine action conseillee : " + dailyRecommendation()));
         content.addView(card("Corpus exploité",
-                allQuestions.size() + " questions corrigées avec réponse et explication.\nQCM 2020-2024 et sujet zéro QCM 2026 référencés, dont le sujet zéro 2026 complet en entraînement corrigé.\n5 annales écrites 2020-2024 analysées par thème, livrable et compétence.\n5 rapports de jury 2020-2024 transformés en règles d’alerte.\n2 sujets zéro 2026 intégrés pour coller au nouveau format."));
+                allQuestions.size() + " questions corrigées avec réponse et explication.\nQCM 2020-2025 et sujet zéro QCM 2026 référencés, dont le sujet zéro 2026 complet en entraînement corrigé.\n6 annales écrites 2020-2025 analysées par thème, livrable et compétence.\n6 rapports de jury 2020-2025 référencés et transformés en règles d’alerte.\n2 sujets zéro 2026 intégrés pour coller au nouveau format."));
         content.addView(card("Audit QCM",
                 bankHealth() + "\nQuestions officielles QCM référencées : " + officialQcmTotal + ".\nQuestions corrigées sélectionnables : " + allQuestions.size() + ".\nReste à intégrer avec corrigé vérifié : " + Math.max(0, officialQcmTotal - allQuestions.size()) + "."));
         content.addView(card("Calendrier officiel",
@@ -229,7 +231,7 @@ public class MainActivity extends Activity {
         content.addView(card("Format des épreuves",
                 "QCM de 1 h 30, coefficient 1, sans calculatrice.\nCas pratique écrit de 3 h, coefficient 2, calculatrice autorisée.\nOral de 20 minutes, coefficient 3, avec présentation du parcours en 2 minutes.\nToute note inférieure à 5/20 est éliminatoire."));
         content.addView(card("Ancien format vs format 2026",
-                "Les annales 2020-2024 restent utiles.\nLe sujet zéro 2026 est prioritaire pour se caler sur le nouveau format.\nLe mode 54 questions correspond aux anciennes annales.\nLe QCM 2026 reste une épreuve de 1h30 sans calculatrice."));
+                "Les annales 2020-2025 restent utiles.\nLe sujet zéro 2026 est prioritaire pour se caler sur le nouveau format.\nLe mode 54 questions correspond aux anciennes annales.\nLe QCM 2026 reste une épreuve de 1h30 sans calculatrice."));
         content.addView(card("Plan intelligent",
                 "Phase 1 : sécuriser le QCM avec 15 minutes par jour sur français, calcul, logique et culture générale.\nPhase 2 : refaire chaque annale écrite en conditions dégradées : lecture rapide, plan, livrable opérationnel.\nPhase 3 : oral coefficient 3 : présentation de 2 minutes, missions DGFiP/DGDDI, mises en situation et déontologie.\nObjectif : ne jamais descendre sous 5/20 et viser 12+ sur les deux écrits."));
         content.addView(card("Couverture corrigée",
@@ -243,7 +245,7 @@ public class MainActivity extends Activity {
     private void showAnnales() {
         addSection("Toutes les annales");
         content.addView(card("Couverture officielle",
-                "Cette version exploite toute la liste publiée sur la page officielle : QCM 2020, 2021, 2022, 2023, 2024 ; sujet zéro QCM 2026 ; écrits 2020, 2021, 2022, 2023, 2024 ; rapports de jury 2020, 2021, 2022, 2023, 2024 ; sujet zéro écrit 2026."));
+                "Cette version référence toute la liste publiée sur la page officielle : QCM, écrits et rapports de jury 2020 à 2025, ainsi que les deux sujets zéro 2026. Les questions 2025 restent hors entraînement tant qu’un corrigé vérifié n’est pas intégré."));
         for (Annal annal : annalItems) {
             content.addView(card(annal.year + " · " + annal.title,
                     "QCM : " + annal.qcm + "\nÉcrit : " + annal.written + "\nSignal jury : " + annal.jury + "\nÀ travailler : " + annal.training));
@@ -301,7 +303,7 @@ public class MainActivity extends Activity {
 
         addAction("Démarrer la série", this::startQuizFromFilters);
         content.addView(card("Ancien format vs format 2026",
-                "Les annales 2020-2024 restent utiles.\nLe sujet zéro 2026 est prioritaire pour se caler sur le nouveau format.\nLe mode 54 questions correspond aux anciennes annales.\nLe QCM 2026 reste une épreuve de 1h30 sans calculatrice."));
+                "Les annales 2020-2025 restent utiles.\nLe sujet zéro 2026 est prioritaire pour se caler sur le nouveau format.\nLe mode 54 questions correspond aux anciennes annales.\nLe QCM 2026 reste une épreuve de 1h30 sans calculatrice."));
         content.addView(card("Qualité de la banque",
                 bankHealth() + "\nSeules les questions avec réponse attendue et explication sont proposées en entraînement."));
 
@@ -928,7 +930,6 @@ public class MainActivity extends Activity {
         SharedPreferences prefs = getPreferences(MODE_PRIVATE);
         String id = questionId(q);
         return reviewFailures(id) > 0
-                && !"mastered".equals(prefs.getString("review_mastery_" + id, "fragile"))
                 && prefs.getLong("review_next_" + id, prefs.getLong("due_" + id, 0)) <= System.currentTimeMillis();
     }
 
@@ -1432,6 +1433,15 @@ public class MainActivity extends Activity {
         productionInput.setHint("Rédigez ici votre synthèse, réponse structurée, fiche, courriel ou support de communication...");
         productionInput.setBackground(rounded(Color.WHITE, LINE, 1, 8));
         productionInput.setPadding(dp(14), dp(14), dp(14), dp(14));
+        String draftKey = "written_draft_" + Math.abs(subjectItems.get(subjectIndex).hashCode());
+        productionInput.setText(getPreferences(MODE_PRIVATE).getString(draftKey, ""));
+        productionInput.addTextChangedListener(new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
+                getPreferences(MODE_PRIVATE).edit().putString(draftKey, s.toString()).apply();
+            }
+            @Override public void afterTextChanged(Editable s) {}
+        });
         content.addView(productionInput, new LinearLayout.LayoutParams(-1, dp(220)));
         addAction("Squelette synthèse", () -> insertDeliverableTemplate("Synthèse"));
         addAction("Squelette réponse structurée", () -> insertDeliverableTemplate("Réponse structurée"));
@@ -1454,8 +1464,15 @@ public class MainActivity extends Activity {
 
     private void gradeProduction() {
         String text = productionInput.getText().toString().trim();
-        Grade grade = Grader.grade(text);
-        gradingResult.setText("Auto-évaluation indicative : " + grade.score + "/20\n\n" + grade.comment);
+        String lower = text.toLowerCase(Locale.FRANCE);
+        List<String> checks = new ArrayList<>();
+        if (text.isEmpty()) checks.add("Rédigez d’abord une production complète.");
+        if (!hasAny(lower, "document", "dossier", "fait", "donnée", "chiffre", "pourcentage", "graphique", "tableau")) checks.add("Appuyez les idées sur des faits, chiffres ou documents précis.");
+        if (!hasAny(lower, "1.", "2.", "conclusion", "objet", "contexte")) checks.add("Rendez le plan et le type de livrable immédiatement visibles.");
+        if (!hasAny(lower, "action", "priorité", "suivi", "délai", "usager", "service")) checks.add("Précisez les actions, acteurs et échéances utiles.");
+        String detected = checks.isEmpty() ? "Aucun signal simple détecté : vérifiez maintenant la justesse de chaque information avec le dossier." : String.join("\n", checks);
+        gradingResult.setText("Relecture guidée — aucune note automatique\n\n" + detected +
+                "\n\nÀ valider personnellement :\n• toutes les parties de la consigne sont traitées ;\n• chaque idée importante repose sur le dossier ;\n• calculs et unités sont vérifiés ;\n• le livrable est adapté ;\n• orthographe, anonymat et présentation sont relus.");
     }
 
     private void insertPlan() {
@@ -1630,7 +1647,10 @@ public class MainActivity extends Activity {
     private String sourceIntegrationStatus(String type, String year) {
         if ("zero-qcm".equals(type)) return "Sujet zéro QCM 2026 intégré en questions.";
         if ("zero-written".equals(type)) return "Sujet zéro écrit disponible dans l’entraînement écrit.";
-        if ("qcm".equals(type)) return qcmCountForYear(year) + " question(s) intégrée(s) ou adaptée(s).";
+        if ("qcm".equals(type)) {
+            int count = qcmCountForYear(year);
+            return count > 0 ? count + " question(s) intégrée(s) ou adaptée(s)." : "Source officielle référencée ; corrigé vérifié non intégré.";
+        }
         if ("qcm-correction".equals(type)) return "Utilisée comme aide de contrôle, fiabilité inférieure à l’officiel.";
         if ("written".equals(type)) return "Disponible dans les sujets écrits ou le corpus d’annales.";
         if ("jury-report".equals(type)) return "Transformé en règles et alertes de préparation.";

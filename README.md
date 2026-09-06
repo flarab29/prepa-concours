@@ -5,19 +5,25 @@ Application Android native et prévisualisation navigateur pour préparer le con
 ## Contenu
 
 - Tableau de bord avec calendrier 2026, coefficients, seuil éliminatoire et plan de travail.
-- Corpus référencé : QCM 2020 à 2024, sujet zéro QCM 2026, écrits 2020 à 2024, rapports de jury 2020 à 2024, sujets zéro 2026.
+- Corpus référencé : QCM 2020 à 2025, sujet zéro QCM 2026, écrits 2020 à 2025, rapports de jury 2020 à 2025, sujets zéro 2026.
 - Source de données unique : le corpus pédagogique est dans `public_sources/corpus.json`, empaqueté comme asset Android et chargé par la prévisualisation web.
 - QCM filtrable par année, catégorie et taille de série dans l'application Android et dans la prévisualisation navigateur.
 - Modes QCM plus utiles : libre, diagnostic initial, série courte, mode examen 54 questions, sujet zéro 2026, annale complète, faiblesses du jour et carnet d'erreurs.
 - Regroupement automatique des questions par grands domaines : maths/logique, français, histoire-géographie, EMC/institutions, numérique, MEF/DGFiP/DGDDI, actualité et culture générale.
 - Carnet d'erreurs local : les mauvaises réponses sont conservées, reproposées et diminuent quand elles sont réussies.
 - Pilotage par domaine : l'application repère le domaine le plus fragile et propose une action de travail prioritaire.
+- Programme personnel selon la date des écrits, le temps disponible et la priorité du candidat dans la prévisualisation web.
+- Suivi par compétence avec volume réellement évalué, taux de réussite et acquis confirmés après révision différée.
+- Reprise d'une série QCM interrompue, expiration automatique des simulations et signalement des annales partielles.
 - Banque corrigée renforcée : 218 questions actives ont une réponse et une explication, dont les 50 questions du sujet zéro QCM 2026 et 49 questions issues de l’annale QCM 2024.
 - Audit intégré : l'app signale que toutes les questions sélectionnables sont corrigées, et distingue clairement les questions officielles encore à intégrer avec un corrigé vérifié.
 - Annales écrites transformées en thèmes d'entraînement : égalité professionnelle, France Relance, services publics écoresponsables, dématérialisation, sujet zéro économie du livre.
-- Grille de notation indicative sur 20 : compréhension, structure, exploitation des données, caractère opérationnel, culture MEF, langue.
+- Grille de relecture par critères : compréhension, structure, exploitation des données, caractère opérationnel et langue, sans note automatique fondée sur des mots-clés.
+- Atelier écrit avec tableau d'extraction, brouillons sauvegardés automatiquement, versions restaurables et relecture guidée sans note automatique trompeuse.
 - Fiches anti-erreurs fondées sur les rapports de jury.
 - Entraînement oral : présentation de 2 minutes, motivations, DGFiP/DGDDI, déontologie et mises en situation.
+- Enregistrement et réécoute locale de la présentation orale dans la prévisualisation web.
+- Export et import des données de progression au format JSON.
 - Suivi local dans l'application Android et dans la prévisualisation navigateur : checklist, avancement, historique des scores QCM, statistiques par domaine et carnet d'erreurs.
 
 ## Sources utilisées
@@ -25,12 +31,12 @@ Application Android native et prévisualisation navigateur pour préparer le con
 - Page officielle du concours DGFiP externe.
 - Sujet zéro 2026 de préadmissibilité.
 - Sujet zéro 2026 d'admissibilité.
-- Annale QCM 2024.
-- Rapport de jury 2024.
+- Annales QCM 2024 et 2025.
+- Rapports de jury 2024 et 2025.
 - Sujet zéro QCM 2026 avec corrigé officiel intégré en totalité.
 - Propositions de correction QCM 2020 à 2023 utilisées pour élargir la banque corrigée.
 
-La page officielle liste les annales QCM et écrites 2020 à 2024 ainsi que les rapports de jury 2020 à 2024. L'application référence ce corpus complet et contient déjà une banque corrigée couvrant chaque millésime.
+L'application référence les annales QCM et écrites ainsi que les rapports de jury de 2020 à 2025. La banque corrigée couvre actuellement 2020 à 2024 et le sujet zéro 2026 ; l'annale 2025 reste une source officielle consultable tant qu'un corrigé vérifié n'est pas intégré.
 
 ## Source JSON
 
